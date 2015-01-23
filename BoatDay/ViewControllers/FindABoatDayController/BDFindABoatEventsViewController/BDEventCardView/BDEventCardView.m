@@ -99,7 +99,7 @@
 //    }
 //    
 //    NSInteger availableSeats = event.availableSeats.integerValue - numberOfUsersAttending;
-    self.numberOfSeatsLabel.text = [NSString stringWithFormat:@"%ld", (long)event.freeSeats];
+    self.numberOfSeatsLabel.text = [NSString stringWithFormat:@"%ld", (long)event.freeSeats.integerValue];
     
     self.userNameLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"eventCard.hostedBy", nil), [event.host shortName]];
     

@@ -308,6 +308,7 @@ CGFloat const kMinDistanceLocation    = 0.5;
     [query whereKey:@"startsAt" greaterThan:[NSDate date]];
     [query whereKey:@"status" equalTo:@(EventStatusApproved)];
     [query whereKey:@"deleted" notEqualTo:@(YES)];
+    [query whereKey:@"freeSeats" greaterThan:@(0)];
     
     [self setTimeframeFilter:self.filterDictionary[kTimeFrame] forQuery:query];
     
@@ -403,7 +404,7 @@ CGFloat const kMinDistanceLocation    = 0.5;
     
     NSNumber *seats = [f numberFromString:availableSeats];
     
-    [query whereKey:@"availableSeats" greaterThanOrEqualTo:seats];
+    [query whereKey:@"freeSeats" greaterThanOrEqualTo:seats];
     
 }
 

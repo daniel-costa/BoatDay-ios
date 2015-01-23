@@ -944,6 +944,21 @@ static NSInteger const kMaximumAvailableSeats = 15;
         
     }
     
+    
+    NSInteger numberOfUsersAttending = 0;
+    
+    if(!newEvent) {    
+        // Check for user seats request
+        for (SeatRequest *request in self.event.seatRequests) {
+            if(![request isEqual:[NSNull null]]) {
+                if ([request.status integerValue] == SeatRequestStatusAccepted) {
+                    numberOfUsersAttending += [request.numberOfSeats integerValue];
+                }
+            }
+            
+        }
+    }
+    
     self.event.name = self.eventName;
     self.event.price = [f numberFromString:self.pricePerSeat];
     self.event.boat = self.selectedBoat;
@@ -956,7 +971,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
     self.event.smokingPermitted = self.familyContent[kSmokingPermitted];
     self.event.childrenPermitted = self.familyContent[kChildrenPermitted];
     self.event.availableSeats = @(self.availableSeats);
-    self.event.freeSeats = @(self.availableSeats);
+    self.event.freeSeats = @(self.availableSeats - numberOfUsersAttending);
     self.event.host = [User currentUser];
     self.event.status = @(status);
     self.event.eventDescription = self.eventDescription;
