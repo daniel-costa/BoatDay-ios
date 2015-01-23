@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *arrowImageView;
 @property (nonatomic) CertificationStatus status;
+@property (weak, nonatomic) IBOutlet UILabel *deepDescription;
 
 - (void)setStatus:(CertificationStatus)status;
 

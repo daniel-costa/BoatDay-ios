@@ -389,7 +389,7 @@
     
     // If this is the current user profile, he is always "Active Now"
     if ([self.user isEqual:[User currentUser]]) {
-        
+
         // if current user, is active now!
         self.lastActiveLabel.text = NSLocalizedString(@"addReview.activeNow", nil);
         
@@ -802,7 +802,7 @@
             notification.deleted = @(NO);
             
             self.seatRequest.status = @(SeatRequestStatusAccepted);
-            
+            self.seatRequest.event.freeSeats = @(availableSeats);
             [PFObject saveAllInBackground:@[self.seatRequest, notification] block:^(BOOL succeeded, NSError *error) {
                 
                 [SVProgressHUD dismiss];

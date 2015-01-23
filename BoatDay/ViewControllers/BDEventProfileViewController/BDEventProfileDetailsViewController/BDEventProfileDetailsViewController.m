@@ -402,7 +402,7 @@
     
     NSInteger availableSeats = self.event.availableSeats.integerValue - self.numberOfUsersAttending;
     
-    if (!userRequest && availableSeats == 0) {
+    if (!userRequest && self.event.freeSeats.integerValue == 0) {
         self.buttonBottomView.enabled = NO;
     }
     

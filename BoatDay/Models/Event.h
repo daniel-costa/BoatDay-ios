@@ -45,6 +45,8 @@
 
 @property (retain) NSNumber *availableSeats;
 
+@property (retain) NSNumber *freeSeats;
+
 @property (retain) NSMutableArray *seatRequests;
 
 @property (retain) NSNumber *deleted;

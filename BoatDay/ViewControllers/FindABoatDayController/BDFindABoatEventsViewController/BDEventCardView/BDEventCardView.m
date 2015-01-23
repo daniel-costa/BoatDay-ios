@@ -85,21 +85,21 @@
 
 - (void) updateCardWithEvent:(Event *)event {
     
-    NSInteger numberOfUsersAttending = 0;
-    
-    // Check for user seats request
-    for (SeatRequest *request in event.seatRequests) {
-        
-        if(![request isEqual:[NSNull null]]) {
-            if ([request.status integerValue] == SeatRequestStatusAccepted) {
-                numberOfUsersAttending += [request.numberOfSeats integerValue];
-            }
-        }
-        
-    }
-    
-    NSInteger availableSeats = event.availableSeats.integerValue - numberOfUsersAttending;
-    self.numberOfSeatsLabel.text = [NSString stringWithFormat:@"%ld", (long)availableSeats];
+//    NSInteger numberOfUsersAttending = 0;
+//    
+//    // Check for user seats request
+//    for (SeatRequest *request in event.seatRequests) {
+//        
+//        if(![request isEqual:[NSNull null]]) {
+//            if ([request.status integerValue] == SeatRequestStatusAccepted) {
+//                numberOfUsersAttending += [request.numberOfSeats integerValue];
+//            }
+//        }
+//        
+//    }
+//    
+//    NSInteger availableSeats = event.availableSeats.integerValue - numberOfUsersAttending;
+    self.numberOfSeatsLabel.text = [NSString stringWithFormat:@"%ld", (long)event.freeSeats];
     
     self.userNameLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"eventCard.hostedBy", nil), [event.host shortName]];
     

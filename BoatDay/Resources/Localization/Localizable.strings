@@ -155,7 +155,8 @@
 "certifications.delete.noButton"            = "No";
 "certifications.delete.yesButton"           = "Yes";
 "certificationDetail.title"                 = "Certification Detail";
-
+"certificationsList.title"                  = "Certifications";
+"certificationsList.boatSafteyEduCou"       = "Required if born on or after Jan 1, 1988";
 /*
  * My Boats
  */

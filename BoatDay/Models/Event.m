@@ -25,6 +25,7 @@
 @dynamic status;
 @dynamic locationName;
 @dynamic availableSeats;
+@dynamic freeSeats;
 @dynamic seatRequests;
 @dynamic endDate;
 @dynamic deleted;

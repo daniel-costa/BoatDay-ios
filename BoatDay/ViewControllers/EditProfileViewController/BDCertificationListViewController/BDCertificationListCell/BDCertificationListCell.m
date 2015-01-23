@@ -31,6 +31,10 @@
     self.titleLabel.textColor = [UIColor grayBoatDay];
     self.titleLabel.backgroundColor = [UIColor clearColor];
     
+    
+    self.deepDescription.hidden = YES;
+    [self.deepDescription setFont:[UIFont quattroCentoRegularFontWithSize:13.0]];
+    [self.deepDescription setTextColor:[UIColor darkGrayBoatDay]];
     self.contentView.backgroundColor = [UIColor lightGrayBoatDay];
     self.backgroundColor = [UIColor lightGrayBoatDay];
     
