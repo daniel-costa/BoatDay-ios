@@ -1,0 +1,687 @@
+/*
+ Localizable.strings
+ BoatDay
+ 
+ Created by Diogo Nunes on 27/05/14.
+ Copyright (c) 2014 Rocksauce Studios LLC. All rights reserved.
+ */
+
+/*
+ * Side Menu
+ */
+
+"sideMenu.home"                     = "HOME";
+"sideMenu.findABoatDay"             = "FIND A BOATDAY";
+"sideMenu.myProfile"                = "MY PROFILE";
+"sideMenu.myEvents"                 = "MY EVENTS";
+"sideMenu.notifications"            = "NOTIFICATIONS";
+"sideMenu.hostRegistration"         = "HOST & BOAT REGISTRATION";
+"sideMenu.myBoats"                  = "MY BOATS";
+"sideMenu.emergencyBoatTowing"      = "EMERGENCY SERVICES";
+"sideMenu.settings"                 = "SETTINGS";
+"sideMenu.signOutButton"            = "SIGN OUT";
+"sideMenu.loginButton"              = "LOG IN";
+
+/*
+ * Take Photo Action
+ */
+
+"actionSheet.takePhoto"                 = "Take Photo";
+"actionSheet.chooseFromGallery"         = "Choose From Gallery";
+
+/*
+ * Error Messages
+ */
+
+"errorMessages.noCamera.title"          = "Error";
+"errorMessages.noCamera.message"        = "Device has no camera";
+"errorMessages.ok"                      = "OK";
+"errorMessages.seatRequest.title"       = "Error";
+"errorMessages.seatRequest.message"     = "Something went wrong, check your internet connection and please try again later.";
+
+/*
+ * Login
+ */
+
+"login.facebookButton.title"            = "SIGN-IN WITH";
+"login.signInLaterButton.title"         = "SIGN-IN LATER";
+"login.facebookFailedAlert.title"       = "Warning";
+"login.facebookFailedAlert.message"     = "Failed facebook login.";
+
+"notLoggedIn.alertview.title"           = "Please Login";
+"notLoggedIn.alertview.message"         = "You need to login in order to use this feature.";
+
+/*
+ * Home
+ */
+
+"home.findABoatButton.title"            = "FIND A BOATDAY";
+"home.createBoatDayButton.title"        = "CREATE BOATDAY";
+"home.mustBeLoggedIn.text"              = "YOU MUST SIGN-IN WITH FACEBOOK\nTO ACCESS MORE BOATDAY FEATURES";
+"home.becomeAHost.title"                = "BECOME A HOST";
+"home.browseUsers.title"                = "BROWSE USERS";
+"home.browseGuests.title"               = "BROWSE GUESTS";
+
+/*
+ * Profile
+ */
+
+"profile.title"                             = "Profile";
+"profile.edit"                              = "Edit";
+"profile.reviews"                           = "REVIEWS";
+"profile.about"                             = "ABOUT";
+"profile.friendsWithBoatDay"                = "FRIENDS WITH BOATDAY";
+"profile.myFavoriteActivities"              = "MY FAVORITE ACTIVITIES";
+"profile.commonFriends"                     = "COMMON FRIENDS";
+"profile.commonActivities"                  = "COMMON ACTIVITIES";
+"profile.inviteButton"                      = "INVITE USER TO EVENT";
+"profile.seatRequest.noSeats.title"         = "No Seats Available";
+"profile.seatRequest.noSeats.message"       = "You are not able to accept this request because the number of seats requested by this user is not available.";
+"profile.noActivities"                      = "You didn't choose any. Edit your profile to select some of your favorite activities.";
+"profile.noActivitiesInCommon"              = "No common activities.";
+"profile.noFriends"                         = "None of your friends are using BoatDay.";
+"profile.noFriendsInCommon"                 = "No common friends.";
+"profile.noAboutText"                       = "This user hasn't written a description yet.";
+"profile.noAboutTextSelf"                   = "You haven't written a description about you.";
+"profile.seatRequest.rejectAlert.title"     = "Reject Seat Request";
+"profile.seatRequest.rejectAlert.message"   = "Let this user know why are you rejecting this request. (optional)";
+
+/*
+ * Seat Request
+ */
+
+"userProfile.seatRequest.pedingRequests.single"     = "PENDING REQUEST FOR 1 SEAT";
+"userProfile.seatRequest.pedingRequests.multiple"   = "PENDING REQUEST FOR %@ SEATS";
+"userProfile.seatRequest.titleMessage"              = "%@'S MESSAGE";
+"userProfile.seatRequest.removeUser"                = "REMOVE THIS PERSON FROM YOUR EVENT?";
+"userProfile.seatRequest.remove"                    = "REMOVE";
+"userProfile.seatRequest.removeInvitation"          = "REMOVE THIS INVITATION?";
+
+/*
+ * Report User
+ */
+
+"reportUser.send"               = "Send";
+
+/*
+ * User Reviews
+ */
+
+"reviews.title"                 = "Reviews";
+"reviews.addReview"             = "Add Review";
+
+/*
+ * Invite User
+ */
+
+"invite.sendInvite"                         = "Invite";
+"inviteUser.title"                          = "Invite User";
+"inviteUser.selectAnEvent"                  = "SELECT AN EVENT TO INVITE THIS USER TO";
+"inviteUser.eventInvitationNotification"    = "%@ invited you to \"%@\" event.";
+
+/*
+ * Add/Edit Profile
+ */
+
+"editProfile.title"                         = "My Profile";
+"editProfile.save"                          = "Save";
+"editProfile.cancel"                        = "Cancel";
+"editProfile.photosMessage"                 = "Swipe through your saved photos or add a new one";
+"editProfile.firstName"                     = "FIRST NAME*";
+"editProfile.lastName"                      = "LAST NAME*";
+"editProfile.birthday"                      = "BIRTHDAY*";
+"editProfile.aboutMe"                       = "ABOUT ME*";
+"editProfile.aboutMe.charsRemaining"        = "characters remaining";
+"editProfile.myActivities"                  = "MY ACTIVITIES";
+"editProfile.boatingCertifications"         = "BOATING CERTIFICATIONS";
+"editProfile.certifications"                = "Certifications";
+"editProfile.myActivityEmptyState"          = "Pick your favorite activities!";
+
+/*
+ * Certifications
+ */
+
+"certificationsList.title"                  = "Certifications";
+"certifications.addMessage"                 = "Tap to add a photo of your certificate";
+"certifications.textView.placeholder"       = "Add your message...";
+"certifications.addInfo"                    = "ADD A MESSAGE ABOUT YOUR CERTIFICATION";
+"certifications.approved"                   = "APPROVED";
+"certifications.pending"                    = "PENDING";
+"certifications.deletePending"              = "DELETE";
+"certifications.submit"                     = "SUBMIT";
+"certifications.noMessagePlaceholder"       = "No message added.";
+"certifications.deleteTitle"                = "Delete This Certification?";
+"certifications.deleteMessage"              = "Are you sure you want to delete this Certification?";
+"certifications.delete.noButton"            = "No";
+"certifications.delete.yesButton"           = "Yes";
+"certificationDetail.title"                 = "Certification Detail";
+
+/*
+ * My Boats
+ */
+
+"myBoats.noBoatsView.message"               = "You haven’t added any boats yet!\nTap the “+” icon in the top-right corner to begin.";
+"myBoats.title"                             = "My Boats";
+"myBoats.cell.seats"                        = "SEATS";
+"myBoats.cell.added"                        = "Added";
+"myBoats.tableView.section.notApproved"     = "Not submitted for approval yet";
+"myBoats.tableView.section.approved"        = "Approved";
+"myBoats.tableView.section.submited"        = "Submitted";
+
+/*
+ * Boat Profile
+ */
+
+"boatProfile.edit"                      = "Edit";
+"boatProfile.title"                     = "Boat Profile";
+"boatProfile.boatDetails"               = "BOAT DETAILS";
+"boatProfile.type"                      = "TYPE";
+"boatProfile.length"                    = "LENGHT";
+"boatProfile.capacity"                  = "CAPACITY";
+"boatProfile.buildYear"                 = "BUILD YEAR";
+"boatProfile.safetyFeatures"            = "SAFETY FEATURES";
+"boatProfile.locationNotFound"          = "Location Not Found";
+"boatProfile.lengthMetric"              = "ft";
+"boatProfile.addedDate"                 = "Added";
+"boatProfile.findingLocation"           = "Finding location...";
+"boatProfile.passengers"                = "Passengers";
+
+/*
+ * Boat Rejection Message
+ */
+
+"boatProfile.rejectedMessage.title"             = "WE CANNOT APPROVE YOUR BOAT AT THIS TIME.";
+"boatProfile.rejectedMessage.subTitle"          = "Tap here for details";
+"boatProfile.messageNotification.adminName"     = "Admin";
+"boatProfile.messageNotification.title"         = "Message";
+"boatProfile.noSafetyFeatures"                  = "This boat has no safety features.";
+
+/*
+ * Add/Edit Boat
+ */
+
+"addEditBoat.edit.title"                    = "Edit Boat";
+"addEditBoat.add.title"                     = "Add Boat";
+"addEditBoat.swipePhotoMessage"             = "Swipe through your saved photos or add a new one";
+"addEditBoat.addPhotoMessage"               = "Add photos of your boat";
+"addEditBoat.boatName"                      = "BOAT NAME*";
+"addEditBoat.location"                      = "STORAGE LOCATION*";
+"addEditBoat.type"                          = "TYPE*";
+"addEditBoat.length"                        = "LENGTH*";
+"addEditBoat.capacity"                      = "CAPACITY*";
+"addEditBoat.buildYear"                     = "BUILD YEAR*";
+"addEditBoat.save"                          = "Save";
+"addEditBoat.cancel"                        = "Cancel";
+"addEditBoat.safetyFeatures"                = "SAFETY FEATURES";
+"addEditBoat.proofOfInsurance"              = "PROOF OF INSURANCE*";
+"addEditBoat.submit"                        = "SUBMIT BOAT";
+"addEditBoat.deleteButton"                  = "DELETE THIS BOAT";
+"addEditBoat.deleteDraftBoat"               = "DELETE BOAT";
+"addEditBoat.alertview.title"               = "Error";
+"addEditBoat.alertview.message"             = "Please fill in all of the required fields";
+"addEditBoat.deleteError.gotEvent.message"  = "You can't delete this boat because it is associated to an active event.";
+"addEditBoat.safetyFeatures.title"          = "Safety Features";
+"addEditBoat.createdAlert.title"            = "Success";
+"addEditBoat.createdAlert.message"          = "Your boat information has been submitted for approval.";
+"addEditBoat.gotoPaymentInfo.message"       = "Your Boat Registration has been submitted, input your payment info to finalize your Registration";
+"addEditBoat.maxPhotosAlert.title"          = "Number of photos";
+"addEditBoat.maxPhotosAlert.message"        = "The maximum number of photos is 5.";
+"addEditBoat.notCreatedAlert.title"         = "Error";
+"addEditBoat.notCreatedAlert.message"       = "Failed to create boat. Please check verify internet settings.";
+"addEditBoat.deleteVerification"            = "Delete boat?";
+"addEditBoat.deleteMessage"                 = "Are you sure you want to delete this boat?";
+"addEditBoat.pictureReqlertview.title"      = "Boat Picture";
+"addEditBoat.pictureReqlertview.message"    = "A boat picture is required to submit a boat.";
+"addEditBoat.insuranceAlertview.title"      = "Insurance Picture";
+"addEditBoat.insuranceAlertview.message"    = "An insurance picture is required.";
+"addEditBoat.lenghtNumAlertview.title"      = "Length";
+"addEditBoat.lenghtNumAlertview.message"    = "This field should only take numbers";
+"addEditBoat.capacityNumAlertview.title"    = "Capacity";
+"addEditBoat.capacityNumAlertview.message"  = "This field should only take numbers";
+"addEditBoat.capacityMaxMin.message"        = "Alowed capacity is between 1 and 15 seats.";
+
+/*
+ * Location Boat
+ */
+
+"location.save"                     = "Save";
+"location.cancel"                   = "Cancel";
+"location.title"                    = "Set Location";
+"location.placeNotFound"            = "Didn't find your boat location";
+"location.placeNotFound.title"      = "Location not found";
+"location.placeNotFound.okButton"   = "Ok";
+
+/*
+ * Boat Insurance
+ */
+
+"boatInsurance.title"                           = "Insurance";
+"boatInsurance.save"                            = "Save";
+"boatInsurance.cancel"                          = "Cancel";
+"boatInsurance.tapToAddPhoto"                   = "Tap to add a photo of your boat insurance card or form";
+"boatInsurance.expirationDate"                  = "EXPIRATION DATE";
+"boatInsurance.minimumCoverage"                 = "MIN COVERAGE ($)";
+"boatInsurance.minimumCoverage.placeholder"     = "Min $300,000";
+"boatInsurance.minCoverageAlert.title"          = "Minimum Coverage";
+"boatInsurance.minCoverageAlert.message"        = "Insurance coverage must be $300,000 or greater.";
+"boatInsurance.pictureAlert.title"              = "Insurance Photo";
+"boatInsurance.pictureAlert.message"            = "You need to choose an insurance photo.";
+"boatInsurance.dateTime.title"                  = "Date";
+"boatInsurance.dateTime.message"                = "Your expiration date needs to be valid.";
+"boatInsurance.warning.title"                   = "Picture";
+"boatInsurance.warning.message"                 = "Image must have full policy summary information including: Name of Carrier, Coverage Type, Minimum Amount of Coverage, Named Insured(s), Boat Registration Number, Coverage Term (including expiration), Address.";
+
+/*
+ * Find a Boat
+ */
+
+"findABoat.segmentedControl.events"             = "EVENTS";
+"findABoat.segmentedControl.map"                = "MAP";
+"findABoat.segmentedControl.calendar"           = "CALENDAR";
+"findABoat.title"                               = "BoatDays";
+"coinSymbol"                                    = "$";
+
+/*
+ * Find a Boat: Filter
+ */
+
+"findABoat.filter"                              = "Filter";
+"findABoat.save"                                = "Save";
+"findABoat.apply"                               = "Apply";
+"findABoat.cancel"                              = "Cancel";
+"findABoat.activities"                          = "ACTIVITIES";
+"findABoat.activities.noneSelected"             = "NONE SELECTED";
+"findABoat.familyContent"                       = "FAMILY CONTENT";
+"findABoat.activities.selected"                 = "SELECTED";
+"findABoat.location.title"                      = "LOCATION";
+"findABoat.timeframe"                           = "TIMEFRAME";
+"findABoat.availableSeats"                      = "AVAILABLE SEATS";
+"findABoat.distance"                            = "DISTANCE";
+"findABoat.suggestedPrice"                      = "SUGGESTED PRICE";
+"findABoat.keywords"                            = "KEYWORDS";
+"findABoat.keywordsPlaceholder"                 = "Insert keywords";
+
+"findABoat.location.none"                       = "None";
+
+"findABoat.timeframe.any"                       = "Any";
+"findABoat.timeframe.today"                     = "Today";
+"findABoat.timeframe.thisWeek"                  = "This Week";
+"findABoat.timeframe.thisMonth"                 = "This Month";
+"findABoat.timeframe.thisYear"                  = "This Year";
+
+"findABoat.availableSeats.noLimit"              = "No Limit";
+
+"findABoat.suggestedDonation.noLimit"           = "No Limit";
+"findABoat.suggestedDonation.under25"           = "Under $25";
+"findABoat.suggestedDonation.under50"           = "Under $50";
+"findABoat.suggestedDonation.under100"          = "Under $100";
+"findABoat.suggestedDonation.under250"          = "Under $250";
+"findABoat.suggestedDonation.under500"          = "Under $500";
+
+"findABoat.distanceValue.stringFormat"          = "[ %@ miles ]";
+"findABoat.familyContent.childrenPermitted"     = "Children Permitted";
+"findABoat.familyContent.alcoholPermitted"      = "Alcohol Permitted";
+"findABoat.familyContent.smokingPermitted"      = "Smoking Permitted";
+
+/*
+ * Event
+ */
+
+"eventProfile.title"                                    = "Event";
+"eventProfile.edit"                                     = "Edit";
+"eventProfile.segmentedControl.details"                 = "DETAILS";
+"eventProfile.segmentedControl.guests"                  = "GUESTS";
+"eventProfile.segmentedControl.wall"                    = "WALL";
+"eventProfile.eventDescription"                         = "EVENT DESCRIPTION";
+"eventProfile.emptyEventDescription"                    = "No Description for this Event";
+"eventProfile.activities.title"                         = "Activities";
+"eventProfile.activities.noDrinking.title"              = "Alocohol-free";
+"eventProfile.activities.noDrinking.description"        = "No alcoholic beverages are permitted on this event.";
+"eventProfile.activities.noSmoking.title"               = "Smoking-free";
+"eventProfile.activities.noSmoking.description"         = "No smoking of any kind is permitted on this event.";
+"eventProfile.activities.familyWelcome.title"           = "FAMILY WELCOME";
+"eventProfile.activities.familyWelcome.description"     = "Children who are accompanied by adults are permitted on this event.";
+"eventProfile.suggestedContribution"                    = "Suggested Contribution";
+"eventProfile.requestSeats"                             = "REQUEST SEATS";
+"eventProfile.seats"                                    = "OPEN SEATS";
+"eventProfile.confirmedGuest"                           = "YOU ARE A CONFIRMED GUEST FOR THIS EVENT";
+"eventProfile.cancelSeats"                              = "CANCEL SEATS";
+"eventProfile.pendingRequest"                           = "YOUR RESERVATION IS PENDING";
+"event.pickupLocation.title"                            = "Pick-Up Location";
+"event.pickupLocation.getDirections"                    = "Get Directions";
+"eventProfile.guests.pendingRequests"                   = "PENDING REQUESTS YOU’VE RECEIVED";
+"eventProfile.guests.pendingInvitations"                = "PENDING INVITATIONS YOU’VE SENT";
+"eventProfile.guests.confirmedGuests"                   = "CONFIRMED GUESTS";
+"eventProfile.guests.noRequests"                        = "YOU HAVE NO PENDING REQUESTS";
+"eventProfile.guests.noInvitations"                     = "YOU HAVE NO PENDING INVITATIONS";
+"eventProfile.guests.noGuestConfirmations"              = "THIS EVENT DOES NOT YET HAVE ANY GUESTS";
+"eventProfile.flagAlert.title"                          = "Success";
+"eventProfile.flagAlert.message"                        = "%@ flagged";
+"eventProfile.flagMessage"                              = "User Flagged this event.";
+"eventProfile.flagConfirmation.title"                   = "Event Report";
+"eventProfile.flagConfirmation.message"                 = "Report as Inappropriate?";
+"eventProfile.inviteUsers"                              = "INVITE USERS";
+"eventProfile.seatRequest.deleteTitle"                  = "Cancel?";
+"eventProfile.seatRequest.deleteMessage"                = "Do you want to cancel your reservation? You will lose your seat reservations.";
+"eventProfile.seat"                                     = "SEAT";
+"eventProfile.cancelRequest.title"                      = "Are you Sure?";
+"eventProfile.cancelRequest.message"                    = "Cancellation within 24 hours of your BoatDay negatively effects all Hosts and Guests. You will be charged the contribution amount if you cancel at this time. Do you wish to cancel?";
+"eventProfile.finalizeContribution"                     = "FINALIZE CONTRIBUTION";
+"eventProfile.wall.you"                                 = "You";
+"eventProfile.activities.yesDrinking.title"             = "DRINKING ALLOWED";
+"eventProfile.activities.yesDrinking.description"       = "Alcoholic beverages are permitted on this event.";
+"eventProfile.activities.yesSmoking.title"              = "SMOKING ALLOWED";
+"eventProfile.activities.yesSmoking.description"        = "Smoking is permitted on this event";
+"eventProfile.activities.nofamilyWelcome.title"         = "Not recommended for Children";
+"eventProfile.activities.nofamilyWelcome.description"   = "Children who are accompanied by adults are not permitted on this event.";
+"eventProfile.cancelationNotification"                  = "%@ canceled is seat request for \"%@\" event";
+
+/*
+ * Notifications
+ */
+
+"notifications.type.seatRequestCanceledByUser"  = "Seat Request Canceled by user.";
+"notifications.newComent"                       = "New Event Host Comment";
+"notification.eventDeleted.title"               = "Event Deleted By Admin";
+"notification.eventEnded.title"                 = "Event Ended";
+"notification.eventEnded.message"               = "Please leave a review and finalize your payment.";
+
+/*
+ * Find Users
+ */
+
+"findUsers.title"                       = "Find Users";
+"findUsers.placeholderText"             = "SEARCH BY USERNAME OR LOCATION";
+"findUser.usersByName"                  = "SEARCH RESULTS - NAME";
+"findUser.NoUsersByName"                = "NO SEARCH RESULTS - NAME";
+"findUser.usersByLocation"              = "SEARCH RESULTS - LOCATION";
+"findUser.NoUsersByLocation"            = "NO SEARCH RESULTS - LOCATION";
+
+/*
+ * Add/Edit Event
+ */
+
+"addEditEvent.edit.title"               = "Edit Event";
+"addEditEvent.add.title"                = "Add Event";
+"addEditEvent.save"                     = "Save";
+"addEditEvent.cancel"                   = "Cancel";
+"addEditEvent.selectBoat"               = "SELECT BOAT";
+"addEditEvent.eventName"                = "EVENT NAME";
+"addEditEvent.location"                 = "DEPARTURE LOCATION";
+"addEditEvent.pricePerSeat"             = "PRICE PER SEAT ($)";
+"addEditEvent.pickUpTime"               = "DEPARTURE TIME";
+"addEditEvent.endTime"                  = "END TIME";
+"addEditEvent.availableSeats"           = "AVAILABLE SEATS";
+"addEditEvent.selectBoatFirst"          = "No Boat Selected";
+"addEditEvent.selected"                 = "Selected";
+"addEditEvent.eventDescription"         = "EVENT DESCRIPTION";
+"addEditEvent.publish"                  = "PUBLISH";
+"addEditEvent.delete"                   = "DELETE";
+"addEditEvent.date"                     = "Date";
+"addEditEvent.createdAlert.title"       = "Success";
+"addEditEvent.createdAlert.message"     = "Your new event has been created!";
+"addEditEvent.deleteAlert.title"        = "Delete Event";
+"addEditEvent.deleteAlert.message"      = "Let the guests know why are you deleting this event. (optional)";
+"addEditEvent.deleteAlert.messageHere"  = "Message here...";
+
+/*
+ * Family Content
+ */
+
+"familyContent.title"                   = "Family Content";
+
+/*
+ * Select Boats
+ */
+
+"selectBoats.title"                     = "Select Boat";
+
+/*
+ * About View
+ */
+
+"aboutView.title" = "About This App";
+"aboutView.version" = "Version";
+
+/*
+ * My Events 
+ */
+
+"myEvents.title"                                = "My Events";
+"myEvents.segmentedControl.hostingEvents"       = "HOSTING";
+"myEvents.segmentedControl.attendingEvents"     = "ATTENDING";
+"myEvents.segmentedControl.historyEvents"       = "HISTORY";
+"myEvents.merchantIdAlertView.title"            = "Payment Info";
+"myEvents.merchantIdAlertView.message"          = "You must complete your Payment Information in the Settings section before you can create an Event. After your Payment Information has been approved you can create Events.";
+
+/*
+ * Event Card
+ */
+
+"eventCard.hostedBy"                            = "Hosted by";
+"eventCard.status.hosting.notsubmited"          = "SAVED BUT NOT SUBMITTED";
+"eventCard.status.hosting.denied"               = "DENIED BY ADMIN";
+"eventCard.status.hosting.approved"             = "APPROVED";
+"eventCard.status.hosting.pending"              = "PENDING";
+"eventCard.status.hosting.canceled"             = "CANCELED";
+"eventCard.status.attending.pending"            = "PENDING REQUEST";
+"eventCard.status.attending.accepted"           = "YOU ARE A CONFIRMED GUEST FOR THIS EVENT";
+"eventCard.status.attending.rejected"           = "YOUR REQUEST HAS BEEN CANCELED";
+"eventCard.status.history.eventOver"            = "THIS EVENT IS OVER";
+"eventCard.status.eventIsLive"                  = "THIS EVENT IS LIVE";
+"eventCard.status.somethingWentWrong"           = "EVENT INFORMATION";
+
+/*
+ * Notifications
+ */
+
+"notifications.title"                               = "Notifications";
+"notifications.type.boatApproved"                   = "Your boat has been approved!";
+"notifications.type.boatRejected"                   = "Your boat has been rejected.";
+"notifications.type.seatRequestSingle"              = "Request for %@ seat";
+"notifications.type.seatRequest"                    = "Request for %@ seats";
+"notifications.type.seatRequestApproved"            = "Your seat request has been approved!";
+"notifications.type.seatRequestRejected"            = "Your seat request has been canceled.";
+"notifications.type.certificationApproved"          = "Your certification has been approved!";
+"notifications.type.certificationRejected"          = "Your certification has been rejected.";
+"notifications.type.newChatMessage"                 = "Registered Users New Message";
+"notifications.type.eventInvitation"                = "The Host has invited you to reserve a seat!";
+"notifications.type.userRemovedFromEvent"           = "You have been removed from an event.";
+"notifications.type.eventCanceled"                  = "This event was canceled.";
+"notifications.type.newReview"                      = "New review";
+"notifications.type.hostRegistrationApproved"       = "You have been approved as a BoatDay Host!";
+"notifications.type.hostRegistrationRejected"       = "Your host registration has been rejected.";
+"notifications.type.paymentReminder"                = "Finalize your contribution.";
+"notifications.type.merchantApproved"               = "Your Payment Info was approved.";
+"notifications.type.merchantRejected"               = "Your Payment Info was declined.";
+"notifications.type.eventEnded"                     = "Event Ended. Tap for more information";
+"notifications.type.48hoursPriorToEvent"            = "Event will start in 48 hours.";
+"notifications.rejectionMessage.title"              = "Event Host Message";
+"notifications.rejectionMessage.defaultMessage"     = "The event host didn't give a reason for the cancelation.";
+"notifications.type.invitationRemoved"              = "Your invitation is no longer active.";
+
+/*
+ * Boat Towing
+ */
+
+"boatTowing.title"                  = "Boat Towing";
+"boatTowing.phoneNumber"            = "1-800-391-4869";
+"boatTowing.titleText"              = "Emergency Services";
+"boatTowing.text"                   = "24-Hour Dispatch Number: 1-800-391-4869\n\nUS Coast Guard 1-800-323-7233\n\nBoat Towing Services are provided by Boat US";
+"boatTowing.alert.title"            = "Alert";
+"boatTowing.alert.message"          = "Call facility is not available!";
+
+/*
+ * Settings
+ */
+
+"settings.title"                            = "Settings";
+"settings.showEventsImAttending"            = "SHOW EVENTS I’M ATTENDING?";
+"settings.showEventsImAttending.detail"     = "Events you are attending will be visible in your public profile.";
+"settings.paymentInfo"                      = "PAYMENT INFO";
+"settings.termsOfService"                   = "BOATDAY TERMS AND CONDITIONS";
+"settings.aboutThisApp"                     = "ABOUT THIS APP";
+"settings.creditCardInfo"                   = "CREDIT CARD INFO";
+
+
+/*
+ * Terms Of Services
+ */
+
+"termsOfService.title"      = "Terms and Conditions";
+"termsOfService.text"       = "TERMS AND CONDITIONS (\"Terms\")\nLast updated: August 07, 2014\n\n\Please read these Terms of Service carefully before using this app.\n\nYour access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.\n\nBy accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.\n\n\nAccounts\n\nWhen you create an account with us, you must provide us information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Service.\n\nYou are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password, whether your password is with our Service or a third-party service.\n\nYou agree not to disclose your password to any third party. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.\n\nLinks To Other Web Sites\nOur Service may contain links to third-party web sites or services that are not owned or controlled by BoatDay.\n\n\BoatDay has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that BoatDay shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services.\n\nWe strongly advise you to read the terms and conditions and privacy policies of any third-party web sites or services that you visit.\n\nTermination\nWe may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.\n\nAll provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.\n\nWe may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.\n\nUpon termination, your right to use the Service will immediately cease. If you wish to terminate your account, you may simply discontinue using the Service.\n\nAll provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.\n\nGoverning Law\nThese Terms shall be governed and construed in accordance with the laws of Texas, United States, without regard to its conflict of law provisions.\n\nOur failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have between us regarding the Service.\n\nChanges\nWe reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.\n\nBy continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.\n\nWith permission from TermsFeed (http://termsfeed.com/).\n\nContact Us\nIf you have any questions about these Terms, please contact us.";
+
+/*
+ * Host Registration
+ */
+
+"hostRegistration.title"                                = "Host Registration";
+"hostRegistration.firstName"                            = "FIRST NAME*";
+"hostRegistration.lastName"                             = "LAST NAME*";
+"hostRegistration.birthday"                             = "BIRTHDAY*";
+"hostRegistration.firstAddressLine"                     = "ADDRESS LINE*";
+"hostRegistration.city"                                 = "CITY*";
+"hostRegistration.state"                                = "STATE*";
+"hostRegistration.zipCode"                              = "ZIP CODE*";
+"hostRegistration.email"                                = "EMAIL*";
+"hostRegistration.phoneNumber"                          = "PHONE NUMBER*";
+"hostRegistration.firstName.placeholder"                = "First Name";
+"hostRegistration.lastName.placeholder"                 = "Last Name";
+"hostRegistration.firstAddressLine.placeholder"         = "Address";
+"hostRegistration.zipCode.placeholder"                  = "Zip Code";
+"hostRegistration.email.placeholder"                    = "your@email.com";
+"hostRegistration.phoneNumber.placeholder"              = "Your Phone";
+"hostRegistration.city.placeholder"                     = "City";
+"hostRegistration.state.placeholder"                    = "State";
+"hostRegistration.birthday.placeholder"                 = "Select Date";
+"hostRegistration.next"                                 = "Next";
+"hostRegistration.alertview.title"                      = "Picture is missing";
+"hostRegistration.alertview.message"                    = "Please add your drivers license picture.";
+"hostRegistration.terms.consentBackground"              = "I consent to a background check by the BoatDay administrators using the information that I have provided in the previous screen.";
+"hostRegistration.terms.agreeWithTerms"                 = "I agree to the BoatDay";
+"hostRegistration.terms.termsOfService"                 = "Terms of Service";
+"hostRegistration.terms.submit"                         = "SUBMIT";
+"hostRegistration.terms.title"                          = "Terms";
+"hostRegistration.error.title"                          = "Failed";
+"hostRegistration.error.message"                        = "Something went wrong, please try again later or contact an admin.";
+"hostRegistration.uploadingPicture"                     = "Uploading Picture";
+"hostRegistration.checkboxesNotPressed.message"         = "You must accept the terms of service before submitting. To accept the terms, check off next to each item.";
+"hostRegistration.checkboxesNotPressed.title"           = "Host Registration";
+"hostRegistration.phoneNumberAlertView.title"           = "Phone Number";
+"hostRegistration.phoneNumberAlertView.message"         = "Please check your phone number. Some numbers are missing.";
+"hostRegistration.submitedAlert.title"                  = "Success";
+"hostRegistration.submitedAlert.message"                = "Your Host Registration has been submitted, continue to the next screen to register your boat.";
+"hostRegistration.zipCodeAlertView.title"               = "Zip Code";
+"hostRegistration.zipCodeAlertView.message"             = "The Zip code should have 5 numbers";
+"hostRegistration.emailAlertView.title"                 = "Email";
+"hostRegistration.emailAlertView.message"               = "The email you entered is not valid.";
+"hostRegistration.zipCodeOutOfArea.title"               = "Zip Code";
+"hostRegistration.zipCodeOutOfArea.message"             = "BoatDay is not yet currently in your area. Please encourage your community to ask for BoatDay and check our website for new location updates.";
+
+/*
+ * Seat Requests
+ */
+
+"seatRequests.title"                        = "Request Seats";
+"seatRequests.avaialableSeats"              = "%ld OF %ld SEATS AVAILABLE";
+"seatsRequest.textView.placeholder"         = "Add a personal message for the event host";
+"seatRequest.addCreditCard"                 = "Use Credit Card";
+"seatRequests.totalContribution"            = "TOTAL CONTRIBUTION";
+"seatRequest.sendRequest"                   = "SEND REQUEST";
+"seatRequest.submit"                        = "SUBMIT";
+"seatRequests.providePaymentInfoLabel"      = "Please provide your payment information\nto complete your request (next page).";
+
+/*
+ * Finalize Contribution
+ */
+
+"finalizeContribution.title"                    = "Finalize Payment";
+"finalizeContribution.message"                  = "Your contribution is about to be charged. Do you wish to proceed?";
+"finalizeContribution.error.title"              = "Error";
+"finalizeContribution.error.message"            = "Something went wrong. Payment could not be charged. Please verify your internet connection. If the error persists please contact admin.";
+"finalizeContribution.confirmation.title"       = "Payment";
+"finalizeContributions.error.defaultMessage"    = "Error trying to make payment, please contact the admin.";
+
+/*
+ * Payment Info
+ */
+
+"paymentInfo.title"                                 = "Payment Info";
+"paymentInfo.sectionTitle.selectDestination"        = "SELECT DESTINATION";
+"paymentInfo.sectionTitle.businessInformation"      = "BUSINESS INFORMATION (OPTIONAL)";
+"paymentInfo.sectionTitle.personalInformation"      = "PERSONAL INFORMATION";
+"paymentInfo.sectionTitle.termsOfService"           = "TERMS OF SERVICE";
+"paymentInfo.sectionTitle.addressInformation"       = "ADDRESS INFO";
+"paymentInfo.termsOfService"                        = "Terms of Service";
+"paymentInfo.submitButton"                          = "SUBMIT";
+"paymentInfo.accountNumber"                         = "ACCOUNT NUMBER*";
+"paymentInfo.routingNumber"                         = "ROUTING NUMBER*";
+"paymentInfo.emailField"                            = "EMAIL";
+"paymentInfo.phoneNumberField"                      = "PHONE NUMBER";
+"paymentInfo.businessName"                          = "BUSINESS NAME";
+"paymentInfo.taxID"                                 = "TAX ID";
+"paymentInfo.ssn"                                   = "LAST 4 DIGITS OF SSN";
+"paymentInfo.agree"                                 = "I agree to the Braintree";
+"paymentInfo.accountNumber.placeholder"             = "Account Number";
+"paymentInfo.routingNumber.placeholder"             = "Routing Number";
+"paymentInfo.emailField.placeholder"                = "your@email.com";
+"paymentInfo.phoneNumberField.placeholder"          = "Phone Number";
+"paymentInfo.businessName.placeholder"              = "Name";
+"paymentInfo.taxID.placeholder"                     = "Tax ID";
+"paymentInfo.ssn.placeholder"                       = "SSN (optional)";
+"paymentInfo.bank.indicateLabel"                    = "* indicates required fields";
+"paymentInfo.notBank.indicateLabel"                 = "* email or phone number is required (leave the other blank)";
+"paymentInfo.emailNotValid"                         = "The submitted email is not valid.";
+"paymentInfo.taxIDLenght"                           = "Tax ID lenght must be 9.";
+"paymentInfo.ssnLength"                             = "SSN must be the last 4 digits.";
+"paymentInfo.address"                               = "ADDRESS*";
+"paymentInfo.address.placeholder"                   = "Address";
+"paymentInfo.zipCode"                               = "POSTAL CODE*";
+"paymentInfo.zipCode.placeholder"                   = "Postal Code";
+"paymentInfo.state"                                 = "STATE*";
+"paymentInfo.hostRegistration.title"                = "Success";
+"paymentInfo.hostRegistration.message"              = "You have completed the Host Registration process! Your information has been submitted and is pending approval. You can go to Settings -> Payment Info to check your account status.";
+"paymentInfo.inputsMustMatch"                       = "All inputs must match policy summary page above";
+
+/*
+ * Payment Status
+ */
+
+"paymentStatus.title"           = "Payment Info";
+"paymentStatus.success"         = "Success!";
+"paymentStatus.message"         = "Your payment info has been submitted.\n\nOnce approved, you’ll be able to receive payments from hosting BoatDays! You can come back to this screen to check your account status.";
+"paymentStatus.statusTitle"     = "Status:";
+"paymentStatus.pending"         = "Pending";
+"paymentStatus.done"            = "Done";
+
+/*
+ * Add Review
+ */
+
+"addReview.yourRating"              = "YOUR RATING";
+"addReview.textView.placeholder"    = "YOUR REVIEW (OPTIONAL)";
+"addReview.title"                   = "New Review";
+"addReview.activeNow"               = "Active Now";
+
+/*
+ * JSQMessagesViewController (Event -> Wall)
+ */
+
+"New Message"       = "Access for Confirmed Guests";
+
+/*
+ * Report User
+ */
+
+"reportUser.title" = "Report User";
+"reportUser.flagAlert.title"        = "Success";
+"reportUser.flagAlert.message"      = "The user was reported successfuly";
+"reportUser.textView.placeholder"   = "REPORT DETAILS (OPTIONAL)";
+
+/*
+ * No Connection View
+ */
+
+"KEY_NO_CONNECTION_MESSAGE" = "No connection could be made.\nPlease check your network settings.";
+
+"notifications.clearAll" = "Clear All";

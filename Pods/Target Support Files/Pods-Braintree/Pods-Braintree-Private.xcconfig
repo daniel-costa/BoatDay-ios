@@ -1,0 +1,8 @@
+#include "Pods-Braintree.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+GCC_TREAT_WARNINGS_AS_ERRORS = ${PODS_BRAINTREE_GCC_TREAT_WARNINGS_AS_ERRORS}
+GCC_WARN_ABOUT_MISSING_NEWLINE = ${PODS_BRAINTREE_GCC_WARN_ABOUT_MISSING_NEWLINE}
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/Braintree" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/ActionSheetPicker-3.0" "${PODS_ROOT}/Headers/Public/Bolts" "${PODS_ROOT}/Headers/Public/Braintree" "${PODS_ROOT}/Headers/Public/DejalActivityView" "${PODS_ROOT}/Headers/Public/EDStarRating" "${PODS_ROOT}/Headers/Public/Facebook-iOS-SDK" "${PODS_ROOT}/Headers/Public/Facebook-iOS-SDK/FacebookSDK" "${PODS_ROOT}/Headers/Public/HPGrowingTextView" "${PODS_ROOT}/Headers/Public/MMDrawerController" "${PODS_ROOT}/Headers/Public/Parse" "${PODS_ROOT}/Headers/Public/ParseFacebookUtils" "${PODS_ROOT}/Headers/Public/ReactiveCocoa" "${PODS_ROOT}/Headers/Public/SMPageControl" "${PODS_ROOT}/Headers/Public/SVProgressHUD" "${PODS_ROOT}/Headers/Public/UIAlertView-Blocks" "${PODS_ROOT}/Headers/Public/WCActionSheet" "${PODS_ROOT}/Headers/Public/iCarousel" "${PODS_ROOT}/Headers/Public/libPhoneNumber-iOS"
+LIBRARY_SEARCH_PATHS = ${PODS_BRAINTREE_LIBRARY_SEARCH_PATHS}
+OTHER_LDFLAGS = ${PODS_BRAINTREE_OTHER_LDFLAGS} -ObjC
+PODS_ROOT = ${SRCROOT}

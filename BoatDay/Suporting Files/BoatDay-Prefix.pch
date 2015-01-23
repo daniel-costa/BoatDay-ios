@@ -1,0 +1,66 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+    #import <FacebookSDK/FacebookSDK.h>
+    #import <Parse/Parse.h>
+    #import <ParseFacebookUtils/PFFacebookUtils.h>
+
+    #import "MMNavigationController.h"
+
+    #import "DNFrameTools.h"
+    #import "BDConstants.h"
+    #import "UIColor+AppColors.h"
+    #import "UIFont+AppFonts.h"
+    #import "UIView+DNAnimations.h"
+    #import "NSObject+BlockAfterDelay.h"
+    #import "UIView+GetViewController.h"
+    #import "NSMutableAttributedString+AppAttributedStrings.h"
+    #import "NSString+Additions.h"
+    #import "UIButton+UIButtonAdditions.h"
+    #import "NSDateFormatter+AppDateFormatter.h"
+    #import "NSNumberFormatter+AppNumberFormatter.h"
+    #import "UIViewController+MMDrawerController.h"
+    #import "NSString+Additions.h"
+    #import "UIView+RoundedView.h"
+    #import "NSDate+Extensions.h"
+    #import "BDPaymentServiceManager.h"
+
+    #import "Session.h"
+    #import "User.h"
+    #import "Activity.h"
+    #import "ActivityType.h"
+    #import "Certification.h"
+    #import "CertificationType.h"
+    #import "Review.h"
+    #import "Boat.h"
+    #import "Event.h"
+    #import "Report.h"
+    #import "Invite.h"
+    #import "SafetyFeature.h"
+    #import "Notification.h"
+    #import "SeatRequest.h"
+    #import "ChatMessage.h"
+    #import "AdminMessage.h"
+    #import "HostRegistration.h"
+
+    #import "SVProgressHUD.h"
+
+#endif
+
+
+#define LogRect(RECT) NSLog(@"%s: (%0.0f, %0.0f) %0.0f x %0.0f", #RECT, RECT.origin.x, RECT.origin.y, RECT.size.width, RECT.size.height)
+#define LogSize(SIZE) NSLog(@"%s: %0.0f x %0.0f", #SIZE, SIZE.width, SIZE.height)
+#define LogPoint(POINT) NSLog(@"%s: (%0.0f x %0.0f)", #POINT, POINT.x, POINT.y)

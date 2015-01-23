@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BDCertificationDetailViewController">
+            <connections>
+                <outlet property="addCertificationView" destination="6xM-WI-QE7" id="rix-I9-uFg"/>
+                <outlet property="addInfoLabel" destination="Qfm-iZ-HZh" id="Ayk-RE-uFP"/>
+                <outlet property="addMessageLabel" destination="pVy-Tt-Gwt" id="6V7-qe-Rmm"/>
+                <outlet property="certificateImageView" destination="0hn-dG-uge" id="jNQ-X2-5lJ"/>
+                <outlet property="charRemainingLabel" destination="Eco-n9-vX4" id="KBx-sZ-Bx5"/>
+                <outlet property="contentView" destination="6PD-OL-Gkb" id="2L5-TC-P01"/>
+                <outlet property="messageView" destination="Pk1-EQ-0CW" id="xAJ-g3-AHq"/>
+                <outlet property="scrollView" destination="bqf-bi-lO7" id="Tz6-k2-lAJ"/>
+                <outlet property="separatorLine" destination="kjs-GG-yvR" id="0bh-nk-0wT"/>
+                <outlet property="submitButton" destination="D1B-Ty-1Ig" id="bNO-oe-Xnu"/>
+                <outlet property="takePhotoButton" destination="Ps7-bV-Xm2" id="btQ-1Q-ZMl"/>
+                <outlet property="textView" destination="1Ad-So-uba" id="gIN-nB-Vok"/>
+                <outlet property="titleLabel" destination="O32-1P-R1n" id="e4J-7T-k7Q"/>
+                <outlet property="view" destination="p7x-np-OYm" id="9f0-Nc-Sf6"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="p7x-np-OYm">
+            <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="6PD-OL-Gkb" userLabel="ContentView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="bqf-bi-lO7">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" id="hcJ-hg-sbN" userLabel="Images">
+                                    <rect key="frame" x="0.0" y="50" width="320" height="194"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="certification_placeholder" id="0hn-dG-uge">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="194"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" id="6xM-WI-QE7" userLabel="Add Cert View">
+                                            <rect key="frame" x="0.0" y="0.0" width="325" height="194"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ps7-bV-Xm2">
+                                                    <rect key="frame" x="83" y="29" width="155" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" backgroundImage="photo_add_cert">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="takePhotoButtonPressed:" destination="-1" eventType="touchUpInside" id="ESg-nn-3hY"/>
+                                                    </connections>
+                                                </button>
+                                                <view contentMode="scaleToFill" id="ERd-Is-WA1" userLabel="Tap to Add View">
+                                                    <rect key="frame" x="0.0" y="172" width="320" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to add a photo of your certificate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pVy-Tt-Gwt">
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.023529411760000001" green="0.1137254902" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </view>
+                                <view contentMode="scaleToFill" id="Pk1-EQ-0CW">
+                                    <rect key="frame" x="0.0" y="252" width="320" height="182"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qfm-iZ-HZh">
+                                            <rect key="frame" x="28" y="7" width="263" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <string key="text">ADD A MESSAGE ABOUT YOUR CERTIFICATION
+ </string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" id="1Ad-So-uba" userLabel="TextView" customClass="HPGrowingTextView">
+                                            <rect key="frame" x="28" y="16" width="253" height="47"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" id="kjs-GG-yvR" userLabel="separator line">
+                                            <rect key="frame" x="28" y="67" width="263" height="1"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500 characters remaining" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Eco-n9-vX4">
+                                            <rect key="frame" x="28" y="67" width="263" height="27"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O32-1P-R1n">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.1058823529" green="0.4549019608" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D1B-Ty-1Ig">
+                                    <rect key="frame" x="42" y="442" width="237" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <state key="normal" title="Submit" backgroundImage="button_lg_blue_off">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="button_lg_blue_on"/>
+                                    <connections>
+                                        <action selector="submitButtonPressed:" destination="-1" eventType="touchUpInside" id="Am0-o8-PV0"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="cJr-JC-PVf"/>
+                            </connections>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <point key="canvasLocation" x="392" y="339.99999999999989"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="button_lg_blue_off" width="235" height="44"/>
+        <image name="button_lg_blue_on" width="235" height="44"/>
+        <image name="certification_placeholder" width="640" height="388"/>
+        <image name="photo_add_cert" width="155" height="115"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

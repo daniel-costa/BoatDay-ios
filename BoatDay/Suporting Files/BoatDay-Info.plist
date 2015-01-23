@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.RS.boatday</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb315814075250020</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1.1.13</string>
+	<key>FacebookAppID</key>
+	<string>315814075250020</string>
+	<key>FacebookDisplayName</key>
+	<string>BoatDay</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We only need to get your current location once.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Location needed to find boats and new events near you.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We only need to get your current location once.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>For Profile, Insurance Pictures, Certifications, Events, Boats, etc</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Abel-Regular.ttf</string>
+		<string>QuattrocentoSans.ttf</string>
+		<string>QuattrocentoSans-Italic.ttf</string>
+		<string>QuattrocentoSans-Bold.ttf</string>
+		<string>QuattrocentoSans-BoldItalic.ttf</string>
+	</array>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+</dict>
+</plist>

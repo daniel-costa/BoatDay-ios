@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BDAddEditEventProfileViewController">
+            <connections>
+                <outlet property="bigButton" destination="Eid-pX-kxY" id="BNo-6x-kdL"/>
+                <outlet property="contentView" destination="vAE-r3-18k" id="NV3-fR-9re"/>
+                <outlet property="smallRedButton" destination="sDg-jL-PUr" id="n1J-oB-iKp"/>
+                <outlet property="smallYellowButton" destination="dlk-J0-NWE" id="cj2-Lf-7A6"/>
+                <outlet property="tableView" destination="SJa-av-Y0r" id="1AW-k5-cks"/>
+                <outlet property="view" destination="TJY-uX-GfF" id="uCw-rE-aNy"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="TJY-uX-GfF">
+            <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="vAE-r3-18k" userLabel="ContentView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" id="ID8-yK-PFq" userLabel="Bottom View">
+                            <rect key="frame" x="0.0" y="432" width="320" height="72"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Eid-pX-kxY">
+                                    <rect key="frame" x="43" y="14" width="235" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Big Button" backgroundImage="button_lg_yellow_off">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="button_lg_yellow_on"/>
+                                    <connections>
+                                        <action selector="bigButtonPressed:" destination="-1" eventType="touchUpInside" id="Siu-xn-g8m"/>
+                                    </connections>
+                                </button>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sDg-jL-PUr" userLabel="SMALL RED BUTTON">
+                                    <rect key="frame" x="15" y="14" width="140" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="DELETE DRAFT" backgroundImage="button_md_red_off">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="button_md_red_on"/>
+                                    <connections>
+                                        <action selector="smallRedButtonPressed:" destination="-1" eventType="touchUpInside" id="kqs-wC-Bdz"/>
+                                    </connections>
+                                </button>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dlk-J0-NWE" userLabel="SMALL YELLOW BUTTON">
+                                    <rect key="frame" x="165" y="14" width="140" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="PUBLISH" backgroundImage="button_sm_yellow_off">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="button_sm_yellow_on"/>
+                                    <connections>
+                                        <action selector="smallYellowButtonPressed:" destination="-1" eventType="touchUpInside" id="1lv-Cr-HQL"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SJa-av-Y0r">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="432"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="52L-Ds-HQl"/>
+                                <outlet property="delegate" destination="-1" id="kdC-M0-zZP"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="button_lg_yellow_off" width="235" height="44"/>
+        <image name="button_lg_yellow_on" width="235" height="44"/>
+        <image name="button_md_red_off" width="140" height="44"/>
+        <image name="button_md_red_on" width="140" height="44"/>
+        <image name="button_sm_yellow_off" width="140" height="44"/>
+        <image name="button_sm_yellow_on" width="140" height="44"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

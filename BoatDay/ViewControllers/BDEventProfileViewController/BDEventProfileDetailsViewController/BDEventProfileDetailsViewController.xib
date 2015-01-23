@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BDEventProfileDetailsViewController">
+            <connections>
+                <outlet property="activitiesIndicator" destination="02W-JH-22g" id="Myl-RK-lBb"/>
+                <outlet property="activitiesScrollView" destination="rEa-aP-Ph8" id="fO7-z4-TZu"/>
+                <outlet property="activitiesView" destination="Fc1-TH-vqe" id="9q9-6F-ja2"/>
+                <outlet property="bottomView" destination="Fxx-kd-CAn" id="1kj-bG-S6G"/>
+                <outlet property="buttonBottomView" destination="c97-1q-Vc2" id="KxN-JU-Ic3"/>
+                <outlet property="eventDescriptionLabel" destination="dq9-RE-D2d" id="jtJ-cV-9Ij"/>
+                <outlet property="eventDescriptionTitleLabel" destination="sUO-2A-sBp" id="Ea3-gh-fIE"/>
+                <outlet property="eventInfoView" destination="M0x-pG-XgN" id="wSk-Z3-x0m"/>
+                <outlet property="headerBottomView" destination="5fU-PS-gGx" id="h1T-z1-ia7"/>
+                <outlet property="headerBottomViewLabel" destination="6VP-GD-PsM" id="hbC-MW-a4l"/>
+                <outlet property="hostedByLabel" destination="0zs-V3-fhV" id="qfH-ZL-IfB"/>
+                <outlet property="infoHeaderView" destination="TEw-tc-jF5" id="Avl-ib-39O"/>
+                <outlet property="locationLabel" destination="7kR-he-WBP" id="hCS-ZC-fWz"/>
+                <outlet property="mainScrollView" destination="Zto-KQ-Vs0" id="MAD-Yu-sAw"/>
+                <outlet property="noReviewLabel" destination="JWR-kl-FR8" id="DAB-r2-Knt"/>
+                <outlet property="numberOfSeatsLabel" destination="qHZ-6d-25x" id="sLk-GK-7oh"/>
+                <outlet property="pinLocationButton" destination="fLS-SV-ArI" id="6JV-Hk-Nqe"/>
+                <outlet property="profileAccessView" destination="ECs-tk-gen" id="BOM-5H-VOJ"/>
+                <outlet property="ratingView" destination="HEa-0s-wgf" id="ozT-VW-yvI"/>
+                <outlet property="seatsLabel" destination="Aa9-5z-Ggw" id="Cda-Oq-cj9"/>
+                <outlet property="userPictureImageView" destination="kD4-Wz-czD" id="42L-jJ-x54"/>
+                <outlet property="userPlaceholderImageView" destination="IBQ-lI-YOL" id="Igu-e7-4I6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="lnK-8s-cMD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Zto-KQ-Vs0">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="410"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="cI9-76-FvE"/>
+                    </connections>
+                </scrollView>
+                <view contentMode="scaleToFill" id="Fxx-kd-CAn" userLabel="Bottom View">
+                    <rect key="frame" x="0.0" y="432" width="320" height="72"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="c97-1q-Vc2">
+                            <rect key="frame" x="90" y="14" width="220" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="INVITE USERS" backgroundImage="button_lg_yellow_off">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" backgroundImage="button_lg_yellow_on"/>
+                            <connections>
+                                <action selector="buttonBottomViewPressed:" destination="-1" eventType="touchUpInside" id="69Q-wx-jyp"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEATS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Aa9-5z-Ggw">
+                            <rect key="frame" x="12" y="46" width="80" height="12"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2/8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qHZ-6d-25x">
+                            <rect key="frame" x="26" y="14" width="52" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" id="5fU-PS-gGx" userLabel="Header Bottom View">
+                    <rect key="frame" x="0.0" y="410" width="320" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOU ARE CONFIRMED TO THIS EVENT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6VP-GD-PsM">
+                            <rect key="frame" x="9" y="0.0" width="302" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.070588235289999995" green="0.69019607839999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+        <view contentMode="scaleToFill" id="M0x-pG-XgN">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="410"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sUO-2A-sBp">
+                    <rect key="frame" x="20" y="117" width="278" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="about me" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dq9-RE-D2d">
+                    <rect key="frame" x="20" y="144" width="280" height="400"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" id="Fc1-TH-vqe" userLabel="Commom Friends View">
+                    <rect key="frame" x="0.0" y="59" width="320" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" id="rEa-aP-Ph8">
+                            <rect key="frame" x="0.0" y="0.0" width="276" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        </scrollView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="grz-7x-ZrZ">
+                            <rect key="frame" x="278" y="0.0" width="42" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="cell_arrow_green">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="cell_arrow_grey"/>
+                            <connections>
+                                <action selector="activitiesButtonPressed:" destination="-1" eventType="touchUpInside" id="5RW-Jm-g57"/>
+                            </connections>
+                        </button>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" id="02W-JH-22g">
+                            <rect key="frame" x="150" y="15" width="20" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.070588235289999995" green="0.69019607839999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" id="TEw-tc-jF5" userLabel="Header View">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" id="KGi-EM-YjV">
+                            <rect key="frame" x="0.0" y="0.0" width="181" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hosted by Jack H." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0zs-V3-fhV">
+                                    <rect key="frame" x="61" y="10" width="219" height="15"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miami, Florida" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7kR-he-WBP">
+                                    <rect key="frame" x="61" y="24" width="219" height="15"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" red="0.95294117649999999" green="0.69360173357664223" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JWR-kl-FR8">
+                                    <rect key="frame" x="61" y="39" width="100" height="15"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="IBQ-lI-YOL" userLabel="Placeholder">
+                                    <rect key="frame" x="8" y="7" width="45" height="45"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="kD4-Wz-czD">
+                                    <rect key="frame" x="8" y="7" width="45" height="45"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <view contentMode="scaleToFill" id="HEa-0s-wgf" userLabel="Stars View" customClass="EDStarRating">
+                                    <rect key="frame" x="49" y="41" width="98" height="13"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <view contentMode="scaleToFill" id="ECs-tk-gen">
+                                    <rect key="frame" x="5" y="3" width="181" height="57"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fLS-SV-ArI">
+                            <rect key="frame" x="269" y="0.0" width="51" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="eventProfileMapPin">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="eventProfileMapPin_white"/>
+                            <connections>
+                                <action selector="pinLocationButtonPressed:" destination="-1" eventType="touchUpInside" id="a2k-fX-rpf"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1058823529" green="0.4549019608" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="button_lg_yellow_off" width="235" height="44"/>
+        <image name="button_lg_yellow_on" width="235" height="44"/>
+        <image name="cell_arrow_green" width="8" height="15"/>
+        <image name="cell_arrow_grey" width="8" height="15"/>
+        <image name="eventProfileMapPin" width="20" height="28"/>
+        <image name="eventProfileMapPin_white" width="20" height="28"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

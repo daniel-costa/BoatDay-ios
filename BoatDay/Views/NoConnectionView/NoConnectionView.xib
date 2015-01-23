@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1" customClass="NoConnectionView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="qOq-je-rP7" userLabel="Horizontal Scroll View">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </scrollView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="erJ-Xp-Icc" userLabel="Vertical Scroll View">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="horizontalScrollView" destination="qOq-je-rP7" id="ZnW-ZJ-F9I"/>
+                <outlet property="messageButton" destination="Zu1-Vg-5D3" id="WCB-CI-AmB"/>
+                <outlet property="messageLabel" destination="9Wt-Vg-W7a" id="E2R-fh-CZc"/>
+                <outlet property="messageView" destination="xvA-M8-UhH" id="f59-dN-hLJ"/>
+                <outlet property="verticalScrollView" destination="erJ-Xp-Icc" id="kGh-Ah-Vu6"/>
+            </connections>
+        </view>
+        <view contentMode="scaleToFill" id="xvA-M8-UhH" userLabel="noConnectionView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="327"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zu1-Vg-5D3">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="327"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="-90" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" image="events_nophoto_logo" backgroundImage="backgroundNormal.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" image="semLigacao_white.png" backgroundImage="backgroundHighlighted.png"/>
+                    <connections>
+                        <action selector="buttonDown:" destination="1" eventType="touchDragEnter" id="29Z-69-HbI"/>
+                        <action selector="buttonDown:" destination="1" eventType="touchDown" id="HFU-h1-RBJ"/>
+                        <action selector="buttonDown:" destination="1" eventType="touchDragInside" id="MGd-56-mSN"/>
+                        <action selector="buttonUp:" destination="1" eventType="touchUpOutside" id="4wM-LJ-uSt"/>
+                        <action selector="buttonUp:" destination="1" eventType="touchDragOutside" id="5W4-jY-Xcy"/>
+                        <action selector="buttonUp:" destination="1" eventType="touchDragExit" id="95d-kp-SmM"/>
+                        <action selector="buttonUp:" destination="1" eventType="touchCancel" id="Kbk-IS-cnl"/>
+                        <action selector="buttonUp:" destination="1" eventType="touchUpInside" id="yJe-wp-39c"/>
+                        <action selector="messageButtonPressed:" destination="1" eventType="touchUpInside" id="tgb-cG-2tl"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Wt-Vg-W7a">
+                    <rect key="frame" x="12" y="211" width="295" height="83"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backgroundHighlighted.png" width="160" height="75"/>
+        <image name="backgroundNormal.png" width="160" height="75"/>
+        <image name="events_nophoto_logo" width="159" height="143"/>
+        <image name="semLigacao_white.png" width="70" height="58"/>
+    </resources>
+</document>

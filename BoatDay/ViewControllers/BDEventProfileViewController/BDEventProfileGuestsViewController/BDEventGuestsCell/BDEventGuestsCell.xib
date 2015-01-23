@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="130" id="xw4-FI-mcP" customClass="BDEventGuestsCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xw4-FI-mcP" id="klS-mh-Fth">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photoplaceholder" id="mIc-P8-dlM" userLabel="Placeholder 1">
+                        <rect key="frame" x="24" y="11" width="75" height="75"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photoplaceholder" id="1Vy-EY-sAS" userLabel="Placeholder 2">
+                        <rect key="frame" x="123" y="11" width="75" height="75"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photoplaceholder" id="RLW-DA-bf3" userLabel="Placeholder 3">
+                        <rect key="frame" x="222" y="11" width="75" height="75"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="x6O-JM-Tmc" userLabel="Image 1">
+                        <rect key="frame" x="24" y="11" width="75" height="75"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="AjM-TN-j5z" userLabel="Image 2">
+                        <rect key="frame" x="123" y="11" width="75" height="75"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="MO0-de-zMh" userLabel="Image 3">
+                        <rect key="frame" x="222" y="11" width="75" height="75"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nWw-3o-Qv9" userLabel="Button 1">
+                        <rect key="frame" x="24" y="11" width="75" height="75"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="firstUserButtonPressed:" destination="xw4-FI-mcP" eventType="touchUpInside" id="8FY-bF-XvJ"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zG3-Y5-7TM" userLabel="Button 2">
+                        <rect key="frame" x="123" y="11" width="75" height="75"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="secondUserButtonPressed:" destination="xw4-FI-mcP" eventType="touchUpInside" id="Khu-ka-T1n"/>
+                        </connections>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_selected" id="11t-la-Jhl" userLabel="Check 1">
+                        <rect key="frame" x="74" y="61" width="25" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_selected" id="fIM-4w-nkt" userLabel="Check 2">
+                        <rect key="frame" x="173" y="61" width="25" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_selected" id="kdt-9T-2wm" userLabel="Check 3">
+                        <rect key="frame" x="272" y="61" width="25" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U5J-Y9-6Qb" userLabel="Name 1">
+                        <rect key="frame" x="18" y="87" width="87" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GWv-ta-rtA" userLabel="Location 1">
+                        <rect key="frame" x="14" y="103" width="95" height="15"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bf3-9W-gtN" userLabel="Name 2">
+                        <rect key="frame" x="117" y="87" width="87" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gka-Vs-nBn" userLabel="Location 2">
+                        <rect key="frame" x="113" y="103" width="95" height="15"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EWd-hH-77j" userLabel="Name 3">
+                        <rect key="frame" x="216" y="87" width="87" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Oyu-jd-WWD" userLabel="Location 3">
+                        <rect key="frame" x="212" y="103" width="95" height="15"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MI8-wR-UgI" userLabel="Button 3">
+                        <rect key="frame" x="222" y="11" width="75" height="75"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="thirdUserButtonPressed:" destination="xw4-FI-mcP" eventType="touchUpInside" id="OUR-WU-n4e"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" red="0.30588235289999999" green="0.69411764710000001" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="firstCheckImageView" destination="11t-la-Jhl" id="2E2-fT-TEH"/>
+                <outlet property="firstImageView" destination="nWw-3o-Qv9" id="2fj-P5-VMr"/>
+                <outlet property="firstLocationLabel" destination="GWv-ta-rtA" id="t4D-9h-Vio"/>
+                <outlet property="firstNameLabel" destination="U5J-Y9-6Qb" id="E5a-BI-4yH"/>
+                <outlet property="firstOriginImageView" destination="x6O-JM-Tmc" id="mtB-lv-4yY"/>
+                <outlet property="firstPlaceholderImageView" destination="mIc-P8-dlM" id="vff-EE-LZe"/>
+                <outlet property="secondCheckImageView" destination="fIM-4w-nkt" id="EbN-mj-c3k"/>
+                <outlet property="secondImageView" destination="zG3-Y5-7TM" id="TrV-LX-Vn2"/>
+                <outlet property="secondLocationLabel" destination="gka-Vs-nBn" id="pjT-lm-wOW"/>
+                <outlet property="secondNameLabel" destination="Bf3-9W-gtN" id="lPq-Er-bux"/>
+                <outlet property="secondOriginImageView" destination="AjM-TN-j5z" id="emC-vT-KG0"/>
+                <outlet property="secondPlaceholderImageView" destination="1Vy-EY-sAS" id="Q3t-c9-5Lf"/>
+                <outlet property="thirdCheckImageView" destination="kdt-9T-2wm" id="MJC-h6-CZC"/>
+                <outlet property="thirdImageView" destination="MI8-wR-UgI" id="alQ-ez-6ce"/>
+                <outlet property="thirdLocationLabel" destination="Oyu-jd-WWD" id="8Zz-Hg-Ie5"/>
+                <outlet property="thirdNameLabel" destination="EWd-hH-77j" id="vE0-vO-jFy"/>
+                <outlet property="thirdOriginImageView" destination="MO0-de-zMh" id="Uzc-n6-0Lk"/>
+                <outlet property="thirdPlaceholderImageView" destination="RLW-DA-bf3" id="7CN-dI-M2Y"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Photoplaceholder" width="600" height="600"/>
+        <image name="photo_selected" width="29" height="29"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
