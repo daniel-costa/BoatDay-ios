@@ -238,6 +238,9 @@ typedef NS_ENUM(NSUInteger, BDPaymentInfoTextFieldTag) {
             return 155.0;
             break;
         case 3:
+            return 65.0;
+            break;
+        case 4:
             return 44.0;
             break;
         default:
@@ -249,7 +252,7 @@ typedef NS_ENUM(NSUInteger, BDPaymentInfoTextFieldTag) {
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -279,6 +282,9 @@ typedef NS_ENUM(NSUInteger, BDPaymentInfoTextFieldTag) {
             headerLabelString = NSLocalizedString(@"paymentInfo.sectionTitle.businessInformation", nil);
             break;
         case 3:
+            headerLabelString = NSLocalizedString(@"paymentInfo.sectionTitle.personalInformation", nil);
+            break;
+        case 4:
             headerLabelString = NSLocalizedString(@"paymentInfo.sectionTitle.termsOfService", nil);
             break;
         default:
@@ -305,6 +311,9 @@ typedef NS_ENUM(NSUInteger, BDPaymentInfoTextFieldTag) {
             return [self businessInfoCellForIndexPath:indexPath];
             break;
         case 3:
+            return [self personalInfoCellForIndexPath:indexPath];
+            break;
+        case 4:
             return [self termsOfServiceCellForIndexPath:indexPath];
             break;
         default:
@@ -338,7 +347,7 @@ typedef NS_ENUM(NSUInteger, BDPaymentInfoTextFieldTag) {
     cell.bARoutingNumberTextField.placeholder = NSLocalizedString(@"paymentInfo.routingNumber.placeholder", nil);
     cell.bARoutingNumberTextField.delegate = self;
     cell.bARoutingNumberTextField.tag = BDPaymentInfoTextFieldTagRoutingNumber;
-    cell.bAAccountNumberTextField.keyboardType = UIKeyboardTypeDecimalPad;
+    cell.bARoutingNumberTextField.keyboardType = UIKeyboardTypeDecimalPad;
     
     cell.venmoIndicateLabel.text = NSLocalizedString(@"paymentInfo.notBank.indicateLabel", nil);
     
@@ -656,7 +665,7 @@ typedef NS_ENUM(NSUInteger, BDPaymentInfoTextFieldTag) {
     
     self.acceptedTermsOfService = !self.acceptedTermsOfService;
     
-    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:3]] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:4]] withRowAnimation:UITableViewRowAnimationFade];
     
 }
 

@@ -48,7 +48,7 @@
     self.suggestedLabel.font = [UIFont abelFontWithSize:9.0];
     self.suggestedLabel.textAlignment = NSTextAlignmentRight;
     self.suggestedLabel.text = NSLocalizedString(@"eventProfile.suggestedContribution", nil);
-
+    self.suggestedLabel.hidden = YES;
 
     self.dateLabel.font = [UIFont quattroCentoRegularFontWithSize:11.0];
     self.dateLabel.textColor = RGB(18.0, 78.0, 88.0);

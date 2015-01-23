@@ -418,8 +418,8 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
     
     cell.emailLabel.text = NSLocalizedString(@"hostRegistration.email", nil);
     cell.emailTextField.text = self.email;
-    NSLog(@"ma jalap ni %@",self.email);
-    [cell.emailTextField setText:@"hali"];
+
+
     cell.emailTextField.placeholder = NSLocalizedString(@"hostRegistration.email.placeholder", nil);
     cell.emailTextField.delegate = self;
     cell.emailTextField.tag = HostRegistrationFieldEmail;
@@ -567,6 +567,7 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
             break;
         case HostRegistrationFieldEmail:
             self.email = textField.text;
+            [[User currentUser] setEmail:textField.text];
             break;
         default:
             break;

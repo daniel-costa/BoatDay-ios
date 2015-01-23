@@ -16,7 +16,7 @@
 #import "BDLoginViewController.h"
 #import <Crashlytics/Crashlytics.h>
 #import <AVFoundation/AVFoundation.h>
-
+#import "GAI.h"
 @interface BDAppDelegate ()
 
 @property (nonatomic,strong) MMDrawerController * drawerController;
@@ -24,94 +24,124 @@
 @end
 
 @implementation BDAppDelegate
+- (void)launch {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        // Crashlytics
+        [Crashlytics startWithAPIKey:@"92ac8ecdcc1700f12f2f856b7facbb06db49b649"];
+        
+        // Google Analytics
+        // Optional: automatically send uncaught exceptions to Google Analytics.
+        [GAI sharedInstance].trackUncaughtExceptions = YES;
+        
+        // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+        [GAI sharedInstance].dispatchInterval = 20;
+        
+        // Optional: set Logger to VERBOSE for debug information.
+        [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+        
+        // Initialize tracker. Replace with your tracking ID.
+        [[GAI sharedInstance] trackerWithTrackingId:@"UA-XXXX-Y"];
+        
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
+        
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+        {
+            [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+            [[UIApplication sharedApplication] registerForRemoteNotifications];
+        }
+        else
+        {
+            [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+             (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
+        }
+
+        
+        
+        
+        //
+        
+        [self registParseSubclasses];
+        
+        [Parse setApplicationId:@"n847Wlp5wbJxzU5sakhXd6ojpReDGDRKy5HhhmWN" clientKey:@"sYfLmXqCjf2DvH6LZZ3mobT8Jl9YDyxYv9q3bwvO"];
+        
+        [PFFacebookUtils initializeFacebook];
+        
+#warning Log To File (uncomment)
+        //  [self logToFile];
+        
+        // Customize status bar
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+        
+        // Customize navigation bar
+        [self customizeNavigationBar];
+        
+        [self appearenceCustumizations];
+        
+        // MMDrawerController for Left/Right Menu
+        
+        BDLeftViewController *leftSideDrawerViewController = [[BDLeftViewController alloc] init];
+        
+        UIViewController *centerViewController;
+        
+        if ([User currentUser]) {
+            BDHomeViewController *viewController = [[BDHomeViewController alloc] init];
+            centerViewController = [[MMNavigationController alloc] initWithRootViewController:viewController];
+            [Session sharedSession].selectedSideMenu = SideMenuHome;
+        }
+        else {
+            
+            centerViewController = [[MMNavigationController alloc] initWithRootViewController:[[BDLoginViewController alloc] init]];
+            
+        }
+        
+        // Creating Drawer
+        self.drawerController = [[MMDrawerController alloc]
+                                 initWithCenterViewController:centerViewController
+                                 leftDrawerViewController:leftSideDrawerViewController];
+        
+        // Show shadow beetween side view and center view
+        [self.drawerController setShowsShadow:NO];
+        
+        // Visible Size of Left View
+        [self.drawerController setMaximumLeftDrawerWidth:272.0];
+        [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+        [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+        
+        // Drawer Manager to open and close with animation. Using Default: MMDrawerAnimationTypeParallax
+        [self.drawerController
+         setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
+             MMDrawerControllerDrawerVisualStateBlock block;
+             block = [[MMExampleDrawerVisualStateManager sharedManager]
+                      drawerVisualStateBlockForDrawerSide:drawerSide];
+             if(block){
+                 block(drawerController, drawerSide, percentVisible);
+             }
+         }];
+        
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        
+        // Set window background color
+        UIColor * tintColor = [UIColor colorWithRed:29.0/255.0
+                                              green:173.0/255.0
+                                               blue:234.0/255.0
+                                              alpha:1.0];
+        [self.window setTintColor:tintColor];
+        
+        [self.window setRootViewController:self.drawerController];
+        
+        [self.window makeKeyAndVisible];
+
+    });
+    
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [Crashlytics startWithAPIKey:@"92ac8ecdcc1700f12f2f856b7facbb06db49b649"];
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
-
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
-    {
-        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-    }
-    else
-    {
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-         (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
-    }
+    // Singlaton Launch
+    [self launch];
     
-    [self registParseSubclasses];
     
-    [Parse setApplicationId:@"n847Wlp5wbJxzU5sakhXd6ojpReDGDRKy5HhhmWN" clientKey:@"sYfLmXqCjf2DvH6LZZ3mobT8Jl9YDyxYv9q3bwvO"];
-
-    [PFFacebookUtils initializeFacebook];
-    
-#warning Log To File (uncomment)
-    //  [self logToFile];
-    
-    // Customize status bar
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
-    // Customize navigation bar
-    [self customizeNavigationBar];
-    
-    [self appearenceCustumizations];
-    
-    // MMDrawerController for Left/Right Menu
-    
-    BDLeftViewController *leftSideDrawerViewController = [[BDLeftViewController alloc] init];
-    
-    UIViewController *centerViewController;
-    
-    if ([User currentUser]) {
-        BDHomeViewController *viewController = [[BDHomeViewController alloc] init];
-        centerViewController = [[MMNavigationController alloc] initWithRootViewController:viewController];
-        [Session sharedSession].selectedSideMenu = SideMenuHome;
-    }
-    else {
-    
-        centerViewController = [[MMNavigationController alloc] initWithRootViewController:[[BDLoginViewController alloc] init]];
-
-    }
-    
-    // Creating Drawer
-    self.drawerController = [[MMDrawerController alloc]
-                             initWithCenterViewController:centerViewController
-                             leftDrawerViewController:leftSideDrawerViewController];
-    
-    // Show shadow beetween side view and center view
-    [self.drawerController setShowsShadow:NO];
-    
-    // Visible Size of Left View
-    [self.drawerController setMaximumLeftDrawerWidth:272.0];
-    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
-    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
-
-    // Drawer Manager to open and close with animation. Using Default: MMDrawerAnimationTypeParallax
-    [self.drawerController
-     setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
-         MMDrawerControllerDrawerVisualStateBlock block;
-         block = [[MMExampleDrawerVisualStateManager sharedManager]
-                  drawerVisualStateBlockForDrawerSide:drawerSide];
-         if(block){
-             block(drawerController, drawerSide, percentVisible);
-         }
-     }];
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    // Set window background color
-    UIColor * tintColor = [UIColor colorWithRed:29.0/255.0
-                                          green:173.0/255.0
-                                           blue:234.0/255.0
-                                          alpha:1.0];
-    [self.window setTintColor:tintColor];
-    
-    [self.window setRootViewController:self.drawerController];
-    
-    [self.window makeKeyAndVisible];
-
     return YES;
     
 }

@@ -28,7 +28,7 @@
 #define kBackgroundParallexFactor 0.5f
 #define kCertificateButtonInitialY 10.0f
 
-@interface BDProfileViewController () <UIScrollViewDelegate>
+@interface BDProfileViewController () <UIScrollViewDelegate,MHFacebookImageViewerDatasource>
 
 @property (nonatomic) ProfileType profileType;
 
@@ -339,11 +339,11 @@
     if (self.user.pictures.count) {
         
         // set this image enable to be opened with MHFacebookImageViewer on tap
-        [self.userImageView setupImageViewer];
-        
+
+        [self.userImageView setupImageViewerWithDatasource:self initialIndex:[self.user.selectedPictureIndex integerValue] onOpen:nil onClose:nil];
         // the first picture is the one that is used in user profile (change this to the selected one)
         PFFile *file = self.user.pictures[[self.user.selectedPictureIndex integerValue]];
-        
+
         // Get image from cache or from server if isnt available (background task)
         [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             
@@ -362,7 +362,19 @@
     }
     
 }
+- (NSInteger) numberImagesForImageViewer:(MHFacebookImageViewer*) imageViewer{
+    return [[User currentUser] pictures].count;
+}
 
+- (NSURL*) imageURLAtIndex:(NSInteger)index imageViewer:(MHFacebookImageViewer*) imageViewer{
+    PFFile *file =self.user.pictures[index];
+    return [NSURL URLWithString:[file url]];
+}
+- (UIImage*) imageDefaultAtIndex:(NSInteger)index imageViewer:(MHFacebookImageViewer*) imageViewer{
+//    PFFile *file =self.user.pictures[index];
+    
+    return nil;
+}
 - (void) updateUserData {
     
     // setup navigation bar buttons

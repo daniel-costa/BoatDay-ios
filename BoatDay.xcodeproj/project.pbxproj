@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		951D64671A72E33F00540EED /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D64651A72E33F00540EED /* libAdIdAccess.a */; };
+		951D64681A72E34000540EED /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D64661A72E33F00540EED /* libGoogleAnalyticsServices.a */; };
+		951D64741A72E9BF00540EED /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D64731A72E9BF00540EED /* libz.dylib */; };
+		951D64761A72E9C500540EED /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D64751A72E9C500540EED /* CoreData.framework */; };
+		951D64781A72E9D300540EED /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D64771A72E9D300540EED /* SystemConfiguration.framework */; };
 		958474A61A72BAF20008FAC3 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958474A51A72BAF20008FAC3 /* Crashlytics.framework */; };
 		E80E1B991A30C04A0084E828 /* TSCurrencyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E80E1B981A30C04A0084E828 /* TSCurrencyTextField.m */; };
 		E812ED2519811BE7008EAE9C /* BDLeftMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E812ED2319811BE7008EAE9C /* BDLeftMenuCell.m */; };
@@ -291,6 +296,21 @@
 
 /* Begin PBXFileReference section */
 		65F5B7F5D1BF8E5369CBC2EC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		951D64651A72E33F00540EED /* libAdIdAccess.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdIdAccess.a; sourceTree = "<group>"; };
+		951D64661A72E33F00540EED /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		951D64691A72E35700540EED /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		951D646A1A72E35700540EED /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		951D646B1A72E35700540EED /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		951D646C1A72E35700540EED /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		951D646D1A72E35700540EED /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		951D646E1A72E35700540EED /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		951D646F1A72E35700540EED /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		951D64701A72E35700540EED /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		951D64711A72E35700540EED /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		951D64721A72E35700540EED /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		951D64731A72E9BF00540EED /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		951D64751A72E9C500540EED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		951D64771A72E9D300540EED /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		958474A51A72BAF20008FAC3 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		B89FAEA454AF4B3A8C994E10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80E1B971A30C04A0084E828 /* TSCurrencyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCurrencyTextField.h; sourceTree = "<group>"; };
@@ -740,10 +760,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951D64781A72E9D300540EED /* SystemConfiguration.framework in Frameworks */,
+				951D64761A72E9C500540EED /* CoreData.framework in Frameworks */,
+				951D64741A72E9BF00540EED /* libz.dylib in Frameworks */,
 				E88182441982769D00BF3EB2 /* MapKit.framework in Frameworks */,
 				E8D31D27197FF5850016BA57 /* AddressBookUI.framework in Frameworks */,
 				958474A61A72BAF20008FAC3 /* Crashlytics.framework in Frameworks */,
+				951D64681A72E34000540EED /* libGoogleAnalyticsServices.a in Frameworks */,
 				E8FDBF43197D5F9200D51645 /* MediaPlayer.framework in Frameworks */,
+				951D64671A72E33F00540EED /* libAdIdAccess.a in Frameworks */,
 				E87A744619533C110006D097 /* CoreGraphics.framework in Frameworks */,
 				E87A744819533C110006D097 /* UIKit.framework in Frameworks */,
 				E87A744419533C110006D097 /* Foundation.framework in Frameworks */,
@@ -761,6 +786,25 @@
 				EB147628F063EDA19E5D4726 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		951D64641A72E31500540EED /* GroupAnalytic */ = {
+			isa = PBXGroup;
+			children = (
+				951D64691A72E35700540EED /* GAI.h */,
+				951D646A1A72E35700540EED /* GAIDictionaryBuilder.h */,
+				951D646B1A72E35700540EED /* GAIEcommerceFields.h */,
+				951D646C1A72E35700540EED /* GAIEcommerceProduct.h */,
+				951D646D1A72E35700540EED /* GAIEcommerceProductAction.h */,
+				951D646E1A72E35700540EED /* GAIEcommercePromotion.h */,
+				951D646F1A72E35700540EED /* GAIFields.h */,
+				951D64701A72E35700540EED /* GAILogger.h */,
+				951D64711A72E35700540EED /* GAITrackedViewController.h */,
+				951D64721A72E35700540EED /* GAITracker.h */,
+				951D64651A72E33F00540EED /* libAdIdAccess.a */,
+				951D64661A72E33F00540EED /* libGoogleAnalyticsServices.a */,
+			);
+			name = GroupAnalytic;
 			sourceTree = "<group>";
 		};
 		E80E1B961A30C04A0084E828 /* TSCurrencyTextField */ = {
@@ -1446,6 +1490,9 @@
 		E87A744219533C110006D097 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				951D64771A72E9D300540EED /* SystemConfiguration.framework */,
+				951D64751A72E9C500540EED /* CoreData.framework */,
+				951D64731A72E9BF00540EED /* libz.dylib */,
 				958474A51A72BAF20008FAC3 /* Crashlytics.framework */,
 				E88182431982769D00BF3EB2 /* MapKit.framework */,
 				E8D31D26197FF5850016BA57 /* AddressBookUI.framework */,
@@ -1463,6 +1510,7 @@
 		E87A744919533C110006D097 /* BoatDay */ = {
 			isa = PBXGroup;
 			children = (
+				951D64641A72E31500540EED /* GroupAnalytic */,
 				E87A747219533CBE0006D097 /* AppDelegate */,
 				E87A74B819533CBE0006D097 /* Views */,
 				E87A74B419533CBE0006D097 /* ViewControllers */,
@@ -2820,6 +2868,10 @@
 				GCC_PREFIX_HEADER = "BoatDay/Suporting Files/BoatDay-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/BoatDay/Suporting Files/BoatDay-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BoatDay",
+				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -2844,6 +2896,10 @@
 				GCC_PREFIX_HEADER = "BoatDay/Suporting Files/BoatDay-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/BoatDay/Suporting Files/BoatDay-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BoatDay",
+				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
