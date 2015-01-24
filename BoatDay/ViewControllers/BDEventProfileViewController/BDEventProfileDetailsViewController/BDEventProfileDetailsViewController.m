@@ -550,9 +550,9 @@
         self.numberOfSeatsLabel.backgroundColor = [UIColor clearColor];
         self.numberOfSeatsLabel.textColor = [UIColor mediumGreenBoatDay];
         self.numberOfSeatsLabel.font = [UIFont abelFontWithSize:30.0];
-        self.numberOfSeatsLabel.text = [NSString stringWithFormat:@"%ld/%@",
-                                        (long)self.numberOfUsersAttending,
-                                        self.event.availableSeats];
+        self.numberOfSeatsLabel.text = [NSString stringWithFormat:@"%ld/%ld",
+                                        self.event.freeSeats.integerValue,
+                                        self.event.availableSeats.integerValue];
         
         self.seatsLabel.backgroundColor = [UIColor clearColor];
         self.seatsLabel.textColor = [UIColor mediumGreenBoatDay];
