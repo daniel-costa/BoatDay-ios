@@ -856,6 +856,8 @@
         
     }
     else {
+        self.seatRequest.event.freeSeats = @(self.seatRequest.event.freeSeats.integerValue + self.seatRequest.numberOfSeats.integerValue);
+        
         // seat request cancelation
         notification.text = NSLocalizedString(@"notifications.type.seatRequestRejected", nil);
         notification.notificationType = @(NotificationTypeRequestRejected);
