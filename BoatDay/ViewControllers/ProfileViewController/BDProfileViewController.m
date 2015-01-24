@@ -274,6 +274,7 @@
     if ([self.user.objectId isEqualToString:[User currentUser].objectId]) {
         self.commonFriendsLabel.text = NSLocalizedString(@"profile.friendsWithBoatDay", nil);
         self.commonActivitiesLabel.text = NSLocalizedString(@"profile.myFavoriteActivities", nil);
+        self.commonActivitiesView.hidden = true;
     }
     else {
         self.commonFriendsLabel.text = NSLocalizedString(@"profile.commonFriends", nil);

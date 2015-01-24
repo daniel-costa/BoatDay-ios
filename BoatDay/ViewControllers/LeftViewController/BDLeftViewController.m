@@ -86,8 +86,8 @@
     
     if (CGRectGetMaxY(self.tableView.frame) > CGRectGetMinY(self.footerView.frame)) {
       
-        return (self.view.frame.size.height-20)/[BDLeftViewController sideMenuNumberOfRows];
-//        return 48.0;
+//        return (self.view.frame.size.height-20)/[BDLeftViewController sideMenuNumberOfRows];
+        return 50.0;
     }
     else {
 
@@ -384,11 +384,11 @@
     
     dispatch_once(&onceToken, ^{
         _convertArray = @[@(SideMenuHome),
-                          @(SideMenuNotifications),
-                          @(SideMenuFindABoatDay),
+//                          @(SideMenuNotifications),
+//                          @(SideMenuFindABoatDay),
                           @(SideMenuMyEvents),
-                          @(SideMenuMyBoats),
                           @(SideMenuMyProfile),
+                          @(SideMenuMyBoats),
                           @(SideMenuSettings),
                           @(SideMenuEmergencyBoatTowing)];
     });
@@ -405,11 +405,11 @@
     
     dispatch_once(&onceToken, ^{
         _convertArray = @[@(SideMenuHome),
-                          @(SideMenuNotifications),
-                          @(SideMenuFindABoatDay),
+//                          @(SideMenuNotifications),
+//                          @(SideMenuFindABoatDay),
                           @(SideMenuMyEvents),
-                          @(SideMenuMyBoats),
                           @(SideMenuMyProfile),
+                          @(SideMenuMyBoats),
                           @(SideMenuSettings),
                           @(SideMenuEmergencyBoatTowing)];
     });
@@ -426,8 +426,8 @@
     
     dispatch_once(&onceToken, ^{
         _convertArray = @[@(SideMenuHome),
-                          @(SideMenuNotifications),
-                          @(SideMenuFindABoatDay),
+//                          @(SideMenuNotifications),
+//                          @(SideMenuFindABoatDay),
                           @(SideMenuMyEvents),
                           @(SideMenuMyProfile),
                           @(SideMenuHostRegistration),

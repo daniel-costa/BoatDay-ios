@@ -15,8 +15,8 @@
 "sideMenu.myProfile"                = "MY PROFILE";
 "sideMenu.myEvents"                 = "MY EVENTS";
 "sideMenu.notifications"            = "NOTIFICATIONS";
-"sideMenu.hostRegistration"         = "HOST & BOAT REGISTRATION";
-"sideMenu.myBoats"                  = "MY BOATS";
+"sideMenu.hostRegistration"         = "HOST REGISTRATION";
+"sideMenu.myBoats"                  = "HOST CENTER";
 "sideMenu.emergencyBoatTowing"      = "EMERGENCY SERVICES";
 "sideMenu.settings"                 = "SETTINGS";
 "sideMenu.signOutButton"            = "SIGN OUT";
@@ -162,11 +162,10 @@
  */
 
 "myBoats.noBoatsView.message"               = "You haven’t added any boats yet!\nTap the “+” icon in the top-right corner to begin.";
-"myBoats.title"                             = "My Boats";
+"myBoats.title"                             = "HOST CENTER";
 "myBoats.cell.seats"                        = "SEATS";
 "myBoats.cell.added"                        = "Added";
-"myBoats.tableView.section.notApproved"     = "Not submitted for approval yet";
-"myBoats.tableView.section.approved"        = "Approved";
+"myBoats.tableView.section.notApproved"     = "Not yet submitted";
 "myBoats.tableView.section.submited"        = "Submitted";
 
 /*
@@ -608,11 +607,11 @@
  */
 
 "paymentInfo.title"                                 = "Payment Info";
-"paymentInfo.sectionTitle.selectDestination"        = "SELECT DESTINATION";
+"paymentInfo.sectionTitle.selectDestination"        = "PAYMENT METHOD";
 "paymentInfo.sectionTitle.businessInformation"      = "BUSINESS INFORMATION (OPTIONAL)";
 "paymentInfo.sectionTitle.personalInformation"      = "PERSONAL INFORMATION";
 "paymentInfo.sectionTitle.termsOfService"           = "TERMS OF SERVICE";
-"paymentInfo.sectionTitle.addressInformation"       = "ADDRESS INFO";
+"paymentInfo.sectionTitle.addressInformation"       = "BILLING ADDRESS";
 "paymentInfo.termsOfService"                        = "Terms of Service";
 "paymentInfo.submitButton"                          = "SUBMIT";
 "paymentInfo.accountNumber"                         = "ACCOUNT NUMBER*";

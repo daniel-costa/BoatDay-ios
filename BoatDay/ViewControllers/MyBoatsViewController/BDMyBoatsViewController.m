@@ -172,8 +172,20 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    if (section == 1) {
+    if (self.boats.count > 0 && section == 0) {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.frame.size.width, 22.0)];
+        [view setBackgroundColor:[UIColor greenBoatDay]];
         
+        UILabel *label = [[UILabel alloc] initWithFrame:view.bounds];
+        label.font = [UIFont abelFontWithSize:12.0];
+        label.text = [NSLocalizedString(@"myBoats.tableView.section.submited", nil) uppercaseString];
+        label.backgroundColor = [UIColor clearColor];
+        label.textColor = [UIColor whiteColor];
+        label.textAlignment = NSTextAlignmentCenter;
+        [view addSubview:label];
+        
+        return view;
+    } else if(self.notSubmitedBoats.count > 0) {
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.frame.size.width, 22.0)];
         [view setBackgroundColor:[UIColor greenBoatDay]];
         
@@ -186,30 +198,24 @@
         [view addSubview:label];
         
         return view;
-        
-    }
-    else {
-        
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.frame.size.width, 22.0)];
-        [view setBackgroundColor:[UIColor yellowBoatDay]];
-        
-        UILabel *label = [[UILabel alloc] initWithFrame:view.bounds];
-        label.font = [UIFont abelFontWithSize:12.0];
-        label.text = [NSLocalizedString(@"myBoats.tableView.section.submited", nil) uppercaseString];
-        label.backgroundColor = [UIColor clearColor];
-        label.textColor = [UIColor whiteColor];
-        label.textAlignment = NSTextAlignmentCenter;
-        [view addSubview:label];
-        
-        return view;
-        
     }
     
     return [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    
+    NSInteger total = 0;
+    
+    if(self.boats.count > 0) {
+        total++;
+    }
+    
+    if(self.notSubmitedBoats.count > 0) {
+        total++;
+    }
+    
+    return total;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
