@@ -269,14 +269,16 @@ static NSInteger const kMaximumAvailableSeats = 15;
 
 - (void) setupNavigationBar {
     
-    // create save button to navigatio bar at top of the view
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:NSLocalizedString(@"addEditEvent.save", nil)
-                                   style:UIBarButtonItemStyleDone
-                                   target:self
-                                   action:@selector(saveButtonPressed)];
-    
-    self.navigationItem.rightBarButtonItem = saveButton;
+    if (self.event) {
+        // create save button to navigatio bar at top of the view
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]
+                                       initWithTitle:NSLocalizedString(@"addEditEvent.save", nil)
+                                       style:UIBarButtonItemStyleDone
+                                       target:self
+                                       action:@selector(saveButtonPressed)];
+        
+        self.navigationItem.rightBarButtonItem = saveButton;
+    }
     
     // create cancel button to navigatio bar at top of the view
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]

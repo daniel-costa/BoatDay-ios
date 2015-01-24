@@ -10,6 +10,8 @@
 #import "BDBoatListCell.h"
 #import "BDBoatViewController.h"
 #import "BDAddEditBoatViewController.h"
+#import "BDPaymentInfoViewController.h"
+#import "BDPaymentStatusViewController.h"
 
 #define SUBMITED_BOATS_TABLEVIEW_SECTION 0
 
@@ -25,6 +27,10 @@
 
 @property (strong, nonatomic) NSMutableArray *boats;
 @property (strong, nonatomic) NSMutableArray *notSubmitedBoats;
+
+@property (weak, nonatomic) IBOutlet UIButton *bigButton;
+
+- (IBAction)bigButtonPressed:(id)sender;
 
 @end
 
@@ -68,6 +74,18 @@
     self.noBoatsViewLabel.text = NSLocalizedString(@"myBoats.noBoatsView.message", nil);
     self.noBoatsViewLabel.font = [UIFont quattroCentoRegularFontWithSize:13.0];
     self.noBoatsViewLabel.textColor = [UIColor greenBoatDay];
+    
+    
+    self.bigButton.hidden = NO;
+    
+    [self.bigButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.bigButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    
+    self.bigButton.titleLabel.font = [UIFont abelFontWithSize:24.0];
+    
+    [self.bigButton setTitle:NSLocalizedString(@"myBoats.payments", nil) forState:UIControlStateNormal];
+    [self.bigButton setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_off"] forState:UIControlStateNormal];
+    [self.bigButton setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_on"] forState:UIControlStateHighlighted];
     
 }
 
@@ -265,6 +283,18 @@
     
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
+
+
+- (IBAction)bigButtonPressed:(id)sender {
+    if ([Session sharedSession].hostRegistration.merchantId) {
+        BDPaymentStatusViewController *paymentStatusView = [[BDPaymentStatusViewController alloc] init];
+        [self.navigationController pushViewController:paymentStatusView animated:YES];
+    }
+    else {
+        BDPaymentInfoViewController *paymentInfoViewController = [[BDPaymentInfoViewController alloc] init];
+        [self.navigationController pushViewController:paymentInfoViewController animated:YES];
     }
 }
 

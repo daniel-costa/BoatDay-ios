@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BDMyBoatsViewController">
             <connections>
+                <outlet property="bigButton" destination="IQ7-1J-LpU" id="0o8-d4-Ape"/>
                 <outlet property="contentView" destination="jyG-Y9-iE7" id="oZJ-fW-d3O"/>
                 <outlet property="noBoatsView" destination="lhS-ma-3SC" id="M3j-sN-xiZ"/>
                 <outlet property="noBoatsViewLabel" destination="wPj-Ga-t2u" id="rMO-b6-Wro"/>
@@ -31,14 +33,30 @@
                                 <outlet property="delegate" destination="-1" id="5XU-nq-04H"/>
                             </connections>
                         </tableView>
+                        <view contentMode="scaleToFill" id="2k4-1c-z8D" userLabel="Bottom View">
+                            <rect key="frame" x="0.0" y="432" width="320" height="72"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IQ7-1J-LpU">
+                                    <rect key="frame" x="43" y="14" width="235" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Big Button" backgroundImage="button_lg_yellow_off">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="button_lg_yellow_on"/>
+                                    <connections>
+                                        <action selector="bigButtonPressed:" destination="-1" eventType="touchUpInside" id="Yvj-9g-p06"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.89000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
         <view contentMode="scaleToFill" id="lhS-ma-3SC" userLabel="No boats View">
             <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
@@ -57,9 +75,18 @@
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
     <resources>
+        <image name="button_lg_yellow_off" width="235" height="44"/>
+        <image name="button_lg_yellow_on" width="235" height="44"/>
         <image name="myboats_noboats" width="159" height="143"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

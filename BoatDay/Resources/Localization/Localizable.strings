@@ -11,6 +11,7 @@
  */
 
 "sideMenu.home"                     = "HOME";
+"sideMenu.BoatDay"                  = "BOATDAY";
 "sideMenu.findABoatDay"             = "FIND A BOATDAY";
 "sideMenu.myProfile"                = "MY PROFILE";
 "sideMenu.myEvents"                 = "MY EVENTS";
@@ -167,6 +168,7 @@
 "myBoats.cell.added"                        = "Added";
 "myBoats.tableView.section.notApproved"     = "Not yet submitted";
 "myBoats.tableView.section.submited"        = "Submitted";
+"myBoats.payments"                          = "PAYMENT INFO";
 
 /*
  * Boat Profile
@@ -233,7 +235,7 @@
 "addEditBoat.pictureReqlertview.title"      = "Boat Picture";
 "addEditBoat.pictureReqlertview.message"    = "A boat picture is required to submit a boat.";
 "addEditBoat.insuranceAlertview.title"      = "Insurance Picture";
-"addEditBoat.insuranceAlertview.message"    = "An insurance picture is required.";
+"addEditBoat.insuranceAlertview.message"    = "Proof of Insurance is Required.";
 "addEditBoat.lenghtNumAlertview.title"      = "Length";
 "addEditBoat.lenghtNumAlertview.message"    = "This field should only take numbers";
 "addEditBoat.capacityNumAlertview.title"    = "Capacity";
@@ -339,14 +341,15 @@
 "eventProfile.activities.noDrinking.description"        = "No alcoholic beverages are permitted on this event.";
 "eventProfile.activities.noSmoking.title"               = "Smoking-free";
 "eventProfile.activities.noSmoking.description"         = "No smoking of any kind is permitted on this event.";
-"eventProfile.activities.familyWelcome.title"           = "FAMILY WELCOME";
+"eventProfile.activities.familyWelcome.title"           = "Family Friendly";
 "eventProfile.activities.familyWelcome.description"     = "Children who are accompanied by adults are permitted on this event.";
 "eventProfile.suggestedContribution"                    = "Suggested Contribution";
 "eventProfile.requestSeats"                             = "REQUEST SEATS";
 "eventProfile.seats"                                    = "OPEN SEATS";
+"eventProfile.seatsRequest"                             = "SEATS";
 "eventProfile.confirmedGuest"                           = "YOU ARE A CONFIRMED GUEST FOR THIS EVENT";
 "eventProfile.cancelSeats"                              = "CANCEL SEATS";
-"eventProfile.pendingRequest"                           = "YOUR RESERVATION IS PENDING";
+"eventProfile.pendingRequest"                           = "Your seat request is pending.";
 "event.pickupLocation.title"                            = "Pick-Up Location";
 "event.pickupLocation.getDirections"                    = "Get Directions";
 "eventProfile.guests.pendingRequests"                   = "PENDING REQUESTS YOU’VE RECEIVED";
@@ -362,7 +365,7 @@
 "eventProfile.flagConfirmation.message"                 = "Report as Inappropriate?";
 "eventProfile.inviteUsers"                              = "INVITE USERS";
 "eventProfile.seatRequest.deleteTitle"                  = "Cancel?";
-"eventProfile.seatRequest.deleteMessage"                = "Do you want to cancel your reservation? You will lose your seat reservations.";
+"eventProfile.seatRequest.deleteMessage"                = "Are sure you want to cancel your seat request?";
 "eventProfile.seat"                                     = "SEAT";
 "eventProfile.cancelRequest.title"                      = "Are you Sure?";
 "eventProfile.cancelRequest.message"                    = "Cancellation within 24 hours of your BoatDay negatively effects all Hosts and Guests. You will be charged the contribution amount if you cancel at this time. Do you wish to cancel?";

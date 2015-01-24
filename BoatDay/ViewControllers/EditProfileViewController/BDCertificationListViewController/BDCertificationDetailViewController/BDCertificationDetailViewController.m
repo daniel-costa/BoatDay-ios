@@ -106,19 +106,18 @@ static NSInteger const kAboutMeMaximumCharacters = 500;
         
         switch ([self.certification.status integerValue]) {
             case CertificationStatusPending:
-
-               
                 [self.submitButton setTitle:NSLocalizedString(@"certifications.deletePending", nil) forState:UIControlStateNormal];
                 [self.submitButton setBackgroundImage:[UIImage imageNamed:@"button_lg_red_off"] forState:UIControlStateNormal];
                 [self.submitButton setBackgroundImage:[UIImage imageNamed:@"button_lg_red_on"] forState:UIControlStateHighlighted];
                 
                 break;
             case CertificationStatusApproved:
-                
-                [self.submitButton setTitle:NSLocalizedString(@"certifications.approved", nil) forState:UIControlStateNormal];
-                [self.submitButton setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_off"] forState:UIControlStateNormal];
-                [self.submitButton setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_on"] forState:UIControlStateHighlighted];
-                
+//                [self.submitButton setTitle:NSLocalizedString(@"certifications.approved", nil) forState:UIControlStateNormal];
+//                [self.submitButton setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_off"] forState:UIControlStateNormal];
+//                [self.submitButton setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_on"] forState:UIControlStateHighlighted];
+                [self.submitButton setTitle:NSLocalizedString(@"certifications.deletePending", nil) forState:UIControlStateNormal];
+                [self.submitButton setBackgroundImage:[UIImage imageNamed:@"button_lg_red_off"] forState:UIControlStateNormal];
+                [self.submitButton setBackgroundImage:[UIImage imageNamed:@"button_lg_red_on"] forState:UIControlStateHighlighted];
                 break;
             default:
                 break;

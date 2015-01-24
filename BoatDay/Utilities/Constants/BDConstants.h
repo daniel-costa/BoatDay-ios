@@ -32,7 +32,8 @@ typedef NS_ENUM(NSInteger, SideMenu) {
     SideMenuHostRegistration,
     SideMenuMyBoats,
     SideMenuEmergencyBoatTowing,
-    SideMenuSettings
+    SideMenuSettings,
+    SideMenuAboutUs
     
 };
 

@@ -80,10 +80,10 @@
 - (void)updateCellWithTitle:(NSString *)title descriptionTitle:(NSString*)description image:(UIImage*)image hasPermission:(BOOL)hasPermission {
     
     if (hasPermission) {
-        [self setCellColor:[UIColor eventsGreenBoatDay]];
+        [self setCellColor:[UIColor lightGrayColor]];
         
     } else {
-        [self setCellColor:RGB(203, 21, 50)];
+        [self setCellColor:[UIColor lightGrayColor]];
     }
     
     self.activityTitleLabel.textColor = [UIColor whiteColor];

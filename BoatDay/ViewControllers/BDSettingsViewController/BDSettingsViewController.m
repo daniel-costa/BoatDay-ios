@@ -86,12 +86,12 @@ typedef NS_ENUM(NSUInteger, SettingsRow) {
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    if ([Session sharedSession].hostRegistration && [User currentUser]) {
-        return 2;
-    }
-    
-    return 1;
+//    
+//    if ([Session sharedSession].hostRegistration && [User currentUser]) {
+//        return 2;
+//    }
+//    
+    return 0;
     
 }
 

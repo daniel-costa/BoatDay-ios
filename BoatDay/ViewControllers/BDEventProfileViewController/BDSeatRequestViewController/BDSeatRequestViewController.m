@@ -194,7 +194,7 @@ static NSInteger const kMessageMaximumCharacters = 500;
     self.seatsLabel.backgroundColor = [UIColor clearColor];
     self.seatsLabel.textColor = [UIColor whiteColor];
     self.seatsLabel.font = [UIFont quattroCentoRegularFontWithSize:13.0];
-    self.seatsLabel.text = self.requestedSeats == 1 ?  NSLocalizedString(@"eventProfile.seat", nil): NSLocalizedString(@"eventProfile.seats", nil);
+    self.seatsLabel.text = self.requestedSeats == 1 ?  NSLocalizedString(@"eventProfile.seat", nil): NSLocalizedString(@"eventProfile.seatsRequest", nil);
     
     self.charCount.font = [UIFont abelFontWithSize:12.0];
     self.charCount.textColor = [UIColor grayBoatDay];
@@ -257,7 +257,7 @@ static NSInteger const kMessageMaximumCharacters = 500;
     }
     
     self.requestedSeatsLabel.text = [@(self.requestedSeats) stringValue];
-    self.seatsLabel.text = self.requestedSeats == 1 ?  NSLocalizedString(@"eventProfile.seat", nil): NSLocalizedString(@"eventProfile.seats", nil);
+    self.seatsLabel.text = self.requestedSeats == 1 ?  NSLocalizedString(@"eventProfile.seat", nil): NSLocalizedString(@"eventProfile.seatsRequest", nil);
     
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
     self.priceLabel.attributedText = [self createPriceStringWithPrice:@(self.event.price.integerValue * self.requestedSeats) andCoinSymbol:coinSymbol];
@@ -273,7 +273,7 @@ static NSInteger const kMessageMaximumCharacters = 500;
     }
     
     self.requestedSeatsLabel.text = [@(self.requestedSeats) stringValue];
-    self.seatsLabel.text = self.requestedSeats == 1 ?  NSLocalizedString(@"eventProfile.seat", nil): NSLocalizedString(@"eventProfile.seats", nil);
+    self.seatsLabel.text = self.requestedSeats == 1 ?  NSLocalizedString(@"eventProfile.seat", nil): NSLocalizedString(@"eventProfile.seatsRequest", nil);
     
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
     self.priceLabel.attributedText = [self createPriceStringWithPrice:@(self.event.price.integerValue * self.requestedSeats) andCoinSymbol:coinSymbol];

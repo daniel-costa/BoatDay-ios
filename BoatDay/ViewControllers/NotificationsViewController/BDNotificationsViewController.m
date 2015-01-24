@@ -38,7 +38,7 @@
     
     [super viewWillAppear:animated];
     
-    [self.mm_drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModePanningNavigationBar];
+//    [self.mm_drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModePanningNavigationBar];
     
     [self getData];
     
@@ -48,7 +48,7 @@
     
     [super viewWillDisappear:animated];
     
-    [self.mm_drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+//    [self.mm_drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     
 }
 

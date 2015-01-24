@@ -17,7 +17,7 @@
 #import "BDBoatTowingViewController.h"
 #import "BDSettingsViewController.h"
 #import "BDHostRegistrationViewController.h"
-
+#import "BDAboutViewController.h"
 #import "BDLeftMenuCell.h"
 
 #define SELECTED_COLOR RGB(36, 154, 175)
@@ -39,7 +39,8 @@
     [super viewDidLoad];
     
     [self setupTableView];
-    
+
+    [self.view setBackgroundColor:[UIColor colorWithRed:36.0/255 green:154.0/255 blue:174.0/255 alpha:1.0]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -68,8 +69,8 @@
 - (void) setupTableView {
     
     // setup table view
-    self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.backgroundView.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundColor = [UIColor greenBoatDay];
+    self.tableView.backgroundView.backgroundColor = [UIColor greenBoatDay];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.tableView.separatorColor = SELECTED_COLOR;
@@ -77,7 +78,38 @@
     
     self.tableView.allowsMultipleSelectionDuringEditing = NO;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tableView.tableHeaderView = [self setupTableViewHeader];
+}
+
+- (UIView *) setupTableViewHeader {
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), 44)];
+
+
+   [header setBackgroundColor:[UIColor colorWithRed:36.0/255 green:154.0/255 blue:174.0/255 alpha:1.0]];
+
+    CGFloat btnDimantion = 35.0;
+    CGFloat btnY = (CGRectGetHeight(header.frame) - btnDimantion)/2;
+    CGFloat btnXOffSet = (CGRectGetWidth(self.tableView.frame)/4 - btnDimantion)/2;
+    UIButton *btnNotification = [[UIButton alloc] initWithFrame:CGRectMake(btnXOffSet, btnY, btnDimantion,btnDimantion)];
+    [btnNotification addTarget:self action:@selector(btnNotificationPressed) forControlEvents:UIControlEventTouchDown];
+    [btnNotification setImage:[UIImage imageNamed:@"sidemenu_settings"] forState:UIControlStateNormal];
     
+    UIButton *btnSetting = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.tableView.frame)/4 + btnXOffSet, btnY, btnDimantion,btnDimantion)];
+    [btnSetting addTarget:self action:@selector(btnSettingPressed) forControlEvents:UIControlEventTouchDown];    [btnSetting setImage:[UIImage imageNamed:@"sidemenu_settings"] forState:UIControlStateNormal];
+    
+    UIButton *btnEmergency = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.tableView.frame)/2 + btnXOffSet, btnY, btnDimantion,btnDimantion)];
+    [btnEmergency addTarget:self action:@selector(btnEmergencyPressed) forControlEvents:UIControlEventTouchDown];    [btnEmergency setImage:[UIImage imageNamed:@"sidemenu_settings"] forState:UIControlStateNormal];
+    
+    UIButton *btnAboutUs = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.tableView.frame) * 0.75 + btnXOffSet, btnY, btnDimantion,btnDimantion)];
+    [btnAboutUs addTarget:self action:@selector(btnAboutUsPressed) forControlEvents:UIControlEventTouchDown];
+    [btnAboutUs setImage:[UIImage imageNamed:@"sidemenu_settings"] forState:UIControlStateNormal];
+    
+    [header addSubview:btnNotification];
+    [header addSubview:btnSetting];
+    [header addSubview:btnEmergency];
+    [header addSubview:btnAboutUs];
+    
+    return header;
 }
 
 #pragma mark - UITableView Datasource
@@ -96,7 +128,23 @@
     }
 }
 
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+
+    return 88.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+
+    UIView *headerSection = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), 88)];
+    headerSection.backgroundColor = [UIColor greenBoatDay];
+    return headerSection;
+}
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
     return 1;
 }
 
@@ -112,13 +160,10 @@
     BDLeftMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if(cell == nil) {
-        
         cell = [[BDLeftMenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
         cell.textLabel.font = [UIFont abelFontWithSize:17.0];
         cell.textLabel.textColor = [UIColor whiteColor];
-        
     }
     
     cell.accessoryView = nil;
@@ -134,8 +179,9 @@
     
     switch (sideMenu) {
         case SideMenuHome:
-            cell.textLabel.text = NSLocalizedString(@"sideMenu.home", nil);
-            
+            cell.textLabel.text = NSLocalizedString(@"sideMenu.BoatDay", nil);
+            cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sidemenu_settings"]];
+
             break;
         case SideMenuFindABoatDay:
             cell.textLabel.text = NSLocalizedString(@"sideMenu.findABoatDay", nil);
@@ -174,7 +220,13 @@
         default:
             break;
     }
-    
+    if ([User currentUser] && [Session sharedSession].dataWasFechted) {
+        [cell.textLabel setTextColor:[UIColor whiteColor]];
+
+    }else if(indexPath.row != 0){
+        [cell.textLabel setTextColor:[UIColor grayBoatDay]];
+        
+    }
     
     return cell;
 }
@@ -189,11 +241,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    SideMenu pressedSideMenu = [BDLeftViewController convertSideMenuIndex:indexPath.row];
     
-    [self openViewController:pressedSideMenu];
-    
-    [self.tableView reloadData];
+    if ([User currentUser] && [Session sharedSession].dataWasFechted) {
+       
+        SideMenu pressedSideMenu = [BDLeftViewController convertSideMenuIndex:indexPath.row];
+        
+        [self openViewController:pressedSideMenu];
+        
+        [self.tableView reloadData];
+
+    }else if(indexPath.row == 0){
+        SideMenu pressedSideMenu = [BDLeftViewController convertSideMenuIndex:indexPath.row];
+        
+        [self openViewController:pressedSideMenu];
+        
+        [self.tableView reloadData];
+        
+    }
     
 }
 
@@ -234,12 +298,14 @@
         case SideMenuSettings:
             centerViewController = [[BDSettingsViewController alloc] init];
             break;
+        case SideMenuAboutUs:
+            centerViewController =  [[BDAboutViewController alloc] init];
+            break;
         default:
             break;
     }
     
     UINavigationController * navigationController = [[MMNavigationController alloc] initWithRootViewController:centerViewController];
-    
     [self.mm_drawerController setCenterViewController:navigationController withCloseAnimation:YES completion:nil];
     
 }
@@ -278,6 +344,26 @@
     }
     
 }
+
+- (void) btnNotificationPressed{
+    [self openViewController:SideMenuNotifications];
+}
+
+- (void) btnSettingPressed{
+    [self openViewController:SideMenuSettings];
+
+}
+
+- (void) btnEmergencyPressed{
+    [self openViewController:SideMenuEmergencyBoatTowing];
+
+}
+
+- (void) btnAboutUsPressed{
+    [self openViewController:SideMenuAboutUs];
+}
+
+
 
 #pragma mark - Notification Methods
 
@@ -384,13 +470,9 @@
     
     dispatch_once(&onceToken, ^{
         _convertArray = @[@(SideMenuHome),
-//                          @(SideMenuNotifications),
-//                          @(SideMenuFindABoatDay),
                           @(SideMenuMyEvents),
                           @(SideMenuMyProfile),
-                          @(SideMenuMyBoats),
-                          @(SideMenuSettings),
-                          @(SideMenuEmergencyBoatTowing)];
+                          @(SideMenuMyBoats)];
     });
     
     return _convertArray;
@@ -405,13 +487,9 @@
     
     dispatch_once(&onceToken, ^{
         _convertArray = @[@(SideMenuHome),
-//                          @(SideMenuNotifications),
-//                          @(SideMenuFindABoatDay),
                           @(SideMenuMyEvents),
                           @(SideMenuMyProfile),
-                          @(SideMenuMyBoats),
-                          @(SideMenuSettings),
-                          @(SideMenuEmergencyBoatTowing)];
+                          @(SideMenuMyBoats)];
     });
     
     return _convertArray;
@@ -426,13 +504,9 @@
     
     dispatch_once(&onceToken, ^{
         _convertArray = @[@(SideMenuHome),
-//                          @(SideMenuNotifications),
-//                          @(SideMenuFindABoatDay),
                           @(SideMenuMyEvents),
                           @(SideMenuMyProfile),
-                          @(SideMenuHostRegistration),
-                          @(SideMenuSettings),
-                          @(SideMenuEmergencyBoatTowing)];
+                          @(SideMenuHostRegistration)];
     });
     
     return _convertArray;
@@ -446,9 +520,10 @@
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        _convertArray = @[@(SideMenuHome),
-                          @(SideMenuSettings),
-                          @(SideMenuEmergencyBoatTowing)];
+        _convertArray =  @[@(SideMenuHome),
+                           @(SideMenuMyEvents),
+                           @(SideMenuMyProfile),
+                           @(SideMenuHostRegistration)];
     });
     
     return _convertArray;

@@ -27,7 +27,8 @@ static char associatedKey;
     
     self.title = NSLocalizedString(@"certificationsList.title", nil);
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
-    [[self navigationItem] setBackBarButtonItem:backButton];}
+    [[self navigationItem] setBackBarButtonItem:backButton];
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     
