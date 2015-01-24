@@ -788,9 +788,8 @@
             
         }
         
-        NSInteger availableSeats = self.seatRequest.event.availableSeats.integerValue - numberOfUsersAttending;
         
-        if (availableSeats >= [self.seatRequest.numberOfSeats integerValue]) {
+        if (self.seatRequest.event.freeSeats.integerValue >= self.seatRequest.numberOfSeats.integerValue) {
             
             Notification *notification = [Notification object];
             notification.user = self.user;
@@ -802,7 +801,7 @@
             notification.deleted = @(NO);
             
             self.seatRequest.status = @(SeatRequestStatusAccepted);
-            self.seatRequest.event.freeSeats = @(availableSeats);
+            self.seatRequest.event.freeSeats = @(self.seatRequest.event.freeSeats.integerValue - self.seatRequest.numberOfSeats.integerValue);
             [PFObject saveAllInBackground:@[self.seatRequest, notification] block:^(BOOL succeeded, NSError *error) {
                 
                 [SVProgressHUD dismiss];
