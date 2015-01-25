@@ -66,5 +66,6 @@
 
 - (void)resetValuesToObject:(PFObject*)oldValue;
 
+- (BOOL)hasEventsGoingOn;
 
 @end

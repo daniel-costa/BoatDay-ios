@@ -91,5 +91,30 @@
     return [other.objectId isEqualToString:self.objectId];
 }
 
+- (BOOL)hasEventsGoingOn {
+    
+    PFQuery *eventQuery = [Event query];
+    [eventQuery includeKey:@"user"];
+    [eventQuery includeKey:@"boat"];
+    [eventQuery whereKey:@"startsAt" greaterThan:[NSDate date]];
+    [eventQuery whereKey:@"host" equalTo:[User currentUser]];
+    [eventQuery whereKey:@"deleted" notEqualTo:@(YES)];
+    
+    PFQuery *attendingQuery = [Event query];
+    [attendingQuery whereKey:@"startsAt" greaterThan:[NSDate date]];
+    [attendingQuery whereKey:@"deleted" notEqualTo:@(YES)];
+    
+    PFQuery *attendingSeatRequestQuery = [SeatRequest query];
+    [attendingSeatRequestQuery includeKey:@"event"];
+    [attendingSeatRequestQuery includeKey:@"event.user"];
+    [attendingSeatRequestQuery includeKey:@"event.boat"];
+    [attendingSeatRequestQuery whereKey:@"event" matchesQuery:attendingQuery];
+    [attendingSeatRequestQuery whereKey:@"user" equalTo:self];
+    [attendingSeatRequestQuery whereKey:@"status" equalTo:@(SeatRequestStatusAccepted)];
+    [attendingSeatRequestQuery whereKey:@"deleted" notEqualTo:@(YES)];
+
+    return ([eventQuery countObjects] + [attendingSeatRequestQuery countObjects]) > 0;
+}
+
 
 @end

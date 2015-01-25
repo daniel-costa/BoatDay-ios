@@ -56,6 +56,13 @@
     self.pricePerSeatTextField.font = [UIFont abelFontWithSize:17.0];
     self.pricePerSeatTextField.textColor = [UIColor greenBoatDay];
     
+    self.estimatedIncomeLabel.font = [UIFont abelFontWithSize:12.0];
+    self.estimatedIncomeLabel.textColor = [UIColor grayBoatDay];
+    
+    self.estimatedIncomeButton.titleLabel.font = [UIFont abelFontWithSize:17.0];
+    [self.estimatedIncomeButton setTitleColor:[UIColor greenBoatDay] forState:UIControlStateNormal];
+    [self.estimatedIncomeButton setTitleColor:[UIColor grayBoatDay] forState:UIControlStateHighlighted];
+    
     self.pickUpTimeLabel.font = [UIFont abelFontWithSize:12.0];
     self.pickUpTimeLabel.textColor = [UIColor grayBoatDay];
     

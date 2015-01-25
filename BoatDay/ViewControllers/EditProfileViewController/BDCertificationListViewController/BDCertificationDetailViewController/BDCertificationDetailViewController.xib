@@ -123,7 +123,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D1B-Ty-1Ig">
-                                    <rect key="frame" x="42" y="441.99999964034021" width="237" height="44"/>
+                                    <rect key="frame" x="42" y="441.99999926735961" width="237" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <state key="normal" title="Submit" backgroundImage="button_lg_blue_off">

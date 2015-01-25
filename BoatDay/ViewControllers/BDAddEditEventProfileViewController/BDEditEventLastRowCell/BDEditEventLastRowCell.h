@@ -31,6 +31,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *endTimeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *endTimeButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *estimatedIncomeButton;
+@property (weak, nonatomic) IBOutlet UILabel *estimatedIncomeLabel;
+
 - (void)changeCellStateSelected:(BOOL)selected;
 
 @end

@@ -318,10 +318,18 @@
     self.commonActivitiesLabel.font = [UIFont abelFontWithSize:14.0];
     self.commonActivitiesLabel.textColor = [UIColor whiteColor];
     
-    self.inviteButton.titleLabel.font = [UIFont abelFontWithSize:14.0];
-    [self.inviteButton setTitleColor:[UIColor grayBoatDay] forState:UIControlStateNormal];
-    [self.inviteButton setTitleColor:[UIColor grayBoatDay] forState:UIControlStateHighlighted];
-    [self.inviteButton setTitle:NSLocalizedString(@"profile.inviteButton", nil) forState:UIControlStateNormal];
+    if([User currentUser].hasEventsGoingOn) {
+        self.inviteButton.titleLabel.font = [UIFont abelFontWithSize:14.0];
+        [self.inviteButton setTitleColor:[UIColor grayBoatDay] forState:UIControlStateNormal];
+        [self.inviteButton setTitleColor:[UIColor grayBoatDay] forState:UIControlStateHighlighted];
+        [self.inviteButton setTitle:NSLocalizedString(@"profile.inviteButton", nil) forState:UIControlStateNormal];
+    } else {
+        self.inviteButton.hidden = true;
+        self.viewBelowAbout.frame = CGRectMake(self.viewBelowAbout.frame.origin.x,
+                                               self.viewBelowAbout.frame.origin.y,
+                                               self.viewBelowAbout.frame.size.width,
+                                               180);
+    }
     
     if (self.seatRequest) {
         [self setupSeatRequestView];
@@ -442,6 +450,7 @@
     
     self.aboutMeLabel.numberOfLines = 0;
     self.aboutMeLabel.backgroundColor = [UIColor clearColor];
+
     setFrameHeight(self.aboutMeLabel, 350);
     setFrameWidth(self.aboutMeLabel, 280);
     

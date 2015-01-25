@@ -462,14 +462,14 @@ typedef NS_ENUM(NSUInteger, BDPaymentInfoTextFieldTag) {
     
     if (self.acceptedTermsOfService) {
         
-        [cell.confirmButton setImage:[UIImage imageNamed:@"cert_approved"] forState:UIControlStateNormal];
-        [cell.confirmButton setImage:[UIImage imageNamed:@"cert_gray"] forState:UIControlStateHighlighted];
+        [cell.confirmButton setImage:[UIImage imageNamed:@"check_on"] forState:UIControlStateNormal];
+        [cell.confirmButton setImage:[UIImage imageNamed:@"check_off"] forState:UIControlStateHighlighted];
         
     }
     else {
         
-        [cell.confirmButton setImage:[UIImage imageNamed:@"cert_gray"] forState:UIControlStateNormal];
-        [cell.confirmButton setImage:[UIImage imageNamed:@"cert_approved"] forState:UIControlStateHighlighted];
+        [cell.confirmButton setImage:[UIImage imageNamed:@"check_off"] forState:UIControlStateNormal];
+        [cell.confirmButton setImage:[UIImage imageNamed:@"check_on"] forState:UIControlStateHighlighted];
         
     }
     

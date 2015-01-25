@@ -56,8 +56,8 @@
         self.businessNameLabel.alpha = 1.0;
         self.taxIdLabel.alpha = 1.0;
 
-        [self.confirmButton setImage:[UIImage imageNamed:@"cert_approved"] forState:UIControlStateNormal];
-        [self.confirmButton setImage:[UIImage imageNamed:@"cert_gray"] forState:UIControlStateHighlighted];
+        [self.confirmButton setImage:[UIImage imageNamed:@"check_on"] forState:UIControlStateNormal];
+        [self.confirmButton setImage:[UIImage imageNamed:@"check_off"] forState:UIControlStateHighlighted];
         self.businessNameTextField.enabled = YES;
         self.taxIdTextField.enabled = YES;
         
@@ -70,8 +70,8 @@
         self.businessNameLabel.alpha = 0.5;
         self.taxIdLabel.alpha = 0.5;
         
-        [self.confirmButton setImage:[UIImage imageNamed:@"cert_gray"] forState:UIControlStateNormal];
-        [self.confirmButton setImage:[UIImage imageNamed:@"cert_approved"] forState:UIControlStateHighlighted];
+        [self.confirmButton setImage:[UIImage imageNamed:@"check_off"] forState:UIControlStateNormal];
+        [self.confirmButton setImage:[UIImage imageNamed:@"check_on"] forState:UIControlStateHighlighted];
         self.businessNameTextField.enabled = NO;
         self.taxIdTextField.enabled = NO;
         

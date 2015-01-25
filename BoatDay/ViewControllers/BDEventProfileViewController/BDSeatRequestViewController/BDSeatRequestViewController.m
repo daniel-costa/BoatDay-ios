@@ -26,6 +26,8 @@ static NSInteger const kMessageMaximumCharacters = 500;
 @property (weak, nonatomic) IBOutlet UILabel *hostLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceSuggestedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceFeeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *availableSeatsLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *addSeatsView;
@@ -163,7 +165,9 @@ static NSInteger const kMessageMaximumCharacters = 500;
     self.dateLabel.font = [UIFont quattroCentoRegularFontWithSize:11.0];
     
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
-    self.priceLabel.attributedText = [self createPriceStringWithPrice:self.event.price andCoinSymbol:coinSymbol];
+    [self formatLabelWithPriceStringWithPrice:@(self.event.price.integerValue + TRUST_SAFETY_FEE) andCoinSymbol:coinSymbol withSize:39.0 forLabel:self.priceLabel];
+    [self formatLabelWithPriceStringWithPrice:@(TRUST_SAFETY_FEE) andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceFeeLabel];
+    [self formatLabelWithPriceStringWithPrice:self.event.price andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceSuggestedLabel];
     
     NSInteger numberOfUsersAttending = 0;
     
@@ -260,7 +264,9 @@ static NSInteger const kMessageMaximumCharacters = 500;
     self.seatsLabel.text = self.requestedSeats == 1 ?  NSLocalizedString(@"eventProfile.seat", nil): NSLocalizedString(@"eventProfile.seatsRequest", nil);
     
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
-    self.priceLabel.attributedText = [self createPriceStringWithPrice:@(self.event.price.integerValue * self.requestedSeats) andCoinSymbol:coinSymbol];
+    [self formatLabelWithPriceStringWithPrice:@((self.event.price.integerValue + TRUST_SAFETY_FEE)  * self.requestedSeats) andCoinSymbol:coinSymbol withSize:39.0 forLabel:self.priceLabel];
+    [self formatLabelWithPriceStringWithPrice:@(TRUST_SAFETY_FEE * self.requestedSeats) andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceFeeLabel];
+    [self formatLabelWithPriceStringWithPrice:@(self.event.price.integerValue * self.requestedSeats) andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceSuggestedLabel];
     
 }
 
@@ -276,8 +282,9 @@ static NSInteger const kMessageMaximumCharacters = 500;
     self.seatsLabel.text = self.requestedSeats == 1 ?  NSLocalizedString(@"eventProfile.seat", nil): NSLocalizedString(@"eventProfile.seatsRequest", nil);
     
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
-    self.priceLabel.attributedText = [self createPriceStringWithPrice:@(self.event.price.integerValue * self.requestedSeats) andCoinSymbol:coinSymbol];
-    
+    [self formatLabelWithPriceStringWithPrice:@((self.event.price.integerValue + TRUST_SAFETY_FEE)  * self.requestedSeats) andCoinSymbol:coinSymbol withSize:39.0 forLabel:self.priceLabel];
+    [self formatLabelWithPriceStringWithPrice:@(TRUST_SAFETY_FEE * self.requestedSeats) andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceFeeLabel];
+    [self formatLabelWithPriceStringWithPrice:@(self.event.price.integerValue * self.requestedSeats) andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceSuggestedLabel];
 }
 
 - (IBAction)sendRequestPressedButton:(id)sender {
@@ -287,6 +294,27 @@ static NSInteger const kMessageMaximumCharacters = 500;
     [self createSeatRequest];
     
 }
+
+
+- (void)formatLabelWithPriceStringWithPrice:(NSNumber *)price andCoinSymbol:(NSString *)coinSymbol withSize: (double) fontSize forLabel: (UILabel *) label {
+    
+    NSString *string = [NSString stringWithFormat:@"%@%@", coinSymbol, price];
+    
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:string];
+    UIFont *font = [UIFont fontWithName:label.font.fontName size: fontSize];
+    UIFont *smallFont = [UIFont fontWithName:label.font.fontName size: fontSize * 0.6];
+
+    [attString beginEditing];
+    [attString addAttribute:NSFontAttributeName value:(font) range:NSMakeRange(1, string.length - 1)];
+    [attString addAttribute:NSFontAttributeName value:(smallFont) range:NSMakeRange(0, 1)];
+    [attString addAttribute:(NSString*)kCTSuperscriptAttributeName value:@"1" range:NSMakeRange(0, 1)];
+    
+    [attString addAttribute:(NSString*)kCTForegroundColorAttributeName value:label.textColor range:NSMakeRange(0, string.length - 1)];
+    [attString endEditing];
+    
+    label.attributedText = attString;
+}
+
 
 #pragma mark - String Methods
 
