@@ -249,7 +249,7 @@
 
             break;
         case SideMenuHome:
-            return [self returnDefaultCell:tableView name:NSLocalizedString(@"sideMenu.BoatDay", nil) image:@"home_boatday_logo"];
+            return [self returnDefaultCell:tableView name:NSLocalizedString(@"sideMenu.home", nil) image:@"home_boatday_logo"];
             
             break;
         case SideMenuFindABoatDay:

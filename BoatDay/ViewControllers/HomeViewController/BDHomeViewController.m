@@ -136,7 +136,7 @@
     
     if ([Session sharedSession].hostRegistration &&
         [[Session sharedSession].hostRegistration.status integerValue] == HostRegistrationStatusAccepted) {
-        [self.findPassengersButton setTitle:NSLocalizedString(@"home.browseGuests.title", nil) forState:UIControlStateNormal];
+        [self.findPassengersButton setTitle:NSLocalizedString(@"home.browseUsers.title", nil) forState:UIControlStateNormal];
     }
     else {
         [self.findPassengersButton setTitle:NSLocalizedString(@"home.browseUsers.title", nil) forState:UIControlStateNormal];

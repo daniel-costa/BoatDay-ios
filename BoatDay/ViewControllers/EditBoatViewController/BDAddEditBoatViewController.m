@@ -667,7 +667,6 @@ static NSInteger const kMinumumDateYear = 1920;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     switch (indexPath.row) {
         case 1:
@@ -705,6 +704,8 @@ static NSInteger const kMinumumDateYear = 1920;
         default:
             break;
     }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     
 }
 

@@ -14,7 +14,7 @@
 "sideMenu.BoatDay"                  = "BOATDAY";
 "sideMenu.findABoatDay"             = "FIND A BOATDAY";
 "sideMenu.myProfile"                = "MY PROFILE";
-"sideMenu.myEvents"                 = "MY EVENTS";
+"sideMenu.myEvents"                 = "MY BOATDAYS";
 "sideMenu.notifications"            = "NOTIFICATIONS";
 "sideMenu.hostRegistration"         = "HOST REGISTRATION";
 "sideMenu.myBoats"                  = "HOST CENTER";
@@ -57,7 +57,7 @@
  */
 
 "home.findABoatButton.title"            = "FIND A BOATDAY";
-"home.createBoatDayButton.title"        = "CREATE BOATDAY";
+"home.createBoatDayButton.title"        = "CREATE A BOATDAY";
 "home.mustBeLoggedIn.text"              = "YOU MUST SIGN-IN WITH FACEBOOK\nTO ACCESS MORE BOATDAY FEATURES";
 "home.becomeAHost.title"                = "BECOME A HOST";
 "home.browseUsers.title"                = "BROWSE USERS";
@@ -168,7 +168,7 @@
 "myBoats.cell.added"                        = "Added";
 "myBoats.tableView.section.notApproved"     = "Not yet submitted";
 "myBoats.tableView.section.submited"        = "Submitted";
-"myBoats.payments"                          = "PAYMENT INFO";
+"myBoats.payments"                          = "PAYMENT ACCOUNT";
 
 /*
  * Boat Profile
@@ -474,7 +474,7 @@
 "eventCard.status.history.eventOver"            = "THIS EVENT IS OVER";
 "eventCard.status.eventIsLive"                  = "THIS EVENT IS LIVE";
 "eventCard.status.somethingWentWrong"           = "EVENT INFORMATION";
-"eventCard.view.openSeats"                      = "OPEN SEATS";
+"eventCard.view.openSeats"                      = "OPEN";
 "eventCard.view.totalSeats"                     = "TOTAL SEATS";
 
 /*
