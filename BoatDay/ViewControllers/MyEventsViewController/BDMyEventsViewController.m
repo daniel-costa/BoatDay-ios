@@ -143,7 +143,7 @@
 
 - (void) setupViewControllers {
     
-    self.eventHostingViewController = [[BDEventListViewController alloc] initWithEvents:self.hostingEvents];
+    self.eventHostingViewController = [[BDEventListViewController alloc] initWithEventsHostingAndHistory:self.hostingEvents];
 
     
     __weak BDMyEventsViewController *weakSelf = self;
@@ -164,7 +164,7 @@
         
     }];
     
-    self.eventHistoryViewController = [[BDEventListViewController alloc] initWithEvents:self.historyEvents];
+    self.eventHistoryViewController = [[BDEventListViewController alloc] initWithEventsHostingAndHistory:self.historyEvents];
     
     [self.eventHistoryViewController setEventTappedBlock:^(Event *event){
         

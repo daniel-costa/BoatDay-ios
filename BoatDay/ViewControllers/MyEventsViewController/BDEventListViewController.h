@@ -17,5 +17,5 @@ typedef void (^EventTappedBlock)(Event *event);
 - (instancetype)initWithEvents:(NSArray *)events NS_DESIGNATED_INITIALIZER;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+- (instancetype)initWithEventsHostingAndHistory:(NSArray *)events;
 @end

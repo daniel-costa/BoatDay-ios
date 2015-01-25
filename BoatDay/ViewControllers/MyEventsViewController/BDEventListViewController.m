@@ -21,14 +21,21 @@
     self = [super init];
     
     if( !self ) return nil;
-    
+
     _events = events;
 
-    
     return self;
     
 }
+- (instancetype)initWithEventsHostingAndHistory:(NSArray *)events{
+    NSArray *reorderEvents = [events sortedArrayUsingComparator:
+                              ^(Event *obj1, Event *obj2) {
+                                  return [obj2.startsAt compare:obj1.startsAt];
+                              }];
 
+    return [self initWithEvents:reorderEvents];
+
+}
 - (void)viewDidLayoutSubviews {
     
     [super viewDidLayoutSubviews];
@@ -81,7 +88,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     Event *event = self.events[indexPath.row];
-    
+   
     BDMyEventListCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[BDMyEventListCell reuseIdentifier]];
     
     NSDate *now = [NSDate date];
