@@ -396,7 +396,6 @@ static NSInteger const kMessageMaximumCharacters = 500;
         [[BDPaymentServiceManager sharedManager] chargeContributionWithRequestID:self.seatRequest.objectId sessionToken:user.sessionToken paymentToken:user.braintreePaymentToken merchantID:self.event.host.hostRegistration.merchantId amount:[@(self.contribution) stringValue] withBlock:^(BOOL success, NSString *error) {
             
             if (success) {
-                
                 self.seatRequest.userDidPayFromTheApp = @(YES);
                 [self.seatRequest saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                     

@@ -15,25 +15,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" id="rgz-JF-RFB" userLabel="Boat Name View">
-                        <rect key="frame" x="20" y="19" width="120" height="41"/>
+                        <rect key="frame" x="20" y="19" width="276" height="41"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENT NAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="goS-9o-j4f">
-                                <rect key="frame" x="0.0" y="0.0" width="120" height="14"/>
+                                <rect key="frame" x="0.0" y="0.0" width="273" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="The Beer Barge" minimumFontSize="17" id="Wgk-lc-BXR">
-                                <rect key="frame" x="0.0" y="14" width="120" height="27"/>
+                                <rect key="frame" x="0.0" y="14" width="276" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.1058823529" green="0.4549019608" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" id="TLS-Am-qaZ" userLabel="bottom Line">
-                                <rect key="frame" x="0.0" y="40" width="120" height="1"/>
+                                <rect key="frame" x="0.0" y="40" width="273" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -57,43 +57,8 @@
                                 <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="calculateEstimatedIncome:" destination="xw4-FI-mcP" eventType="valueChanged" id="e3l-KQ-tTz"/>
-                                    <action selector="calculateEstimatedIncomes:" destination="xw4-FI-mcP" eventType="editingDidEnd" id="qo4-Vf-bPn"/>
-                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" id="bQ5-cL-xAC" userLabel="bottom Line">
-                                <rect key="frame" x="-2" y="39" width="120" height="1"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </view>
-                    <view contentMode="scaleToFill" id="Mde-HY-vVJ" userLabel="Income">
-                        <rect key="frame" x="178" y="68" width="120" height="41"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qSL-mF-UTJ">
-                                <rect key="frame" x="0.0" y="0.0" width="120" height="14"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EEH-yh-VgR">
-                                <rect key="frame" x="0.0" y="10" width="120" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="0">
-                                    <color key="titleColor" red="0.1058823529" green="0.4549019608" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <view hidden="YES" contentMode="scaleToFill" id="ysY-YC-sig" userLabel="bottom Line">
                                 <rect key="frame" x="-2" y="39" width="120" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -165,7 +130,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <view contentMode="scaleToFill" id="gxh-ry-One" userLabel="Departure Time">
-                        <rect key="frame" x="22" y="227" width="276" height="41"/>
+                        <rect key="frame" x="20" y="227" width="276" height="41"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="END TIME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P1b-pl-x8d">
@@ -196,7 +161,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <view contentMode="scaleToFill" id="viS-1n-Iok" userLabel="Type View">
-                        <rect key="frame" x="178" y="19" width="120" height="41"/>
+                        <rect key="frame" x="178" y="68" width="120" height="41"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVAILABLE SEATS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cD1-a0-b3V">
@@ -206,8 +171,13 @@
                                 <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" id="ena-cc-D6x" userLabel="bottom Line">
+                                <rect key="frame" x="0.0" y="40" width="120" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4Cf-JW-mwu">
-                                <rect key="frame" x="0.0" y="10" width="120" height="22"/>
+                                <rect key="frame" x="0.0" y="17" width="120" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="0">
@@ -218,11 +188,6 @@
                                     <color key="titleColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <view contentMode="scaleToFill" id="ena-cc-D6x" userLabel="bottom Line">
-                                <rect key="frame" x="0.0" y="40" width="120" height="1"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
@@ -235,8 +200,6 @@
                 <outlet property="availableSeatsLabel" destination="cD1-a0-b3V" id="7Qm-fV-d0E"/>
                 <outlet property="endTimeButton" destination="fcQ-gw-GQx" id="EVx-qF-yl7"/>
                 <outlet property="endTimeLabel" destination="P1b-pl-x8d" id="Dnz-Fk-izO"/>
-                <outlet property="estimatedIncomeButton" destination="EEH-yh-VgR" id="BO0-3i-Rgn"/>
-                <outlet property="estimatedIncomeLabel" destination="qSL-mF-UTJ" id="wvW-r0-aK4"/>
                 <outlet property="eventNameLabel" destination="goS-9o-j4f" id="Vsf-MV-kxW"/>
                 <outlet property="eventNameTextField" destination="Wgk-lc-BXR" id="lvS-wZ-chg"/>
                 <outlet property="locationButton" destination="760-Hc-NlQ" id="Rgf-GM-2PR"/>

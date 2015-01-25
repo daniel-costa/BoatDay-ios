@@ -167,9 +167,10 @@ static NSInteger const kMessageMaximumCharacters = 500;
     self.dateLabel.font = [UIFont quattroCentoRegularFontWithSize:11.0];
     
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
-    [self formatLabelWithPriceStringWithPrice:@(self.event.price.integerValue + TRUST_SAFETY_FEE) andCoinSymbol:coinSymbol withSize:39.0 forLabel:self.priceLabel];
-    [self formatLabelWithPriceStringWithPrice:@(TRUST_SAFETY_FEE) andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceFeeLabel];
-    [self formatLabelWithPriceStringWithPrice:self.event.price andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceSuggestedLabel];
+    ;
+    [self formatLabelWithPriceStringWithPrice:@([GetSeatPrice(self.event.price) integerValue] + BRAINTREE_FIX_FEE) andCoinSymbol:coinSymbol withSize:39.0 forLabel:self.priceLabel];
+    [self formatLabelWithPriceStringWithPrice:@(BRAINTREE_FIX_FEE) andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceFeeLabel];
+    [self formatLabelWithPriceStringWithPrice:GetSeatPrice(self.event.price) andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceSuggestedLabel];
     
     NSInteger numberOfUsersAttending = 0;
     
@@ -276,9 +277,12 @@ static NSInteger const kMessageMaximumCharacters = 500;
     self.seatsLabel.text = self.requestedSeats == 1 ?  NSLocalizedString(@"eventProfile.seat", nil): NSLocalizedString(@"eventProfile.seatsRequest", nil);
     
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
-    [self formatLabelWithPriceStringWithPrice:@((self.event.price.integerValue + TRUST_SAFETY_FEE)  * self.requestedSeats) andCoinSymbol:coinSymbol withSize:39.0 forLabel:self.priceLabel];
-    [self formatLabelWithPriceStringWithPrice:@(TRUST_SAFETY_FEE * self.requestedSeats) andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceFeeLabel];
-    [self formatLabelWithPriceStringWithPrice:@(self.event.price.integerValue * self.requestedSeats) andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceSuggestedLabel];
+    
+    double pricePerSeat = [GetSeatPrice(self.event.price) doubleValue];
+    [self formatLabelWithPriceStringWithPrice:@(pricePerSeat * self.requestedSeats + BRAINTREE_FIX_FEE)
+                                andCoinSymbol:coinSymbol withSize:39.0 forLabel:self.priceLabel];
+    [self formatLabelWithPriceStringWithPrice:@(pricePerSeat * self.requestedSeats)
+                                andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceSuggestedLabel];
     
 }
 
@@ -299,9 +303,13 @@ static NSInteger const kMessageMaximumCharacters = 500;
     self.seatsLabel.text = self.requestedSeats == 1 ?  NSLocalizedString(@"eventProfile.seat", nil): NSLocalizedString(@"eventProfile.seatsRequest", nil);
     
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
-    [self formatLabelWithPriceStringWithPrice:@((self.event.price.integerValue + TRUST_SAFETY_FEE)  * self.requestedSeats) andCoinSymbol:coinSymbol withSize:39.0 forLabel:self.priceLabel];
-    [self formatLabelWithPriceStringWithPrice:@(TRUST_SAFETY_FEE * self.requestedSeats) andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceFeeLabel];
-    [self formatLabelWithPriceStringWithPrice:@(self.event.price.integerValue * self.requestedSeats) andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceSuggestedLabel];
+    
+    double pricePerSeat = [GetSeatPrice(self.event.price) doubleValue];
+    [self formatLabelWithPriceStringWithPrice:@(pricePerSeat * self.requestedSeats + BRAINTREE_FIX_FEE)
+                                andCoinSymbol:coinSymbol withSize:39.0 forLabel:self.priceLabel];
+    [self formatLabelWithPriceStringWithPrice:@(pricePerSeat * self.requestedSeats)
+                                andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceSuggestedLabel];
+
 }
 
 - (IBAction)sendRequestPressedButton:(id)sender {

@@ -121,7 +121,8 @@
     self.dateLabel.text = [NSString stringWithFormat:@"%@\nDuration: %@", eventDate, timeLeft];
     
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
-    self.priceLabel.attributedText = [self createPriceStringWithPrice:event.price andCoinSymbol:coinSymbol];
+    
+    self.priceLabel.attributedText = [self createPriceStringWithPrice:GetSeatPrice([NSNumber numberWithInt:event.price.integerValue])  andCoinSymbol:coinSymbol];
     
     if (event.host.pictures.count) {
         

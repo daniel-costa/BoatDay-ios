@@ -32,14 +32,19 @@
     }
     
     self.eventName.font = [UIFont abelFontWithSize:15.0];
-    self.eventName.textColor = [UIColor whiteColor];
+    self.eventName.textColor = [UIColor greenBoatDay];
     
     self.dateLabel.font = [UIFont abelFontWithSize:11.0];
-    self.dateLabel.textColor = RGB(18.0, 78.0, 88.0);
+//    self.dateLabel.textColor = RGB(18.0, 78.0, 88.0); 
+    self.dateLabel.textColor = [UIColor greenBoatDay];
     self.dateLabel.numberOfLines = 0;
     
-    [UIView setRoundedView:self.placeholder
-                toDiameter:CGRectGetHeight(self.placeholder.frame)];
+    self.price.textColor = [UIColor greenBoatDay];
+    
+    self.infoLabel.font = [UIFont abelFontWithSize:11.0];
+    self.infoLabel.textColor = [UIColor darkGreenBoatDay];
+    
+    [UIView setRoundedView:self.placeholder toDiameter:CGRectGetHeight(self.placeholder.frame)];
     
     [self.picture.layer setBorderColor:[UIColor whiteColor].CGColor];
     
@@ -55,11 +60,41 @@
     
     NSDateFormatter *dateFormatter = [NSDateFormatter eventsCardDateFormatter];
     NSString *eventDate = [dateFormatter stringFromDate:event.startsAt];
-    NSString *timeLeft = [event.endDate timeLeftSinceDate:event.startsAt];
-    self.dateLabel.text = [NSString stringWithFormat:@"%@\nDuration: %@", eventDate, timeLeft];
-    
+//    NSString *timeLeft = [event.endDate timeLeftSinceDate:event.startsAt];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@", eventDate];
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
-    self.price.attributedText = [self createPriceStringWithPrice:event.price andCoinSymbol:coinSymbol];
+    
+    if ([[NSDate date] compare:event.startsAt] == NSOrderedDescending) {
+        if([event.host isEqual:[User currentUser]]) {
+            self.infoLabel.text = @"Hosted";
+            self.price.attributedText = [self createPriceStringWithPrice:@(-1) andCoinSymbol:coinSymbol];
+        } else {
+            self.infoLabel.text = @"Attended";
+            self.price.attributedText = [self createPriceStringWithPrice:@(1) andCoinSymbol:coinSymbol];
+        }
+    }  else {
+        if([event.host isEqual:[User currentUser]]) {
+            long booked = event.availableSeats.integerValue - event.freeSeats.integerValue;
+            self.infoLabel.text = [NSString stringWithFormat:@"%li out of %li seat%@ booked", booked, event.availableSeats.integerValue, event.availableSeats.integerValue > 1 ? @"s" : @"" ];
+            self.price.attributedText = [self createPriceStringWithPrice:event.price andCoinSymbol:coinSymbol];
+        } else {
+            for (SeatRequest *request in event.seatRequests) {
+                if(![request isEqual:[NSNull null]]) {
+                    if ([request.user isEqual:[User currentUser]]) {
+                        // cant be rejected
+                        if ([request.status integerValue] == SeatRequestStatusAccepted) {
+                            self.infoLabel.text = [NSString stringWithFormat:@"%li seat%@ booked", request.numberOfSeats.integerValue, request.numberOfSeats.integerValue > 1 ? @"s" : @"" ];
+                        }
+                    }
+                }
+            }
+            
+            self.price.attributedText = [self createPriceStringWithPrice:GetSeatPrice(event.price) andCoinSymbol:coinSymbol];
+        }
+    }
+    
+
+    
     
     if (event.boat.pictures.count) {
         
@@ -93,46 +128,46 @@
 
 - (void)changeCellStateHighlighted:(BOOL)highlighted {
     
-    if (highlighted) {
-        
-        [self setCellColor:[UIColor darkGreenBoatDay]];
-        self.dateLabel.textColor = [UIColor whiteColor];
-        
-    }
-    else {
-        
-        if (self.shouldBeGray) {
-            [self setCellColor:[UIColor grayBoatDay]];
-            self.dateLabel.textColor = [UIColor whiteColor];
-        }
-        else {
-            [self setCellColor:RGB(58.0, 191.0, 187.0)];
-            self.dateLabel.textColor = RGB(18.0, 78.0, 88.0);
-        }
-    }
+//    if (highlighted) {
+//        
+//        [self setCellColor:[UIColor darkGreenBoatDay]];
+//        self.dateLabel.textColor = [UIColor whiteColor];
+//        
+//    }
+//    else {
+//        
+//        if (self.shouldBeGray) {
+//            [self setCellColor:[UIColor grayBoatDay]];
+//            self.dateLabel.textColor = [UIColor whiteColor];
+//        }
+//        else {
+//            [self setCellColor:RGB(58.0, 191.0, 187.0)];
+//            self.dateLabel.textColor = RGB(18.0, 78.0, 88.0);
+//        }
+//    }
     
 }
 
 - (void)changeCellStateSelected:(BOOL)selected {
     
-    if (selected) {
-        
-        [self setCellColor:[UIColor darkGreenBoatDay]];
-        self.dateLabel.textColor = [UIColor whiteColor];
-        
-    }
-    else {
-        
-        if (self.shouldBeGray) {
-            [self setCellColor:[UIColor grayBoatDay]];
-            self.dateLabel.textColor = [UIColor whiteColor];
-        }
-        else {
-            [self setCellColor:RGB(58.0, 191.0, 187.0)];
-            self.dateLabel.textColor = RGB(18.0, 78.0, 88.0);
-        }
-        
-    }
+//    if (selected) {
+//        
+//        [self setCellColor:[UIColor darkGreenBoatDay]];
+//        self.dateLabel.textColor = [UIColor whiteColor];
+//        
+//    }
+//    else {
+//        
+//        if (self.shouldBeGray) {
+//            [self setCellColor:[UIColor grayBoatDay]];
+//            self.dateLabel.textColor = [UIColor whiteColor];
+//        }
+//        else {
+//            [self setCellColor:RGB(58.0, 191.0, 187.0)];
+//            self.dateLabel.textColor = RGB(18.0, 78.0, 88.0);
+//        }
+//        
+//    }
     
 }
 

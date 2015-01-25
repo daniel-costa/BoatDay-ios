@@ -580,7 +580,7 @@
     
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
     
-    NSString *priceString = [NSString stringWithFormat:@"%@%@", coinSymbol, price];
+    NSString *priceString = [NSString stringWithFormat:@"%@%@", coinSymbol, GetSeatPrice(price)];
     
     NSString *string = [NSString stringWithFormat:@"%@ %@", suggestedContribution, priceString];
     

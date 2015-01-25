@@ -422,17 +422,6 @@ static NSInteger const kMaximumAvailableSeats = 15;
     
 }
 
-- (void)calculateEstimatedIncomes {
-
-    double pricePerSeatWithFee      = [self.pricePerSeat integerValue] + TRUST_SAFETY_FEE;
-    double totalPricePerSeatWithFee = self.availableSeats * pricePerSeatWithFee;
-    double brainTreeFee             = BRAINTREE_PERCENTAGE * totalPricePerSeatWithFee + BRAINTREE_FIX_FEE * self.availableSeats;
-    
-    double total = (totalPricePerSeatWithFee - brainTreeFee - (TRUST_SAFETY_FEE * self.availableSeats) ) * (1 - BOATDAY_FEE);
-    
-//    self.estimatedIncomeTextField.text = [NSString stringWithFormat:@"%.2f $", total];
-}
-
 - (UITableViewCell *) lastRowCellForIndexPath:(NSIndexPath*)indexPath {
     
     BDEditEventLastRowCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[BDEditEventLastRowCell reuseIdentifier]];
@@ -459,29 +448,6 @@ static NSInteger const kMaximumAvailableSeats = 15;
         cell.availableSeatsButton.userInteractionEnabled = NO;
         [cell.availableSeatsButton setTitle:NSLocalizedString(@"addEditEvent.selectBoatFirst", nil) forState:UIControlStateNormal];
     }
-    
-    cell.estimatedIncomeLabel.text = NSLocalizedString(@"addEditEvent.estimatedIncome", nil);
-    // [cell.estimatedIncomeTextField setTitle:[NSString stringWithFormat:@"%ld", (long)self.availableSeats] forState:UIControlStateNormal];
-    [cell.estimatedIncomeButton removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
-    [cell.estimatedIncomeButton addTarget:self action:@selector(availableSeatsButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    cell.estimatedIncomeButton.userInteractionEnabled = YES;
-    
-    if(!self.selectedBoat) {
-        cell.estimatedIncomeButton.userInteractionEnabled = NO;
-        [cell.estimatedIncomeButton setTitle:NSLocalizedString(@"addEditEvent.selectBoatFirst", nil) forState:UIControlStateNormal];
-    }
-    
-//    - (void) pricePerSeatEdited:(UITextField *)textField {
-//        
-//        double amountOfSeats = [self.availableSeatsButton.currentTitle doubleValue];
-//        double pricePerSeat = [self.pricePerSeatTextField.text doubleValue];
-//        
-//        if(amountOfSeats > 0) {
-//            [self calculateEstimatedIncomesWithSeats: amountOfSeats AndPrice: pricePerSeat];
-//        }
-//        
-//        NSLog(@"%f %f", amountOfSeats, pricePerSeat);
-//    }
     
     cell.pricePerSeatLabel.text = NSLocalizedString(@"addEditEvent.pricePerSeat", nil);
     cell.pricePerSeatTextField.text = self.pricePerSeat;
@@ -625,8 +591,6 @@ static NSInteger const kMaximumAvailableSeats = 15;
     
     if (textField.tag == 2) { // Price Per Set
         self.pricePerSeat = textField.text;
-        
-        [self calculateEstimatedIncomes];
     }
     
 }

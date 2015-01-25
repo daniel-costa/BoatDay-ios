@@ -15,6 +15,15 @@
 #define setFrameY(view, value) { CGRect tempframe = view.frame; tempframe.origin.y = value; view.frame = tempframe; }
 
 
+#define TRUST_SAFETY_FEE 4.0
+#define BRAINTREE_PERCENTAGE 0.029
+#define BRAINTREE_FIX_FEE 0.30
+#define BOATDAY_FEE 0.27
+
+#define GetSeatPrice_(price)                [NSNumber numberWithDouble:( (price.doubleValue + TRUST_SAFETY_FEE) * (1 + BOATDAY_FEE) * (1 + BRAINTREE_PERCENTAGE) )]
+#define GetSeatPrice(price)                 [NSNumber numberWithDouble:ceil([GetSeatPrice_(price) doubleValue])]
+
+
 #define setCenterX(__view__, __x__) { __view__.center = CGPointMake(__x__, __view__.center.y); }
 
 #define setCenterY(__view__, __y__) { __view__.center = CGPointMake(__view__.center.x, __y__); }
