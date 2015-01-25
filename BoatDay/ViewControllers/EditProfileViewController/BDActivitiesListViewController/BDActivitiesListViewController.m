@@ -36,7 +36,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+        self.screenName =@"BDActivitiesListViewController";
+
     // Register nib cell class so they can be used in cellForRow
     UINib *storesCellNib = [UINib nibWithNibName:NSStringFromClass([BDActivitiesListCell class]) bundle:nil];
     [self.tableView registerNib:storesCellNib forCellReuseIdentifier:[BDActivitiesListCell reuseIdentifier]];
@@ -144,7 +145,12 @@
 #pragma mark - BDActivitiesListCell Delegate Methods
 
 - (void)viewTappedAtSection:(NSInteger)section andRow:(NSInteger)row isSelected:(BOOL)selected {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"BDActivitiesListCellTapped"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     NSString *key = [[Session sharedSession].activitiesByTypes allKeys][section];
     NSMutableArray *typeArray = [Session sharedSession].activitiesByTypes[key];
     Activity *activity = typeArray[row];

@@ -82,7 +82,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+        self.screenName =@"BDBoatViewController";
+
     // setup navigation bar buttons
     [self setupNavigationBar];
     
@@ -118,6 +119,7 @@
         setFrameHeight(self.mainScrollView, CGRectGetHeight(self.contentView.frame) - CGRectGetMaxY(self.rejectedView.frame));
         
     }
+
     
 }
 
@@ -130,16 +132,15 @@
     if ([self.boat.owner.objectId isEqualToString:[User currentUser].objectId]) {
         
         // create save button to navigatio bar at top of the view
-        UIBarButtonItem *editButton = [[UIBarButtonItem alloc]
-                                       initWithTitle:NSLocalizedString(@"boatProfile.edit", nil)
-                                       style:UIBarButtonItemStyleDone
-                                       target:self
-                                       action:@selector(editButtonPressed:)];
+        UIButton *editButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        editButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+        [editButton setImage:[UIImage imageNamed:@"ico-Edit"] forState:UIControlStateNormal];
+        [editButton addTarget:self action:@selector(editButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         
-        self.navigationItem.rightBarButtonItem = editButton;
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:editButton];
         
     }
-    
+
 }
 
 // setup view
@@ -315,7 +316,12 @@
 #pragma mark - Action Methods
 
 -(void) editButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"editButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     BDAddEditBoatViewController *editBoatViewController = [[BDAddEditBoatViewController alloc] initWithBoat:self.boat];
     [editBoatViewController setBoatDeletedBlock:^(){
         
@@ -387,7 +393,12 @@
 }
 
 - (void)pressedButtonContainerView:(UIView*)view {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"pressedButtonContainerView"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     if (view == self.rejectedView) {
         
         BDBoatMessageViewController *messageViewController = [[BDBoatMessageViewController alloc] initWithNotificationForBoat:self.boat];

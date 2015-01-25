@@ -51,7 +51,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+        self.screenName =@"BDHostRegistrationTermsViewController";
+
     self.title = NSLocalizedString(@"hostRegistration.terms.title", nil);
     
     [self updateConsentBackgroundButton];
@@ -79,7 +80,12 @@
 #pragma mark - IBAction Methods
 
 - (IBAction)submitButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"submitButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     if (self.consentBackgroundCheck && self.agreeWithTermsOfService) {
         
         [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
@@ -173,7 +179,12 @@
 }
 
 - (IBAction)consentBackgroundButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"consentBackgroundButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self.consentBackgroundButton.layer removeAllAnimations];
     self.consentBackgroundButton.transform = CGAffineTransformIdentity;
     
@@ -198,7 +209,12 @@
 }
 
 - (IBAction)agreeWithTermsOfServiceButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"agreeWithTermsOfServiceButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self.agreeWithTermsOfServiceButton.layer removeAllAnimations];
     self.agreeWithTermsOfServiceButton.transform = CGAffineTransformIdentity;
     
@@ -222,7 +238,12 @@
 }
 
 - (IBAction)termsOfServiceButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"termsOfServiceButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     BDTermsOfServiceViewController *termsViewController = [[BDTermsOfServiceViewController alloc] init];
     [self.navigationController pushViewController:termsViewController animated:YES];
     

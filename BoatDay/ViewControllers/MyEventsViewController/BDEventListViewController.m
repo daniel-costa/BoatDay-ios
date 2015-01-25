@@ -32,7 +32,7 @@
 - (void)viewDidLayoutSubviews {
     
     [super viewDidLayoutSubviews];
-    
+
     [self setupTableView];
     
     if (!self.events.count) {

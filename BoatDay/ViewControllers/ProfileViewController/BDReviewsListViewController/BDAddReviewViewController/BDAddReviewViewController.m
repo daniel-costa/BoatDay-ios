@@ -55,7 +55,8 @@ static NSInteger const kReviewMaximumCharacters = 500;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    self.screenName =@"BDAddReviewViewController";
+
     self.title = NSLocalizedString(@"addReview.title", nil);
     
     [self setupView];
@@ -170,18 +171,20 @@ static NSInteger const kReviewMaximumCharacters = 500;
 - (void) setupNavigationBar {
     
     // create save button to navigatio bar at top of the view
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:NSLocalizedString(@"editProfile.save", nil)
-                                   style:UIBarButtonItemStyleDone
-                                   target:self
-                                   action:@selector(saveButtonPressed)];
+    UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    saveButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+    [saveButton setImage:[UIImage imageNamed:@"ico-save"] forState:UIControlStateNormal];
+    [saveButton addTarget:self action:@selector(saveButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     
-    self.navigationItem.rightBarButtonItem = saveButton;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:saveButton];
     
 }
 
 - (void) getUserImage {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"getUserImage"
+                                                                label:self.screenName
+                                                                value:nil] build]];
     // user image is "hidden" while is getting its data on background
     self.userLittleImageView.alpha = 0.0;
     
@@ -211,7 +214,11 @@ static NSInteger const kReviewMaximumCharacters = 500;
 #pragma mark - Navigation Bar Button Actions
 
 - (void) saveButtonPressed {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"saveButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
     [self.textView resignFirstResponder];
     
     // shows some loading view so the user can see that is saving

@@ -118,6 +118,8 @@ static NSInteger const kMinumumDateYear = 1920;
     
     [super viewDidLoad];
     
+    self.screenName =@"BDAddEditBoatViewController";
+
     // set user data
     self.imagesArray = [self.boat.pictures mutableCopy];
     
@@ -276,24 +278,20 @@ static NSInteger const kMinumumDateYear = 1920;
     
     self.title = NSLocalizedString(@"addEditBoat.edit.title", nil);
     
-    // create save button to navigatio bar at top of the view
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:NSLocalizedString(@"addEditBoat.save", nil)
-                                   style:UIBarButtonItemStyleDone
-                                   target:self
-                                   action:@selector(saveButtonPressed)];
+    UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    saveButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+    [saveButton setImage:[UIImage imageNamed:@"ico-save"] forState:UIControlStateNormal];
+    [saveButton addTarget:self action:@selector(saveButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     
-    self.navigationItem.rightBarButtonItem = saveButton;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:saveButton];
     
-    // create cancel button to navigatio bar at top of the view
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
-                                     initWithTitle:NSLocalizedString(@"addEditBoat.cancel", nil)
-                                     style:UIBarButtonItemStyleDone
-                                     target:self
-                                     action:@selector(cancelButtonPressed)];
     
-    self.navigationItem.leftBarButtonItem = cancelButton;
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    cancelButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+    [cancelButton setImage:[UIImage imageNamed:@"ico-Cancel"] forState:UIControlStateNormal];
+    [cancelButton addTarget:self action:@selector(cancelButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
 }
 
 #pragma mark - Navigation Bar Button Actions
@@ -924,6 +922,12 @@ static NSInteger const kMinumumDateYear = 1920;
 
 - (void) imageButtonPressed:(id)sender {
     
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"imageButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     UIButton *imageButton = (UIButton*)sender;
     
     if (imageButton.tag == 0) {
@@ -972,7 +976,12 @@ static NSInteger const kMinumumDateYear = 1920;
 }
 
 - (void) closeButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"closeButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     UIButton *imageButton = (UIButton*)sender;
     NSInteger index = imageButton.tag-1;
     
@@ -1138,7 +1147,12 @@ static NSInteger const kMinumumDateYear = 1920;
 #pragma mark - Action Methods
 
 - (void) buildYearButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"buildYearButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy"];
     int thisYear  = [[formatter stringFromDate:[NSDate date]] intValue];
@@ -1174,7 +1188,12 @@ static NSInteger const kMinumumDateYear = 1920;
 }
 
 - (void) locationButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"locationButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     BDLocationViewController *editBoatViewController = [[BDLocationViewController alloc] initWithPFGeoPoint:self.boatLocation];
     editBoatViewController.delegate = self;
     
@@ -1185,7 +1204,12 @@ static NSInteger const kMinumumDateYear = 1920;
 }
 
 - (IBAction)bottomButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"bottomButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     if (self.boat) {
         
         if ([self.boat.status intValue] == BoatStatusNotSubmited) {
@@ -1261,7 +1285,12 @@ static NSInteger const kMinumumDateYear = 1920;
 }
 
 - (IBAction)deleteDraftButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"deleteDraftButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"addEditBoat.deleteVerification", nil)
                                 message:NSLocalizedString(@"addEditBoat.deleteMessage", nil)
                        cancelButtonItem:[RIButtonItem itemWithLabel:NSLocalizedString(@"certifications.delete.noButton", nil) action:nil]

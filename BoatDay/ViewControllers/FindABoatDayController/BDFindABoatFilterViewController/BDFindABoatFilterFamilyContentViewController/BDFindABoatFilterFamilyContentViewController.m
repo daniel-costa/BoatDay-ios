@@ -38,7 +38,8 @@ extern const NSString * kAlcoholPermitted;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+        self.screenName =@"BDFindABoatFilterFamilyContentViewController";
+
     self.title = NSLocalizedString(@"familyContent.title", nil);
     
     [self setupTableView];

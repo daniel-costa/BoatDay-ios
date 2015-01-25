@@ -132,7 +132,8 @@
     [super viewDidLoad];
     
     self.title = NSLocalizedString(@"profile.title", nil);
-    
+    self.screenName =@"BDProfileViewController";
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -200,20 +201,17 @@
         
         if ([self.user isEqual:[User currentUser]]) {
             
-            // create save button to navigatio bar at top of the view
-            UIBarButtonItem *editButton = [[UIBarButtonItem alloc]
-                                           initWithTitle:NSLocalizedString(@"profile.edit", nil)
-                                           style:UIBarButtonItemStyleDone
-                                           target:self
-                                           action:@selector(editButtonPressed:)];
+            UIButton *editButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            editButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+            [editButton setImage:[UIImage imageNamed:@"ico-Edit"] forState:UIControlStateNormal];
+            [editButton addTarget:self action:@selector(editButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
             
-            self.navigationItem.rightBarButtonItem = editButton;
-            
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:editButton];
         } else {
             
             UIButton *reportButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            reportButton.frame = CGRectMake(0, 0, 28, 20);
-            [reportButton setImage:[UIImage imageNamed:@"nav_flag"] forState:UIControlStateNormal];
+            reportButton.frame = CGRectMake(0, 0, 30.0, 30.0);
+            [reportButton setImage:[UIImage imageNamed:@"ico-Flag"] forState:UIControlStateNormal];
             [reportButton addTarget:self action:@selector(reportButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
             UIBarButtonItem *reportButtonItem = [[UIBarButtonItem alloc] initWithCustomView:reportButton];
             self.navigationItem.rightBarButtonItem = reportButtonItem;
@@ -756,19 +754,30 @@
 
 
 - (IBAction)seatRequestRejectButtonPressed:(id)sender {
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"seatRequestRejectButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
     
+
     [self setSeatRequestStatus:SeatRequestStatusRejected];
     
 }
 
 - (IBAction)seatRequestAcceptButtonPressed:(id)sender {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"seatRequestAcceptButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
     [self setSeatRequestStatus:SeatRequestStatusAccepted];
     
 }
 
 - (IBAction)seatRequestRemoveButtonPressed:(id)sender {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"seatRequestRemoveButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
     [self setSeatRequestStatus:SeatRequestStatusRejected];
     
 }
@@ -895,14 +904,20 @@
 #pragma mark - Action Methods
 
 - (IBAction)reviewsButtonPressed:(id)sender {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"reviewsButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
     BDReviewsListViewController *reviewListViewController = [[BDReviewsListViewController alloc] initWithUser:self.user];
     [self.navigationController pushViewController:reviewListViewController animated:YES];
     
 }
 
 - (IBAction)reportButtonPressed:(id)sender {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"reportButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
     BDReportUserViewController *reportUserViewController = [[BDReportUserViewController alloc] initWithUserToReport:self.user];
     
     UINavigationController *navigationController = [[MMNavigationController alloc] initWithRootViewController:reportUserViewController];
@@ -912,14 +927,20 @@
 }
 
 - (void) certificationsListButtonPressed:(id)sender {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"certificationsListButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
     BDUserCertificationsViewController *userCertificationsViewController = [[BDUserCertificationsViewController alloc] initWithUser:self.user];
     [self.navigationController pushViewController:userCertificationsViewController animated:YES];
     
 }
 
 - (IBAction)inviteButtonPressed:(id)sender {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"inviteButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
     BDInviteUserViewController *inviteUserViewController = [[BDInviteUserViewController alloc] initWithUser:self.user];
     
     UINavigationController *navigationController = [[MMNavigationController alloc] initWithRootViewController:inviteUserViewController];
@@ -929,7 +950,10 @@
 }
 
 - (void) editButtonPressed:(id)sender {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"editButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
     BDEditProfileViewController *editUserViewController = [[BDEditProfileViewController alloc] init];
     
     UINavigationController *navigationController = [[MMNavigationController alloc] initWithRootViewController:editUserViewController];
@@ -1049,7 +1073,10 @@
 }
 
 -(void) friendButtonPressed:(id)sender {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"friendButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
     UIButton *userButton = (UIButton*)sender;
     User *friend = self.friends[userButton.tag];
     

@@ -23,6 +23,8 @@
     
     [super viewDidLoad];
     
+    self.screenName =@"BDTermsOfServiceViewController";
+
     self.title = NSLocalizedString(@"termsOfService.title", nil);
 
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];

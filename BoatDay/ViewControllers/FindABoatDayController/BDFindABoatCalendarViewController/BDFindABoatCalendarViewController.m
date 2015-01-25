@@ -40,7 +40,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+        self.screenName =@"BDFindABoatCalendarViewController";
+
     self.eventsToShow = [[NSMutableArray alloc] init];
     
     [self setupCalendar];

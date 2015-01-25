@@ -29,6 +29,8 @@
     
     [super viewDidLoad];
     
+    self.screenName =@"BDAboutViewController";
+
     self.title = NSLocalizedString(@"aboutView.title", nil);
     
     [self createPeopleArray];
@@ -255,6 +257,12 @@
 
 #pragma mark - Get Terms
 - (void) pushToTermsCondition:(UITapGestureRecognizer *)sender{
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"pushToTermsCondition"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     BDTermsOfServiceViewController *termsOfServiceViewController = [[BDTermsOfServiceViewController alloc] init];
     [self.navigationController pushViewController:termsOfServiceViewController animated:YES];
 }

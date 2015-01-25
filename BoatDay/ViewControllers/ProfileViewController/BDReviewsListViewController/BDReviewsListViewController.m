@@ -37,7 +37,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    self.screenName =@"BDReviewsListViewController";
+
     self.title = NSLocalizedString(@"reviews.title", nil);
     
     // setup view
@@ -72,7 +73,11 @@
 }
 
 - (void) addReviewButtonPressed {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"addReviewButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
     BDAddReviewViewController *addReviewViewController = [[BDAddReviewViewController alloc] initWithUserToReview:self.user];
     
     [self.navigationController pushViewController:addReviewViewController animated:YES];

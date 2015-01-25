@@ -59,7 +59,8 @@ CGFloat const kMinDistanceLocation    = 0.5;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+        self.screenName =@"BDFindABoatDayViewController";
+
     self.title = NSLocalizedString(@"findABoat.title", nil);
     
     // Set default filter values
@@ -119,8 +120,8 @@ CGFloat const kMinDistanceLocation    = 0.5;
 - (void) setupNavigationBar {
     
     UIButton *filterButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    filterButton.frame = CGRectMake(0.0, 0.0, 20.0, 22.0);
-    [filterButton setImage:[UIImage imageNamed:@"nav_filter"] forState:UIControlStateNormal];
+    filterButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+    [filterButton setImage:[UIImage imageNamed:@"ico-Filter"] forState:UIControlStateNormal];
     [filterButton addTarget:self action:@selector(filterButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     self.filterButton = [[UIBarButtonItem alloc] initWithCustomView:filterButton];
     
@@ -204,7 +205,12 @@ CGFloat const kMinDistanceLocation    = 0.5;
 }
 
 - (void) changeViewControllerToIndex:(FindABoatTab)index {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"segmentedControlChangeView"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     self.segmentedControl.userInteractionEnabled = NO;
     
     UIViewController *fromViewController = [self.childViewControllers lastObject];
@@ -484,7 +490,12 @@ CGFloat const kMinDistanceLocation    = 0.5;
 #pragma mark - Action Methods
 
 - (void) filterButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"filterButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     BDFindABoatFilterViewController *filterViewController = [[BDFindABoatFilterViewController alloc] initWithFilterDictionary:self.filterDictionary];
     
     [filterViewController setFilterDictionaryChangeBlock:^(NSMutableDictionary *filterDictionary) {

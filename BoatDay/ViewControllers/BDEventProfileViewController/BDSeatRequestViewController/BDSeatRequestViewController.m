@@ -75,6 +75,8 @@ static NSInteger const kMessageMaximumCharacters = 500;
     
     [super viewDidLoad];
     
+    self.screenName =@"BDSeatRequestViewController";
+
     [self setupView];
     
 }
@@ -245,7 +247,12 @@ static NSInteger const kMessageMaximumCharacters = 500;
 #pragma mark - Navigation Bar Button Actions
 
 - (void) cancelButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"cancelButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self.textView resignFirstResponder];
     
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -253,7 +260,12 @@ static NSInteger const kMessageMaximumCharacters = 500;
 }
 
 - (IBAction)minusButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"minusButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     self.requestedSeats--;
     
     if (self.requestedSeats < 1) {
@@ -271,7 +283,12 @@ static NSInteger const kMessageMaximumCharacters = 500;
 }
 
 - (IBAction)plusButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"plusButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     self.requestedSeats++;
     
     if (self.requestedSeats > self.availableSeats) {
@@ -288,7 +305,12 @@ static NSInteger const kMessageMaximumCharacters = 500;
 }
 
 - (IBAction)sendRequestPressedButton:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"sendRequestPressedButton"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self.textView resignFirstResponder];
     
     [self createSeatRequest];

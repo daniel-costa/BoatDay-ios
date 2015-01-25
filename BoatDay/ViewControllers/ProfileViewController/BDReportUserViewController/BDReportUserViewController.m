@@ -52,7 +52,7 @@ static NSInteger const kReviewMaximumCharacters = 500;
     [super viewDidLoad];
     
     self.title = NSLocalizedString(@"reportUser.title", nil);
-    
+    self.screenName =@"BDReportUserViewController";
     [self setupView];
     
 }
@@ -151,27 +151,29 @@ static NSInteger const kReviewMaximumCharacters = 500;
 - (void) setupNavigationBar {
     
     // create save button to navigatio bar at top of the view
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:NSLocalizedString(@"editProfile.save", nil)
-                                   style:UIBarButtonItemStyleDone
-                                   target:self
-                                   action:@selector(saveButtonPressed)];
+    UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    saveButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+    [saveButton setImage:[UIImage imageNamed:@"ico-save"] forState:UIControlStateNormal];
+    [saveButton addTarget:self action:@selector(saveButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     
-    self.navigationItem.rightBarButtonItem = saveButton;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:saveButton];
     
-    // create cancel button to navigatio bar at top of the view
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
-                                     initWithTitle:NSLocalizedString(@"addEditBoat.cancel", nil)
-                                     style:UIBarButtonItemStyleDone
-                                     target:self
-                                     action:@selector(cancelButtonPressed)];
     
-    self.navigationItem.leftBarButtonItem = cancelButton;
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    cancelButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+    [cancelButton setImage:[UIImage imageNamed:@"ico-Cancel"] forState:UIControlStateNormal];
+    [cancelButton addTarget:self action:@selector(cancelButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
 }
 
 - (void) getUserImage {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"getUserImage"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     // user image is "hidden" while is getting its data on background
     self.userLittleImageView.alpha = 0.0;
     
@@ -202,13 +204,23 @@ static NSInteger const kReviewMaximumCharacters = 500;
 
 
 - (void) cancelButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"cancelButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
 - (void) saveButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"saveButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self.textView resignFirstResponder];
     
     // shows some loading view so the user can see that is saving

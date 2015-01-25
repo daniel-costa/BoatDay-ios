@@ -97,7 +97,8 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+        self.screenName =@"BDHostRegistrationViewController";
+
     self.title = NSLocalizedString(@"hostRegistration.title", nil);
     
     [self setupNavigationBar];
@@ -652,6 +653,8 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
 
 - (void)choosePhotofromLibrary {
     
+
+
     // Open Picker from Photo Library
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
@@ -734,6 +737,12 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
 
 - (IBAction)addPictureButtonPressed:(id)sender {
     
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"addPictureButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self dismissKeyboard];
     
     WCActionSheet *actionSheet = [[WCActionSheet alloc] init];
@@ -752,7 +761,12 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
 #pragma mark - Date Picker Methods
 
 -(void)openDatePicker:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"openDatePicker"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     self.actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@""
                                                            datePickerMode:UIDatePickerModeDate
                                                              selectedDate:self.birthdayDate ?: [NSDate date]
@@ -783,7 +797,12 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
 #pragma mark - Address State Methods
 
 - (void) stateButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"stateButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     NSArray *statesArrayDict = [NSString states];
     
     NSMutableArray *statesArray = [[NSMutableArray alloc] init];

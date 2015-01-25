@@ -121,14 +121,12 @@
 - (void) setupNavigationBar {
     
     // create save button to navigatio bar at top of the view
-    UIBarButtonItem *editButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:NSLocalizedString(@"boatProfile.edit", nil)
-                                   style:UIBarButtonItemStyleDone
-                                   target:self
-                                   action:@selector(editButtonPressed:)];
+    UIButton *editButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    editButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+    [editButton setImage:[UIImage imageNamed:@"ico-Edit"] forState:UIControlStateNormal];
+    [editButton addTarget:self action:@selector(editButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
-    self.navigationItem.rightBarButtonItem = editButton;
-    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:editButton];
 }
 
 #pragma mark - Data Methods

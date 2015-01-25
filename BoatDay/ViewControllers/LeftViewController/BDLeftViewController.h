@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface BDLeftViewController : UIViewController
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+@interface BDLeftViewController : GAITrackedViewController
 
 @end

@@ -41,7 +41,8 @@
     [super viewDidLayoutSubviews];
     
     [self setupView];
-    
+    self.screenName =@"BDFindABoatEventsViewController";
+
     if (!self.events.count) {
         [self addPlaceholderViewWithTitle:@"There are no events available!" andMessage:@"" toView:self.view];
     }
@@ -141,7 +142,12 @@
 #pragma mark iCarousel taps
 
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"didSelectEvent"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     Event *event = self.events[index];
     
     if (self.eventTappedBlock) {

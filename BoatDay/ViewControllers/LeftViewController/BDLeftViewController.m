@@ -45,6 +45,8 @@
     [super viewDidLoad];
     
     [self setupTableView];
+    self.tracker = [[GAI sharedInstance] defaultTracker];
+    
 
     [self.view setBackgroundColor:[UIColor colorWithRed:36.0/255 green:154.0/255 blue:174.0/255 alpha:1.0]];
 }
@@ -52,7 +54,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    
+    self.screenName = @"BDLeftViewController";
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(userLoggedInNotification:)
                                                  name:@"userLoggedIn"
@@ -316,6 +318,7 @@
 
 - (void) openViewController:(SideMenu)pressedSideMenu {
     
+
     [Session sharedSession].selectedSideMenu = pressedSideMenu;
     
     UIViewController *centerViewController;
@@ -323,38 +326,82 @@
     switch (pressedSideMenu) {
         case SideMenuHome:
         {
+            [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                                       action:@"SideMenuHome"
+                                                                        label:@"BDLeftViewController"
+                                                                        value:nil] build]];
             [self openHomeView];
             return;
         }
             break;
         case SideMenuFindABoatDay:
+            [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                                       action:@"SideMenuFindABoatDay"
+                                                                        label:@"BDLeftViewController"
+                                                                        value:nil] build]];
             centerViewController = [[BDFindABoatDayViewController alloc] init];
             break;
         case SideMenuProfileHeader:
+            [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                                       action:@"SideMenuProfileHeader"
+                                                                        label:@"BDLeftViewController"
+                                                                        value:nil] build]];
             centerViewController = [[BDProfileViewController alloc] initWithUser:[User currentUser] andProfileType:ProfileTypeSelf];
             break;
         case SideMenuMyEvents:
+            [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                                       action:@"SideMenuMyEvents"
+                                                                        label:@"BDLeftViewController"
+                                                                        value:nil] build]];
             centerViewController = [[BDMyEventsViewController alloc] init];
             break;
         case SideMenuNotificationBar:
+            [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                                       action:@"SideMenuNotificationBar"
+                                                                        label:@"BDLeftViewController"
+                                                                        value:nil] build]];
             centerViewController = [[BDNotificationsViewController alloc] init];
             break;
         case SideMenuHostRegistration:
+            [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                                       action:@"SideMenuHostRegistration"
+                                                                        label:@"BDLeftViewController"
+                                                                        value:nil] build]];
             centerViewController = [[BDHostRegistrationViewController alloc] init];
             break;
         case SideMenuMyBoats:
+            [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                                       action:@"SideMenuMyBoats"
+                                                                        label:@"BDLeftViewController"
+                                                                        value:nil] build]];
             centerViewController = [[BDMyBoatsViewController alloc] init];
             break;
         case SideMenuEmergencyBoatTowing:
+            [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                                       action:@"SideMenuEmergencyBoatTowing"
+                                                                        label:@"BDLeftViewController"
+                                                                        value:nil] build]];
             centerViewController = [[BDBoatTowingViewController alloc] init];
             break;
         case SideMenuSettings:
+            [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                                       action:@"SideMenuSettings"
+                                                                        label:@"BDLeftViewController"
+                                                                        value:nil] build]];
             centerViewController = [[BDSettingsViewController alloc] init];
             break;
         case SideMenuAboutUs:
+            [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                                       action:@"SideMenuAboutUs"
+                                                                        label:@"BDLeftViewController"
+                                                                        value:nil] build]];
             centerViewController =  [[BDAboutViewController alloc] init];
             break;
         case SidemenuFactBar:
+            [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                                       action:@"SidemenuFactBar"
+                                                                        label:@"BDLeftViewController"
+                                                                        value:nil] build]];
             return;
             break;
         default:
@@ -420,6 +467,7 @@
 }
 
 - (IBAction)settingButtonPressed:(id)sender {
+    
     [self openViewController:SideMenuSettings];
 
 }

@@ -46,7 +46,10 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    self.tracker = [[GAI sharedInstance] defaultTracker];
     
+    self.screenName =@"BDEventProfileGuestsViewController";
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {

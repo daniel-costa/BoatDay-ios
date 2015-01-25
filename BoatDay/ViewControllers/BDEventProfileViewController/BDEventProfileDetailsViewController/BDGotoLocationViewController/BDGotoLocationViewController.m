@@ -59,6 +59,8 @@
     
     [super viewDidLoad];
     
+    self.screenName =@"BDGotoLocationViewController";
+
     [self setupView];
     
 }
@@ -161,7 +163,12 @@
 #pragma mark - Action Methods
 
 - (IBAction)getDirectionsButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"getDirectionsButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(self.location.latitude, self.location.longitude);
     
     //Apple Maps, using the MKMapItem class

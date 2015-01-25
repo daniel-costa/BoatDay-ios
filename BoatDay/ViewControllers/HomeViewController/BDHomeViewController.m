@@ -39,7 +39,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    self.screenName = @"BDHomeViewController";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -216,14 +216,20 @@
 #pragma mark - IBAction Methods
 
 - (IBAction)findABoatButtonPressed:(id)sender {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"findABoatButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
     BDFindABoatDayViewController *viewController = [[BDFindABoatDayViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
     
 }
 
 - (IBAction)createBoatDayButtonPressed:(id)sender {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"createBoatDayButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
     if ([Session sharedSession].hostRegistration &&
         [[Session sharedSession].hostRegistration.status integerValue] == HostRegistrationStatusAccepted) {
         
@@ -255,7 +261,11 @@
 }
 
 - (IBAction)findPassengersButtonPressed:(id)sender {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"findPassengersButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
     BDFindUsersViewController *viewController = [[BDFindUsersViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
     

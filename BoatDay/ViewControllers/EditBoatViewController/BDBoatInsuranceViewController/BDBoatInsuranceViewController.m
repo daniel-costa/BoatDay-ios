@@ -68,6 +68,8 @@
     
     [super viewDidLoad];
     
+    self.screenName =@"BDBoatInsuranceViewController";
+
     [self setupView];
     
     // if there is a certification already
@@ -150,7 +152,24 @@
 - (void) setupNavigationBar {
     
     self.title = NSLocalizedString(@"boatInsurance.title", nil);
+    UIButton *saveButtons = [UIButton buttonWithType:UIButtonTypeCustom];
+    saveButtons.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+    [saveButtons setImage:[UIImage imageNamed:@"ico-save"] forState:UIControlStateNormal];
+    [saveButtons addTarget:self action:@selector(saveButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    self.saveButton = [[UIBarButtonItem alloc] initWithCustomView:saveButtons];
+    self.navigationItem.rightBarButtonItem = self.saveButton;
     
+    
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    cancelButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+    [cancelButton setImage:[UIImage imageNamed:@"ico-Cancel"] forState:UIControlStateNormal];
+    [cancelButton addTarget:self action:@selector(cancelButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
+    
+    
+
+    /*
     // create save button to navigatio bar at top of the view
     self.saveButton = [[UIBarButtonItem alloc]
                        initWithTitle:NSLocalizedString(@"boatInsurance.save", nil)
@@ -182,7 +201,7 @@
                                      action:@selector(cancelButtonPressed)];
     
     self.navigationItem.leftBarButtonItem = cancelButton;
-    
+    */
 }
 
 - (void) setupView {
@@ -223,13 +242,23 @@
 #pragma mark - Navigation Bar Button Actions
 
 - (void) cancelButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"cancelButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
 - (void) saveButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"saveButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     if ([self.minimumCoverageTextField.amount floatValue] < 300000) {
         
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"boatInsurance.minCoverageAlert.title", nil)
@@ -295,7 +324,11 @@
 #pragma mark - IBAction Methods
 
 - (IBAction)takePhotoButtonPressed:(id)sender {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"takePhotoButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
     [self dismissKeyboard];
     
     [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"boatInsurance.warning.title", nil)
@@ -310,7 +343,12 @@
 }
 
 - (IBAction)dateButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"dateButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self openDatePicker:sender];
     
 }
@@ -319,6 +357,7 @@
 
 - (void)openPhotoActionSheet {
     
+
     WCActionSheet *actionSheet = [[WCActionSheet alloc] init];
     [actionSheet addButtonWithTitle:NSLocalizedString(@"actionSheet.takePhoto", nil) actionBlock:^{
         [self takePhoto];

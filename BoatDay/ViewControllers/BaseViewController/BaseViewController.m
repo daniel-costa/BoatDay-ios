@@ -28,7 +28,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    self.tracker = [[GAI sharedInstance] defaultTracker];
+
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
         
         self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -73,8 +74,8 @@
 - (void) setupLeftSideMenuButton {
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    backButton.frame = CGRectMake(0, 0, 28, 20);
-    [backButton setImage:[UIImage imageNamed:@"nav_menu"] forState:UIControlStateNormal];
+    backButton.frame = CGRectMake(0, 0, 30, 30);
+    [backButton setImage:[UIImage imageNamed:@"ico-Hamburger"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(leftSideMenuButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;

@@ -43,7 +43,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+        self.screenName =@"BDMyEventsViewController";
+
     self.user = [User currentUser];
     
     self.title = NSLocalizedString(@"myEvents.title", nil);
@@ -73,7 +74,7 @@
         
         UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
         addButton.frame = CGRectMake(0, 0, 25, 25);
-        [addButton setImage:[UIImage imageNamed:@"nav_add"] forState:UIControlStateNormal];
+        [addButton setImage:[UIImage imageNamed:@"ico-Add"] forState:UIControlStateNormal];
         [addButton addTarget:self action:@selector(addButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithCustomView:addButton];
         self.navigationItem.rightBarButtonItem = addButtonItem;
@@ -175,7 +176,12 @@
 }
 
 - (void) changeViewControllerToIndex:(NSInteger)index {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"segmentedControlChangeView"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     self.segmentedControl.userInteractionEnabled = NO;
     
     UIViewController *fromViewController = [self.childViewControllers lastObject];
@@ -365,7 +371,12 @@
 #pragma mark - IBAction Methods
 
 -(void) addButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"addButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     if (![Session sharedSession].hostRegistration.merchantId) {
         
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"myEvents.merchantIdAlertView.title", nil)

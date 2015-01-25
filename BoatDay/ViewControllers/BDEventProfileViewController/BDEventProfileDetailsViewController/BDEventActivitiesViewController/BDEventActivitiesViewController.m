@@ -39,6 +39,8 @@
     
     [super viewDidLoad];
     
+    self.screenName =@"BDEventActivitiesViewController";
+
     self.title = NSLocalizedString(@"eventProfile.activities.title", nil);
     
     [self setupTableView];

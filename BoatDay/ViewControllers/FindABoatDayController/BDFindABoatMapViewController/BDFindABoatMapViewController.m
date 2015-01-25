@@ -36,7 +36,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    self.screenName =@"BDFindABoatMapViewController";
+
     // Setup Map View
     [self setupMapView];
     

@@ -38,6 +38,8 @@
     
     self.title = NSLocalizedString(@"addEditBoat.safetyFeatures.title", nil);
     
+    self.screenName =@"BDSafetyFeaturesListViewController";
+
     // setup view
     [self setupTableView];
     

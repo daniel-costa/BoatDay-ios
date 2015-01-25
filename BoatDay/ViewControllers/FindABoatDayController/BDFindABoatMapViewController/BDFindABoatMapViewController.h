@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BaseViewController.h"
 typedef void (^EventTappedBlock)(Event *event);
 
-@interface BDFindABoatMapViewController : UIViewController
+@interface BDFindABoatMapViewController : GAITrackedViewController
 
 @property (nonatomic, copy) EventTappedBlock eventTappedBlock;
 

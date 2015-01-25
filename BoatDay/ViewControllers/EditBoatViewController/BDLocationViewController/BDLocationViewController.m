@@ -80,6 +80,8 @@
     
     [super viewDidLoad];
     
+    self.screenName =@"BDLocationViewController";
+
     UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGesture:)];
     [self.mapView addGestureRecognizer:longPressGesture];
     
@@ -149,24 +151,19 @@
     self.title = NSLocalizedString(@"location.title", nil);
     
     // create save button to navigatio bar at top of the view
-    self.saveButton = [[UIBarButtonItem alloc]
-                       initWithTitle:NSLocalizedString(@"location.save", nil)
-                       style:UIBarButtonItemStyleDone
-                       target:self
-                       action:@selector(saveButtonPressed)];
+    UIButton *saveButtons = [UIButton buttonWithType:UIButtonTypeCustom];
+    saveButtons.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+    [saveButtons setImage:[UIImage imageNamed:@"ico-save"] forState:UIControlStateNormal];
+    [saveButtons addTarget:self action:@selector(saveButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    self.saveButton = [[UIBarButtonItem alloc] initWithCustomView:saveButtons];
+    self.navigationItem.rightBarButtonItem = self.saveButton;
     
-    self.navigationItem.rightBarButtonItem = nil;
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    cancelButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+    [cancelButton setImage:[UIImage imageNamed:@"ico-Cancel"] forState:UIControlStateNormal];
+    [cancelButton addTarget:self action:@selector(cancelButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     
-    
-    // create cancel button to navigatio bar at top of the view
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
-                                     initWithTitle:NSLocalizedString(@"location.cancel", nil)
-                                     style:UIBarButtonItemStyleDone
-                                     target:self
-                                     action:@selector(cancelButtonPressed)];
-    
-    self.navigationItem.leftBarButtonItem = cancelButton;
-    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
 }
 
 - (void) setupMapView {
@@ -179,7 +176,12 @@
 #pragma mark - Navigation Bar Button Actions
 
 - (void) cancelButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"cancelButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     if ([self.delegate respondsToSelector:@selector(changedLocation:withLocationString:)]) {
         [self.delegate changedLocation:self.oldLocation withLocationString:nil];
     }
@@ -193,7 +195,12 @@
 }
 
 - (void) saveButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"saveButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     if ([self.delegate respondsToSelector:@selector(changedLocation:withLocationString:)]) {
         [self.delegate changedLocation:self.actualLocation withLocationString:self.searchBar.text];
     }
@@ -209,7 +216,12 @@
 // Action Methods
 
 - (IBAction)pinButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"pinButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self getCurrentLocation];
     
 }
@@ -442,7 +454,12 @@
 #pragma mark - Gesture Recognizer Methods
 
 -(void)handleLongPressGesture:(UIGestureRecognizer*)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"handleLongPressGesture"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     if (sender.state == UIGestureRecognizerStateBegan) {
         
         // Here we get the CGPoint for the touch and convert it to latitude and longitude coordinates to display on the map

@@ -10,8 +10,9 @@
 #import "NoConnectionView.h"
 #import "DejalActivityView.h"
 #import "BDPlaceholderView.h"
-
-@interface BaseViewController : UIViewController <NoConnectionViewDelegate>
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+@interface BaseViewController : GAITrackedViewController <NoConnectionViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *contentView;
 @property (strong, nonatomic) NRLoadingView *loadingView;

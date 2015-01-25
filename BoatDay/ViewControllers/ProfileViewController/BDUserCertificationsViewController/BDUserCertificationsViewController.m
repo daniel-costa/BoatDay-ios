@@ -36,7 +36,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    self.screenName =@"BDUserCertificationsViewController";
+
     [self setupTableView];
 }
 

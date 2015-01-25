@@ -52,7 +52,8 @@
     [super viewDidLoad];
     
     self.title = NSLocalizedString(@"inviteUser.title", nil);
-    
+    self.screenName =@"BDInviteUserViewController";
+
     [self setupTableView];
     
     [self setupView];
@@ -157,7 +158,12 @@
 }
 
 - (void) getUserImage {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"getUserImage"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     // user image is "hidden" while is getting its data on background
     self.userLittleImageView.alpha = 0.0;
     
@@ -263,7 +269,12 @@
 #pragma mark - Action Methods
 
 - (IBAction)inviteButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"inviteButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     NSArray *saveArray;
     
     Notification *notification = [Notification object];
@@ -317,7 +328,12 @@
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"cancelButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }

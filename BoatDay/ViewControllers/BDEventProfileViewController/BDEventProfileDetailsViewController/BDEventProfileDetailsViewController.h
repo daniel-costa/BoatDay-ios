@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface BDEventProfileDetailsViewController : UIViewController
+#import "BaseViewController.h"
+@interface BDEventProfileDetailsViewController : GAITrackedViewController
 
 - (instancetype)initWithEvent:(Event *)event NS_DESIGNATED_INITIALIZER;
 

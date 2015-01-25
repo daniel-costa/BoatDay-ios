@@ -27,7 +27,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+        self.screenName =@"BDNotificationsViewController";
+
     self.title = NSLocalizedString(@"notifications.title", nil);
     
     [self setupTableView];
@@ -230,7 +231,12 @@
 #pragma mark - UITableView Delegate methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"didSelectNotifications"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     Notification *notification = self.notifications[indexPath.row];
@@ -385,6 +391,11 @@
 #pragma mark - Action Methods
 
 - (void) clearAllButtonPressed {
+ [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"clearAllButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
 
     [SVProgressHUD show];
     

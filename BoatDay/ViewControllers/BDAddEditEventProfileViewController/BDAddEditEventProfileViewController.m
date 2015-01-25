@@ -109,7 +109,8 @@ static NSInteger const kMaximumAvailableSeats = 15;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+        self.screenName =@"BDAddEditEventProfileViewController";
+
     // make a new copy in order to reset user if this view is canceled
     self.oldEvent = (Event*)[self.event copyShallow];
     
@@ -271,23 +272,21 @@ static NSInteger const kMaximumAvailableSeats = 15;
     
     if (self.event) {
         // create save button to navigatio bar at top of the view
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]
-                                       initWithTitle:NSLocalizedString(@"addEditEvent.save", nil)
-                                       style:UIBarButtonItemStyleDone
-                                       target:self
-                                       action:@selector(saveButtonPressed)];
+        UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        saveButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+        [saveButton setImage:[UIImage imageNamed:@"ico-save"] forState:UIControlStateNormal];
+        [saveButton addTarget:self action:@selector(saveButtonPressed) forControlEvents:UIControlEventTouchUpInside];
         
-        self.navigationItem.rightBarButtonItem = saveButton;
-    }
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:saveButton];
+
+        }
     
-    // create cancel button to navigatio bar at top of the view
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
-                                     initWithTitle:NSLocalizedString(@"addEditEvent.cancel", nil)
-                                     style:UIBarButtonItemStyleDone
-                                     target:self
-                                     action:@selector(cancelButtonPressed)];
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    cancelButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+    [cancelButton setImage:[UIImage imageNamed:@"ico-Cancel"] forState:UIControlStateNormal];
+    [cancelButton addTarget:self action:@selector(cancelButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     
-    self.navigationItem.leftBarButtonItem = cancelButton;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
     
 }
 
@@ -431,7 +430,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
     
     double total = (totalPricePerSeatWithFee - brainTreeFee - (TRUST_SAFETY_FEE * self.availableSeats) ) * (1 - BOATDAY_FEE);
     
-    self.estimatedIncomeTextField.text = [NSString stringWithFormat:@"%.2f $", total];
+//    self.estimatedIncomeTextField.text = [NSString stringWithFormat:@"%.2f $", total];
 }
 
 - (UITableViewCell *) lastRowCellForIndexPath:(NSIndexPath*)indexPath {
@@ -550,7 +549,12 @@ static NSInteger const kMaximumAvailableSeats = 15;
 #pragma mark - UITableView Delegate methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"goToselectBoatViewController"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     switch (indexPath.row) {
@@ -718,7 +722,12 @@ static NSInteger const kMaximumAvailableSeats = 15;
 #pragma mark - Action Methods
 
 - (void) locationButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"locationButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     BDLocationViewController *editBoatViewController = [[BDLocationViewController alloc] initWithPFGeoPoint:nil];
     editBoatViewController.delegate = self;
     
@@ -729,7 +738,12 @@ static NSInteger const kMaximumAvailableSeats = 15;
 }
 
 - (void) availableSeatsButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"availableSeatsButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     // Create an array of strings you want to show in the picker:
     NSMutableArray *availableSeatsArray = [[NSMutableArray alloc] init];
     
@@ -763,13 +777,23 @@ static NSInteger const kMaximumAvailableSeats = 15;
 }
 
 - (void) endDateButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"endDateButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self openDatePicker:sender];
     
 }
 
 - (void) pickUpDateButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"pickUpDateButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self openDatePicker:sender];
     
 }
@@ -811,7 +835,9 @@ static NSInteger const kMaximumAvailableSeats = 15;
 }
 
 -(void)openDatePicker:(id)sender {
-    
+
+
+
     UIButton *selectedButton = (UIButton*)sender;
     
     self.actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@""
@@ -918,7 +944,12 @@ static NSInteger const kMaximumAvailableSeats = 15;
 }
 
 - (IBAction)bigButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"bigButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     if (self.event) {
         
         [self deleteEvent];
@@ -932,13 +963,23 @@ static NSInteger const kMaximumAvailableSeats = 15;
 }
 
 - (IBAction)smallRedButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"smallRedButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self deleteEvent];
     
 }
 
 - (IBAction)smallYellowButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"smallYellowButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self publishEvent];
     
 }

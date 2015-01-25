@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BaseViewController.h"
 typedef void (^UserGuestTappedBlock)(User *user, SeatRequest *seatRequest);
 
-@interface BDEventProfileGuestsViewController : UIViewController
+@interface BDEventProfileGuestsViewController : GAITrackedViewController
 
 @property (nonatomic, copy) UserGuestTappedBlock userTapBlock;
 

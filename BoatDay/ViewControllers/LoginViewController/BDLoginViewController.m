@@ -36,7 +36,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    self.screenName =@"BDLoginViewController";
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -184,7 +185,10 @@
 #pragma mark - IBAction Methods
 
 - (IBAction)loginFacebookButtonPressed:(id)sender {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"loginFacebookButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
     self.activityIndicator.hidden = NO;
     self.facebookButton.enabled = NO;
     
@@ -251,7 +255,10 @@
 }
 
 - (IBAction)findABoatButtonPressed:(id)sender {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"findABoatButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
     BDFindABoatDayViewController *viewController = [[BDFindABoatDayViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
     

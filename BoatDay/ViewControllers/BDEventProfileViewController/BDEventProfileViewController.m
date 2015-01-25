@@ -61,6 +61,8 @@
     
     [super viewDidLoad];
     
+    self.screenName =@"BDEventProfileViewController";
+
     self.title = NSLocalizedString(@"eventProfile.title", nil);
     
     [self resetView];
@@ -107,12 +109,13 @@
             
             if ([self.event.startsAt compare:[NSDate date]] == NSOrderedDescending) {
                 
-                // create save button to navigatio bar at top of the view
-                self.topRightButtonItem = [[UIBarButtonItem alloc]
-                                           initWithTitle:NSLocalizedString(@"eventProfile.edit", nil)
-                                           style:UIBarButtonItemStyleDone
-                                           target:self
-                                           action:@selector(editButtonPressed:)];
+              
+                UIButton *editButton = [UIButton buttonWithType:UIButtonTypeCustom];
+                editButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+                [editButton setImage:[UIImage imageNamed:@"ico-Edit"] forState:UIControlStateNormal];
+                [editButton addTarget:self action:@selector(editButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+                
+                self.topRightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:editButton];
                 
                 self.navigationItem.rightBarButtonItem = self.topRightButtonItem;
                 
@@ -121,8 +124,8 @@
         } else {
             
             UIButton *flagButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            flagButton.frame = CGRectMake(0, 0, 19, 22);
-            [flagButton setImage:[UIImage imageNamed:@"nav_flag"] forState:UIControlStateNormal];
+            flagButton.frame = CGRectMake(0, 0, 30.0, 30.0);
+            [flagButton setImage:[UIImage imageNamed:@"ico-Flag"] forState:UIControlStateNormal];
             [flagButton addTarget:self action:@selector(flagButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
             self.topRightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:flagButton];
             self.navigationItem.rightBarButtonItem = self.topRightButtonItem;
@@ -246,7 +249,12 @@
 }
 
 - (void) changeViewControllerToIndex:(EventProfileTab)index {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"segmentedControlChangeView"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     self.segmentedControl.userInteractionEnabled = NO;
     
     UIViewController *fromViewController = [self.childViewControllers lastObject];
@@ -330,7 +338,12 @@
 #pragma mark - Action Methods
 
 - (void) editButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"editButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     BDAddEditEventProfileViewController *editEventViewController = [[BDAddEditEventProfileViewController alloc] initWithEvent:self.event];
     [editEventViewController setEventDeletedBlock:^(){
         
@@ -345,7 +358,12 @@
 }
 
 - (void) flagButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"flagButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"eventProfile.flagConfirmation.title", nil)
                                 message:NSLocalizedString(@"eventProfile.flagConfirmation.message", nil)
                        cancelButtonItem:[RIButtonItem itemWithLabel:NSLocalizedString(@"certifications.delete.noButton", nil) action:^{

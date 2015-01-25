@@ -101,7 +101,8 @@ typedef NS_ENUM(NSUInteger, BDPaymentInfoTextFieldTag) {
     self.title = NSLocalizedString(@"paymentInfo.title", nil);
     
     [super viewDidLoad];
-    
+    self.screenName =@"BDPaymentInfoViewController";
+
     // setup view
     [self setupTableView];
     
@@ -636,7 +637,12 @@ typedef NS_ENUM(NSUInteger, BDPaymentInfoTextFieldTag) {
 #pragma mark - Action Methods
 
 - (void) cancelButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"cancelButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [SVProgressHUD show];
     
     self.registrationBoat.status = @(BoatStatusNotSubmited);
@@ -654,7 +660,12 @@ typedef NS_ENUM(NSUInteger, BDPaymentInfoTextFieldTag) {
 }
 
 - (void) businessInfoButtonPressed:(UIButton*)button {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"businessInfoButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     self.useBusinessInfo = !self.useBusinessInfo;
     
     [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:2]] withRowAnimation:UITableViewRowAnimationFade];
@@ -662,7 +673,12 @@ typedef NS_ENUM(NSUInteger, BDPaymentInfoTextFieldTag) {
 }
 
 - (void) termsOfServiceButtonPressed:(UIButton*)button {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"termsOfServiceButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     self.acceptedTermsOfService = !self.acceptedTermsOfService;
     
     [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:4]] withRowAnimation:UITableViewRowAnimationFade];
@@ -670,7 +686,12 @@ typedef NS_ENUM(NSUInteger, BDPaymentInfoTextFieldTag) {
 }
 
 - (void) termsOfServiceLinkButtonPressed:(UIButton*)button {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"termsOfServiceLinkButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     //BDTermsOfServiceViewController *termsViewController = [[BDTermsOfServiceViewController alloc] init];
     //[self.navigationController pushViewController:termsViewController animated:YES];
     
@@ -679,7 +700,12 @@ typedef NS_ENUM(NSUInteger, BDPaymentInfoTextFieldTag) {
 }
 
 - (IBAction)submitButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"submitButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self dismissKeyboard];
     
     PaymentInfoDestination destination;
@@ -827,7 +853,12 @@ typedef NS_ENUM(NSUInteger, BDPaymentInfoTextFieldTag) {
 #pragma mark - Address State Methods
 
 - (void) stateButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"stateButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self dismissKeyboard];
     
     NSArray *statesArrayDict = [NSString states];

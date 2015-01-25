@@ -39,7 +39,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    self.screenName =@"BDMyBoatsViewController";
+
     self.title = NSLocalizedString(@"myBoats.title", nil);
     
     self.user = [User currentUser];
@@ -96,7 +97,7 @@
         
         UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
         addButton.frame = CGRectMake(0, 0, 25, 25);
-        [addButton setImage:[UIImage imageNamed:@"nav_add"] forState:UIControlStateNormal];
+        [addButton setImage:[UIImage imageNamed:@"ico-Add"] forState:UIControlStateNormal];
         [addButton addTarget:self action:@selector(addButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithCustomView:addButton];
         self.navigationItem.rightBarButtonItem = addButtonItem;
@@ -288,6 +289,12 @@
 
 
 - (IBAction)bigButtonPressed:(id)sender {
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"bigButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     if ([Session sharedSession].hostRegistration.merchantId) {
         BDPaymentStatusViewController *paymentStatusView = [[BDPaymentStatusViewController alloc] init];
         [self.navigationController pushViewController:paymentStatusView animated:YES];
@@ -303,7 +310,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"SeletedBoatFromTableView"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     Boat *boat = self.boats.count && indexPath.section == SUBMITED_BOATS_TABLEVIEW_SECTION ? self.boats[indexPath.row] : self.notSubmitedBoats[indexPath.row];
     
     BDBoatViewController *boatViewController = [[BDBoatViewController alloc] initWithBoat:boat];
@@ -314,7 +326,12 @@
 #pragma mark - IBAction Methods
 
 -(void) addButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"addButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     BDAddEditBoatViewController *editUBoatViewController = [[BDAddEditBoatViewController alloc] init];
     
     UINavigationController *navigationController = [[MMNavigationController alloc] initWithRootViewController:editUBoatViewController];

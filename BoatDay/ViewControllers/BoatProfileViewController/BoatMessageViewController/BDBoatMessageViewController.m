@@ -37,7 +37,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+        self.screenName =@"BDBoatMessageViewController";
+
     self.title = NSLocalizedString(@"boatProfile.messageNotification.title", nil);
     
     [self setupView];

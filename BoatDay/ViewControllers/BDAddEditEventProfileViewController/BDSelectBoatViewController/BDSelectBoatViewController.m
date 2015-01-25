@@ -32,7 +32,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+        self.screenName =@"BDSelectBoatViewController";
+
     self.user = [User currentUser];
     
     [self setupView];
@@ -66,7 +67,7 @@
         
         UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
         addButton.frame = CGRectMake(0, 0, 25, 25);
-        [addButton setImage:[UIImage imageNamed:@"nav_add"] forState:UIControlStateNormal];
+        [addButton setImage:[UIImage imageNamed:@"ico-Add"] forState:UIControlStateNormal];
         [addButton addTarget:self action:@selector(addButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithCustomView:addButton];
         self.navigationItem.rightBarButtonItem = addButtonItem;
@@ -222,7 +223,12 @@
 #pragma mark - IBAction Methods
 
 -(void) addButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"addButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     BDAddEditBoatViewController *editUBoatViewController = [[BDAddEditBoatViewController alloc] init];
     
     UINavigationController *navigationController = [[MMNavigationController alloc] initWithRootViewController:editUBoatViewController];

@@ -97,11 +97,19 @@
     return self;
     
 }
+-(void)viewDidLoad{
 
+    [super viewDidLoad];
+    self.tracker = [[GAI sharedInstance] defaultTracker];
+
+    self.screenName =@"BDCertificationListViewController";
+
+}
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
     
+
     [self setupView];
     
     [self getReviews];
@@ -722,27 +730,47 @@
 #pragma mark - Action Methods
 
 - (IBAction)pinLocationButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"pinLocationButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     BDGotoLocationViewController *gotoLocationViewController = [[BDGotoLocationViewController alloc] initWithEvent:self.event];
     [self.navigationController pushViewController:gotoLocationViewController animated:YES];
     
 }
 
 -(void)tapToOpenActivityDetail{
+ [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"tapToOpenActivityDetail"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
 
     BDEventActivitiesViewController *activitiesViewController = [[BDEventActivitiesViewController alloc] initWithEvent:self.event];
     [self.navigationController pushViewController:activitiesViewController animated:YES];
 }
 
 - (IBAction)activitiesButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"activitiesButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     BDEventActivitiesViewController *activitiesViewController = [[BDEventActivitiesViewController alloc] initWithEvent:self.event];
     [self.navigationController pushViewController:activitiesViewController animated:YES];
     
 }
 
 - (void) hostPicturePressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"hostPicturePressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     ProfileType type = [self.event.host isEqual:[User currentUser]] ? ProfileTypeSelf : ProfileTypeOther;
     
     BDProfileViewController *profileViewController = [[BDProfileViewController alloc] initWithUser:self.event.host andProfileType:type];
@@ -753,7 +781,12 @@
 #pragma mark - Seat Requests Methods
 
 - (IBAction)buttonBottomViewPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"buttonBottomViewPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     // If not logged
     if (![User currentUser]) {
         

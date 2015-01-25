@@ -35,6 +35,8 @@ typedef NS_ENUM(NSUInteger, SettingsRow) {
     
     [super viewDidLoad];
     
+    self.screenName =@"BDSettingsViewController";
+
     self.title = NSLocalizedString(@"settings.title", nil);
     self.signOutButton.titleLabel.font = [UIFont abelFontWithSize:17.0];
     [self.signOutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -196,6 +198,12 @@ typedef NS_ENUM(NSUInteger, SettingsRow) {
 
 - (IBAction)signOutAction:(id)sender {
     
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"signOutAction"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     if ([User currentUser]) {
         
         [[Session sharedSession] logOutUser];

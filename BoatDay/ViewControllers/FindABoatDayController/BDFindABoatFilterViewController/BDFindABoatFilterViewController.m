@@ -76,7 +76,8 @@ extern const CGFloat kMaxDistanceLocation;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+        self.screenName =@"BDFindABoatFilterViewController";
+
     // setup view
     [self setupTableView];
     
@@ -157,36 +158,44 @@ extern const CGFloat kMaxDistanceLocation;
     
     self.title = NSLocalizedString(@"findABoat.filter", nil);
     
-    // create save button to navigatio bar at top of the view
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:NSLocalizedString(@"findABoat.apply", nil)
-                                   style:UIBarButtonItemStyleDone
-                                   target:self
-                                   action:@selector(saveButtonPressed)];
     
-    self.navigationItem.rightBarButtonItem = saveButton;
+    UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    saveButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+    [saveButton setImage:[UIImage imageNamed:@"ico-save"] forState:UIControlStateNormal];
+    [saveButton addTarget:self action:@selector(saveButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     
-    // create cancel button to navigatio bar at top of the view
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
-                                     initWithTitle:NSLocalizedString(@"findABoat.cancel", nil)
-                                     style:UIBarButtonItemStyleDone
-                                     target:self
-                                     action:@selector(cancelButtonPressed)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:saveButton];
     
-    self.navigationItem.leftBarButtonItem = cancelButton;
+    
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    cancelButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+    [cancelButton setImage:[UIImage imageNamed:@"ico-Cancel"] forState:UIControlStateNormal];
+    [cancelButton addTarget:self action:@selector(cancelButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
     
 }
 
 #pragma mark - Navigation Bar Button Actions
 
 - (void) cancelButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"cancelButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
 - (void) saveButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"saveButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     if (self.filterDictionaryChangeBlock) {
         
         self.filterDictionaryChangeBlock(self.filterDictionary);
@@ -525,7 +534,12 @@ extern const CGFloat kMaxDistanceLocation;
 #pragma mark - Action Methods
 
 - (void) locationButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"locationButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     BDLocationViewController *editBoatViewController = [[BDLocationViewController alloc] initWithPFGeoPoint:self.filterDictionary[kLocationGeoPoint]];
     editBoatViewController.delegate = self;
     
@@ -536,7 +550,12 @@ extern const CGFloat kMaxDistanceLocation;
 }
 
 - (void) timeFrameButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"timeFrameButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     // Create an array of strings you want to show in the picker:
     NSArray *timeframeArray = @[NSLocalizedString(@"findABoat.timeframe.any", nil),
                                 NSLocalizedString(@"findABoat.timeframe.today", nil),
@@ -569,7 +588,12 @@ extern const CGFloat kMaxDistanceLocation;
 }
 
 - (void) availableSeatButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"availableSeatButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     // Create an array of strings you want to show in the picker:
     NSArray *availableSeatsArray = @[NSLocalizedString(@"findABoat.availableSeats.noLimit", nil),
                                      @"1",
@@ -614,7 +638,12 @@ extern const CGFloat kMaxDistanceLocation;
 }
 
 - (void) suggestedDonationButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"suggestedDonationButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     // Create an array of strings you want to show in the picker:
     NSArray * suggestedDonationsArray = @[NSLocalizedString(@"findABoat.suggestedDonation.noLimit", nil),
                                           NSLocalizedString(@"findABoat.suggestedDonation.under25", nil),

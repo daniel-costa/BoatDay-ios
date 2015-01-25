@@ -38,7 +38,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+        self.screenName =@"BDFindUsersViewController";
+
     self.title = NSLocalizedString(@"findUsers.title", nil);
     
     [self setupView];
@@ -116,7 +117,7 @@
 - (void) setupNavigationBar {
     
     UIButton *filterButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    filterButton.frame = CGRectMake(0.0, 0.0, 20.0, 22.0);
+    filterButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
     [filterButton setImage:[UIImage imageNamed:@"nav_filter"] forState:UIControlStateNormal];
     [filterButton addTarget:self action:@selector(filterButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     self.filterButton = [[UIBarButtonItem alloc] initWithCustomView:filterButton];
@@ -394,6 +395,12 @@
 #pragma mark - Action Methods
 
 - (void) filterButtonPressed:(id)sender {
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"filterButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
 /*
     BDFindABoatFilterViewController *filterViewController = [[BDFindABoatFilterViewController alloc] initWithFilterDictionary:self.filterDictionary];
     

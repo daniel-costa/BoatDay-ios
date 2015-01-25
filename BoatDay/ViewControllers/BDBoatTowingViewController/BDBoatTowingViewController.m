@@ -22,7 +22,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+        self.screenName =@"BDBoatTowingViewController";
+
     self.title = NSLocalizedString(@"boatTowing.title", nil);
     
     [self.numberButton setTitle:NSLocalizedString(@"boatTowing.phoneNumber", nil) forState:UIControlStateNormal];
@@ -41,7 +42,12 @@
 }
 
 - (IBAction)numberButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"numberButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     NSString *phNo = NSLocalizedString(@"boatTowing.phoneNumber", nil);
     NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt:%@",phNo]];
     

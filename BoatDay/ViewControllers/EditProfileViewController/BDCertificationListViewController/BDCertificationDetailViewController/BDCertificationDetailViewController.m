@@ -57,6 +57,7 @@ static NSInteger const kAboutMeMaximumCharacters = 500;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    self.screenName =@"BDCertificationDetailViewController";
 
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem:backButton];
@@ -216,7 +217,12 @@ static NSInteger const kAboutMeMaximumCharacters = 500;
 #pragma mark - IBAction Methods
 
 - (IBAction)takePhotoButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"takePhotoButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self dismissKeyboard];
     
     WCActionSheet *actionSheet = [[WCActionSheet alloc] init];
@@ -233,7 +239,12 @@ static NSInteger const kAboutMeMaximumCharacters = 500;
 }
 
 - (void) saveCertificate {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"saveCertificate"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
     
     NSString *myUniqueName = [NSString stringWithFormat:@"%@%@-%@-%lu", [User currentUser].firstName, [User currentUser].lastName, self.type.name, (unsigned long)([[NSDate date] timeIntervalSince1970]*10.0)];
@@ -267,7 +278,12 @@ static NSInteger const kAboutMeMaximumCharacters = 500;
 }
 
 - (void) deleteCertificate {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"deleteCertificate"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
     
     [[Session sharedSession].myCertifications removeObject:self.certification];
@@ -292,7 +308,12 @@ static NSInteger const kAboutMeMaximumCharacters = 500;
 
 
 - (IBAction)submitButtonPressed:(id)sender {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"submitButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     [self.textView resignFirstResponder];
     
     if (self.certification) {

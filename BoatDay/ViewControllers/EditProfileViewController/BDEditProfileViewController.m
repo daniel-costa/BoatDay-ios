@@ -58,7 +58,8 @@ static NSInteger const kMaximumNumberOfPictures = 5;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    self.screenName =@"BDEditProfileViewController";
+
     // set user data
     self.imagesArray = [[User currentUser].pictures mutableCopy];
     
@@ -162,30 +163,29 @@ static NSInteger const kMaximumNumberOfPictures = 5;
     
     self.title = NSLocalizedString(@"editProfile.title", nil);
     
-    // create save button to navigatio bar at top of the view
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:NSLocalizedString(@"editProfile.save", nil)
-                                   style:UIBarButtonItemStyleDone
-                                   target:self
-                                   action:@selector(saveButtonPressed)];
+    UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    saveButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+    [saveButton setImage:[UIImage imageNamed:@"ico-save"] forState:UIControlStateNormal];
+    [saveButton addTarget:self action:@selector(saveButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     
-    self.navigationItem.rightBarButtonItem = saveButton;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:saveButton];
     
-    // create cancel button to navigatio bar at top of the view
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
-                                     initWithTitle:NSLocalizedString(@"editProfile.cancel", nil)
-                                     style:UIBarButtonItemStyleDone
-                                     target:self
-                                     action:@selector(cancelButtonPressed)];
     
-    self.navigationItem.leftBarButtonItem = cancelButton;
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    cancelButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+    [cancelButton setImage:[UIImage imageNamed:@"ico-Cancel"] forState:UIControlStateNormal];
+    [cancelButton addTarget:self action:@selector(cancelButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
 }
 
 #pragma mark - Navigation Bar Button Actions
 
 - (void) cancelButtonPressed {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"cancelButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
     // all the modifications must be discarded
     // we reset all simple values, activities and certifications
     [[User currentUser] resetValuesToObject:self.oldUser];
@@ -196,7 +196,12 @@ static NSInteger const kMaximumNumberOfPictures = 5;
 }
 
 - (void) saveButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"saveButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     // shows some loading view so the user can see that is saving
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
     
@@ -703,7 +708,10 @@ static NSInteger const kMaximumNumberOfPictures = 5;
 }
 
 - (void) imageButtonPressed:(id)sender {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"imageButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
     UIButton *imageButton = (UIButton*)sender;
     
     if (imageButton.tag == 0) {
@@ -753,7 +761,10 @@ static NSInteger const kMaximumNumberOfPictures = 5;
 }
 
 - (void) closeButtonPressed:(id)sender {
-    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"closeButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
     UIButton *imageButton = (UIButton*)sender;
     NSInteger index = imageButton.tag-1;
     
@@ -837,6 +848,8 @@ static NSInteger const kMaximumNumberOfPictures = 5;
 
 - (void)takePhoto {
     
+
+
     // If the device has camera
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
@@ -909,7 +922,12 @@ static NSInteger const kMaximumNumberOfPictures = 5;
 #pragma mark - Action Methods
 
 - (void) locationButtonPressed {
-    
+     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+                                                               action:@"locationButtonPressed"
+                                                                label:self.screenName
+                                                                value:nil] build]];
+
+
     BDLocationViewController *editBoatViewController = [[BDLocationViewController alloc] initWithStringLocation:[User currentUser].fullLocation];
     editBoatViewController.delegate = self;
     

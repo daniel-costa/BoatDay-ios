@@ -24,7 +24,8 @@ static char associatedKey;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    self.screenName =@"BDCertificationListViewController";
+
     self.title = NSLocalizedString(@"certificationsList.title", nil);
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem:backButton];
