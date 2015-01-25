@@ -492,6 +492,9 @@ static const CGFloat kMinImageScale = 1.0f;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [self setupRotation];
+
+
     }
     return self;
 }
@@ -538,6 +541,7 @@ static const CGFloat kMinImageScale = 1.0f;
     [_doneButton setImageEdgeInsets:UIEdgeInsetsMake(-10, -10, -10, -10)];  // make click area bigger
     [_doneButton setImage:[UIImage imageNamed:@"Done"] forState:UIControlStateNormal];
     _doneButton.frame = CGRectMake(windowBounds.size.width - (51.0f + 9.0f),15.0f, 51.0f, 26.0f);
+    
 }
 
 #pragma mark - Show
@@ -561,6 +565,60 @@ static const CGFloat kMinImageScale = 1.0f;
     _senderView = nil;
     _imageDatasource = nil;
 }
+
+#pragma mark - Orientation
+
+
+-(void)setupRotation{
+/*
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(orientationChanged:)
+                                                 name:UIDeviceOrientationDidChangeNotification
+                                               object:nil];
+ 
+ */
+}
+
+- (void)orientationChanged:(NSNotification *)notification
+{
+    /*
+    UIDeviceOrientation deviceOrientation = [UIDevice currentDevice].orientation;
+    if (UIDeviceOrientationIsLandscape(deviceOrientation))
+    {
+        NSLog(@"hello");
+        [UIView animateWithDuration:0.3 animations:^{
+            
+            CGRect appFrame = [[UIScreen mainScreen] applicationFrame];
+
+//            fullScreenView.transform = CGAffineTransformIdentity;
+//            .transform = CGAffineTransformIdentity;
+//            fullScreenView.frame = appFrame;
+        }];
+        //        [self performSegueWithIdentifier:@"DisplayAlternateView" sender:self];
+//        isShowingLandscapeView = YES;
+    }
+    else if (UIDeviceOrientationIsPortrait(deviceOrientation))
+    {
+                NSLog(@"YAO hello");
+        [UIView animateWithDuration:0.3 animations:^{
+            
+            CGRect appFrame = [[UIScreen mainScreen] applicationFrame];
+            
+//            fullScreenView.transform = CGAffineTransformMakeRotation(M_PI_2);
+//            fullScreenView.frame = appFrame;
+//            
+//            // Translate the button.
+//            CGAffineTransform rotateTransform = CGAffineTransformMakeRotation(M_PI_2);
+//            CGAffineTransform translateTransform = CGAffineTransformTranslate(rotateTransform, appFrame.size.height - (BUTTON_WIDTH/2) - TOP_BUTTON_GAP - RIGHT_BUTTON_GAP - (BUTTON_HEIGHT/2), -(BUTTON_WIDTH/2) + (BUTTON_HEIGHT/2));
+//            closeButton.transform  = translateTransform;
+        }];
+
+    }
+     */
+}
+
+
 @end
 
 

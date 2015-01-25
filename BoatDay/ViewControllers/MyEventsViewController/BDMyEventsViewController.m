@@ -8,20 +8,20 @@
 
 #import "BDMyEventsViewController.h"
 #import "HMSegmentedControl.h"
-#import "BDFindABoatEventsViewController.h"
+
 #import "BDDateRange.h"
 #import "BDAddEditEventProfileViewController.h"
 #import "BDEventProfileViewController.h"
-
+#import "BDEventListViewController.h"
 @interface BDMyEventsViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @property (strong, nonatomic) HMSegmentedControl *segmentedControl;
 
-@property (strong, nonatomic) BDFindABoatEventsViewController *eventHostingViewController;
-@property (strong, nonatomic) BDFindABoatEventsViewController *eventAttendingViewController;
-@property (strong, nonatomic) BDFindABoatEventsViewController *eventHistoryViewController;
+@property (strong, nonatomic) BDEventListViewController *eventHostingViewController;
+@property (strong, nonatomic) BDEventListViewController *eventAttendingViewController;
+@property (strong, nonatomic) BDEventListViewController *eventHistoryViewController;
 
 @property (strong, nonatomic) UIBarButtonItem *filterButton;
 
@@ -142,8 +142,8 @@
 
 - (void) setupViewControllers {
     
-    self.eventHostingViewController = [[BDFindABoatEventsViewController alloc] initWithEvents:self.hostingEvents];
-    self.eventHostingViewController.showCardsWithStatus = YES;
+    self.eventHostingViewController = [[BDEventListViewController alloc] initWithEvents:self.hostingEvents];
+
     
     __weak BDMyEventsViewController *weakSelf = self;
     
@@ -154,8 +154,7 @@
         
     }];
     
-    self.eventAttendingViewController = [[BDFindABoatEventsViewController alloc] initWithEvents:self.attendingEvents];
-    self.eventAttendingViewController.showCardsWithStatus = YES;
+    self.eventAttendingViewController = [[BDEventListViewController alloc] initWithEvents:self.attendingEvents];
     
     [self.eventAttendingViewController setEventTappedBlock:^(Event *event){
         
@@ -164,8 +163,7 @@
         
     }];
     
-    self.eventHistoryViewController = [[BDFindABoatEventsViewController alloc] initWithEvents:self.historyEvents];
-    self.eventHistoryViewController.showCardsWithStatus = YES;
+    self.eventHistoryViewController = [[BDEventListViewController alloc] initWithEvents:self.historyEvents];
     
     [self.eventHistoryViewController setEventTappedBlock:^(Event *event){
         

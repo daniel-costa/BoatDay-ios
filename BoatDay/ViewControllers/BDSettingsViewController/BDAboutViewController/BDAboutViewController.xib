@@ -97,8 +97,12 @@
                     <rect key="frame" x="0.0" y="341" width="320" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="cell_arrow_grey" id="bhh-lG-7Ca">
+                            <rect key="frame" x="296" y="22" width="8" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms &amp; Conditions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DvD-sl-Jyi">
-                            <rect key="frame" x="0.0" y="-3" width="320" height="60"/>
+                            <rect key="frame" x="18" y="8" width="249" height="43"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -115,6 +119,7 @@
         </view>
     </objects>
     <resources>
+        <image name="cell_arrow_grey" width="8" height="15"/>
         <image name="myboats_noboats" width="159" height="143"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

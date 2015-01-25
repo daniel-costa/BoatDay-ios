@@ -32,6 +32,10 @@
     self.numberOfSeatsLabel.font = [UIFont abelFontWithSize:70.0];
     self.numberOfSeatsLabel.textColor = [UIColor whiteColor];
     
+    self.openSeatsLabel.font = [UIFont quattroCentoRegularFontWithSize:13.0];
+    self.openSeatsLabel.textColor = [UIColor whiteColor];
+    self.openSeatsLabel.text = NSLocalizedString(@"eventCard.view.openSeats", nil);
+    
     self.seatsLabel.font = [UIFont quattroCentoRegularFontWithSize:13.0];
     self.seatsLabel.textColor = [UIColor whiteColor];
     
@@ -100,7 +104,8 @@
 //    
 //    NSInteger availableSeats = event.availableSeats.integerValue - numberOfUsersAttending;
     self.numberOfSeatsLabel.text = [NSString stringWithFormat:@"%ld", (long)event.freeSeats.integerValue];
-    
+    self.seatsLabel.text = [NSString stringWithFormat:@"%ld %@", (long)event.availableSeats.integerValue,NSLocalizedString(@"eventCard.view.totalSeats", nil)];
+
     self.userNameLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"eventCard.hostedBy", nil), [event.host shortName]];
     
     self.locationLabel.text = event.locationName;

@@ -12,6 +12,18 @@
 		951D64741A72E9BF00540EED /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D64731A72E9BF00540EED /* libz.dylib */; };
 		951D64761A72E9C500540EED /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D64751A72E9C500540EED /* CoreData.framework */; };
 		951D64781A72E9D300540EED /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D64771A72E9D300540EED /* SystemConfiguration.framework */; };
+		9582C5A91A741C4400986CDC /* BDMyEventListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9582C5A71A741C4400986CDC /* BDMyEventListCell.m */; };
+		9582C5AA1A741C4400986CDC /* BDMyEventListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9582C5A81A741C4400986CDC /* BDMyEventListCell.xib */; };
+		9582C5B91A742BE600986CDC /* BDEventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9582C5B71A742BE600986CDC /* BDEventListViewController.m */; };
+		9582C5BA1A742BE600986CDC /* BDEventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9582C5B81A742BE600986CDC /* BDEventListViewController.xib */; };
+		9582C5C01A744CAC00986CDC /* BDLeftMenuProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9582C5BE1A744CAC00986CDC /* BDLeftMenuProfileTableViewCell.m */; };
+		9582C5C11A744CAC00986CDC /* BDLeftMenuProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9582C5BF1A744CAC00986CDC /* BDLeftMenuProfileTableViewCell.xib */; };
+		9582C5C51A744CED00986CDC /* BDLeftMenuFactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9582C5C31A744CED00986CDC /* BDLeftMenuFactTableViewCell.m */; };
+		9582C5C61A744CED00986CDC /* BDLeftMenuFactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9582C5C41A744CED00986CDC /* BDLeftMenuFactTableViewCell.xib */; };
+		9582C5CA1A744D1B00986CDC /* BDLeftMenuNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9582C5C81A744D1B00986CDC /* BDLeftMenuNotificationTableViewCell.m */; };
+		9582C5CB1A744D1B00986CDC /* BDLeftMenuNotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9582C5C91A744D1B00986CDC /* BDLeftMenuNotificationTableViewCell.xib */; };
+		9582C5CF1A74689A00986CDC /* BDDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9582C5CD1A74689A00986CDC /* BDDefaultTableViewCell.m */; };
+		9582C5D01A74689A00986CDC /* BDDefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9582C5CE1A74689A00986CDC /* BDDefaultTableViewCell.xib */; };
 		958474A61A72BAF20008FAC3 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958474A51A72BAF20008FAC3 /* Crashlytics.framework */; };
 		E80E1B991A30C04A0084E828 /* TSCurrencyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E80E1B981A30C04A0084E828 /* TSCurrencyTextField.m */; };
 		E812ED2519811BE7008EAE9C /* BDLeftMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E812ED2319811BE7008EAE9C /* BDLeftMenuCell.m */; };
@@ -311,6 +323,24 @@
 		951D64731A72E9BF00540EED /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		951D64751A72E9C500540EED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		951D64771A72E9D300540EED /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9582C5A61A741C4400986CDC /* BDMyEventListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDMyEventListCell.h; sourceTree = "<group>"; };
+		9582C5A71A741C4400986CDC /* BDMyEventListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDMyEventListCell.m; sourceTree = "<group>"; };
+		9582C5A81A741C4400986CDC /* BDMyEventListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDMyEventListCell.xib; sourceTree = "<group>"; };
+		9582C5B61A742BE600986CDC /* BDEventListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDEventListViewController.h; sourceTree = "<group>"; };
+		9582C5B71A742BE600986CDC /* BDEventListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDEventListViewController.m; sourceTree = "<group>"; };
+		9582C5B81A742BE600986CDC /* BDEventListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDEventListViewController.xib; sourceTree = "<group>"; };
+		9582C5BD1A744CAC00986CDC /* BDLeftMenuProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDLeftMenuProfileTableViewCell.h; sourceTree = "<group>"; };
+		9582C5BE1A744CAC00986CDC /* BDLeftMenuProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDLeftMenuProfileTableViewCell.m; sourceTree = "<group>"; };
+		9582C5BF1A744CAC00986CDC /* BDLeftMenuProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDLeftMenuProfileTableViewCell.xib; sourceTree = "<group>"; };
+		9582C5C21A744CED00986CDC /* BDLeftMenuFactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDLeftMenuFactTableViewCell.h; sourceTree = "<group>"; };
+		9582C5C31A744CED00986CDC /* BDLeftMenuFactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDLeftMenuFactTableViewCell.m; sourceTree = "<group>"; };
+		9582C5C41A744CED00986CDC /* BDLeftMenuFactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDLeftMenuFactTableViewCell.xib; sourceTree = "<group>"; };
+		9582C5C71A744D1B00986CDC /* BDLeftMenuNotificationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDLeftMenuNotificationTableViewCell.h; sourceTree = "<group>"; };
+		9582C5C81A744D1B00986CDC /* BDLeftMenuNotificationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDLeftMenuNotificationTableViewCell.m; sourceTree = "<group>"; };
+		9582C5C91A744D1B00986CDC /* BDLeftMenuNotificationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDLeftMenuNotificationTableViewCell.xib; sourceTree = "<group>"; };
+		9582C5CC1A74689A00986CDC /* BDDefaultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDDefaultTableViewCell.h; sourceTree = "<group>"; };
+		9582C5CD1A74689A00986CDC /* BDDefaultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDDefaultTableViewCell.m; sourceTree = "<group>"; };
+		9582C5CE1A74689A00986CDC /* BDDefaultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDDefaultTableViewCell.xib; sourceTree = "<group>"; };
 		958474A51A72BAF20008FAC3 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		B89FAEA454AF4B3A8C994E10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80E1B971A30C04A0084E828 /* TSCurrencyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCurrencyTextField.h; sourceTree = "<group>"; };
@@ -807,6 +837,53 @@
 			name = GroupAnalytic;
 			sourceTree = "<group>";
 		};
+		9582C5A51A741C1100986CDC /* MyEventListCell */ = {
+			isa = PBXGroup;
+			children = (
+				9582C5A61A741C4400986CDC /* BDMyEventListCell.h */,
+				9582C5A71A741C4400986CDC /* BDMyEventListCell.m */,
+				9582C5A81A741C4400986CDC /* BDMyEventListCell.xib */,
+			);
+			name = MyEventListCell;
+			sourceTree = "<group>";
+		};
+		9582C5AB1A741F4900986CDC /* MyEventListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9582C5A51A741C1100986CDC /* MyEventListCell */,
+				9582C5B61A742BE600986CDC /* BDEventListViewController.h */,
+				9582C5B71A742BE600986CDC /* BDEventListViewController.m */,
+				9582C5B81A742BE600986CDC /* BDEventListViewController.xib */,
+			);
+			name = MyEventListViewController;
+			sourceTree = "<group>";
+		};
+		9582C5BB1A743D5B00986CDC /* BDProfileTableHeader */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = BDProfileTableHeader;
+			sourceTree = "<group>";
+		};
+		9582C5BC1A744C7600986CDC /* BDLeftHeadersCell */ = {
+			isa = PBXGroup;
+			children = (
+				9582C5BD1A744CAC00986CDC /* BDLeftMenuProfileTableViewCell.h */,
+				9582C5BE1A744CAC00986CDC /* BDLeftMenuProfileTableViewCell.m */,
+				9582C5BF1A744CAC00986CDC /* BDLeftMenuProfileTableViewCell.xib */,
+				9582C5C71A744D1B00986CDC /* BDLeftMenuNotificationTableViewCell.h */,
+				9582C5C81A744D1B00986CDC /* BDLeftMenuNotificationTableViewCell.m */,
+				9582C5C91A744D1B00986CDC /* BDLeftMenuNotificationTableViewCell.xib */,
+				9582C5C21A744CED00986CDC /* BDLeftMenuFactTableViewCell.h */,
+				9582C5C31A744CED00986CDC /* BDLeftMenuFactTableViewCell.m */,
+				9582C5C41A744CED00986CDC /* BDLeftMenuFactTableViewCell.xib */,
+				9582C5CC1A74689A00986CDC /* BDDefaultTableViewCell.h */,
+				9582C5CD1A74689A00986CDC /* BDDefaultTableViewCell.m */,
+				9582C5CE1A74689A00986CDC /* BDDefaultTableViewCell.xib */,
+			);
+			name = BDLeftHeadersCell;
+			sourceTree = "<group>";
+		};
 		E80E1B961A30C04A0084E828 /* TSCurrencyTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -1079,6 +1156,7 @@
 		E82F5E1E19B4810E0095D6DF /* My Events */ = {
 			isa = PBXGroup;
 			children = (
+				9582C5AB1A741F4900986CDC /* MyEventListViewController */,
 				E82F5E1F19B4810E0095D6DF /* BDMyEventsViewController.h */,
 				E82F5E2019B4810E0095D6DF /* BDMyEventsViewController.m */,
 				E82F5E2119B4810E0095D6DF /* BDMyEventsViewController.xib */,
@@ -1821,6 +1899,8 @@
 		E87A74CF195340DD0006D097 /* Left Menu */ = {
 			isa = PBXGroup;
 			children = (
+				9582C5BC1A744C7600986CDC /* BDLeftHeadersCell */,
+				9582C5BB1A743D5B00986CDC /* BDProfileTableHeader */,
 				E812ED2119811BE7008EAE9C /* BDLeftMenuCell */,
 				E87A74D1195344B00006D097 /* BDLeftViewController.h */,
 				E87A74D2195344B00006D097 /* BDLeftViewController.m */,
@@ -2452,6 +2532,7 @@
 				E824B1681965C0B300557328 /* BDInviteUserViewController.xib in Resources */,
 				E86F6F64196337CC00E2821F /* Done.png in Resources */,
 				E87FE2BA1A1E425F009AD37F /* typing.png in Resources */,
+				9582C5BA1A742BE600986CDC /* BDEventListViewController.xib in Resources */,
 				E83A053F1961D767008244E0 /* BDProfileViewController.xib in Resources */,
 				E8385CF219BE2CF3004D350F /* USStateAbbreviations.plist in Resources */,
 				E88F769E19A36608007B9AA0 /* BDFindUsersViewController.xib in Resources */,
@@ -2489,6 +2570,7 @@
 				E8385CE419BDE12D004D350F /* BDTermsOfServicePaymentCell.xib in Resources */,
 				E8169B26195C66A8008F2A8C /* semLigacao@2x.png in Resources */,
 				E86D949619B87C600066AB5C /* BDHostRegistrationFirstRowCell.xib in Resources */,
+				9582C5AA1A741C4400986CDC /* BDMyEventListCell.xib in Resources */,
 				E8FDBF4B197D677100D51645 /* background.mp4 in Resources */,
 				E869A9031964409300CB78A7 /* BDReviewsListViewController.xib in Resources */,
 				E8315E56199A6E8D00977E5A /* BDEventActivitiesViewController.xib in Resources */,
@@ -2508,6 +2590,7 @@
 				E87FE2B61A1E425F009AD37F /* bubble_tailless.png in Resources */,
 				E812ED7F19816E66008EAE9C /* BDActivitiesListViewController.xib in Resources */,
 				E8E7921B19741FF2005511F2 /* QuattrocentoSans-Italic.ttf in Resources */,
+				9582C5C11A744CAC00986CDC /* BDLeftMenuProfileTableViewCell.xib in Resources */,
 				E87FE2B71A1E425F009AD37F /* bubble_tailless@2x.png in Resources */,
 				E8385CC419BDC8BC004D350F /* BDPaymentInfoViewController.xib in Resources */,
 				E8385CD019BDD5CC004D350F /* BDBusinessInfoPaymentCell.xib in Resources */,
@@ -2549,6 +2632,7 @@
 				E87FE2D81A1E425F009AD37F /* JSQMessagesLoadEarlierHeaderView.xib in Resources */,
 				E8169B2A195C66A8008F2A8C /* NoConnectionView.xib in Resources */,
 				E87FE2BD1A1E425F009AD37F /* message_sent.aiff in Resources */,
+				9582C5D01A74689A00986CDC /* BDDefaultTableViewCell.xib in Resources */,
 				E883D9C719BF00F400CCA996 /* BDPaymentStatusViewController.xib in Resources */,
 				E8169B24195C66A8008F2A8C /* backgroundNormal@2x.png in Resources */,
 				E8385CCA19BDCAB4004D350F /* BDSelectDestinationPaymentCell.xib in Resources */,
@@ -2556,9 +2640,11 @@
 				E8ECA5A81A31DF83001C64CE /* PeterYoder@2x.png in Resources */,
 				E87A74D5195344B00006D097 /* BDLeftViewController.xib in Resources */,
 				E8D35F2919B9D6DF00ACCDB2 /* BDSeatRequestViewController.xib in Resources */,
+				9582C5CB1A744D1B00986CDC /* BDLeftMenuNotificationTableViewCell.xib in Resources */,
 				E8ECA5A91A31DF83001C64CE /* RJ@2x.png in Resources */,
 				E84E9D311987D11600410585 /* BDFindABoatCalendarViewController.xib in Resources */,
 				E87FE2B31A1E425F009AD37F /* bubble_stroked@2x.png in Resources */,
+				9582C5C61A744CED00986CDC /* BDLeftMenuFactTableViewCell.xib in Resources */,
 				E869B07519B7782E0095E703 /* BDHostRegistrationViewController.xib in Resources */,
 				E812ED3F19814B1D008EAE9C /* BDAddEditBoatViewController.xib in Resources */,
 				E8ECA5AA1A31DF83001C64CE /* SteveNelson@2x.png in Resources */,
@@ -2650,9 +2736,12 @@
 				E869B06119B72DEF0095E703 /* BDAboutViewController.m in Sources */,
 				E87A74D9195344BF0006D097 /* BDHomeViewController.m in Sources */,
 				E812ED8B19816E66008EAE9C /* BDEditProfileFirstRowCell.m in Sources */,
+				9582C5C01A744CAC00986CDC /* BDLeftMenuProfileTableViewCell.m in Sources */,
 				E86ABC67198A63C30049125B /* BDBoatLocationPinAnnotation.m in Sources */,
 				E8B6B19019910708005A8DEB /* BDDateRange.m in Sources */,
 				E87FE2C91A1E425F009AD37F /* JSQMessagesToolbarButtonFactory.m in Sources */,
+				9582C5CF1A74689A00986CDC /* BDDefaultTableViewCell.m in Sources */,
+				9582C5CA1A744D1B00986CDC /* BDLeftMenuNotificationTableViewCell.m in Sources */,
 				E8385CD519BDD8C6004D350F /* BDPersonalInfoPaymentCell.m in Sources */,
 				E873530419866BC0002CCCBD /* BDLocationViewController.m in Sources */,
 				E87A74C219533CBE0006D097 /* NSNumberFormatter+AppNumberFormatter.m in Sources */,
@@ -2696,6 +2785,7 @@
 				E8913F8919A634BC00E44235 /* BDSelectBoatViewController.m in Sources */,
 				E869B05819B7268C0095E703 /* BDBoatTowingViewController.m in Sources */,
 				E812ED7C19816E66008EAE9C /* BDActivitiesListCell.m in Sources */,
+				9582C5B91A742BE600986CDC /* BDEventListViewController.m in Sources */,
 				E8D31D25197FF0E50016BA57 /* SafetyFeature.m in Sources */,
 				E8D7DA06198F943600394966 /* BDFindABoatFilterViewController.m in Sources */,
 				E87FE2C71A1E425F009AD37F /* JSQMessagesBubbleImageFactory.m in Sources */,
@@ -2743,6 +2833,7 @@
 				E8219736197E72E6001B17A1 /* BDMyBoatsViewController.m in Sources */,
 				E87FE2C81A1E425F009AD37F /* JSQMessagesTimestampFormatter.m in Sources */,
 				E87A74C119533CBE0006D097 /* NSMutableAttributedString+AppAttributedStrings.m in Sources */,
+				9582C5C51A744CED00986CDC /* BDLeftMenuFactTableViewCell.m in Sources */,
 				E86F6F67196338BE00E2821F /* MHFacebookImageViewer.m in Sources */,
 				E8260EBD198A741900D59859 /* CKCalendarView.m in Sources */,
 				E869A9021964409300CB78A7 /* BDReviewsListViewController.m in Sources */,
@@ -2758,6 +2849,7 @@
 				E87FE2BE1A1E425F009AD37F /* JSQSystemSoundPlayer+JSQMessages.m in Sources */,
 				E87A74B919533CBE0006D097 /* BDAppDelegate.m in Sources */,
 				E87FE2CB1A1E425F009AD37F /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */,
+				9582C5A91A741C4400986CDC /* BDMyEventListCell.m in Sources */,
 				E812ED2919812E5F008EAE9C /* Notification.m in Sources */,
 				E87FE2C31A1E425F009AD37F /* JSQMessagesKeyboardController.m in Sources */,
 				E87A74BF19533CBE0006D097 /* NSDateFormatter+AppDateFormatter.m in Sources */,

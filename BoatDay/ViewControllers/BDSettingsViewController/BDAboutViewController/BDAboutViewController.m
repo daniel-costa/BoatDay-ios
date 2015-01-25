@@ -126,9 +126,9 @@
     self.companyLabel.attributedText = attributedText;
     
     
-    self.termsLabel.font = [UIFont quattroCentoBoldFontWithSize:14.0];
-    self.termsLabel.textColor = [UIColor mediumGreenBoatDay];
-    
+    self.termsLabel.font = [UIFont quattroCentoRegularFontWithSize:14.0];
+    self.termsLabel.textColor = [UIColor mediumGrayBoatDay];
+    self.termsLabel.textAlignment = NSTextAlignmentLeft;
     self.termsLabel.text = NSLocalizedString(@"settings.termsOfService", nil);
     
 

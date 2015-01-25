@@ -15,7 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet BDFindUsersTextField *textField;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (strong, nonatomic) UIBarButtonItem *filterButton;
 // Data
 @property (strong, nonatomic) NSMutableArray *usersByNameTotalSearch;
 @property (strong, nonatomic) NSMutableArray *usersByLocationTotalSearch;
@@ -87,7 +87,7 @@
 - (void) setupView {
     
     [self setupTableView];
-    
+    [self setupNavigationBar];
     self.textField.font = [UIFont quattroCentoRegularFontWithSize:17.0];
     self.textField.textColor = [UIColor greenBoatDay];
     
@@ -113,7 +113,16 @@
     self.tableView.allowsMultipleSelectionDuringEditing = NO;
     
 }
-
+- (void) setupNavigationBar {
+    
+    UIButton *filterButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    filterButton.frame = CGRectMake(0.0, 0.0, 20.0, 22.0);
+    [filterButton setImage:[UIImage imageNamed:@"nav_filter"] forState:UIControlStateNormal];
+    [filterButton addTarget:self action:@selector(filterButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    self.filterButton = [[UIBarButtonItem alloc] initWithCustomView:filterButton];
+    [self.navigationItem setRightBarButtonItem:self.filterButton animated:YES];
+    
+}
 #pragma mark - UITableView Datasource
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -380,6 +389,25 @@
 
     [self.tableView reloadData];
 
+}
+
+#pragma mark - Action Methods
+
+- (void) filterButtonPressed:(id)sender {
+/*
+    BDFindABoatFilterViewController *filterViewController = [[BDFindABoatFilterViewController alloc] initWithFilterDictionary:self.filterDictionary];
+    
+    [filterViewController setFilterDictionaryChangeBlock:^(NSMutableDictionary *filterDictionary) {
+        
+        self.filterDictionary = filterDictionary;
+        self.events = nil;
+        
+    }];
+    
+    UINavigationController *navigationController = [[MMNavigationController alloc] initWithRootViewController:filterViewController];
+    
+    [self presentViewController:navigationController animated:YES completion:nil];
+    */
 }
 
 

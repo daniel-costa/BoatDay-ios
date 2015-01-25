@@ -417,6 +417,7 @@
 "addEditEvent.availableSeats"           = "AVAILABLE SEATS";
 "addEditEvent.selectBoatFirst"          = "No Boat Selected";
 "addEditEvent.selected"                 = "Selected";
+"addEditEvent.estimatedIncome"          = "TOTAL";
 "addEditEvent.eventDescription"         = "EVENT DESCRIPTION";
 "addEditEvent.publish"                  = "PUBLISH";
 "addEditEvent.delete"                   = "DELETE";
@@ -473,6 +474,8 @@
 "eventCard.status.history.eventOver"            = "THIS EVENT IS OVER";
 "eventCard.status.eventIsLive"                  = "THIS EVENT IS LIVE";
 "eventCard.status.somethingWentWrong"           = "EVENT INFORMATION";
+"eventCard.view.openSeats"                      = "OPEN SEATS";
+"eventCard.view.totalSeats"                     = "TOTAL SEATS";
 
 /*
  * Notifications

@@ -19,6 +19,12 @@
 #import "BDHostRegistrationViewController.h"
 #import "BDAboutViewController.h"
 #import "BDLeftMenuCell.h"
+#import "BDLeftMenuFactTableViewCell.h"
+#import "BDLeftMenuNotificationTableViewCell.h"
+#import "BDLeftMenuProfileTableViewCell.h"
+#import "BDDefaultTableViewCell.h"
+
+
 
 #define SELECTED_COLOR RGB(36, 154, 175)
 
@@ -26,13 +32,13 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (weak, nonatomic) IBOutlet UIView *footerView;
-
+@property (weak, nonatomic) IBOutlet UIView *footerViewsOfController;
 
 
 @end
 
 @implementation BDLeftViewController
+
 
 - (void)viewDidLoad {
     
@@ -67,20 +73,36 @@
 #pragma mark - Setup Methods
 
 - (void) setupTableView {
-    
+    [self setupProfileHeader];
     // setup table view
     self.tableView.backgroundColor = [UIColor greenBoatDay];
+    _footerViewsOfController.backgroundColor = [UIColor greenBoatDay];
     self.tableView.backgroundView.backgroundColor = [UIColor greenBoatDay];
     
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.separatorColor = SELECTED_COLOR;
     self.tableView.delaysContentTouches = NO;
     
     self.tableView.allowsMultipleSelectionDuringEditing = NO;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    self.tableView.tableHeaderView = [self setupTableViewHeader];
+//    self.tableView.tableHeaderView = [self setupTableViewHeader];
 }
 
+- (void) setupProfileHeader {
+    UINib *storesCellNib = [UINib nibWithNibName:NSStringFromClass([BDLeftMenuProfileTableViewCell class]) bundle:nil];
+    [self.tableView registerNib:storesCellNib forCellReuseIdentifier:[BDLeftMenuProfileTableViewCell reuseIdentifier]];
+    
+    storesCellNib = [UINib nibWithNibName:NSStringFromClass([BDLeftMenuNotificationTableViewCell class]) bundle:nil];
+    [self.tableView registerNib:storesCellNib forCellReuseIdentifier:[BDLeftMenuNotificationTableViewCell reuseIdentifier]];
+    
+    storesCellNib = [UINib nibWithNibName:NSStringFromClass([BDLeftMenuFactTableViewCell class]) bundle:nil];
+    [self.tableView registerNib:storesCellNib forCellReuseIdentifier:[BDLeftMenuFactTableViewCell reuseIdentifier]];
+
+    storesCellNib = [UINib nibWithNibName:NSStringFromClass([BDDefaultTableViewCell class]) bundle:nil];
+    [self.tableView registerNib:storesCellNib forCellReuseIdentifier:[BDDefaultTableViewCell reuseIdentifier]];
+    
+  
+}
 - (UIView *) setupTableViewHeader {
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), 44)];
 
@@ -115,32 +137,39 @@
 #pragma mark - UITableView Datasource
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (CGRectGetMaxY(self.tableView.frame) > CGRectGetMinY(self.footerView.frame)) {
-      
-//        return (self.view.frame.size.height-20)/[BDLeftViewController sideMenuNumberOfRows];
-        return 50.0;
+    SideMenu sideMenu = [BDLeftViewController convertSideMenuIndex:indexPath.row];
+
+    switch (sideMenu) {
+        case SideMenuProfileHeader:
+            return 44.0;
+            break;
+        case SideMenuNotificationBar:
+            return 24.0;
+            
+            break;
+        case SidemenuFactBar:
+            return 160.0;
+            
+            break;
+        default:
+            break;
     }
-    else {
 
-        return 50.0;
-        
-    }
+    return 50.0;
 }
 
 
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-
-    return 88.0;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-
-    UIView *headerSection = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), 88)];
-    headerSection.backgroundColor = [UIColor greenBoatDay];
-    return headerSection;
-}
+//
+//-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+//    return 88.0;
+//}
+//
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+//
+//    UIView *headerSection = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), 88)];
+//    headerSection.backgroundColor = [UIColor greenBoatDay];
+//    return headerSection;
+//}
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -154,9 +183,45 @@
     
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"Cell";
+- (UITableViewCell *)profileHeaderCell:(UITableView *)tableView{
+    BDLeftMenuProfileTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[BDLeftMenuProfileTableViewCell reuseIdentifier]];
+    User *user = [User currentUser];
+    PFFile *theImage = user.pictures[[user.selectedPictureIndex integerValue]];
     
+    // Get image from cache or from server if isnt available (background task)
+    [theImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        
+        UIImage *image = [UIImage imageWithData:data];
+        [cell updateProfileCellWith:image profileName:[user fullName]];
+    }];
+
+    
+
+    return cell;
+}
+
+- (UITableViewCell *)notificationBarHeaderCell:(UITableView *)tableView{
+    BDLeftMenuNotificationTableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:[BDLeftMenuNotificationTableViewCell reuseIdentifier]];
+
+    
+    return cell;
+}
+
+- (UITableViewCell *)factHeaderCell:(UITableView *)tableView{
+    BDLeftMenuFactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[BDLeftMenuFactTableViewCell reuseIdentifier]];
+    
+    return cell;
+}
+
+- (UITableViewCell *)returnDefaultCell:(UITableView *)tableView name:(NSString *)name image:(NSString *)image{
+    BDDefaultTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[BDDefaultTableViewCell reuseIdentifier]];
+    [cell updateCellWith:name imageName:image];
+    return cell;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    SideMenu sideMenu = [BDLeftViewController convertSideMenuIndex:indexPath.row];
+    static NSString *cellIdentifier = @"Cell";
+
     BDLeftMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if(cell == nil) {
@@ -165,10 +230,48 @@
         cell.textLabel.font = [UIFont abelFontWithSize:17.0];
         cell.textLabel.textColor = [UIColor whiteColor];
     }
+    cell.textLabel.frame = CGRectMake(54, 3, 202, 42);
+    cell.accessoryView.frame = CGRectMake(4, 3, 42, 42);
+
+//    cell.accessoryView = nil;
+    switch (sideMenu) {
+        case SideMenuProfileHeader:
+            return [self profileHeaderCell:tableView];
+            break;
+        case SideMenuNotificationBar:
+            return [self notificationBarHeaderCell:tableView];
+
+            break;
+        case SidemenuFactBar:
+            return [self factHeaderCell:tableView];
+
+            break;
+        case SideMenuHome:
+            return [self returnDefaultCell:tableView name:NSLocalizedString(@"sideMenu.BoatDay", nil) image:@"home_boatday_logo"];
+            
+            break;
+        case SideMenuFindABoatDay:
+            cell.textLabel.text = NSLocalizedString(@"sideMenu.findABoatDay", nil);
+            
+            break;
+        case SideMenuMyEvents:
+            return [self returnDefaultCell:tableView name:NSLocalizedString(@"sideMenu.myEvents", nil) image:@"ico-Events"];
+
+            
+            break;
+        
+        case SideMenuHostRegistration:
+
+            return [self returnDefaultCell:tableView name:NSLocalizedString(@"sideMenu.hostRegistration", nil) image:@"ico-Flag"];
+            break;
+        case SideMenuMyBoats:
+
+            return [self returnDefaultCell:tableView name:NSLocalizedString(@"sideMenu.myBoats", nil) image:@"ico-Host-center"];
+            break;
     
-    cell.accessoryView = nil;
-    
-    SideMenu sideMenu = [BDLeftViewController convertSideMenuIndex:indexPath.row];
+        default:
+            break;
+    }
     
     if ([Session sharedSession].selectedSideMenu == sideMenu) {
         [self setCellColor:SELECTED_COLOR forCell:cell];
@@ -176,50 +279,7 @@
     else {
         [self setCellColor:[UIColor clearColor] forCell:cell];
     }
-    
-    switch (sideMenu) {
-        case SideMenuHome:
-            cell.textLabel.text = NSLocalizedString(@"sideMenu.BoatDay", nil);
-            cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sidemenu_settings"]];
 
-            break;
-        case SideMenuFindABoatDay:
-            cell.textLabel.text = NSLocalizedString(@"sideMenu.findABoatDay", nil);
-            
-            break;
-        case SideMenuMyProfile:
-            cell.textLabel.text = NSLocalizedString(@"sideMenu.myProfile", nil);
-            
-            break;
-        case SideMenuMyEvents:
-            cell.textLabel.text = NSLocalizedString(@"sideMenu.myEvents", nil);
-            
-            break;
-        case SideMenuNotifications:
-            cell.textLabel.text = NSLocalizedString(@"sideMenu.notifications", nil);
-            
-            break;
-        case SideMenuHostRegistration:
-            cell.textLabel.text = NSLocalizedString(@"sideMenu.hostRegistration", nil);
-            
-            break;
-        case SideMenuMyBoats:
-            cell.textLabel.text = NSLocalizedString(@"sideMenu.myBoats", nil);
-            
-            break;
-        case SideMenuEmergencyBoatTowing:
-            cell.textLabel.text = NSLocalizedString(@"sideMenu.emergencyBoatTowing", nil);
-            cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sidemenu_call"]];
-            
-            break;
-        case SideMenuSettings:
-            cell.textLabel.text = NSLocalizedString(@"sideMenu.settings", nil);
-            cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sidemenu_settings"]];
-            
-            break;
-        default:
-            break;
-    }
     if ([User currentUser] && [Session sharedSession].dataWasFechted) {
         [cell.textLabel setTextColor:[UIColor whiteColor]];
 
@@ -250,13 +310,6 @@
         
         [self.tableView reloadData];
 
-    }else if(indexPath.row == 0){
-        SideMenu pressedSideMenu = [BDLeftViewController convertSideMenuIndex:indexPath.row];
-        
-        [self openViewController:pressedSideMenu];
-        
-        [self.tableView reloadData];
-        
     }
     
 }
@@ -277,13 +330,13 @@
         case SideMenuFindABoatDay:
             centerViewController = [[BDFindABoatDayViewController alloc] init];
             break;
-        case SideMenuMyProfile:
+        case SideMenuProfileHeader:
             centerViewController = [[BDProfileViewController alloc] initWithUser:[User currentUser] andProfileType:ProfileTypeSelf];
             break;
         case SideMenuMyEvents:
             centerViewController = [[BDMyEventsViewController alloc] init];
             break;
-        case SideMenuNotifications:
+        case SideMenuNotificationBar:
             centerViewController = [[BDNotificationsViewController alloc] init];
             break;
         case SideMenuHostRegistration:
@@ -300,6 +353,9 @@
             break;
         case SideMenuAboutUs:
             centerViewController =  [[BDAboutViewController alloc] init];
+            break;
+        case SidemenuFactBar:
+            return;
             break;
         default:
             break;
@@ -363,7 +419,18 @@
     [self openViewController:SideMenuAboutUs];
 }
 
+- (IBAction)settingButtonPressed:(id)sender {
+    [self openViewController:SideMenuSettings];
 
+}
+- (IBAction)emergencyButtonPressed:(id)sender {
+    [self openViewController:SideMenuEmergencyBoatTowing];
+
+}
+- (IBAction)aboutUsButtonPressed:(id)sender {
+    [self openViewController:SideMenuAboutUs];
+
+}
 
 #pragma mark - Notification Methods
 
@@ -469,9 +536,11 @@
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        _convertArray = @[@(SideMenuHome),
+        _convertArray = @[@(SideMenuProfileHeader),
+                          @(SideMenuNotificationBar),
+                          @(SidemenuFactBar),
+                          @(SideMenuHome),
                           @(SideMenuMyEvents),
-                          @(SideMenuMyProfile),
                           @(SideMenuMyBoats)];
     });
     
@@ -486,9 +555,11 @@
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        _convertArray = @[@(SideMenuHome),
+        _convertArray = @[@(SideMenuProfileHeader),
+                          @(SideMenuNotificationBar),
+                          @(SidemenuFactBar),
+                          @(SideMenuHome),
                           @(SideMenuMyEvents),
-                          @(SideMenuMyProfile),
                           @(SideMenuMyBoats)];
     });
     
@@ -503,9 +574,11 @@
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        _convertArray = @[@(SideMenuHome),
+        _convertArray = @[@(SideMenuProfileHeader),
+                          @(SideMenuNotificationBar),
+                          @(SidemenuFactBar),
+                          @(SideMenuHome),
                           @(SideMenuMyEvents),
-                          @(SideMenuMyProfile),
                           @(SideMenuHostRegistration)];
     });
     
@@ -522,7 +595,6 @@
     dispatch_once(&onceToken, ^{
         _convertArray =  @[@(SideMenuHome),
                            @(SideMenuMyEvents),
-                           @(SideMenuMyProfile),
                            @(SideMenuHostRegistration)];
     });
     

@@ -13,6 +13,11 @@ __weak __typeof(VAR) VAR ## _weak_ = (VAR)
 autoreleasepool {} \
 __strong __typeof(VAR) VAR = VAR ## _weak_
 
+#define TRUST_SAFETY_FEE 4.0
+#define BRAINTREE_PERCENTAGE 0.029
+#define BRAINTREE_FIX_FEE 0.30
+#define BOATDAY_FEE 0.27
+
 typedef void (^SimpleBooleanBlock)(BOOL response);
 
 typedef NS_ENUM(NSInteger, ProfileType) {
@@ -23,8 +28,10 @@ typedef NS_ENUM(NSInteger, ProfileType) {
 };
 
 typedef NS_ENUM(NSInteger, SideMenu) {
-    
-    SideMenuHome = 0,
+    SideMenuProfileHeader = 0,
+    SideMenuNotificationBar,
+    SidemenuFactBar,
+    SideMenuHome,
     SideMenuFindABoatDay,
     SideMenuMyProfile,
     SideMenuMyEvents,

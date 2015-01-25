@@ -24,14 +24,21 @@
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="WRG-xN-7vn">
-                            <rect key="frame" x="100" y="225" width="135" height="64"/>
+                            <rect key="frame" x="30" y="227" width="135" height="64"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="55"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEATS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="aCD-23-aB5">
-                            <rect key="frame" x="20" y="290" width="210" height="22"/>
+                            <rect key="frame" x="27" y="290" width="210" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPEN SEATS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="LbB-9L-Nn6">
+                            <rect key="frame" x="90" y="260" width="147" height="22"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -118,6 +125,7 @@
                 <outlet property="eventNameLabel" destination="PKS-Lz-QmR" id="ms4-d3-DtA"/>
                 <outlet property="locationLabel" destination="40b-6l-tuO" id="lzw-rn-Mgy"/>
                 <outlet property="numberOfSeatsLabel" destination="WRG-xN-7vn" id="NjA-2A-88b"/>
+                <outlet property="openSeatsLabel" destination="LbB-9L-Nn6" id="T7c-Ld-923"/>
                 <outlet property="priceLabel" destination="xFT-Va-BgZ" id="JQM-ks-cMg"/>
                 <outlet property="seatsLabel" destination="aCD-23-aB5" id="PST-6g-fT5"/>
                 <outlet property="starRating" destination="NKU-Ls-6hG" id="UFj-zE-toS"/>

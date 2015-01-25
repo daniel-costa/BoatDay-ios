@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BDLeftViewController">
             <connections>
+                <outlet property="footerViewsOfController" destination="bQK-P7-tqy" id="jqQ-AH-Uch"/>
                 <outlet property="tableView" destination="hHa-TG-MwC" id="PBN-cL-hN3"/>
                 <outlet property="view" destination="ZQL-Ni-FFK" id="Zt9-TE-kC7"/>
             </connections>
@@ -17,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hHa-TG-MwC">
-                    <rect key="frame" x="0.0" y="20" width="272" height="548"/>
+                    <rect key="frame" x="0.0" y="20" width="272" height="444"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -25,12 +26,57 @@
                         <outlet property="delegate" destination="-1" id="HzZ-V9-sCe"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" id="bQK-P7-tqy">
+                    <rect key="frame" x="0.0" y="461" width="272" height="107"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DGU-vX-9dY">
+                            <rect key="frame" x="36" y="25" width="36" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="ico-Settings">
+                                <color key="titleColor" red="0.69324100379999998" green="0.081096206609999999" blue="0.081803933189999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="settingButtonPressed:" destination="-1" eventType="touchUpInside" id="bqP-xx-fUg"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lc5-OT-Rlf">
+                            <rect key="frame" x="115" y="25" width="36" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="ico-Emergency">
+                                <color key="titleColor" red="0.69324100379999998" green="0.081096206609999999" blue="0.081803933189999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="emergencyButtonPressed:" destination="-1" eventType="touchUpInside" id="bDg-0p-cEQ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="75l-iO-3e5">
+                            <rect key="frame" x="193" y="25" width="36" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="ico-info">
+                                <color key="titleColor" red="0.69324100379999998" green="0.081096206609999999" blue="0.081803933189999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="aboutUsButtonPressed:" destination="-1" eventType="touchUpInside" id="RkS-D8-XdF"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.070588235294117646" green="0.45098039215686275" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.10588235294117647" green="0.45490196078431372" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
         </view>
     </objects>
+    <resources>
+        <image name="ico-Emergency" width="40" height="40"/>
+        <image name="ico-Settings" width="40" height="40"/>
+        <image name="ico-info" width="40" height="40"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

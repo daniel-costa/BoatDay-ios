@@ -364,7 +364,7 @@
     
 }
 - (NSInteger) numberImagesForImageViewer:(MHFacebookImageViewer*) imageViewer{
-    return [[User currentUser] pictures].count;
+    return self.user.pictures.count;
 }
 
 - (NSURL*) imageURLAtIndex:(NSInteger)index imageViewer:(MHFacebookImageViewer*) imageViewer{
