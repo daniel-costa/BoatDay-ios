@@ -57,7 +57,7 @@
     self.dateLabel.text = [NSString stringWithFormat:@"%@\nDuration: %@", eventDate, timeLeft];
     
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
-    self.price.attributedText = [self createPriceStringWithPrice:event.price andCoinSymbol:coinSymbol];
+    self.price.attributedText = [self createPriceStringWithPrice:GetSeatPrice(event.price) andCoinSymbol:coinSymbol];
     
     if (event.boat.pictures.count) {
         
