@@ -45,7 +45,7 @@
     self.notificationDescriptionLabel.textColor = [UIColor whiteColor];
     self.notificationDescriptionLabel.backgroundColor = [UIColor clearColor];
     self.notificationDescriptionLabel.font = [UIFont quattroCentoBoldFontWithSize:15.0];
-    [self.notificationDescriptionLabel setText:@"3 Seats are requested."];
+    [self.notificationDescriptionLabel setText:@"notification center"];
     
     [_notificationImageVIew setContentMode:UIViewContentModeScaleAspectFill];
 

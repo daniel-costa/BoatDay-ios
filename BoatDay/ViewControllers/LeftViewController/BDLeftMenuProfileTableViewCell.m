@@ -63,9 +63,10 @@
 }
 
 - (void)updateProfileCellWith:(UIImage *)profileImage profileName:(NSString *)profileName{
-
     [_profileNameLabel setText:profileName];
-    [_profileImageView setImage:profileImage];
+    if(profileImage != nil) {
+        [_profileImageView setImage:profileImage];
+    }
 }
 
 @end

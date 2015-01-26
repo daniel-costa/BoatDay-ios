@@ -269,7 +269,7 @@
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"blank_avatar"]];
     
-    if (self.avatars[user.objectId] == nil && [user.selectedPictureIndex integerValue] >= 0) {
+    if (self.avatars[user.objectId] == nil && user.pictures.count > 0 && [user.selectedPictureIndex integerValue] >= 0) {
         
         PFFile *filePicture = user.pictures[[user.selectedPictureIndex integerValue]];
         

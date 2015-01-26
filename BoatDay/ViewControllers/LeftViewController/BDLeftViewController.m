@@ -189,7 +189,8 @@
     BDLeftMenuProfileTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[BDLeftMenuProfileTableViewCell reuseIdentifier]];
     User *user = [User currentUser];
     
-    if([user.selectedPictureIndex integerValue] >= 0) {
+    
+    if(user.pictures.count > 0 && [user.selectedPictureIndex integerValue] >= 0) {
         PFFile *theImage = user.pictures[[user.selectedPictureIndex integerValue]];
         
         // Get image from cache or from server if isnt available (background task)
@@ -198,6 +199,8 @@
             UIImage *image = [UIImage imageWithData:data];
             [cell updateProfileCellWith:image profileName:[user fullName]];
         }];
+    } else {
+        [cell updateProfileCellWith:nil profileName:[user fullName]];
     }
 
     

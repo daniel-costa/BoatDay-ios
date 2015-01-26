@@ -46,7 +46,7 @@
                     </label>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="It7-yq-ScU" userLabel="bottom Line">
                         <rect key="frame" x="0.0" y="79" width="320" height="1"/>
-                        <color key="backgroundColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.25098040699958801" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </subviews>
             </tableViewCellContentView>

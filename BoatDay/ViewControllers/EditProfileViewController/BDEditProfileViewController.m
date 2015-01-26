@@ -753,7 +753,7 @@ static NSInteger const kMaximumNumberOfPictures = 5;
         
         UIButton *selectedButton = self.selectedButtonsArray[index];
         selectedButton.hidden = NO;
-        
+        NSLog(@"%li", (long)index-1);
         [User currentUser].selectedPictureIndex = @(index-1);
         
     }
