@@ -105,6 +105,7 @@
     
   
 }
+
 - (UIView *) setupTableViewHeader {
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), 44)];
 
@@ -143,7 +144,7 @@
 
     switch (sideMenu) {
         case SideMenuProfileHeader:
-            return 44.0;
+            return 60.0;
             break;
         case SideMenuNotificationBar:
             return 24.0;
@@ -151,7 +152,6 @@
             break;
         case SidemenuFactBar:
             return 160.0;
-            
             break;
         default:
             break;
@@ -238,6 +238,7 @@
         cell.textLabel.font = [UIFont abelFontWithSize:17.0];
         cell.textLabel.textColor = [UIColor whiteColor];
     }
+    
     cell.textLabel.frame = CGRectMake(54, 3, 202, 42);
     cell.accessoryView.frame = CGRectMake(4, 3, 42, 42);
 

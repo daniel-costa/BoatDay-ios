@@ -261,6 +261,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.seatsLabel.hidden = YES;
     cell.numberOfSeats.hidden = YES;
+    
     Boat *boat = self.boats.count && indexPath.section == SUBMITED_BOATS_TABLEVIEW_SECTION ? self.boats[indexPath.row] : self.notSubmitedBoats[indexPath.row];
     if (indexPath.section == 1) {
         cell.statusImage.hidden = YES;

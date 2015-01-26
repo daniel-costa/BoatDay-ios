@@ -15,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ico-Bell" translatesAutoresizingMaskIntoConstraints="NO" id="6jj-kM-aos">
-                        <rect key="frame" x="19" y="2" width="20" height="20"/>
+                        <rect key="frame" x="20" y="2" width="20" height="20"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjU-LW-zaK">
                         <rect key="frame" x="60" y="2" width="218" height="20"/>

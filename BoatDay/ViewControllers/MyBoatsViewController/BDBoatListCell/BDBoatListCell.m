@@ -101,8 +101,8 @@
     }
     else {
         
-        self.backgroundColor = [UIColor lightGrayBoatDay];
-        self.contentView.backgroundColor = [UIColor lightGrayBoatDay];
+        self.backgroundColor = [UIColor clearColor];
+        self.contentView.backgroundColor = [UIColor clearColor];
         
         self.name.textColor = [UIColor greenBoatDay];
         self.boatType.textColor = [UIColor grayBoatDay];

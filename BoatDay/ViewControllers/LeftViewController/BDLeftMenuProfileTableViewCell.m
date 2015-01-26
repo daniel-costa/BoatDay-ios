@@ -45,7 +45,7 @@
     self.profileNameLabel.font = [UIFont quattroCentoBoldFontWithSize:16.0];
 
     [_profileImageView setContentMode:UIViewContentModeScaleAspectFill];
-    [_profileImageView setImage:[UIImage imageNamed:@"profile_photo_none"]];
+    [_profileImageView setImage:[UIImage imageNamed:@"user_av_blank"]];
     _profileImageView.layer.cornerRadius = CGRectGetHeight(_profileImageView.frame)/2;
     _profileImageView.layer.masksToBounds = YES;
 

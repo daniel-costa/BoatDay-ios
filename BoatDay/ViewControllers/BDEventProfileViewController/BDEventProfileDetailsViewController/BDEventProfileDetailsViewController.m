@@ -340,11 +340,15 @@
     
     [self getActivities];
     
-    self.hostedByLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"eventCard.hostedBy", nil), [self.event.host shortName]];
+    self.hostedByLabel.text = [NSString stringWithFormat:@"%@", [self.event.host shortName]];
     self.locationLabel.text = self.event.locationName;
-    self.eventDescriptionTitleLabel.text = NSLocalizedString(@"eventProfile.emptyEventDescription", nil);
-    self.eventDescriptionLabel.text = self.event.eventDescription;
     
+    if(self.event.eventDescription.length == 0) {
+        self.eventDescriptionTitleLabel.text = NSLocalizedString(@"eventProfile.emptyEventDescription", nil);
+        self.eventDescriptionLabel.hidden = true;
+    } else {
+        self.eventDescriptionLabel.text = self.event.eventDescription;
+    }
 }
 
 - (void) getEventImage {

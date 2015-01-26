@@ -15,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0h-da-eJA">
-                        <rect key="frame" x="93" y="15" width="161" height="21"/>
+                        <rect key="frame" x="60" y="15" width="161" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -25,7 +25,7 @@
                         <color key="backgroundColor" red="0.2632277516627991" green="0.77854719065656564" blue="0.69805727927938199" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bdX-8C-71r">
-                        <rect key="frame" x="44" y="10" width="30" height="30"/>
+                        <rect key="frame" x="15" y="10" width="30" height="30"/>
                     </imageView>
                 </subviews>
             </tableViewCellContentView>
