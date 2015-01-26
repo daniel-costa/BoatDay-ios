@@ -130,22 +130,17 @@
     [query whereKey:@"deleted" notEqualTo:@(YES)];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        
         if (!error) {
             if (objects.count < 1) {
                 self.ratingView.hidden = YES;
-                [self.noReviewLabel setText:[NSString stringWithFormat:@"NO %@",NSLocalizedString(@"profile.reviews",nil)]];
-            }else{
+//                [self.noReviewLabel setText:[NSString stringWithFormat:@"NO %@",NSLocalizedString(@"profile.reviews",nil)]];
+            } else {
                 self.reviews = objects ?: [[NSArray alloc] init];
                 [self.noReviewLabel setText:@""];
                 self.ratingView.hidden = NO;
                 self.ratingView.rating = [[Session sharedSession] averageReviewsStarsWithReviews:self.reviews];
-            
             }
-            
-
         }
-        
     }];
     
 }

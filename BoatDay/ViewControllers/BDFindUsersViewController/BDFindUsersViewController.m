@@ -116,12 +116,12 @@
 }
 - (void) setupNavigationBar {
     
-    UIButton *filterButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    filterButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
-    [filterButton setImage:[UIImage imageNamed:@"nav_filter"] forState:UIControlStateNormal];
-    [filterButton addTarget:self action:@selector(filterButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    self.filterButton = [[UIBarButtonItem alloc] initWithCustomView:filterButton];
-    [self.navigationItem setRightBarButtonItem:self.filterButton animated:YES];
+//    UIButton *filterButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    filterButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+//    [filterButton setImage:[UIImage imageNamed:@"nav_filter"] forState:UIControlStateNormal];
+//    [filterButton addTarget:self action:@selector(filterButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+//    self.filterButton = [[UIBarButtonItem alloc] initWithCustomView:filterButton];
+//    [self.navigationItem setRightBarButtonItem:self.filterButton animated:YES];
     
 }
 #pragma mark - UITableView Datasource

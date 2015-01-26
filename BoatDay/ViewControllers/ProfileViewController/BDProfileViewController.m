@@ -418,13 +418,44 @@
     
     self.starRating.rating = averageReviewsStars;
     if (self.reviews.count < 1) {
-
+        
+        if(self.reviewsButton.frame.size.height == 60) {
+            self.aboutLabel.frame = CGRectMake(self.aboutLabel.frame.origin.x,
+                                               self.aboutLabel.frame.origin.y - 38,
+                                               self.aboutLabel.frame.size.width,
+                                               self.aboutLabel.frame.size.height);
+            
+            self.aboutMeLabel.frame = CGRectMake(self.aboutMeLabel.frame.origin.x,
+                                                 self.aboutMeLabel.frame.origin.y - 38,
+                                                 self.aboutMeLabel.frame.size.width,
+                                                 self.aboutMeLabel.frame.size.height);
+            
+            self.viewBelowAbout.frame = CGRectMake(self.viewBelowAbout.frame.origin.x,
+                                                   self.viewBelowAbout.frame.origin.y - 38,
+                                                   self.viewBelowAbout.frame.size.width,
+                                                   self.viewBelowAbout.frame.size.height);
+            
+            self.starAndEventsView.frame = CGRectMake(self.starAndEventsView.frame.origin.x,
+                                                      self.starAndEventsView.frame.origin.y,
+                                                      self.starAndEventsView.frame.size.width,
+                                                      22);
+            
+            self.reviewsButton.frame = CGRectMake(self.reviewsButton.frame.origin.x,
+                                                  self.reviewsButton.frame.origin.y,
+                                                  self.reviewsButton.frame.size.width,
+                                                  22);
+        }
+        
+        self.reviewsButton.titleLabel.font =[UIFont abelFontWithSize:12];
+        self.reviewsButton.enabled = false;
+        
         [self.reviewsButton setTitle:[NSString stringWithFormat:@"NO %@",
                                       NSLocalizedString(@"profile.reviews", nil)]
                             forState:UIControlStateNormal];
         self.reviewsButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+        
 //        self.reviewsButton.center = CGPointMake(self.view.center.x, self.reviewsButton.center.y);
-    }else{
+    } else {
         [self.reviewsButton addSubview:self.starRating];
         self.reviewsButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
 

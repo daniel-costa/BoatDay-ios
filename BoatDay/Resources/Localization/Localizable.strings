@@ -59,7 +59,7 @@
 "home.findABoatButton.title"            = "FIND A BOATDAY";
 "home.createBoatDayButton.title"        = "CREATE A BOATDAY";
 "home.mustBeLoggedIn.text"              = "YOU MUST SIGN-IN WITH FACEBOOK\nTO ACCESS MORE BOATDAY FEATURES";
-"home.becomeAHost.title"                = "BECOME A HOST";
+"home.becomeAHost.title"                = "HOST REGISTRATION";
 "home.browseUsers.title"                = "BROWSE USERS";
 "home.browseGuests.title"               = "BROWSE GUESTS";
 
@@ -124,7 +124,7 @@
  * Add/Edit Profile
  */
 
-"editProfile.title"                         = "My Profile";
+"editProfile.title"                         = "Profile";
 "editProfile.save"                          = "Save";
 "editProfile.cancel"                        = "Cancel";
 "editProfile.photosMessage"                 = "Swipe through your saved photos or add a new one";
@@ -451,7 +451,7 @@
  * My Events 
  */
 
-"myEvents.title"                                = "My Events";
+"myEvents.title"                                = "My BoatDays";
 "myEvents.segmentedControl.hostingEvents"       = "HOSTING";
 "myEvents.segmentedControl.attendingEvents"     = "ATTENDING";
 "myEvents.segmentedControl.historyEvents"       = "HISTORY";

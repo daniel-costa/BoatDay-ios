@@ -65,12 +65,11 @@
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
     
     if ([[NSDate date] compare:event.startsAt] == NSOrderedDescending) {
+        self.price.hidden = true;
         if([event.host isEqual:[User currentUser]]) {
             self.infoLabel.text = @"Hosted";
-            self.price.attributedText = [self createPriceStringWithPrice:@(-1) andCoinSymbol:coinSymbol];
         } else {
             self.infoLabel.text = @"Attended";
-            self.price.attributedText = [self createPriceStringWithPrice:@(1) andCoinSymbol:coinSymbol];
         }
     }  else {
         if([event.host isEqual:[User currentUser]]) {

@@ -22,15 +22,15 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="mFD-Yz-D53" customClass="BDActivitiesScrollView">
-                        <rect key="frame" x="20" y="29" width="265" height="45"/>
+                        <rect key="frame" x="20" y="29.5" width="265" height="45"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </scrollView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_arrow_green" highlightedImage="cell_arrow_grey" id="toR-hE-JKO">
-                        <rect key="frame" x="301" y="44" width="9" height="15"/>
+                        <rect key="frame" x="301" y="37.5" width="9" height="15"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g3e-Lj-o7P">
-                        <rect key="frame" x="52" y="38" width="200" height="21"/>
+                        <rect key="frame" x="0.0" y="35" width="320" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

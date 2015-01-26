@@ -30,17 +30,17 @@
     }
     
     self.eventName.font = [UIFont abelFontWithSize:15.0];
-    self.eventName.textColor = [UIColor whiteColor];
+    self.eventName.textColor = [UIColor greenBoatDay];
     
     self.dateLabel.font = [UIFont abelFontWithSize:11.0];
-    self.dateLabel.textColor = RGB(18.0, 78.0, 88.0);
+    self.dateLabel.textColor = [UIColor greenBoatDay];
     self.dateLabel.numberOfLines = 0;
     
-    [UIView setRoundedView:self.placeholder
-                toDiameter:CGRectGetHeight(self.placeholder.frame)];
+    self.price.textColor = [UIColor greenBoatDay];
+    
+    [UIView setRoundedView:self.placeholder toDiameter:CGRectGetHeight(self.placeholder.frame)];
     
     [self.picture.layer setBorderColor:[UIColor whiteColor].CGColor];
-    
     self.picture.alpha = 0.0;
     
 }
@@ -71,8 +71,7 @@
             UIImage *image = [UIImage imageWithData:data];
             self.picture.image = image;
             
-            [UIView setRoundedView:self.picture
-                        toDiameter:CGRectGetHeight(self.picture.frame)];
+            [UIView setRoundedView:self.picture toDiameter:CGRectGetHeight(self.picture.frame)];
             
             [UIView showViewAnimated:self.picture
                            withAlpha:YES
@@ -93,20 +92,13 @@
     
     if (highlighted) {
         
-        [self setCellColor:[UIColor darkGreenBoatDay]];
-        self.dateLabel.textColor = [UIColor whiteColor];
+        [self setCellColor:RGB(58.0, 191.0, 187.0)];
+        self.dateLabel.textColor = RGB(18.0, 78.0, 88.0);
+        self.eventName.textColor = RGB(18.0, 78.0, 88.0);
         
     }
     else {
-        
-        if (self.shouldBeGray) {
-            [self setCellColor:[UIColor grayBoatDay]];
-            self.dateLabel.textColor = [UIColor whiteColor];
-        }
-        else {
-            [self setCellColor:RGB(58.0, 191.0, 187.0)];
-            self.dateLabel.textColor = RGB(18.0, 78.0, 88.0);
-        }
+        [self setCellColor:[UIColor whiteColor]];
     }
     
 }
