@@ -287,7 +287,7 @@
     //set image placeholder
     self.userPlaceholderImageView.image = [UIImage imageNamed:@"boatPhotoCoverPlaceholder"];
     
-    if (self.event.host.pictures.count) {
+    if (self.event.host.pictures.count && [self.event.host.selectedPictureIndex integerValue] >= 0) {
         
         // set this image enable to be opened with User Profile on tap
         UITapGestureRecognizer *newTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hostPicturePressed)];
@@ -346,7 +346,7 @@
     // user image is "hidden" while is getting its data on background
     self.eventImageView.alpha = 0.0;
     
-    if (self.event.boat.pictures.count) {
+    if (self.event.boat.pictures.count && [self.event.boat.selectedPictureIndex integerValue] >= 0) {
         
         // set this image enable to be opened with MHFacebookImageViewer on tap
         [self.eventImageView setupImageViewer];

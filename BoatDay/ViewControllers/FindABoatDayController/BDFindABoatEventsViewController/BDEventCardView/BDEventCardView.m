@@ -124,7 +124,7 @@
     
     self.priceLabel.attributedText = [self createPriceStringWithPrice:GetSeatPrice([NSNumber numberWithInt:event.price.integerValue])  andCoinSymbol:coinSymbol];
     
-    if (event.host.pictures.count) {
+    if (event.host.pictures.count && [event.host.selectedPictureIndex integerValue] >= 0) {
         
         PFFile *userPictureFile = event.host.pictures[[event.host.selectedPictureIndex integerValue]];
         
@@ -169,7 +169,7 @@
         
     }
     
-    if (event.boat.pictures.count) {
+    if (event.boat.pictures.count && [event.boat.selectedPictureIndex integerValue] >= 0) {
         
         PFFile *boatPictureFile = event.boat.pictures[[event.boat.selectedPictureIndex integerValue]];
         

@@ -63,7 +63,7 @@
     self.messageButton.userInteractionEnabled = NO;
     
     // Put placeholder if we got no images
-    if (boat.pictures.count > 0) {
+    if (boat.pictures.count > 0  && [boat.selectedPictureIndex integerValue] >= 0) {
         
         PFFile *theImage = boat.pictures[[boat.selectedPictureIndex integerValue]];
         

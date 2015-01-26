@@ -95,7 +95,7 @@
 
     
     
-    if (event.boat.pictures.count) {
+    if (event.boat.pictures.count && [event.boat.selectedPictureIndex integerValue] >= 0) {
         
         self.picture.alpha = 0.0;
         

@@ -357,7 +357,7 @@
 "eventProfile.guests.confirmedGuests"                   = "CONFIRMED GUESTS";
 "eventProfile.guests.noRequests"                        = "YOU HAVE NO PENDING REQUESTS";
 "eventProfile.guests.noInvitations"                     = "YOU HAVE NO PENDING INVITATIONS";
-"eventProfile.guests.noGuestConfirmations"              = "THIS EVENT DOES NOT YET HAVE ANY GUESTS";
+"eventProfile.guests.noGuestConfirmations"              = "NO CONFIRMED GUESTS";
 "eventProfile.flagAlert.title"                          = "Success";
 "eventProfile.flagAlert.message"                        = "%@ flagged";
 "eventProfile.flagMessage"                              = "User Flagged this event.";

@@ -343,14 +343,15 @@
     // user image is "hidden" while is getting its data on background
     self.userImageView.alpha = 0.0;
     
-    if (self.user.pictures.count) {
+    if (self.user.pictures.count && [self.user.selectedPictureIndex integerValue] >= 0) {
         
         // set this image enable to be opened with MHFacebookImageViewer on tap
 
         [self.userImageView setupImageViewerWithDatasource:self initialIndex:[self.user.selectedPictureIndex integerValue] onOpen:nil onClose:nil];
         // the first picture is the one that is used in user profile (change this to the selected one)
+        
         PFFile *file = self.user.pictures[[self.user.selectedPictureIndex integerValue]];
-
+        
         // Get image from cache or from server if isnt available (background task)
         [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             

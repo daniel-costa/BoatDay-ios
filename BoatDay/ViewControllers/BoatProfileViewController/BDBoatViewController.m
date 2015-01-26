@@ -289,7 +289,7 @@
     // user image is "hidden" while is getting its data on background
     self.boatImageView.alpha = 0.0;
     
-    if (self.boat.pictures.count) {
+    if (self.boat.pictures.count && [self.boat.selectedPictureIndex integerValue] >= 0) {
         
         // set this image enable to be opened with MHFacebookImageViewer on tap
         [self.boatImageView setupImageViewer];

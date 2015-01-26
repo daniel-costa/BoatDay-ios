@@ -59,7 +59,7 @@
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
     self.price.attributedText = [self createPriceStringWithPrice:GetSeatPrice(event.price) andCoinSymbol:coinSymbol];
     
-    if (event.boat.pictures.count) {
+    if (event.boat.pictures.count && [event.boat.selectedPictureIndex integerValue] >= 0) {
         
         self.picture.alpha = 0.0;
         

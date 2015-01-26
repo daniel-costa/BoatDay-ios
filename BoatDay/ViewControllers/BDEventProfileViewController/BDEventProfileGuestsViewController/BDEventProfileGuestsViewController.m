@@ -185,8 +185,7 @@
         }
     }
     
-    NSInteger availableSeats = self.event.availableSeats.integerValue - self.numberOfUsersAttending;
-    
+//    NSInteger availableSeats = self.event.availableSeats.integerValue - self.numberOfUsersAttending;
    
     self.userRequest = userRequest;
     
@@ -317,10 +316,11 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.frame.size.width, 25.0)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 1.0, tableView.frame.size.width, 30.0)];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(15.0, -2.0, tableView.frame.size.width, 25.0)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.frame.size.width, 30.0)];
     label.font = [UIFont abelFontWithSize:14.0];
+    label.textAlignment = NSTextAlignmentCenter;
     
     NSString *headerLabelString = nil;
     
@@ -339,8 +339,8 @@
                 break;
             case 2:
                 headerLabelString = self.confirmedRequests.count ? NSLocalizedString(@"eventProfile.guests.confirmedGuests", nil) : NSLocalizedString(@"eventProfile.guests.noGuestConfirmations", nil);
-                label.textColor = [UIColor whiteColor];
-                view.backgroundColor = [UIColor eventsGreenBoatDay];
+                label.textColor = [UIColor grayBoatDay];
+                view.backgroundColor = [UIColor whiteColor];
                 break;
             default:
                 break;

@@ -123,7 +123,7 @@ static NSInteger const kMessageMaximumCharacters = 500;
 
 - (void) setupView {
     
-    if (self.event.boat.pictures.count) {
+    if (self.event.boat.pictures.count && [self.event.boat.selectedPictureIndex integerValue] >= 0) {
         
         self.eventPicture.alpha = 0;
         

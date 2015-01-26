@@ -106,14 +106,14 @@ static NSString * const kUserPlaceholder = @"user_av_blank_lg";
         self.firstNameLabel.text = firstUser.shortName;
         self.firstLocationLabel.text = firstUser.fullLocation;
         
-        if (firstUser.pictures.count > 0) {
+        if (firstUser.pictures.count > 0 && [firstUser.selectedPictureIndex integerValue] >= 0) {
             
             PFFile *theImage = firstUser.pictures[[firstUser.selectedPictureIndex integerValue]];
             
             self.firstPlaceholderImageView.image = [UIImage imageNamed:kUserPlaceholder];
+            
             [UIView setRoundedView:self.firstPlaceholderImageView
                         toDiameter:CGRectGetHeight(self.firstPlaceholderImageView.frame)];
-            
             
             // Get image from cache or from server if isnt available (background task)
             [theImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
@@ -167,7 +167,7 @@ static NSString * const kUserPlaceholder = @"user_av_blank_lg";
         self.secondNameLabel.text = secondUser.shortName;
         self.secondLocationLabel.text = secondUser.fullLocation;
         
-        if (secondUser.pictures.count > 0) {
+        if (secondUser.pictures.count > 0 && [secondUser.selectedPictureIndex integerValue] >= 0) {
             
             PFFile *theImage = secondUser.pictures[[secondUser.selectedPictureIndex integerValue]];
             
@@ -232,7 +232,7 @@ static NSString * const kUserPlaceholder = @"user_av_blank_lg";
         self.thirdNameLabel.text = thirdUser.shortName;
         self.thirdLocationLabel.text = thirdUser.fullLocation;
         
-        if (thirdUser.pictures.count > 0) {
+        if (thirdUser.pictures.count > 0 && [thirdUser.selectedPictureIndex integerValue] >= 0) {
             
             PFFile *theImage = thirdUser.pictures[[thirdUser.selectedPictureIndex integerValue]];
             

@@ -188,14 +188,17 @@
 - (UITableViewCell *)profileHeaderCell:(UITableView *)tableView{
     BDLeftMenuProfileTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[BDLeftMenuProfileTableViewCell reuseIdentifier]];
     User *user = [User currentUser];
-    PFFile *theImage = user.pictures[[user.selectedPictureIndex integerValue]];
     
-    // Get image from cache or from server if isnt available (background task)
-    [theImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+    if([user.selectedPictureIndex integerValue] >= 0) {
+        PFFile *theImage = user.pictures[[user.selectedPictureIndex integerValue]];
         
-        UIImage *image = [UIImage imageWithData:data];
-        [cell updateProfileCellWith:image profileName:[user fullName]];
-    }];
+        // Get image from cache or from server if isnt available (background task)
+        [theImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            
+            UIImage *image = [UIImage imageWithData:data];
+            [cell updateProfileCellWith:image profileName:[user fullName]];
+        }];
+    }
 
     
 
