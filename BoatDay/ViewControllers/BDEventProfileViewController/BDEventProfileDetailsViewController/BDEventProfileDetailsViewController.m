@@ -450,6 +450,13 @@
     // if it's not done within X hours after the event then they will be automatically charged
     BOOL isInTimeframeHours = [NSDate isDate:[NSDate date] inRangeFirstDate:self.event.endDate lastDate:timeFrameDate];
     
+    NSLog(@"%d", !eventIsLive);
+    NSLog(@"%d", isInTimeframeHours);
+    NSLog(@"%@", self.userRequest);
+    NSLog(@"%d", !self.userRequest.transactionId);
+    NSLog(@"%d", ![self.userRequest.userDidPayFromTheApp boolValue]);
+    NSLog(@"%d", [self.userRequest.status integerValue] == SeatRequestStatusAccepted);
+    
     // if it is in the timeframe, user attend the event, user has not paid
     if (!eventIsLive &&
         isInTimeframeHours &&
@@ -468,7 +475,6 @@
         self.headerBottomViewLabel.text = NSLocalizedString(@"eventProfile.confirmedGuest", nil);
         
         self.buttonBottomView.titleLabel.font = [UIFont abelFontWithSize:24.0];
-        
         [self.buttonBottomView setTitle:NSLocalizedString(@"eventProfile.finalizeContribution", nil) forState:UIControlStateNormal];
         [self.buttonBottomView setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_off"] forState:UIControlStateNormal];
         [self.buttonBottomView setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_on"] forState:UIControlStateHighlighted];

@@ -37,7 +37,7 @@
 
 - (void)updateCellWithActivity:(Activity *)activity {
     
-    [self setCellColor:[UIColor lightGrayBoatDay]];
+    [self setCellColor:[UIColor greenBoatDay]];
     
     self.activityTitleLabel.textColor = [UIColor grayBoatDay];
     
@@ -80,10 +80,10 @@
 - (void)updateCellWithTitle:(NSString *)title descriptionTitle:(NSString*)description image:(UIImage*)image hasPermission:(BOOL)hasPermission {
     
     if (hasPermission) {
-        [self setCellColor:[UIColor lightGrayColor]];
+        [self setCellColor:[UIColor greenBoatDay]];
         
     } else {
-        [self setCellColor:[UIColor lightGrayColor]];
+        [self setCellColor:[UIColor greenBoatDay]];
     }
     
     self.activityTitleLabel.textColor = [UIColor whiteColor];

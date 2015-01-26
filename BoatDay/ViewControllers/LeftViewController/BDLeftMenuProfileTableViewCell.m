@@ -38,7 +38,8 @@
     
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    [self setCellColor:[UIColor colorWithRed:4.0/255 green:165.0/255 blue:172.0/255 alpha:1.0]];
+//    [self setCellColor:[UIColor colorWithRed:4.0/255 green:165.0/255 blue:172.0/255 alpha:1.0]];
+    [self setCellColor:[UIColor greenBoatDay]];
     
     self.profileNameLabel.textColor = [UIColor whiteColor];
     self.profileNameLabel.backgroundColor = [UIColor clearColor];

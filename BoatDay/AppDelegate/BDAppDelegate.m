@@ -41,7 +41,7 @@
         [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelError];
         
         // Initialize tracker. Replace with your tracking ID.
-        [[GAI sharedInstance] trackerWithTrackingId:@"UA-XXXX-Y"];
+        [[GAI sharedInstance] trackerWithTrackingId:@"UA-51849119-2"];
         
         [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
         
@@ -55,11 +55,6 @@
             [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
              (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
         }
-
-        
-        
-        
-        //
         
         [self registParseSubclasses];
         
@@ -88,11 +83,8 @@
             BDHomeViewController *viewController = [[BDHomeViewController alloc] init];
             centerViewController = [[MMNavigationController alloc] initWithRootViewController:viewController];
             [Session sharedSession].selectedSideMenu = SideMenuHome;
-        }
-        else {
-            
+        } else {
             centerViewController = [[MMNavigationController alloc] initWithRootViewController:[[BDLoginViewController alloc] init]];
-            
         }
         
         // Creating Drawer

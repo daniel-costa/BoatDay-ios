@@ -529,7 +529,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
             [selectBoatViewController setBoatSelectedBlock:^(Boat *boat) {
                 
                 self.selectedBoat = boat;
-                self.availableSeats = [boat.passengerCapacity integerValue];
+                self.availableSeats = MIN([boat.passengerCapacity integerValue], 15);
                 
             }];
             [self.navigationController pushViewController:selectBoatViewController animated:YES];

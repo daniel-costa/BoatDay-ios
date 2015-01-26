@@ -233,7 +233,7 @@
 "addEditBoat.deleteVerification"            = "Delete boat?";
 "addEditBoat.deleteMessage"                 = "Are you sure you want to delete this boat?";
 "addEditBoat.pictureReqlertview.title"      = "Boat Picture";
-"addEditBoat.pictureReqlertview.message"    = "A boat picture is required to submit a boat.";
+"addEditBoat.pictureReqlertview.message"    = "A photo of your boat is required.";
 "addEditBoat.insuranceAlertview.title"      = "Insurance Picture";
 "addEditBoat.insuranceAlertview.message"    = "Proof of Insurance is Required.";
 "addEditBoat.lenghtNumAlertview.title"      = "Length";
@@ -248,7 +248,7 @@
 
 "location.save"                     = "Save";
 "location.cancel"                   = "Cancel";
-"location.title"                    = "Set Location";
+"location.title"                    = "Storage Location";
 "location.placeNotFound"            = "Didn't find your boat location";
 "location.placeNotFound.title"      = "Location not found";
 "location.placeNotFound.okButton"   = "Ok";
@@ -267,7 +267,7 @@
 "boatInsurance.minCoverageAlert.title"          = "Minimum Coverage";
 "boatInsurance.minCoverageAlert.message"        = "Insurance coverage must be $300,000 or greater.";
 "boatInsurance.pictureAlert.title"              = "Insurance Photo";
-"boatInsurance.pictureAlert.message"            = "You need to choose an insurance photo.";
+"boatInsurance.pictureAlert.message"            = "Proof of insurance is Required";
 "boatInsurance.dateTime.title"                  = "Date";
 "boatInsurance.dateTime.message"                = "Your expiration date needs to be valid.";
 "boatInsurance.warning.title"                   = "Picture";
@@ -350,7 +350,7 @@
 "eventProfile.confirmedGuest"                           = "YOU ARE A CONFIRMED GUEST FOR THIS EVENT";
 "eventProfile.cancelSeats"                              = "CANCEL SEATS";
 "eventProfile.pendingRequest"                           = "Your seat request is pending.";
-"event.pickupLocation.title"                            = "Pick-Up Location";
+"event.pickupLocation.title"                            = "Departure Location";
 "event.pickupLocation.getDirections"                    = "Get Directions";
 "eventProfile.guests.pendingRequests"                   = "PENDING REQUESTS YOU’VE RECEIVED";
 "eventProfile.guests.pendingInvitations"                = "PENDING INVITATIONS YOU’VE SENT";

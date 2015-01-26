@@ -47,7 +47,6 @@
     [self setupTableView];
     self.tracker = [[GAI sharedInstance] defaultTracker];
     
-
     [self.view setBackgroundColor:[UIColor colorWithRed:36.0/255 green:154.0/255 blue:174.0/255 alpha:1.0]];
 }
 
@@ -109,7 +108,6 @@
 - (UIView *) setupTableViewHeader {
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), 44)];
 
-
    [header setBackgroundColor:[UIColor colorWithRed:36.0/255 green:154.0/255 blue:174.0/255 alpha:1.0]];
 
     CGFloat btnDimantion = 35.0;
@@ -148,7 +146,6 @@
             break;
         case SideMenuNotificationBar:
             return 24.0;
-            
             break;
         case SidemenuFactBar:
             return 160.0;
@@ -281,8 +278,7 @@
     
     if ([Session sharedSession].selectedSideMenu == sideMenu) {
         [self setCellColor:SELECTED_COLOR forCell:cell];
-    }
-    else {
+    } else {
         [self setCellColor:[UIColor clearColor] forCell:cell];
     }
 

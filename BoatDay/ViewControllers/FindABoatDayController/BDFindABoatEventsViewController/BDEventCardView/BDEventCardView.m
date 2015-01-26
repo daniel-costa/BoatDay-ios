@@ -104,7 +104,7 @@
 //    
 //    NSInteger availableSeats = event.availableSeats.integerValue - numberOfUsersAttending;
     self.numberOfSeatsLabel.text = [NSString stringWithFormat:@"%ld", (long)event.freeSeats.integerValue];
-    self.seatsLabel.text = [NSString stringWithFormat:@"%ld %@", (long)event.availableSeats.integerValue,NSLocalizedString(@"eventCard.view.totalSeats", nil)];
+    self.seatsLabel.text = [NSString stringWithFormat:@"%ld %@", (long)event.availableSeats.integerValue, NSLocalizedString(@"eventCard.view.totalSeats", nil)];
 
     self.userNameLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"eventCard.hostedBy", nil), [event.host shortName]];
     
@@ -122,7 +122,8 @@
     
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
     
-    self.priceLabel.attributedText = [self createPriceStringWithPrice:GetSeatPrice([NSNumber numberWithInt:event.price.integerValue])  andCoinSymbol:coinSymbol];
+    self.priceLabel.attributedText = [self createPriceStringWithPrice:GetSeatPrice([NSNumber numberWithInt:event.price.integerValue])
+                                                        andCoinSymbol:coinSymbol];
     
     if (event.host.pictures.count && [event.host.selectedPictureIndex integerValue] >= 0) {
         
@@ -146,11 +147,8 @@
             [UIView hideViewAnimated:self.userPicturePlaceholderImageView
                            withAlpha:YES
                          andDuration:0.3];
-            
         }];
-        
-    }
-    else {
+    } else {
         
         self.userPictureImageView.image = [UIImage imageNamed:@"user_av_none"];
         

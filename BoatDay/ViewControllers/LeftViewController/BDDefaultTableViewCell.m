@@ -27,7 +27,7 @@
     
     self.cellNames.textColor = [UIColor whiteColor];
     self.cellNames.backgroundColor = [UIColor clearColor];
-    self.cellNames.font = [UIFont quattroCentoBoldFontWithSize:13.0];
+    self.cellNames.font = [UIFont quattroCentoBoldFontWithSize:16.0];
     
     [_cellImageView setContentMode:UIViewContentModeScaleAspectFill];
     [_cellImageView setImage:[UIImage imageNamed:@"profile_photo_none"]];

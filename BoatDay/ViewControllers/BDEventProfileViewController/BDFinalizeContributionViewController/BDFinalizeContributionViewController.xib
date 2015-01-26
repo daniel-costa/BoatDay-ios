@@ -135,7 +135,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zjW-Rn-1xc">
                                     <rect key="frame" x="43" y="14" width="235" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="SEND REQUEST" backgroundImage="button_lg_yellow_off">
+                                    <state key="normal" title="FINALIZE CONTRIBUTION" backgroundImage="button_lg_yellow_off">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <state key="highlighted" backgroundImage="button_lg_yellow_on"/>

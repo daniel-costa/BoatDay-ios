@@ -172,10 +172,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    NSInteger numberOfColumns = 3;
-    NSInteger numberOfUsers = self.peopleArray.count;
-    
-    NSInteger numberOfRows = ceil(numberOfUsers / (CGFloat)numberOfColumns);
+//    NSInteger numberOfColumns = 3;
+//    NSInteger numberOfUsers = self.peopleArray.count;
+//    NSInteger numberOfRows = ceil(numberOfUsers / (CGFloat)numberOfColumns);
     
     return 0;
     
