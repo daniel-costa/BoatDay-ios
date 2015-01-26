@@ -30,7 +30,7 @@
     
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 
-    [self setCellColor:[UIColor greenBoatDay]];
+//    [self setCellColor:[UIColor greenBoatDay]];
     
     self.messageLabel.textColor = [UIColor whiteColor];
     self.messageLabel.backgroundColor = [UIColor clearColor];
@@ -44,7 +44,7 @@
     
     self.dateLabel.textColor = [UIColor whiteColor];
     self.dateLabel.backgroundColor = [UIColor clearColor];
-    self.dateLabel.font = [UIFont quattroCentoRegularFontWithSize:12.0];
+    self.dateLabel.font = [UIFont quattroCentoRegularFontWithSize:10.0];
 
 }
 
@@ -205,17 +205,17 @@
     
     if (highlighted) {
         
-        [self setCellColor:[UIColor whiteColor]];
-        self.dateLabel.textColor = [UIColor mediumGreenBoatDay];
-        self.detailMessageLabel.textColor = [UIColor colorWithRed:0.986 green:0.818 blue:0.636 alpha:1.000];
-        self.messageLabel.textColor = [UIColor mediumGreenBoatDay];
+        [self setCellColor:[UIColor mediumGreenBoatDay]];
+        self.dateLabel.textColor = [UIColor whiteColor];
+        self.detailMessageLabel.textColor = [UIColor whiteColor];
+        self.messageLabel.textColor = [UIColor yellowBoatDay];
     }
     else {
         
-        [self setCellColor:[UIColor greenBoatDay]];
-        self.dateLabel.textColor = [UIColor whiteColor];
-        self.detailMessageLabel.textColor = [UIColor yellowBoatDay];
-        self.messageLabel.textColor = [UIColor whiteColor];
+        [self setCellColor:[UIColor whiteColor]];
+        self.dateLabel.textColor = [UIColor grayBoatDay];
+        self.detailMessageLabel.textColor = [UIColor grayBoatDay];
+        self.messageLabel.textColor = [UIColor darkGreenBoatDay];
 
     }
 

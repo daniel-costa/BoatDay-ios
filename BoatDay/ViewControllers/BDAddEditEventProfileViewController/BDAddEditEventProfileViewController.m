@@ -233,12 +233,11 @@ static NSInteger const kMaximumAvailableSeats = 15;
         self.smallYellowButton.hidden = YES;
         self.bigButton.hidden = NO;
         
-        [self.bigButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [self.bigButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        [self.bigButton setTitle:NSLocalizedString(@"addEditEvent.publish", nil) forState:UIControlStateNormal];
         
         self.bigButton.titleLabel.font = [UIFont abelFontWithSize:24.0];
-        
-        [self.bigButton setTitle:NSLocalizedString(@"addEditEvent.publish", nil) forState:UIControlStateNormal];
+        [self.bigButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.bigButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         [self.bigButton setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_off"] forState:UIControlStateNormal];
         [self.bigButton setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_on"] forState:UIControlStateHighlighted];
         

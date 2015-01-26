@@ -88,7 +88,7 @@
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.tableView.separatorInset = UIEdgeInsetsZero;
-    self.tableView.separatorColor = [UIColor whiteColor];
+    self.tableView.separatorColor = [UIColor greenBoatDay];
     
     self.tableView.delaysContentTouches = NO;
     
@@ -166,7 +166,7 @@
 #pragma mark - UITableView Datasource
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 50.0;
+    return 60.0;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

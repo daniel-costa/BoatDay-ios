@@ -75,7 +75,7 @@
 "profile.myFavoriteActivities"              = "MY FAVORITE ACTIVITIES";
 "profile.commonFriends"                     = "COMMON FRIENDS";
 "profile.commonActivities"                  = "COMMON ACTIVITIES";
-"profile.inviteButton"                      = "INVITE USER TO EVENT";
+"profile.inviteButton"                      = "INVITE TO EVENT";
 "profile.seatRequest.noSeats.title"         = "No Seats Available";
 "profile.seatRequest.noSeats.message"       = "You are not able to accept this request because the number of seats requested by this user is not available.";
 "profile.noActivities"                      = "You didn't choose any. Edit your profile to select some of your favorite activities.";

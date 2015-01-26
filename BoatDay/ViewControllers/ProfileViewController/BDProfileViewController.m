@@ -318,9 +318,13 @@
     
     if([User currentUser].hasEventsGoingOn) {
         self.inviteButton.titleLabel.font = [UIFont abelFontWithSize:14.0];
-        [self.inviteButton setTitleColor:[UIColor grayBoatDay] forState:UIControlStateNormal];
-        [self.inviteButton setTitleColor:[UIColor grayBoatDay] forState:UIControlStateHighlighted];
         [self.inviteButton setTitle:NSLocalizedString(@"profile.inviteButton", nil) forState:UIControlStateNormal];
+        
+        self.inviteButton.titleLabel.font = [UIFont abelFontWithSize:24.0];
+        [self.inviteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.inviteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        [self.inviteButton setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_off"] forState:UIControlStateNormal];
+        [self.inviteButton setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_on"] forState:UIControlStateHighlighted];
     } else {
         self.inviteButton.hidden = true;
         self.viewBelowAbout.frame = CGRectMake(self.viewBelowAbout.frame.origin.x,
@@ -973,6 +977,7 @@
                                                                action:@"inviteButtonPressed"
                                                                 label:self.screenName
                                                                 value:nil] build]];
+    
     BDInviteUserViewController *inviteUserViewController = [[BDInviteUserViewController alloc] initWithUser:self.user];
     
     UINavigationController *navigationController = [[MMNavigationController alloc] initWithRootViewController:inviteUserViewController];

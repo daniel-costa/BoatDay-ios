@@ -416,7 +416,7 @@
         }
     }
     
-    NSInteger availableSeats = self.event.availableSeats.integerValue - self.numberOfUsersAttending;
+//    NSInteger availableSeats = self.event.availableSeats.integerValue - self.numberOfUsersAttending;
     
     if (!userRequest && self.event.freeSeats.integerValue == 0) {
         self.buttonBottomView.enabled = NO;
@@ -506,13 +506,13 @@
         switch ([self.userRequest.status integerValue]) {
             case SeatRequestStatusAccepted:
                 
-                self.headerBottomView.backgroundColor = [UIColor yellowBoatDay];
+                self.headerBottomView.backgroundColor = [UIColor eventsGreenBoatDay];
                 self.headerBottomViewLabel.text = NSLocalizedString(@"eventProfile.confirmedGuest", nil);
                 
                 break;
             case SeatRequestStatusPending:
                 
-                self.headerBottomView.backgroundColor = [UIColor greenBoatDay];
+                self.headerBottomView.backgroundColor = [UIColor eventsGreenBoatDay];
                 self.headerBottomViewLabel.text = NSLocalizedString(@"eventProfile.pendingRequest", nil);
                 
                 break;
@@ -525,22 +525,25 @@
         [self.buttonBottomView setTitle:NSLocalizedString(@"eventProfile.cancelSeats", nil) forState:UIControlStateNormal];
         [self.buttonBottomView setBackgroundImage:[UIImage imageNamed:@"button_lg_red_off"] forState:UIControlStateNormal];
         [self.buttonBottomView setBackgroundImage:[UIImage imageNamed:@"button_lg_red_on"] forState:UIControlStateHighlighted];
+        [self.buttonBottomView setFrame:CGRectMake(50, self.buttonBottomView.frame.origin.y, self.buttonBottomView.frame.size.width, self.buttonBottomView.frame.size.height)];
+        self.numberOfSeatsLabel.hidden = true;
+        self.seatsLabel.hidden = true;
         
-        self.numberOfSeatsLabel.backgroundColor = [UIColor clearColor];
-        self.numberOfSeatsLabel.textColor = [UIColor mediumGreenBoatDay];
-        self.numberOfSeatsLabel.font = [UIFont abelFontWithSize:30.0];
-        self.numberOfSeatsLabel.text = [self.userRequest.numberOfSeats stringValue];
-        
-        self.seatsLabel.backgroundColor = [UIColor clearColor];
-        self.seatsLabel.textColor = [UIColor mediumGreenBoatDay];
-        self.seatsLabel.font = [UIFont quattroCentoRegularFontWithSize:13.0];
-        self.seatsLabel.text = NSLocalizedString(@"eventProfile.seats", nil);
+//        self.numberOfSeatsLabel.backgroundColor = [UIColor clearColor];
+//        self.numberOfSeatsLabel.textColor = [UIColor mediumGreenBoatDay];
+//        self.numberOfSeatsLabel.font = [UIFont abelFontWithSize:30.0];
+//        self.numberOfSeatsLabel.text = [self.userRequest.numberOfSeats stringValue];
+//        
+//        self.seatsLabel.backgroundColor = [UIColor clearColor];
+//        self.seatsLabel.textColor = [UIColor mediumGreenBoatDay];
+//        self.seatsLabel.font = [UIFont quattroCentoRegularFontWithSize:13.0];
+//        self.seatsLabel.text = NSLocalizedString(@"eventProfile.seats", nil);
         
     } else {
         
         // If is the event host
         if ([self.event.host isEqual:[User currentUser]]) {
-            
+            self.headerBottomView.backgroundColor = [UIColor eventsGreenBoatDay];
             [self.buttonBottomView setTitle:NSLocalizedString(@"eventProfile.inviteUsers", nil) forState:UIControlStateNormal];
             
         } else { // not attending
@@ -549,7 +552,7 @@
             self.headerBottomViewLabel.font = [UIFont abelFontWithSize:12.0];
             self.headerBottomViewLabel.textColor = [UIColor whiteColor];
             
-            self.headerBottomView.backgroundColor = [UIColor yellowBoatDay];
+            self.headerBottomView.backgroundColor = [UIColor eventsGreenBoatDay];
             self.headerBottomViewLabel.text = NSLocalizedString(@"eventProfile.confirmedGuest", nil);
             
             self.buttonBottomView.titleLabel.font = [UIFont abelFontWithSize:24.0];

@@ -31,7 +31,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DGU-vX-9dY">
-                            <rect key="frame" x="36" y="25" width="36" height="36"/>
+                            <rect key="frame" x="41" y="25" width="36" height="36"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="ico-Settings">
                                 <color key="titleColor" red="0.69324100379999998" green="0.081096206609999999" blue="0.081803933189999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -42,7 +42,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lc5-OT-Rlf">
-                            <rect key="frame" x="115" y="25" width="36" height="36"/>
+                            <rect key="frame" x="118" y="25" width="36" height="36"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="ico-Emergency">
                                 <color key="titleColor" red="0.69324100379999998" green="0.081096206609999999" blue="0.081803933189999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -53,7 +53,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="75l-iO-3e5">
-                            <rect key="frame" x="193" y="25" width="36" height="36"/>
+                            <rect key="frame" x="195" y="25" width="36" height="36"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="ico-info">
                                 <color key="titleColor" red="0.69324100379999998" green="0.081096206609999999" blue="0.081803933189999997" alpha="1" colorSpace="calibratedRGB"/>

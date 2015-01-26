@@ -159,20 +159,15 @@ static NSInteger const kMinumumDateYear = 1920;
             
             self.title = NSLocalizedString(@"addEditBoat.add.title", nil);
             
-            self.bottomButton.frame = CGRectMake((320.0 - 235.0) / 2.0,
-                                                 self.bottomButton.frame.origin.y,
-                                                 235.0,
-                                                 44.0);
-            self.bottomButton.titleLabel.font = [UIFont abelFontWithSize:24.0];
-            [self.bottomButton setTitleColor:[UIColor lightGrayBoatDay] forState:UIControlStateNormal];
+//            self.bottomButton.frame = CGRectMake((320.0 - 235.0) / 2.0, self.bottomButton.frame.origin.y, 235.0, 44.0);
             [self.bottomButton setTitle:NSLocalizedString(@"addEditBoat.submit", nil) forState:UIControlStateNormal];
-            [self.bottomButton setBackgroundImage:[UIImage imageNamed:@"button_lg_blue_off"] forState:UIControlStateNormal];
-            [self.bottomButton setBackgroundImage:[UIImage imageNamed:@"button_lg_blue_on"] forState:UIControlStateHighlighted];
+            self.bottomButton.titleLabel.font = [UIFont abelFontWithSize:24.0];
+            [self.bottomButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [self.bottomButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+            [self.bottomButton setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_off"] forState:UIControlStateNormal];
+            [self.bottomButton setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_on"] forState:UIControlStateHighlighted];
             
-            self.deleteDraftButton.frame = CGRectMake((320.0 - 235.0) / 2.0,
-                                                      self.deleteDraftButton.frame.origin.y,
-                                                      235.0,
-                                                      44.0);
+//            self.deleteDraftButton.frame = CGRectMake((320.0 - 235.0) / 2.0, self.deleteDraftButton.frame.origin.y, 235.0, 44.0);
             self.deleteDraftButton.titleLabel.font = [UIFont abelFontWithSize:24.0];
             [self.deleteDraftButton setTitleColor:[UIColor lightGrayBoatDay] forState:UIControlStateNormal];
             [self.deleteDraftButton setTitle:NSLocalizedString(@"addEditBoat.deleteDraftBoat", nil) forState:UIControlStateNormal];
@@ -189,36 +184,31 @@ static NSInteger const kMinumumDateYear = 1920;
             
             self.title = NSLocalizedString(@"addEditBoat.edit.title", nil);
             
-            self.bottomButton.frame = CGRectMake((320.0 - 140.0) / 2.0,
-                                                 self.bottomButton.frame.origin.y,
-                                                 140.0,
-                                                 44.0);
-            self.bottomButton.titleLabel.font = [UIFont abelFontWithSize:14.0];
-            [self.bottomButton setTitleColor:[UIColor grayBoatDay] forState:UIControlStateNormal];
-            [self.bottomButton setTitleColor:[UIColor lightGrayBoatDay] forState:UIControlStateHighlighted];
+//            self.bottomButton.frame = CGRectMake((320.0 - 140.0) / 2.0, self.bottomButton.frame.origin.y, 140.0, 44.0);
             [self.bottomButton setTitle:NSLocalizedString(@"addEditBoat.deleteButton", nil) forState:UIControlStateNormal];
-            [self.bottomButton setBackgroundImage:[UIImage imageNamed:@"button_report_off"] forState:UIControlStateNormal];
-            [self.bottomButton setBackgroundImage:[UIImage imageNamed:@"button_report_on"] forState:UIControlStateHighlighted];
             
-            setFrameHeight(self.footerView, 95);
+            self.bottomButton.titleLabel.font = [UIFont abelFontWithSize:24.0];
+            [self.bottomButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [self.bottomButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+            [self.bottomButton setBackgroundImage:[UIImage imageNamed:@"button_lg_red_off"] forState:UIControlStateNormal];
+            [self.bottomButton setBackgroundImage:[UIImage imageNamed:@"button_lg_red_on"] forState:UIControlStateHighlighted];
+            
+            setFrameHeight(self.footerView, 72);
             
         }
         
     }
     else {
-        
         self.title = NSLocalizedString(@"addEditBoat.add.title", nil);
-        
-        self.bottomButton.frame = CGRectMake((320.0 - 235.0) / 2.0,
-                                             self.bottomButton.frame.origin.y,
-                                             235.0,
-                                             44.0);
-        self.bottomButton.titleLabel.font = [UIFont abelFontWithSize:24.0];
-        [self.bottomButton setTitleColor:[UIColor lightGrayBoatDay] forState:UIControlStateNormal];
+//        self.bottomButton.frame = CGRectMake((320.0 - 235.0) / 2.0, self.bottomButton.frame.origin.y, 235.0, 44.0);
         [self.bottomButton setTitle:NSLocalizedString(@"addEditBoat.submit", nil) forState:UIControlStateNormal];
-        [self.bottomButton setBackgroundImage:[UIImage imageNamed:@"button_lg_blue_off"] forState:UIControlStateNormal];
-        [self.bottomButton setBackgroundImage:[UIImage imageNamed:@"button_lg_blue_on"] forState:UIControlStateHighlighted];
+        self.bottomButton.titleLabel.font = [UIFont abelFontWithSize:24.0];
+        [self.bottomButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.bottomButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        [self.bottomButton setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_off"] forState:UIControlStateNormal];
+        [self.bottomButton setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_on"] forState:UIControlStateHighlighted];
         
+        setFrameHeight(self.footerView, 72);
     }
     
     self.tableView.tableFooterView = self.footerView;

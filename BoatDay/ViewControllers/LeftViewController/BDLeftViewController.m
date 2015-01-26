@@ -242,7 +242,6 @@
     cell.textLabel.frame = CGRectMake(54, 3, 202, 42);
     cell.accessoryView.frame = CGRectMake(4, 3, 42, 42);
 
-//    cell.accessoryView = nil;
     switch (sideMenu) {
         case SideMenuProfileHeader:
             return [self profileHeaderCell:tableView];
@@ -265,8 +264,6 @@
             break;
         case SideMenuMyEvents:
             return [self returnDefaultCell:tableView name:NSLocalizedString(@"sideMenu.myEvents", nil) image:@"ico-Events"];
-
-            
             break;
         
         case SideMenuHostRegistration:
@@ -292,7 +289,7 @@
     if ([User currentUser] && [Session sharedSession].dataWasFechted) {
         [cell.textLabel setTextColor:[UIColor whiteColor]];
 
-    }else if(indexPath.row != 0){
+    } else if(indexPath.row != 0){
         [cell.textLabel setTextColor:[UIColor grayBoatDay]];
         
     }
@@ -648,9 +645,7 @@
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        _convertArray =  @[@(SideMenuHome),
-                           @(SideMenuMyEvents),
-                           @(SideMenuHostRegistration)];
+        _convertArray =  @[];
     });
     
     return _convertArray;
