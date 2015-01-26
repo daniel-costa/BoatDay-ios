@@ -285,9 +285,18 @@
     self.eventDateLabel.text = [NSString stringWithFormat:@"%@\nDuration: %@", eventDate, timeLeft];
     
     //set image placeholder
-    self.userPlaceholderImageView.image = [UIImage imageNamed:@"boatPhotoCoverPlaceholder"];
+    self.userPlaceholderImageView.image = [UIImage imageNamed:@"user_av_none"];
     
-    if (self.event.host.pictures.count && [self.event.host.selectedPictureIndex integerValue] >= 0) {
+    [UIView setRoundedView:self.userPlaceholderImageView
+                toDiameter:CGRectGetHeight(self.userPlaceholderImageView.frame)];
+    
+    [UIView showViewAnimated:self.userPlaceholderImageView
+                   withAlpha:YES
+                    duration:0.2
+                    andDelay:0.0
+                    andScale:NO];
+    
+    if (self.event.host.pictures.count > 0 && [self.event.host.selectedPictureIndex integerValue] >= 0) {
         
         // set this image enable to be opened with User Profile on tap
         UITapGestureRecognizer *newTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hostPicturePressed)];
@@ -341,7 +350,7 @@
 - (void) getEventImage {
     
     //set image placeholder
-    self.userPlaceholderImageView.image = [UIImage imageNamed:@"boatPhotoCoverPlaceholder"];
+    self.userPlaceholderImageView.image = [UIImage imageNamed:@"user_av_none"];
     
     // user image is "hidden" while is getting its data on background
     self.eventImageView.alpha = 0.0;

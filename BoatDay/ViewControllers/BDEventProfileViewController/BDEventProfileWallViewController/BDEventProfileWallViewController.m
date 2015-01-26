@@ -269,21 +269,23 @@
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"blank_avatar"]];
     
-    if (self.avatars[user.objectId] == nil && user.pictures.count > 0 && [user.selectedPictureIndex integerValue] >= 0) {
+    if (self.avatars[user.objectId] == nil) {
         
-        PFFile *filePicture = user.pictures[[user.selectedPictureIndex integerValue]];
-        
-        [filePicture getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error)
-         {
-             if (error == nil)
+        if(user.pictures.count > 0 && [user.selectedPictureIndex integerValue] >= 0) {
+            PFFile *filePicture = user.pictures[[user.selectedPictureIndex integerValue]];
+            
+            [filePicture getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error)
              {
-                 self.avatars[user.objectId] = [UIImage imageWithData:imageData];
-                 [imageView setImage:self.avatars[user.objectId]];
-                 
-             }
-         }];
-    }
-    else {
+                 if (error == nil)
+                 {
+                     self.avatars[user.objectId] = [UIImage imageWithData:imageData];
+                     [imageView setImage:self.avatars[user.objectId]];
+                     
+                 }
+             }];
+        }
+        
+    } else {
         [imageView setImage:self.avatars[user.objectId]];
     }
     

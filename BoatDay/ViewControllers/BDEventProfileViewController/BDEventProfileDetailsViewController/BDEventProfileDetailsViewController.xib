@@ -167,7 +167,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="IBQ-lI-YOL" userLabel="Placeholder">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boatPhotoCoverPlaceholder" id="IBQ-lI-YOL" userLabel="Placeholder">
                                     <rect key="frame" x="8" y="7" width="45" height="45"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -208,6 +208,7 @@
         </view>
     </objects>
     <resources>
+        <image name="boatPhotoCoverPlaceholder" width="320" height="194"/>
         <image name="button_lg_yellow_off" width="235" height="44"/>
         <image name="button_lg_yellow_on" width="235" height="44"/>
         <image name="cell_arrow_green" width="8" height="15"/>
