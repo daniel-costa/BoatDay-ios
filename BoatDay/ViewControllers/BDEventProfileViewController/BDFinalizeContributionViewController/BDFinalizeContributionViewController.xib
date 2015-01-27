@@ -18,6 +18,7 @@
                 <outlet property="messageView" destination="18R-ba-U41" id="UUP-xu-glv"/>
                 <outlet property="minusButton" destination="ygV-zW-t5i" id="USe-8b-tdm"/>
                 <outlet property="plusButton" destination="J5L-zj-SxM" id="W5b-hE-aLN"/>
+                <outlet property="priceFeeLabel" destination="pve-xK-tjj" id="Y6t-56-ZzC"/>
                 <outlet property="priceLabel" destination="R1m-OM-pOP" id="g0C-51-urf"/>
                 <outlet property="sendRequestButton" destination="zjW-Rn-1xc" id="Ast-SK-iLC"/>
                 <outlet property="separatorLine" destination="Dpa-Lm-BVO" id="USl-MH-q8p"/>

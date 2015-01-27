@@ -166,8 +166,8 @@
 "myBoats.title"                             = "HOST CENTER";
 "myBoats.cell.seats"                        = "SEATS";
 "myBoats.cell.added"                        = "Added";
-"myBoats.tableView.section.notApproved"     = "Not yet submitted";
-"myBoats.tableView.section.submited"        = "Submitted";
+"myBoats.tableView.section.notApproved"     = "Boats Not yet submitted";
+"myBoats.tableView.section.submited"        = "Boats Submitted";
 "myBoats.payments"                          = "PAYMENT ACCOUNT";
 
 /*
@@ -385,7 +385,7 @@
 
 "notifications.type.seatRequestCanceledByUser"  = "Seat Request Canceled by user.";
 "notifications.newComent"                       = "New Event Host Comment";
-"notification.eventDeleted.title"               = "Event Deleted By Admin";
+"notification.eventDeleted.title"               = "Event Cancelled";
 "notification.eventEnded.title"                 = "Event Ended";
 "notification.eventEnded.message"               = "Please leave a review and finalize your payment.";
 
@@ -493,7 +493,7 @@
 "notifications.type.certificationApproved"          = "Your certification has been approved!";
 "notifications.type.certificationRejected"          = "Your certification has been rejected.";
 "notifications.type.newChatMessage"                 = "Registered Users New Message";
-"notifications.type.eventInvitation"                = "The Host has invited you to reserve a seat!";
+"notifications.type.eventInvitation"                = "You have been invited to reserve a seat.";
 "notifications.type.userRemovedFromEvent"           = "You have been removed from an event.";
 "notifications.type.eventCanceled"                  = "This event was canceled.";
 "notifications.type.newReview"                      = "New review";

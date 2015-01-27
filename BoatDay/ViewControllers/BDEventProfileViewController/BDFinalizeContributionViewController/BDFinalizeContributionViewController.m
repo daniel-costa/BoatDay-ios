@@ -136,14 +136,9 @@ static NSInteger const kMessageMaximumCharacters = 500;
             self.eventPicture.layer.borderColor = [UIColor blackColor].CGColor;
             self.eventPicture.layer.borderWidth = 1;
             
-            [UIView setRoundedView:self.eventPicture
-                        toDiameter:CGRectGetHeight(self.eventPicture.frame)];
+            [UIView setRoundedView:self.eventPicture toDiameter:CGRectGetHeight(self.eventPicture.frame)];
             
-            [UIView showViewAnimated:self.eventPicture
-                           withAlpha:YES
-                            duration:0.2
-                            andDelay:0.0
-                            andScale:NO];
+            [UIView showViewAnimated:self.eventPicture withAlpha:YES duration:0.2  andDelay:0.0 andScale:NO];
             
         }];
         
@@ -160,7 +155,7 @@ static NSInteger const kMessageMaximumCharacters = 500;
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
     [self formatLabelWithPriceStringWithPrice:@(self.contribution) andCoinSymbol:coinSymbol withSize:39 forLabel:self.priceLabel];
     [self formatLabelWithPriceStringWithPrice:@([self.seatRequest.numberOfSeats integerValue] * [GetFeePrice() integerValue]) andCoinSymbol:coinSymbol withSize:12 forLabel:self.priceFeeLabel];
-    
+
     
     NSInteger numberOfUsersAttending = 0;
     
