@@ -225,7 +225,7 @@
 "addEditBoat.safetyFeatures.title"          = "Safety Features";
 "addEditBoat.createdAlert.title"            = "Success";
 "addEditBoat.createdAlert.message"          = "Your boat information has been submitted for approval.";
-"addEditBoat.gotoPaymentInfo.message"       = "Your Boat Registration has been submitted, input your payment info to finalize your Registration";
+"addEditBoat.gotoPaymentInfo.message"       = "To submit your boat and finalize your registration, please input your payment information.";
 "addEditBoat.maxPhotosAlert.title"          = "Number of photos";
 "addEditBoat.maxPhotosAlert.message"        = "The maximum number of photos is 5.";
 "addEditBoat.notCreatedAlert.title"         = "Error";
@@ -457,7 +457,7 @@
 "myEvents.segmentedControl.attendingEvents"     = "ATTENDING";
 "myEvents.segmentedControl.historyEvents"       = "HISTORY";
 "myEvents.merchantIdAlertView.title"            = "Payment Info";
-"myEvents.merchantIdAlertView.message"          = "You must complete your Payment Information in the Settings section before you can create an Event. After your Payment Information has been approved you can create Events.";
+"myEvents.merchantIdAlertView.message"          = "Add a Boat in the 'Host Center' and input payment information to finalize Host Registration.";
 
 /*
  * Event Card

@@ -191,7 +191,7 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    if (self.boats.count > 0 && section == 0) {
+    if (section == 0) {
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.frame.size.width, 22.0)];
         [view setBackgroundColor:[UIColor greenBoatDay]];
         
@@ -204,7 +204,7 @@
         [view addSubview:label];
         
         return view;
-    } else if(self.notSubmitedBoats.count > 0) {
+    } else {
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.frame.size.width, 22.0)];
         [view setBackgroundColor:[UIColor greenBoatDay]];
         
@@ -223,18 +223,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    NSInteger total = 0;
-    
-    if(self.boats.count > 0) {
-        total++;
-    }
-    
-    if(self.notSubmitedBoats.count > 0) {
-        total++;
-    }
-    
-    return total;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -296,15 +285,19 @@
                                                                 label:self.screenName
                                                                 value:nil] build]];
 
-
-    if ([Session sharedSession].hostRegistration.merchantId) {
-        BDPaymentStatusViewController *paymentStatusView = [[BDPaymentStatusViewController alloc] init];
-        [self.navigationController pushViewController:paymentStatusView animated:YES];
-    }
-    else {
-        BDPaymentInfoViewController *paymentInfoViewController = [[BDPaymentInfoViewController alloc] init];
-        [self.navigationController pushViewController:paymentInfoViewController animated:YES];
-    }
+    
+    BDPaymentStatusViewController *paymentStatusView = [[BDPaymentStatusViewController alloc] init];
+    [self.navigationController pushViewController:paymentStatusView animated:YES];
+    
+//    if ([Session sharedSession].hostRegistration.merchantId) {
+//        
+//        BDPaymentStatusViewController *paymentStatusView = [[BDPaymentStatusViewController alloc] init];
+//        [self.navigationController pushViewController:paymentStatusView animated:YES];
+//    }
+//    else {
+//        BDPaymentInfoViewController *paymentInfoViewController = [[BDPaymentInfoViewController alloc] init];
+//        [self.navigationController pushViewController:paymentInfoViewController animated:YES];
+//    }
 }
 
 #pragma mark - UITableView Delegate methods
@@ -333,12 +326,9 @@
                                                                 label:self.screenName
                                                                 value:nil] build]];
 
-
-    BDAddEditBoatViewController *editUBoatViewController = [[BDAddEditBoatViewController alloc] init];
-    
-    UINavigationController *navigationController = [[MMNavigationController alloc] initWithRootViewController:editUBoatViewController];
-    
-    [self presentViewController:navigationController animated:YES completion:nil];
+        BDAddEditBoatViewController *editUBoatViewController = [[BDAddEditBoatViewController alloc] init];
+        UINavigationController *navigationController = [[MMNavigationController alloc] initWithRootViewController:editUBoatViewController];
+        [self presentViewController:navigationController animated:YES completion:nil];
     
 }
 

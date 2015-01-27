@@ -264,7 +264,7 @@
             break;
         
         case SideMenuHostRegistration:
-
+            
             return [self returnDefaultCell:tableView name:NSLocalizedString(@"sideMenu.hostRegistration", nil) image:@"ico-Host-center"];
             break;
         case SideMenuMyBoats:
@@ -367,7 +367,20 @@
                                                                        action:@"SideMenuHostRegistration"
                                                                         label:@"BDLeftViewController"
                                                                         value:nil] build]];
-            centerViewController = [[BDHostRegistrationViewController alloc] init];
+            if ([Session sharedSession].hostRegistration && [[Session sharedSession].hostRegistration.status integerValue] == HostRegistrationStatusPending) {
+                
+                UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Host Registration Pending"
+                                                                      message:@"Your Host Information is pending review."
+                                                                     delegate:nil
+                                                            cancelButtonTitle:@"Ok"
+                                                            otherButtonTitles: nil];
+                
+                [myAlertView show];
+                return;
+                
+            } else {
+                centerViewController = [[BDHostRegistrationViewController alloc] init];
+            }
             break;
         case SideMenuMyBoats:
             [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"

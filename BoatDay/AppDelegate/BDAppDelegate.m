@@ -190,6 +190,7 @@
         case NotificationTypeSeatRequest:
             break;
         case NotificationTypeRequestApproved:
+            
             break;
         case NotificationTypeRequestRejected:
             break;

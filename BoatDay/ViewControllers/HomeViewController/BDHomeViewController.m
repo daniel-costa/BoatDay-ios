@@ -230,15 +230,14 @@
                                                                action:@"createBoatDayButtonPressed"
                                                                 label:self.screenName
                                                                 value:nil] build]];
-    if ([Session sharedSession].hostRegistration &&
-        [[Session sharedSession].hostRegistration.status integerValue] == HostRegistrationStatusAccepted) {
+    if ([Session sharedSession].hostRegistration && [[Session sharedSession].hostRegistration.status integerValue] == HostRegistrationStatusAccepted) {
         
         if (![Session sharedSession].hostRegistration.merchantId) {
             
             UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"myEvents.merchantIdAlertView.title", nil)
                                                                   message:NSLocalizedString(@"myEvents.merchantIdAlertView.message", nil)
                                                                  delegate:nil
-                                                        cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
+                                                        cancelButtonTitle:@"Ok"
                                                         otherButtonTitles: nil];
             
             [myAlertView show];
@@ -251,11 +250,20 @@
         
         [self.navigationController presentViewController:navViewController animated:YES completion:nil];
         
-    } else {
+    } else if ([Session sharedSession].hostRegistration && [[Session sharedSession].hostRegistration.status integerValue] == HostRegistrationStatusPending) {
         
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Host Registration Pending"
+                                                              message:@"Your Host Information is pending review."
+                                                             delegate:nil
+                                                    cancelButtonTitle:@"Ok"
+                                                    otherButtonTitles: nil];
+        
+        [myAlertView show];
+        return;
+        
+    } else {
         BDHostRegistrationViewController *viewController = [[BDHostRegistrationViewController alloc] init];
         [self.navigationController pushViewController:viewController animated:YES];
-        
     }
     
 }
