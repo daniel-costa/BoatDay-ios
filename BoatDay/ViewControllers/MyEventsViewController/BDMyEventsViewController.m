@@ -70,6 +70,17 @@
 
 - (void) setupNavigationBar {
     
+    PFQuery *query = [Boat query];
+    [query whereKey:@"owner" equalTo:[User currentUser]];
+    [query whereKey:@"deleted" equalTo:@(NO)];
+    [query whereKey:@"status" equalTo:@("BoatStatusApproved")];
+    
+    
+    if ([query countObjects] == 0) {
+        // If no boats, we cannot create boats
+        return;
+    }
+    
     if (self.user.hostRegistration && [self.user.hostRegistration.status integerValue] == HostRegistrationStatusAccepted) {
         
         UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];

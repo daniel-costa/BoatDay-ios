@@ -245,6 +245,25 @@
             
         }
         
+        PFQuery *query = [Boat query];
+        [query whereKey:@"owner" equalTo:[User currentUser]];
+        [query whereKey:@"deleted" equalTo:@(NO)];
+        [query whereKey:@"status" equalTo:@("BoatStatusApproved")];
+
+        
+        if ([query countObjects] == 0) {
+            
+            UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Boat pending review"
+                                                                  message:@"Your Boat is pending review. Once your boat is approved, you will be able to create a BoatDay."
+                                                                 delegate:nil
+                                                        cancelButtonTitle:@"Ok"
+                                                        otherButtonTitles: nil];
+            
+            [myAlertView show];
+            return;
+            
+        }
+        
         BDAddEditEventProfileViewController *viewController = [[BDAddEditEventProfileViewController alloc] init];
         UINavigationController *navViewController = [[MMNavigationController alloc] initWithRootViewController:viewController];
         

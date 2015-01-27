@@ -615,7 +615,7 @@
  * Payment Info
  */
 
-"paymentInfo.title"                                 = "Payment Info";
+"paymentInfo.title"                                 = "Payment Account";
 "paymentInfo.sectionTitle.selectDestination"        = "PAYMENT METHOD";
 "paymentInfo.sectionTitle.businessInformation"      = "BUSINESS INFORMATION (OPTIONAL)";
 "paymentInfo.sectionTitle.personalInformation"      = "PERSONAL INFORMATION";
@@ -656,7 +656,7 @@
  * Payment Status
  */
 
-"paymentStatus.title"           = "Payment Info";
+"paymentStatus.title"           = "Payment Account";
 "paymentStatus.success"         = "Success!";
 "paymentStatus.message"         = "Your payment info has been submitted.\n\nOnce approved, you’ll be able to receive payments from hosting BoatDays! You can come back to this screen to check your account status.";
 "paymentStatus.statusTitle"     = "Status:";
