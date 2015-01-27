@@ -451,7 +451,7 @@
     BOOL isInTimeframeHours = [NSDate isDate:[NSDate date] inRangeFirstDate:self.event.endDate lastDate:timeFrameDate];
     
     // if it is in the timeframe, user attend the event, user has not paid
-    if (!eventIsLive &&
+    if (/*!eventIsLive &&*/
         isInTimeframeHours &&
         self.userRequest &&
         !self.userRequest.transactionId &&
@@ -464,7 +464,7 @@
         self.headerBottomViewLabel.font = [UIFont abelFontWithSize:12.0];
         self.headerBottomViewLabel.textColor = [UIColor whiteColor];
         
-        self.headerBottomView.backgroundColor = [UIColor greenBoatDay];
+        self.headerBottomView.backgroundColor = [UIColor eventsGreenBoatDay];
         self.headerBottomViewLabel.text = NSLocalizedString(@"eventProfile.wasGuest", nil);
         
         self.buttonBottomView.titleLabel.font = [UIFont abelFontWithSize:24.0];
