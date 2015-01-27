@@ -131,7 +131,8 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+//    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -331,32 +332,35 @@
 
         self.usersByName = [NSMutableArray arrayWithArray:self.usersByNameTotalSearch];
         [self.usersByName removeObject:[User currentUser]];
-        // Location Query
         
-        PFQuery *cityQuery = [User query];
-        [cityQuery whereKey:@"city" matchesRegex:[NSString stringWithFormat:@".*%@", text] modifiers:@"i"];
-        [cityQuery whereKey:@"deleted" notEqualTo:@(YES)];
-
-        PFQuery *countryQuery = [User query];
-        [countryQuery whereKey:@"country" matchesRegex:[NSString stringWithFormat:@".*%@", text] modifiers:@"i"];
-        [countryQuery whereKey:@"deleted" notEqualTo:@(YES)];
-
-        PFQuery *locationQuery = [PFQuery orQueryWithSubqueries:@[cityQuery,countryQuery]];
-        locationQuery.limit = 1000;
-        [locationQuery whereKey:@"deleted" notEqualTo:@(YES)];
-
-        [locationQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            
-            self.usersByLocationTotalSearch = [NSMutableArray arrayWithArray:objects];
-            [self.usersByLocationTotalSearch removeObject:[User currentUser]];
-
-            self.usersByLocation = [NSMutableArray arrayWithArray:self.usersByLocationTotalSearch];
-
-            [self.tableView reloadData];
-            self.activityIndicator.hidden = YES;
-
-            
-        }];
+        
+        [self.tableView reloadData];
+        self.activityIndicator.hidden = YES;
+        
+        // Location Query
+//        PFQuery *cityQuery = [User query];
+//        [cityQuery whereKey:@"city" matchesRegex:[NSString stringWithFormat:@".*%@", text] modifiers:@"i"];
+//        [cityQuery whereKey:@"deleted" notEqualTo:@(YES)];
+//
+//        PFQuery *countryQuery = [User query];
+//        [countryQuery whereKey:@"country" matchesRegex:[NSString stringWithFormat:@".*%@", text] modifiers:@"i"];
+//        [countryQuery whereKey:@"deleted" notEqualTo:@(YES)];
+//
+//        PFQuery *locationQuery = [PFQuery orQueryWithSubqueries:@[cityQuery,countryQuery]];
+//        locationQuery.limit = 1000;
+//        [locationQuery whereKey:@"deleted" notEqualTo:@(YES)];
+//
+//        [locationQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//            
+//            self.usersByLocationTotalSearch = [NSMutableArray arrayWithArray:objects];
+//            [self.usersByLocationTotalSearch removeObject:[User currentUser]];
+//            self.usersByLocation = [NSMutableArray arrayWithArray:self.usersByLocationTotalSearch];
+//
+//            
+////            [self.tableView reloadData];
+////            self.activityIndicator.hidden = YES;
+//            
+//        }];
         
     }];
     
@@ -376,19 +380,19 @@
     
     self.usersByName = [NSMutableArray arrayWithArray:filteredDataLocation];
 
-   // By Location
-    
-    filter = @"%K CONTAINS[cd] %@ || %K CONTAINS[cd] %@";
-   
-    args = @[@"city", text, @"country", text];
-   
-    predicate = [NSPredicate predicateWithFormat:filter argumentArray:args];
-    
-    filteredDataLocation = [self.usersByLocationTotalSearch filteredArrayUsingPredicate:predicate];
-    
-    self.usersByLocation = [NSMutableArray arrayWithArray:filteredDataLocation];
-
-    [self.tableView reloadData];
+//   // By Location
+//    
+//    filter = @"%K CONTAINS[cd] %@ || %K CONTAINS[cd] %@";
+//   
+//    args = @[@"city", text, @"country", text];
+//   
+//    predicate = [NSPredicate predicateWithFormat:filter argumentArray:args];
+//    
+//    filteredDataLocation = [self.usersByLocationTotalSearch filteredArrayUsingPredicate:predicate];
+//    
+//    self.usersByLocation = [NSMutableArray arrayWithArray:filteredDataLocation];
+//
+//    [self.tableView reloadData];
 
 }
 

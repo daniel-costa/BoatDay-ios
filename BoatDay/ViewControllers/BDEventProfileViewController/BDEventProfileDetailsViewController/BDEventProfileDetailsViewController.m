@@ -450,8 +450,14 @@
     // if it's not done within X hours after the event then they will be automatically charged
     BOOL isInTimeframeHours = [NSDate isDate:[NSDate date] inRangeFirstDate:self.event.endDate lastDate:timeFrameDate];
     
+    NSLog(@"%i", isInTimeframeHours);
+    NSLog(@"%@", self.userRequest);
+    NSLog(@"%i", !self.userRequest.transactionId);
+    NSLog(@"%i", ![self.userRequest.userDidPayFromTheApp boolValue]);
+    NSLog(@"%i", [self.userRequest.status integerValue] == SeatRequestStatusAccepted);
+    
     // if it is in the timeframe, user attend the event, user has not paid
-    if (/*!eventIsLive &&*/
+    if (!eventIsLive &&
         isInTimeframeHours &&
         self.userRequest &&
         !self.userRequest.transactionId &&

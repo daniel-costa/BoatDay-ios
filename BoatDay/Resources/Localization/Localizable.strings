@@ -395,9 +395,12 @@
  */
 
 "findUsers.title"                       = "Find Users";
-"findUsers.placeholderText"             = "SEARCH BY USERNAME OR LOCATION";
-"findUser.usersByName"                  = "SEARCH RESULTS - NAME";
-"findUser.NoUsersByName"                = "NO SEARCH RESULTS - NAME";
+//"findUsers.placeholderText"             = "SEARCH BY USERNAME OR LOCATION";
+//"findUser.usersByName"                  = "SEARCH RESULTS - NAME";
+//"findUser.NoUsersByName"                = "NO SEARCH RESULTS - NAME";
+"findUsers.placeholderText"             = "SEARCH BY USERNAME";
+"findUser.usersByName"                  = "SEARCH RESULTS";
+"findUser.NoUsersByName"                = "NO SEARCH RESULTS";
 "findUser.usersByLocation"              = "SEARCH RESULTS - LOCATION";
 "findUser.NoUsersByLocation"            = "NO SEARCH RESULTS - LOCATION";
 
