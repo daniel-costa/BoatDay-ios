@@ -169,7 +169,7 @@ static NSInteger const kMessageMaximumCharacters = 500;
     }
     
 //    self.totalContributionLabel.text = NSLocalizedString(@"seatRequests.totalContribution", nil);
-    self.totalContributionLabel.text = [NSString stringWithFormat:@"%@ FOR %li SEAT%@", NSLocalizedString(@"seatRequests.totalContribution", nil),(long)numberOfUsersAttending, numberOfUsersAttending == 1 ? @"" : @"s"];
+    self.totalContributionLabel.text = [NSString stringWithFormat:@"%@ FOR %li SEAT%@", NSLocalizedString(@"seatRequests.totalContribution", nil),(long)numberOfUsersAttending, numberOfUsersAttending == 1 ? @"" : @"S"];
     self.totalContributionLabel.backgroundColor = [UIColor greenBoatDay];
     self.totalContributionLabel.textColor = [UIColor whiteColor];
     self.totalContributionLabel.font = [UIFont abelFontWithSize:12.0];
