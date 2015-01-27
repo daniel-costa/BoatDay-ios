@@ -333,7 +333,7 @@
                                                180);
     }
     
-    if (self.seatRequest && ![[NSDate date] compare:self.seatRequest.event.startsAt] == NSOrderedDescending) {
+    if (self.seatRequest && !([[NSDate date] compare:self.seatRequest.event.startsAt] == NSOrderedDescending)) {
         [self setupSeatRequestView];
     }
     
