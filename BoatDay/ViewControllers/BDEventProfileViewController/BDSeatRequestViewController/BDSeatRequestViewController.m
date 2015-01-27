@@ -277,7 +277,7 @@ static NSInteger const kMessageMaximumCharacters = 500;
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
     
     double pricePerSeat = [GetSeatPrice(self.event.price) doubleValue];
-    [self formatLabelWithPriceStringWithPrice:@(pricePerSeat * self.requestedSeats + BRAINTREE_FIX_FEE)
+    [self formatLabelWithPriceStringWithPrice:@(pricePerSeat * self.requestedSeats)
                                 andCoinSymbol:coinSymbol withSize:39.0 forLabel:self.priceLabel];
     [self formatLabelWithPriceStringWithPrice:@([GetSeatPrice([NSNumber numberWithInteger:0]) integerValue] * self.requestedSeats)
                                 andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceFeeLabel];

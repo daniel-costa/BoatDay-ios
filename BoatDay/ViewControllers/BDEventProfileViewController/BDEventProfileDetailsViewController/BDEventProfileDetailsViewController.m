@@ -939,27 +939,28 @@
     [objectsToSave addObject:notification];
     
     // Notification to all the users that are attending to event
-    for (SeatRequest *seatRequest in self.event.seatRequests) {
-        
-        if ([seatRequest.status integerValue] == SeatRequestStatusAccepted) {
-            
-            if (![seatRequest.user isEqual:[User currentUser]]) {
-                
-                Notification *notification = [Notification object];
-                notification.user = seatRequest.user;
-                notification.event = self.event;
-                notification.seatRequest = self.userRequest;
-                notification.read = @(NO);
-                notification.notificationType = @(NotificationTypeSeatRequestCanceledByUser);
-                notification.text = [NSString stringWithFormat:NSLocalizedString(@"eventProfile.cancelationNotification", nil), self.userRequest.user.fullName, self.event.name];
-                notification.deleted = @(NO);
-                [objectsToSave addObject:notification];
-                
-            }
-            
-        }
-        
-    }
+    
+//    for (SeatRequest *seatRequest in self.event.seatRequests) {
+//        
+//        if ([seatRequest.status integerValue] == SeatRequestStatusAccepted) {
+//            
+//            if (![seatRequest.user isEqual:[User currentUser]]) {
+//                
+//                Notification *notification = [Notification object];
+//                notification.user = seatRequest.user;
+//                notification.event = self.event;
+//                notification.seatRequest = self.userRequest;
+//                notification.read = @(NO);
+//                notification.notificationType = @(NotificationTypeSeatRequestCanceledByUser);
+//                notification.text = [NSString stringWithFormat:NSLocalizedString(@"eventProfile.cancelationNotification", nil), self.userRequest.user.fullName, self.event.name];
+//                notification.deleted = @(NO);
+//                [objectsToSave addObject:notification];
+//                
+//            }
+//            
+//        }
+//        
+//    }
     
     [PFObject saveAllInBackground:objectsToSave block:^(BOOL succeeded, NSError *error) {
         

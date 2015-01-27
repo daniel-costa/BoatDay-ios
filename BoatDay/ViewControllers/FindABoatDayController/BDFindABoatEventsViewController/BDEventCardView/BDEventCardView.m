@@ -32,9 +32,12 @@
     self.numberOfSeatsLabel.font = [UIFont abelFontWithSize:70.0];
     self.numberOfSeatsLabel.textColor = [UIColor whiteColor];
     
-    self.openSeatsLabel.font = [UIFont quattroCentoRegularFontWithSize:13.0];
-    self.openSeatsLabel.textColor = [UIColor whiteColor];
-    self.openSeatsLabel.text = NSLocalizedString(@"eventCard.view.openSeats", nil);
+    self.openLabel.font = [UIFont quattroCentoRegularFontWithSize:13.0];
+    self.openLabel.textColor = [UIColor whiteColor];
+    self.openLabel.text = NSLocalizedString(@"eventCard.view.openSeats", nil);
+    
+    self.open2Label.textColor = [UIColor whiteColor];
+    self.open2Label.text = NSLocalizedString(@"eventCard.view.openSeats2", nil);
     
     self.seatsLabel.font = [UIFont quattroCentoRegularFontWithSize:13.0];
     self.seatsLabel.textColor = [UIColor whiteColor];
@@ -104,6 +107,15 @@
 //    
 //    NSInteger availableSeats = event.availableSeats.integerValue - numberOfUsersAttending;
     self.numberOfSeatsLabel.text = [NSString stringWithFormat:@"%ld", (long)event.freeSeats.integerValue];
+    
+    if(event.freeSeats.integerValue > 1) {
+        self.open2Label.font = [UIFont quattroCentoRegularFontWithSize:12.0];
+        self.open2Label.text = NSLocalizedString(@"eventCard.view.openSeats3", nil);
+    } else {
+        self.open2Label.font = [UIFont quattroCentoRegularFontWithSize:14.5];
+        self.open2Label.text = NSLocalizedString(@"eventCard.view.openSeats2", nil);
+    }
+
     self.seatsLabel.text = [NSString stringWithFormat:@"%ld %@", (long)event.availableSeats.integerValue, NSLocalizedString(@"eventCard.view.totalSeats", nil)];
 
     self.userNameLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"eventCard.hostedBy", nil), [event.host shortName]];
@@ -122,8 +134,7 @@
     
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
     
-    self.priceLabel.attributedText = [self createPriceStringWithPrice: GetSeatPrice([NSNumber numberWithInt:event.price.integerValue])
-                                                        andCoinSymbol:coinSymbol];
+    self.priceLabel.attributedText = [self createPriceStringWithPrice: GetSeatPrice(event.price) andCoinSymbol:coinSymbol];
     
     if (event.host.pictures.count && [event.host.selectedPictureIndex integerValue] >= 0) {
         

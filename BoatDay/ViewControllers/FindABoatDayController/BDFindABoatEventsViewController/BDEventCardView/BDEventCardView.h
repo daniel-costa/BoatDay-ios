@@ -18,7 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *boatPlaceholderImageView;
 @property (weak, nonatomic) IBOutlet UILabel *numberOfSeatsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *seatsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *openSeatsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *openLabel;
+@property (weak, nonatomic) IBOutlet UILabel *open2Label;
 
 // First Row View
 @property (weak, nonatomic) IBOutlet UIImageView *userPictureImageView;

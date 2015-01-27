@@ -909,8 +909,8 @@
             
         }];
         
-    }
-    else {
+    } else {
+        
         self.seatRequest.event.freeSeats = @(self.seatRequest.event.freeSeats.integerValue + self.seatRequest.numberOfSeats.integerValue);
         
         // seat request cancelation

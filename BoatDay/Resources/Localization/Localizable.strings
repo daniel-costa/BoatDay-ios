@@ -475,7 +475,9 @@
 "eventCard.status.eventIsLive"                  = "THIS EVENT IS LIVE";
 "eventCard.status.somethingWentWrong"           = "EVENT INFORMATION";
 "eventCard.view.openSeats"                      = "OPEN";
-"eventCard.view.totalSeats"                     = "TOTAL SEATS";
+"eventCard.view.openSeats2"                     = "SEAT";
+"eventCard.view.openSeats3"                     = "SEATS";
+"eventCard.view.totalSeats"                     = "TOTAL";
 
 /*
  * Notifications
