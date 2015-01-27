@@ -293,25 +293,26 @@ static NSInteger const kMinumumDateYear = 1920;
     
     [self dismissKeyboard];
     
-    if (boatStatus != BoatStatusNotSubmited) {
+    
+    if ([NSString isStringEmpty:self.boatName] ||
+        [NSString isStringEmpty:self.boatType] ||
+        [NSString isStringEmpty:self.boatLenght] ||
+        [NSString isStringEmpty:self.boatCapacity] ||
+        [NSString isStringEmpty:self.boatBuildYear] ||
+        !self.boatLocation) {
         
-        if ([NSString isStringEmpty:self.boatName] ||
-            [NSString isStringEmpty:self.boatType] ||
-            [NSString isStringEmpty:self.boatLenght] ||
-            [NSString isStringEmpty:self.boatCapacity] ||
-            [NSString isStringEmpty:self.boatBuildYear] ||
-            !self.boatLocation) {
-            
-            UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"addEditBoat.alertview.title", nil)
-                                                                  message:NSLocalizedString(@"addEditBoat.alertview.message", nil)
-                                                                 delegate:nil
-                                                        cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
-                                                        otherButtonTitles: nil];
-            
-            [myAlertView show];
-            return;
-            
-        }
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"addEditBoat.alertview.title", nil)
+                                                              message:NSLocalizedString(@"addEditBoat.alertview.message", nil)
+                                                             delegate:nil
+                                                    cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
+                                                    otherButtonTitles: nil];
+        
+        [myAlertView show];
+        return;
+        
+    }
+    
+    if (boatStatus != BoatStatusNotSubmited) {
         
         if (self.imagesArray.count == 0) {
             
