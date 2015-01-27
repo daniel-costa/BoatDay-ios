@@ -464,8 +464,8 @@
         self.headerBottomViewLabel.font = [UIFont abelFontWithSize:12.0];
         self.headerBottomViewLabel.textColor = [UIColor whiteColor];
         
-        self.headerBottomView.backgroundColor = [UIColor yellowBoatDay];
-        self.headerBottomViewLabel.text = NSLocalizedString(@"eventProfile.confirmedGuest", nil);
+        self.headerBottomView.backgroundColor = [UIColor greenBoatDay];
+        self.headerBottomViewLabel.text = NSLocalizedString(@"eventProfile.wasGuest", nil);
         
         self.buttonBottomView.titleLabel.font = [UIFont abelFontWithSize:24.0];
         [self.buttonBottomView setTitle:NSLocalizedString(@"eventProfile.finalizeContribution", nil) forState:UIControlStateNormal];

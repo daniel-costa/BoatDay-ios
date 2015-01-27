@@ -56,7 +56,7 @@
     
     [super viewWillAppear:animated];
     
-    [self setupView];
+//    [self setupView];
     
     [self.tableView reloadData];
     
@@ -108,15 +108,16 @@
                 [self.confirmedRequests addObject:request];
                 
             } else {
-                
+
                 if ([request.pendingInvite boolValue]) {
-                    
+                    NSLog(@"1a");
                     [self.pendingInvitations addObject:request];
                     
                 } else {
-                    
+                    NSLog(@"1b");
                     if ([request.status integerValue] == SeatRequestStatusPending) {
                         
+                    NSLog(@"3");
                         [self.pendingRequests addObject:request];
                         
                     }

@@ -552,21 +552,40 @@ static NSInteger const kMessageMaximumCharacters = 500;
 
 - (void) saveSeatRequest {
     
-    SeatRequest *seatRequest = [SeatRequest object];
-    seatRequest.user = [User currentUser];
-    seatRequest.event = self.event;
-    seatRequest.numberOfSeats = @(self.requestedSeats);
-    seatRequest.status = @(SeatRequestStatusPending);
-    seatRequest.pendingInvite = @(NO);
-    seatRequest.message = self.textView.text;
-    seatRequest.deleted = @(NO);
-    self.seatRequest = seatRequest;
+    SeatRequest *userRequest = nil;
     
-    if(!self.event.seatRequests) {
-        self.event.seatRequests = [[NSMutableArray alloc] init];
+    for (SeatRequest *request in self.event.seatRequests) {
+        if(![request isEqual:[NSNull null]]) {
+            if ([request.user isEqual:[User currentUser]]) {
+                userRequest = request;
+            }
+        }
     }
     
-    [self.event.seatRequests addObject:seatRequest];
+    if(userRequest) {
+        userRequest.numberOfSeats = @(self.requestedSeats);
+        userRequest.status = @(SeatRequestStatusPending);
+        userRequest.pendingInvite = @(NO);
+        userRequest.message = self.textView.text;
+        userRequest.deleted = @(NO);
+        self.seatRequest = userRequest;
+    } else {
+        SeatRequest *seatRequest = [SeatRequest object];
+        seatRequest.user = [User currentUser];
+        seatRequest.event = self.event;
+        seatRequest.numberOfSeats = @(self.requestedSeats);
+        seatRequest.status = @(SeatRequestStatusPending);
+        seatRequest.pendingInvite = @(NO);
+        seatRequest.message = self.textView.text;
+        seatRequest.deleted = @(NO);
+        self.seatRequest = seatRequest;
+        
+        if(!self.event.seatRequests) {
+            self.event.seatRequests = [[NSMutableArray alloc] init];
+        }
+        
+        [self.event.seatRequests addObject:seatRequest];
+    }
     
     Notification *notification = [Notification object];
     notification.user = self.event.host;

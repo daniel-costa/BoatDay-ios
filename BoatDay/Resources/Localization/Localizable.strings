@@ -348,6 +348,7 @@
 "eventProfile.seats"                                    = "OPEN SEATS";
 "eventProfile.seatsRequest"                             = "SEATS";
 "eventProfile.confirmedGuest"                           = "YOU ARE A CONFIRMED GUEST FOR THIS EVENT";
+"eventProfile.wasGuest"                                 = "YOU ATTENDED THIS EVENT";
 "eventProfile.cancelSeats"                              = "CANCEL SEATS";
 "eventProfile.pendingRequest"                           = "Your seat request is pending.";
 "event.pickupLocation.title"                            = "Departure Location";

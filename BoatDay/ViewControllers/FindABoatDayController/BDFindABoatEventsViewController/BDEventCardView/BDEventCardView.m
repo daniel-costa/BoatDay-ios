@@ -116,7 +116,7 @@
         self.open2Label.text = NSLocalizedString(@"eventCard.view.openSeats2", nil);
     }
 
-    self.seatsLabel.text = [NSString stringWithFormat:@"%ld %@", (long)event.availableSeats.integerValue, NSLocalizedString(@"eventCard.view.totalSeats", nil)];
+//    self.seatsLabel.text = [NSString stringWithFormat:@"%ld %@", (long)event.availableSeats.integerValue, NSLocalizedString(@"eventCard.view.totalSeats", nil)];
 
     self.userNameLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"eventCard.hostedBy", nil), [event.host shortName]];
     
