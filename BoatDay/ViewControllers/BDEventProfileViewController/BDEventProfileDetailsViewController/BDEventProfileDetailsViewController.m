@@ -916,6 +916,10 @@
     
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
     
+    if([self.userRequest.status integerValue] == SeatRequestStatusAccepted) {
+        self.userRequest.event.freeSeats = @(self.userRequest.event.freeSeats.integerValue + self.userRequest.numberOfSeats.integerValue);
+    }
+    
     self.userRequest.status = @(SeatRequestStatusRejected);
     
     NSMutableArray *objectsToSave = [[NSMutableArray alloc] init];

@@ -269,7 +269,10 @@ static NSInteger const kMaximumAvailableSeats = 15;
 
 - (void) setupNavigationBar {
     
+    NSLog(@"%lu", (unsigned long)self.event.seatRequests.count);
+    
     if (self.event) {
+        
         // create save button to navigatio bar at top of the view
         UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeCustom];
         saveButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
@@ -278,7 +281,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
         
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:saveButton];
 
-        }
+    }
     
     UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
     cancelButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);

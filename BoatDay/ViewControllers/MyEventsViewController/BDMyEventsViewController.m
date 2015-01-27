@@ -143,7 +143,7 @@
 
 - (void) setupViewControllers {
     
-    self.eventHostingViewController = [[BDEventListViewController alloc] initWithEventsHostingAndHistory:self.hostingEvents];
+    self.eventHostingViewController = [[BDEventListViewController alloc] initWithEvents:self.hostingEvents];
 
     
     __weak BDMyEventsViewController *weakSelf = self;
@@ -310,6 +310,8 @@
     [query includeKey:@"seatRequests.user"];
     [query includeKey:@"seatRequests.event"];
     
+    [query orderByAscending:@"startsAt"];
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *events, NSError *error) {
         
         // We got all the data, we can remove the loading view
@@ -347,23 +349,16 @@
 
     for (Event *event in events) {
         
-        // ends later than "now"
+        // stats later than "now"
         if ([event.startsAt compare:nowDate] == NSOrderedDescending) {
-            
             if ([event.host isEqual:self.user]) {
                 [self.hostingEvents addObject:event];
-            }
-            else {
+            } else {
                 [self.attendingEvents addObject:event];
             }
-            
-        }
-        else { // history
-            
+        } else { // history
             [self.historyEvents addObject:event];
-            
         }
-        
     }
     
 }

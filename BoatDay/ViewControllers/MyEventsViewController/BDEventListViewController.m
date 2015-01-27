@@ -91,15 +91,15 @@
    
     BDMyEventListCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[BDMyEventListCell reuseIdentifier]];
     
-    NSDate *now = [NSDate date];
+//    NSDate *now = [NSDate date];
     
     // Event Started
-    if ([now compare:event.startsAt] == NSOrderedDescending) {
-        cell.shouldBeGray = YES;
-    }
-    else {
-        cell.shouldBeGray = NO;
-    }
+//    if ([now compare:event.startsAt] == NSOrderedDescending) {
+//        cell.shouldBeGray = YES;
+//    }
+//    else {
+//        cell.shouldBeGray = NO;
+//    }
     
     [cell updateWithEvent:event];
     
