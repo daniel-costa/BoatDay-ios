@@ -75,7 +75,6 @@
     [query whereKey:@"deleted" equalTo:@(NO)];
     [query whereKey:@"status" equalTo:@(BoatStatusApproved)];
     
-    
     if ([query countObjects] == 0) {
         // If no boats, we cannot create boats
         return;
