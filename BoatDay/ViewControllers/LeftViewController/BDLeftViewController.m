@@ -265,7 +265,7 @@
         
         case SideMenuHostRegistration:
 
-            return [self returnDefaultCell:tableView name:NSLocalizedString(@"sideMenu.hostRegistration", nil) image:@"ico-Flag"];
+            return [self returnDefaultCell:tableView name:NSLocalizedString(@"sideMenu.hostRegistration", nil) image:@"ico-Host-center"];
             break;
         case SideMenuMyBoats:
 

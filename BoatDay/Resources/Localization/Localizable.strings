@@ -248,7 +248,7 @@
 
 "location.save"                     = "Save";
 "location.cancel"                   = "Cancel";
-"location.title"                    = "Storage Location";
+"location.title"                    = "Set Location";
 "location.placeNotFound"            = "Didn't find your boat location";
 "location.placeNotFound.title"      = "Location not found";
 "location.placeNotFound.okButton"   = "Ok";

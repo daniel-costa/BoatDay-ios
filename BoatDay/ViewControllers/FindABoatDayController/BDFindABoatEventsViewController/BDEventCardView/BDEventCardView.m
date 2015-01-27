@@ -122,7 +122,7 @@
     
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
     
-    self.priceLabel.attributedText = [self createPriceStringWithPrice:GetSeatPrice([NSNumber numberWithInt:event.price.integerValue])
+    self.priceLabel.attributedText = [self createPriceStringWithPrice: GetSeatPrice([NSNumber numberWithInt:event.price.integerValue])
                                                         andCoinSymbol:coinSymbol];
     
     if (event.host.pictures.count && [event.host.selectedPictureIndex integerValue] >= 0) {

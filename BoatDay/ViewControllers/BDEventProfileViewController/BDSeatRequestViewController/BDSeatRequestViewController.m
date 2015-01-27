@@ -26,7 +26,6 @@ static NSInteger const kMessageMaximumCharacters = 500;
 @property (weak, nonatomic) IBOutlet UILabel *hostLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *priceSuggestedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceFeeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *availableSeatsLabel;
 
@@ -168,9 +167,8 @@ static NSInteger const kMessageMaximumCharacters = 500;
     
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
     ;
-    [self formatLabelWithPriceStringWithPrice:@([GetSeatPrice(self.event.price) integerValue] + BRAINTREE_FIX_FEE) andCoinSymbol:coinSymbol withSize:39.0 forLabel:self.priceLabel];
-    [self formatLabelWithPriceStringWithPrice:@(BRAINTREE_FIX_FEE) andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceFeeLabel];
-    [self formatLabelWithPriceStringWithPrice:GetSeatPrice(self.event.price) andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceSuggestedLabel];
+    [self formatLabelWithPriceStringWithPrice:@([GetSeatPrice(self.event.price) integerValue]) andCoinSymbol:coinSymbol withSize:39.0 forLabel:self.priceLabel];
+    [self formatLabelWithPriceStringWithPrice:@([GetSeatPrice([NSNumber numberWithInteger:0]) integerValue]) andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceFeeLabel];
     
     NSInteger numberOfUsersAttending = 0;
     
@@ -281,8 +279,8 @@ static NSInteger const kMessageMaximumCharacters = 500;
     double pricePerSeat = [GetSeatPrice(self.event.price) doubleValue];
     [self formatLabelWithPriceStringWithPrice:@(pricePerSeat * self.requestedSeats + BRAINTREE_FIX_FEE)
                                 andCoinSymbol:coinSymbol withSize:39.0 forLabel:self.priceLabel];
-    [self formatLabelWithPriceStringWithPrice:@(pricePerSeat * self.requestedSeats)
-                                andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceSuggestedLabel];
+    [self formatLabelWithPriceStringWithPrice:@([GetSeatPrice([NSNumber numberWithInteger:0]) integerValue] * self.requestedSeats)
+                                andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceFeeLabel];
     
 }
 
@@ -305,10 +303,10 @@ static NSInteger const kMessageMaximumCharacters = 500;
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
     
     double pricePerSeat = [GetSeatPrice(self.event.price) doubleValue];
-    [self formatLabelWithPriceStringWithPrice:@(pricePerSeat * self.requestedSeats + BRAINTREE_FIX_FEE)
-                                andCoinSymbol:coinSymbol withSize:39.0 forLabel:self.priceLabel];
     [self formatLabelWithPriceStringWithPrice:@(pricePerSeat * self.requestedSeats)
-                                andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceSuggestedLabel];
+                                andCoinSymbol:coinSymbol withSize:39.0 forLabel:self.priceLabel];
+    [self formatLabelWithPriceStringWithPrice:@([GetSeatPrice([NSNumber numberWithInteger:0]) integerValue] * self.requestedSeats)
+                                andCoinSymbol:coinSymbol withSize:12.0 forLabel:self.priceFeeLabel];
 
 }
 

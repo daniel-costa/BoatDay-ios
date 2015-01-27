@@ -25,9 +25,8 @@
                 <outlet property="minusButton" destination="ygV-zW-t5i" id="USe-8b-tdm"/>
                 <outlet property="paymentInformationLabel" destination="E4C-QB-h8J" id="Epx-Ku-hxg"/>
                 <outlet property="plusButton" destination="J5L-zj-SxM" id="W5b-hE-aLN"/>
-                <outlet property="priceFeeLabel" destination="dXL-iL-UUF" id="diz-UB-wiM"/>
+                <outlet property="priceFeeLabel" destination="w05-7t-ffs" id="ZpK-qP-XjE"/>
                 <outlet property="priceLabel" destination="R1m-OM-pOP" id="g0C-51-urf"/>
-                <outlet property="priceSuggestedLabel" destination="w05-7t-ffs" id="zdg-Sd-ZER"/>
                 <outlet property="requestedSeatsLabel" destination="pzs-WN-yWa" id="7ol-ay-Gqm"/>
                 <outlet property="seatsLabel" destination="XsO-2P-TOh" id="BxE-FU-2Ny"/>
                 <outlet property="sendRequestButton" destination="zjW-Rn-1xc" id="Ast-SK-iLC"/>
@@ -46,7 +45,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" id="0KR-la-peM">
-                            <rect key="frame" x="0.0" y="41" width="320" height="108"/>
+                            <rect key="frame" x="0.0" y="41" width="320" height="89"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="PrC-ck-aK4">
@@ -74,15 +73,8 @@
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested contribution" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Zd-BX-ycA">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="including Trust &amp; Safety Fee" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Zd-BX-ycA">
                                     <rect key="frame" x="10" y="63" width="166" height="19"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction fee" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A1I-Ga-fsH">
-                                    <rect key="frame" x="10" y="84" width="166" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -90,13 +82,6 @@
                                 </label>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w05-7t-ffs">
                                     <rect key="frame" x="205" y="63" width="107" height="19"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dXL-iL-UUF">
-                                    <rect key="frame" x="205" y="84" width="107" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -131,7 +116,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 OF 8 SEATS AVAILABLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="raB-a7-3l0">
-                            <rect key="frame" x="0.0" y="150" width="320" height="22"/>
+                            <rect key="frame" x="0.0" y="131" width="320" height="22"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.22352941179999999" green="0.50196078430000002" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -139,7 +124,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" id="vie-gD-WRg">
-                            <rect key="frame" x="0.0" y="173" width="320" height="60"/>
+                            <rect key="frame" x="0.0" y="154" width="320" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pzs-WN-yWa">
@@ -182,7 +167,7 @@
                             <color key="backgroundColor" red="0.2274509804" green="0.74901960779999999" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                         <view contentMode="scaleToFill" id="18R-ba-U41">
-                            <rect key="frame" x="0.0" y="238" width="320" height="138"/>
+                            <rect key="frame" x="0.0" y="219" width="320" height="138"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" id="t6f-xe-IfP" userLabel="TextView" customClass="HPGrowingTextView">

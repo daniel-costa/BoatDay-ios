@@ -25,6 +25,7 @@ static NSInteger const kMessageMaximumCharacters = 500;
 @property (weak, nonatomic) IBOutlet UILabel *hostLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceFeeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalContributionLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *addSeatsView;
@@ -59,7 +60,7 @@ static NSInteger const kMessageMaximumCharacters = 500;
     
     _event = event;
     _seatRequest = seatRequest;
-    _contribution = [seatRequest.numberOfSeats integerValue] * [event.price floatValue];
+    _contribution = [seatRequest.numberOfSeats integerValue] * [GetSeatPrice(event.price) integerValue];
     
     return self;
     
@@ -157,21 +158,19 @@ static NSInteger const kMessageMaximumCharacters = 500;
     self.dateLabel.font = [UIFont quattroCentoRegularFontWithSize:11.0];
     
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
-    self.priceLabel.attributedText = [self createPriceStringWithPrice:@(self.contribution) andCoinSymbol:coinSymbol];
+    [self formatLabelWithPriceStringWithPrice:@(self.contribution) andCoinSymbol:coinSymbol withSize:39 forLabel:self.priceLabel];
+    [self formatLabelWithPriceStringWithPrice:@([self.seatRequest.numberOfSeats integerValue] * [GetFeePrice() integerValue]) andCoinSymbol:coinSymbol withSize:12 forLabel:self.priceFeeLabel];
+    
     
     NSInteger numberOfUsersAttending = 0;
     
     // Check for user seats request
     for (SeatRequest *request in self.event.seatRequests) {
-        
         if(![request isEqual:[NSNull null]]) {
-            
             if ([request.status integerValue] == SeatRequestStatusAccepted) {
                 numberOfUsersAttending += [request.numberOfSeats integerValue];
             }
-            
         }
-        
     }
     
     self.totalContributionLabel.text = NSLocalizedString(@"seatRequests.totalContribution", nil);
@@ -229,7 +228,6 @@ static NSInteger const kMessageMaximumCharacters = 500;
                                                                 label:self.screenName
                                                                 value:nil] build]];
 
-
     [self.textView resignFirstResponder];
     
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -242,11 +240,14 @@ static NSInteger const kMessageMaximumCharacters = 500;
                                                                 label:self.screenName
                                                                 value:nil] build]];
 
-
     self.contribution--;
     
-    if (self.contribution < 0) {
-        self.contribution = 0;
+    GetSeatPrice([NSNumber numberWithInteger:0]);
+    
+    long minValue = [self.seatRequest.numberOfSeats integerValue] * [GetFeePrice() integerValue];
+    
+    if (self.contribution < minValue) {
+        self.contribution = minValue;
     }
     
     NSString *coinSymbol = NSLocalizedString(@"coinSymbol", nil);
@@ -282,6 +283,25 @@ static NSInteger const kMessageMaximumCharacters = 500;
 }
 
 #pragma mark - String Methods
+
+- (void)formatLabelWithPriceStringWithPrice:(NSNumber *)price andCoinSymbol:(NSString *)coinSymbol withSize: (double) fontSize forLabel: (UILabel *) label {
+    
+    NSString *string = [NSString stringWithFormat:@"%@%@", coinSymbol, price];
+    
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:string];
+    UIFont *font = [UIFont fontWithName:label.font.fontName size: fontSize];
+    UIFont *smallFont = [UIFont fontWithName:label.font.fontName size: fontSize * 0.6];
+    
+    [attString beginEditing];
+    [attString addAttribute:NSFontAttributeName value:(font) range:NSMakeRange(1, string.length - 1)];
+    [attString addAttribute:NSFontAttributeName value:(smallFont) range:NSMakeRange(0, 1)];
+    [attString addAttribute:(NSString*)kCTSuperscriptAttributeName value:@"1" range:NSMakeRange(0, 1)];
+    
+    [attString addAttribute:(NSString*)kCTForegroundColorAttributeName value:label.textColor range:NSMakeRange(0, string.length - 1)];
+    [attString endEditing];
+    
+    label.attributedText = attString;
+}
 
 - (NSMutableAttributedString *)createPriceStringWithPrice:(NSNumber *)price andCoinSymbol:(NSString *)coinSymbol {
     

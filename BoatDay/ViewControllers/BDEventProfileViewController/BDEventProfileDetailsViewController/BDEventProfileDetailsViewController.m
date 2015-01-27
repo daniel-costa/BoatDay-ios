@@ -478,6 +478,9 @@
         [self.buttonBottomView setTitle:NSLocalizedString(@"eventProfile.finalizeContribution", nil) forState:UIControlStateNormal];
         [self.buttonBottomView setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_off"] forState:UIControlStateNormal];
         [self.buttonBottomView setBackgroundImage:[UIImage imageNamed:@"button_lg_yellow_on"] forState:UIControlStateHighlighted];
+        [self.buttonBottomView setFrame:CGRectMake(42.5, self.buttonBottomView.frame.origin.y, 235, self.buttonBottomView.frame.size.height)];
+        self.numberOfSeatsLabel.hidden = true;
+        self.seatsLabel.hidden = true;
         
         self.numberOfSeatsLabel.backgroundColor = [UIColor clearColor];
         self.numberOfSeatsLabel.textColor = [UIColor mediumGreenBoatDay];
