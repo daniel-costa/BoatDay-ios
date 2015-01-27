@@ -73,7 +73,7 @@
     PFQuery *query = [Boat query];
     [query whereKey:@"owner" equalTo:[User currentUser]];
     [query whereKey:@"deleted" equalTo:@(NO)];
-    [query whereKey:@"status" equalTo:@("BoatStatusApproved")];
+    [query whereKey:@"status" equalTo:@(BoatStatusApproved)];
     
     
     if ([query countObjects] == 0) {

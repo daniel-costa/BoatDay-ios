@@ -248,10 +248,9 @@
         PFQuery *query = [Boat query];
         [query whereKey:@"owner" equalTo:[User currentUser]];
         [query whereKey:@"deleted" equalTo:@(NO)];
-        [query whereKey:@"status" equalTo:@("BoatStatusApproved")];
-
+        [query whereKey:@"status" equalTo:@(BoatStatusApproved)];
         
-        if ([query countObjects] == 0) {
+        if ((long)[query countObjects] == 0) {
             
             UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Boat pending review"
                                                                   message:@"Your Boat is pending review. Once your boat is approved, you will be able to create a BoatDay."
