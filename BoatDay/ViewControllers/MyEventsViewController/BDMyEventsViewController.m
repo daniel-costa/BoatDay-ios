@@ -289,7 +289,7 @@
     
     PFQuery *seatRequestQuery = [SeatRequest query];
     [seatRequestQuery whereKey:@"user" equalTo:[User currentUser]];
-    [seatRequestQuery whereKey:@"status" notEqualTo:@(SeatRequestStatusRejected)];
+    [seatRequestQuery whereKey:@"status" equalTo:@(SeatRequestStatusAccepted)];
     [seatRequestQuery whereKey:@"deleted" notEqualTo:@(YES)];
     
     PFQuery *attendeesQuery = [Event query];
@@ -344,11 +344,11 @@
     self.hostingEvents = [[NSMutableArray alloc] init];
     self.attendingEvents = [[NSMutableArray alloc] init];
     self.historyEvents = [[NSMutableArray alloc] init];
-    
+
     for (Event *event in events) {
         
         // ends later than "now"
-        if ([event.endDate compare:nowDate] == NSOrderedDescending) {
+        if ([event.startsAt compare:nowDate] == NSOrderedDescending) {
             
             if ([event.host isEqual:self.user]) {
                 [self.hostingEvents addObject:event];
