@@ -269,8 +269,6 @@ static NSInteger const kMaximumAvailableSeats = 15;
 
 - (void) setupNavigationBar {
     
-    NSLog(@"%lu", (unsigned long)self.event.seatRequests.count);
-    
     if (self.event) {
         
         // create save button to navigatio bar at top of the view
@@ -1038,7 +1036,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
     self.event.price = [f numberFromString:self.pricePerSeat];
     self.event.boat = self.selectedBoat;
     self.event.activities = self.selectedActivities;
-    self.event.pickupLocation = self.pickupLocation;
+//    self.event.pickupLocation = self.pickupLocation;
     self.event.locationName = self.locationString;
     self.event.startsAt = self.pickUpTime;
     self.event.endDate = self.endTime;
