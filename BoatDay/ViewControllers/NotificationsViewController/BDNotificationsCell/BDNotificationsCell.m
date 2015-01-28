@@ -32,19 +32,18 @@
 
 //    [self setCellColor:[UIColor greenBoatDay]];
     
-    self.messageLabel.textColor = [UIColor whiteColor];
+    self.messageLabel.textColor = [UIColor darkGreenBoatDay];
     self.messageLabel.backgroundColor = [UIColor clearColor];
     self.messageLabel.font = [UIFont quattroCentoRegularFontWithSize:15.0];
 
-    self.detailMessageLabel.textColor = [UIColor yellowBoatDay];
-    self.detailMessageLabel.backgroundColor = [UIColor clearColor];
-    self.detailMessageLabel.font = [UIFont quattroCentoRegularFontWithSize:15.0];
-    self.detailMessageLabel.adjustsFontSizeToFitWidth = YES;
-    self.detailMessageLabel.minimumScaleFactor = 0.8;
+    self.detailMessageLabel.textColor = [UIColor grayBoatDay];
+    self.detailMessageLabel.backgroundColor = [UIColor redBoatDay];
+    self.detailMessageLabel.font = [UIFont quattroCentoRegularFontWithSize:12.0];
     
-    self.dateLabel.textColor = [UIColor whiteColor];
+    self.dateLabel.textColor = [UIColor yellowBoatDay];
     self.dateLabel.backgroundColor = [UIColor clearColor];
     self.dateLabel.font = [UIFont quattroCentoRegularFontWithSize:10.0];
+    self.dateLabel.backgroundColor = [UIColor greenBoatDay];
 
 }
 
@@ -194,8 +193,12 @@
     }
     
     self.messageLabel.text = message;
-    self.detailMessageLabel.text = detailMessage;
+    self.detailMessageLabel.text = notification.text;
     self.dateLabel.text = date;
+    
+    self.detailMessageLabel.numberOfLines = 0;
+    [self.detailMessageLabel sizeToFit];
+    self.detailMessageLabel.frame = CGRectMake(self.detailMessageLabel.frame.origin.x, self.detailMessageLabel.frame.origin.y, 300, self.detailMessageLabel.frame.size.height);
 
 }
 
@@ -209,11 +212,11 @@
         self.dateLabel.textColor = [UIColor whiteColor];
         self.detailMessageLabel.textColor = [UIColor whiteColor];
         self.messageLabel.textColor = [UIColor yellowBoatDay];
-    }
-    else {
+        
+    } else {
         
         [self setCellColor:[UIColor whiteColor]];
-        self.dateLabel.textColor = [UIColor grayBoatDay];
+        self.dateLabel.textColor = [UIColor yellowBoatDay];
         self.detailMessageLabel.textColor = [UIColor grayBoatDay];
         self.messageLabel.textColor = [UIColor darkGreenBoatDay];
 

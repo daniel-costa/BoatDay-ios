@@ -511,6 +511,7 @@
 "notifications.rejectionMessage.title"              = "Host Message";
 "notifications.rejectionMessage.defaultMessage"     = "The event host didn't give a reason for the cancelation.";
 "notifications.type.invitationRemoved"              = "Your invitation is no longer active.";
+"notifications.type.finalizeContribution"           = "%@ finalize his contribution for the event '%@' and paid you %@ $";
 
 /*
  * Boat Towing

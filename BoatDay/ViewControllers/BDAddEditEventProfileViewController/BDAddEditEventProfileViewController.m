@@ -1048,8 +1048,6 @@ static NSInteger const kMaximumAvailableSeats = 15;
     self.event.host = [User currentUser];
     self.event.status = @(status);
     self.event.eventDescription = self.eventDescription;
-
-    NSLog(@"%@", self.event.pickupLocation);
     
     // saving the user in background
     [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
