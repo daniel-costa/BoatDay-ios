@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		655AD57C1A7908A600ADD2E8 /* termsAndConditions.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 655AD57B1A7908A600ADD2E8 /* termsAndConditions.pdf */; };
+		655AD57E1A79471900ADD2E8 /* termsAndConditions.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 655AD57D1A79471900ADD2E8 /* termsAndConditions.pdf */; };
 		951D64671A72E33F00540EED /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D64651A72E33F00540EED /* libAdIdAccess.a */; };
 		951D64681A72E34000540EED /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D64661A72E33F00540EED /* libGoogleAnalyticsServices.a */; };
 		951D64741A72E9BF00540EED /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D64731A72E9BF00540EED /* libz.dylib */; };
@@ -307,7 +307,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		655AD57B1A7908A600ADD2E8 /* termsAndConditions.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = termsAndConditions.pdf; sourceTree = "<group>"; };
+		655AD57D1A79471900ADD2E8 /* termsAndConditions.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = termsAndConditions.pdf; sourceTree = "<group>"; };
 		65F5B7F5D1BF8E5369CBC2EC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		951D64651A72E33F00540EED /* libAdIdAccess.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdIdAccess.a; sourceTree = "<group>"; };
 		951D64661A72E33F00540EED /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
@@ -1655,7 +1655,7 @@
 		E87A747619533CBE0006D097 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				655AD57B1A7908A600ADD2E8 /* termsAndConditions.pdf */,
+				655AD57D1A79471900ADD2E8 /* termsAndConditions.pdf */,
 				E84F3F011A1F72C7001340F4 /* zipcodes.plist */,
 				E8FDBF49197D677100D51645 /* videos */,
 				E8385CE519BE12C2004D350F /* loadingBoatDay.gif */,
@@ -2615,7 +2615,7 @@
 				E87FE2D31A1E425F009AD37F /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
 				E82F5E2319B4810E0095D6DF /* BDMyEventsViewController.xib in Resources */,
 				E8A21F91198950770043D086 /* BDEventCardView.xib in Resources */,
-				655AD57C1A7908A600ADD2E8 /* termsAndConditions.pdf in Resources */,
+				655AD57E1A79471900ADD2E8 /* termsAndConditions.pdf in Resources */,
 				E87E2CDA19A4C3C400C18771 /* BDAddEditEventProfileViewController.xib in Resources */,
 				E87FE2B51A1E425F009AD37F /* bubble_stroked_tailless@2x.png in Resources */,
 				E87A74EA19534EDE0006D097 /* BDLoginViewController.xib in Resources */,

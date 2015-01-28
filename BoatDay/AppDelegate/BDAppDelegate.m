@@ -232,7 +232,10 @@
             break;
         case NotificationTypeEventInvitationRemoved:
             break;
+        case NotificationTypeFinalizeContribution:
+            break;
         default:
+            [[Session sharedSession] updateUserData];
             break;
     }
     
@@ -278,12 +281,12 @@
 #pragma mark - App Customs
 
 - (void) appearenceCustumizations {
-//    
-//    [[SVProgressHUD appearance] setHudBackgroundColor:[[UIColor greenBoatDay] colorWithAlphaComponent:0.4]];
-//    [[SVProgressHUD appearance] setHudForegroundColor:[UIColor whiteColor]];
-//    [[SVProgressHUD appearance] setHudFont:[UIFont abelFontWithSize:15.0]];
-//    [[SVProgressHUD appearance] setHudStatusShadowColor:[UIColor whiteColor]];
-//
+    //
+    //    [[SVProgressHUD appearance] setHudBackgroundColor:[[UIColor greenBoatDay] colorWithAlphaComponent:0.4]];
+    //    [[SVProgressHUD appearance] setHudForegroundColor:[UIColor whiteColor]];
+    //    [[SVProgressHUD appearance] setHudFont:[UIFont abelFontWithSize:15.0]];
+    //    [[SVProgressHUD appearance] setHudStatusShadowColor:[UIColor whiteColor]];
+    //  
     // [[UITextField appearance] setTintColor:[UIColor mediumGreenBoatDay]];
     
 }

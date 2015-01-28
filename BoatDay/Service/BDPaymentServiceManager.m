@@ -156,10 +156,10 @@ static NSString* const kBaseUrl = @"https://boat-day-payments.herokuapp.com";
                              merchantID:(NSString*)merchantId
                                  amount:(NSString*)amount
                               withBlock:(void (^)(BOOL success, NSString *error))block {
-    
+
     NSString *payment = @"%@/seat-request/%@/payment";
     NSString *url = [NSString stringWithFormat:payment, kBaseUrl, seatRequestID];
-    
+        NSLog(@"-%@", amount ?: @"");
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager POST:url
        parameters:@{@"session":         sessionToken ?: @"",

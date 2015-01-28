@@ -409,6 +409,14 @@ static NSInteger const kMessageMaximumCharacters = 500;
         
         User *user = [User currentUser];
         
+        NSLog(@"%@", @(self.contribution));
+        NSLog(@"%ld", (long)self.contribution);
+//        NSLog(@"%@", self.event.host.hostRegistration);
+//        NSLog(@"%@", self.event.host.hostRegistration.merchantId);
+        
+        [self.event.host.hostRegistration fetchIfNeeded];
+        
+        
         [[BDPaymentServiceManager sharedManager] chargeContributionWithRequestID:self.seatRequest.objectId sessionToken:user.sessionToken paymentToken:user.braintreePaymentToken merchantID:self.event.host.hostRegistration.merchantId amount:[@(self.contribution) stringValue] withBlock:^(BOOL success, NSString *error) {
             
             if (success) {
@@ -417,7 +425,19 @@ static NSInteger const kMessageMaximumCharacters = 500;
                     
                     if (succeeded) {
                         
+                        //                        finalizeContributions.notifyUser
                         [SVProgressHUD dismiss];
+                        
+                        Notification *notification = [Notification object];
+                        notification.user = self.seatRequest.event.host;
+//                        notification.event = self.seatRequest.event;
+                        notification.seatRequest = self.seatRequest;
+                        notification.read = @(NO);
+                        notification.text = [NSString stringWithFormat:NSLocalizedString(@"finalizeContributions.notifyUser", nil), [User currentUser].fullName, self.event.name];
+                        notification.notificationType = @(NotificationTypeFinalizeContribution);
+                        notification.deleted = @(NO);
+                        [notification saveInBackground];
+                        
                         [self cancelButtonPressed];
                         
                     } else {

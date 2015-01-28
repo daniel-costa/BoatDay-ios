@@ -37,20 +37,19 @@
     self.messageLabel.font = [UIFont quattroCentoRegularFontWithSize:15.0];
 
     self.detailMessageLabel.textColor = [UIColor grayBoatDay];
-    self.detailMessageLabel.backgroundColor = [UIColor redBoatDay];
+    self.detailMessageLabel.backgroundColor = [UIColor clearColor];
     self.detailMessageLabel.font = [UIFont quattroCentoRegularFontWithSize:12.0];
     
     self.dateLabel.textColor = [UIColor yellowBoatDay];
     self.dateLabel.backgroundColor = [UIColor clearColor];
     self.dateLabel.font = [UIFont quattroCentoRegularFontWithSize:10.0];
-    self.dateLabel.backgroundColor = [UIColor greenBoatDay];
 
 }
 
 - (void)updateLayoutWithNotification:(Notification*)notification {
 
     NSString *message = @"";
-    NSString *detailMessage = @"";
+//    NSString *detailMessage = @"";
     NSString *date = @"";
 
     NSDateFormatter *dateFormatter = [NSDateFormatter notificationMessageDateFormatter];
@@ -188,7 +187,12 @@
 //            detailMessage = notification.event.name;
         }
             break;
+        case NotificationTypeFinalizeContribution: {
+            message = NSLocalizedString(@"notifications.type.finalizeContribution", nil);
+        }
+            break;
         default:
+            message = @"Notification from BoatDay";
             break;
     }
     

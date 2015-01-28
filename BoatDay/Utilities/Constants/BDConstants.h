@@ -116,7 +116,8 @@ typedef NS_ENUM(NSInteger, NotificationType) {
     NotificationTypeMerchantDeclined = 17,
     NotificationTypeEventEnded = 18,
     NotificationTypeEventWillStartIn48H = 19,
-    NotificationTypeEventInvitationRemoved = 20
+    NotificationTypeEventInvitationRemoved = 20,
+    NotificationTypeFinalizeContribution = 21
 
     
 };
