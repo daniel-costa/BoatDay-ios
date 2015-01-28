@@ -1030,7 +1030,7 @@
                 
             }
             else {
-                NSLog(@"failed to get facebook friends users");
+
                 [self setupFriendsScrollView];
                 
             }

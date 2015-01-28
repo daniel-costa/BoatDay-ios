@@ -425,9 +425,6 @@ CGFloat const kMinDistanceLocation    = 0.5;
         distance = [NSNumber numberWithInt:500];
     }
     
-    NSLog(@"%f", [distance floatValue]);
-    
-    
     [query whereKey:kLocationGeoPoint nearGeoPoint:geoPoint withinMiles:[distance floatValue]];
 
     

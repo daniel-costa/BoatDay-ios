@@ -197,8 +197,6 @@
 
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
         
-        NSLog(@"%@", error);
-        
         if (user) {
             
             // Store the deviceToken in the current Installation and save it to Parse.
