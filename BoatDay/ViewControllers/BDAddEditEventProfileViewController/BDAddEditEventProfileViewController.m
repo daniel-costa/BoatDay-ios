@@ -430,7 +430,10 @@ static NSInteger const kMaximumAvailableSeats = 15;
         default:
             break;
     }
+    cell.accessoryView.hidden = self.readOnly ? YES : NO;
     
+    cell.userInteractionEnabled = self.readOnly ? NO : YES;
+    cell.selectionStyle = self.readOnly ? UITableViewCellSelectionStyleNone : UITableViewCellSelectionStyleGray;
     return cell;
     
 }
@@ -505,7 +508,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
     BDEditProfileAboutMeCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[BDEditProfileAboutMeCell reuseIdentifier]];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+
     cell.textView.delegate = self;
     
     cell.titleLabel.text = NSLocalizedString(@"addEditEvent.eventDescription", nil);
@@ -515,9 +518,10 @@ static NSInteger const kMaximumAvailableSeats = 15;
     if(self.readOnly) {
         cell.textView.editable = NO;
     }
-    
     [cell updateCell];
-    
+    //    cell.accessoryView.hidden = self.readOnly ? YES : NO;
+
+    cell.userInteractionEnabled = self.readOnly ? NO : YES;
     return cell;
     
 }

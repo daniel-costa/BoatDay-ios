@@ -26,6 +26,7 @@ typedef NS_ENUM(NSUInteger, HostRegistrationField) {
     HostRegistrationFieldCity,
     HostRegistrationFieldState,
     HostRegistrationFieldZipCode,
+    HostRegistrationFieldSSNCode,
     HostRegistrationFieldEmail,
     HostRegistrationFieldPhoneNumber
     
@@ -60,6 +61,7 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
 @property (strong, nonatomic) NSString *city;
 @property (strong, nonatomic) NSString *state;
 @property (strong, nonatomic) NSString *zipCode;
+@property (strong,nonatomic) NSString *ssnCode;
 @property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) NSString *phoneNumber;
 @property (strong, nonatomic) UIImage *driversLicenseImage;
@@ -86,6 +88,7 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
         _city = _user.city;
         _state = _user.state;
         _zipCode = _user.zipCode;
+        _ssnCode = _user.ssnCode;
         _email = _user.email;
         _phoneNumber = _user.phoneNumber;
     }
@@ -206,6 +209,7 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
         [NSString isStringEmpty:self.city] ||
         [NSString isStringEmpty:self.state] ||
         [NSString isStringEmpty:self.zipCode] ||
+        [NSString isStringEmpty:self.ssnCode] ||
         [NSString isStringEmpty:self.email] ||
         [NSString isStringEmpty:self.phoneNumber]) {
         
@@ -260,6 +264,18 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
         
     }
     
+    if (self.ssnCode.length != 4 || ![self.ssnCode isNumeric]) {
+        
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"hostRegistration.ssnCodeAlertView.title", nil)
+                                                              message:NSLocalizedString(@"hostRegistration.ssnCodeAlertView.message", nil)
+                                                             delegate:nil
+                                                    cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
+                                                    otherButtonTitles: nil];
+        
+        [myAlertView show];
+        return;
+        
+    }
     
     if (![self.email isValidEmail]) {
         
@@ -282,6 +298,7 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
                                                  @"state": self.state ?: @"",
                                                  @"zipCode": self.zipCode ?: @"",
                                                  @"email": self.email ?: @"",
+                                                 @"ssnCode" : self.ssnCode ?: @"",
                                                  @"phoneNumber": self.phoneNumber ?: @"",
                                                  @"driversLicenseFile": self.driversLicenseFile
                                                  };
@@ -416,6 +433,14 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
     cell.zipCodeTextField.delegate = self;
     cell.zipCodeTextField.tag = HostRegistrationFieldZipCode;
     cell.zipCodeTextField.keyboardType = UIKeyboardTypeNumberPad;
+    // EdidMIER
+    cell.ssnLabel.text = NSLocalizedString(@"hostRegistration.ssnCode", nil);
+    cell.ssnCodeTextFiled.text = self.ssnCode;
+    cell.ssnCodeTextFiled.placeholder = NSLocalizedString(@"hostRegistration.ssnCode.placeholder", nil);
+    cell.ssnCodeTextFiled.delegate = self;
+    cell.ssnCodeTextFiled.tag = HostRegistrationFieldSSNCode;
+    cell.ssnCodeTextFiled.keyboardType = UIKeyboardTypeNumberPad;
+    
     
     cell.emailLabel.text = NSLocalizedString(@"hostRegistration.email", nil);
     cell.emailTextField.text = self.email;
@@ -566,6 +591,27 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
             }
         }
             break;
+        case HostRegistrationFieldSSNCode:
+            if ([self checkSSNCode:textField.text]) {
+                self.ssnCode = textField.text;
+            }else {
+                            
+                [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"hostRegistration.ssnCodeAlertView.title", nil)
+                                            message:NSLocalizedString(@"hostRegistration.ssnCodeAlertView.message", nil)
+                                   cancelButtonItem:[RIButtonItem itemWithLabel:NSLocalizedString(@"errorMessages.ok", nil) action:^{
+                    
+                    textField.text = @"";
+                    self.ssnCode = @"";
+                    
+                    
+                }]
+                                   otherButtonItems:nil] show];
+                
+            }
+
+            
+            break;
+            
         case HostRegistrationFieldEmail:
             self.email = textField.text;
             [[User currentUser] setEmail:textField.text];
@@ -599,6 +645,16 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
     return NO;
     
 }
+
+- (BOOL)checkSSNCode:(NSString*)ssnCode {
+    
+    if ([ssnCode integerValue] && ssnCode.length == 4) {
+        return YES;
+    }
+    return NO;
+    
+}
+
 
 #pragma mark - Keyboard Methods
 

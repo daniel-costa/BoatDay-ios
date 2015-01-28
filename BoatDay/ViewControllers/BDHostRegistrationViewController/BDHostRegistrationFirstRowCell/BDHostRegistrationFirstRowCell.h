@@ -40,6 +40,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumberLabel;
 
+
+@property (weak, nonatomic) IBOutlet UILabel *ssnLabel;
+
+@property (weak, nonatomic) IBOutlet UITextField *ssnCodeTextFiled;
+
+
 - (void)changeCellStateSelected:(BOOL)selected;
 
 @end

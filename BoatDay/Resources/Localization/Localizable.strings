@@ -557,12 +557,16 @@
 "hostRegistration.city"                                 = "CITY*";
 "hostRegistration.state"                                = "STATE*";
 "hostRegistration.zipCode"                              = "ZIP CODE*";
+"hostRegistration.ssnCode"                              = "SSN (Last 4 Digits)*";
+
 "hostRegistration.email"                                = "EMAIL*";
 "hostRegistration.phoneNumber"                          = "PHONE NUMBER*";
 "hostRegistration.firstName.placeholder"                = "First Name";
 "hostRegistration.lastName.placeholder"                 = "Last Name";
 "hostRegistration.firstAddressLine.placeholder"         = "Address";
 "hostRegistration.zipCode.placeholder"                  = "Zip Code";
+"hostRegistration.ssnCode.placeholder"                  = "SSN Code";
+
 "hostRegistration.email.placeholder"                    = "your@email.com";
 "hostRegistration.phoneNumber.placeholder"              = "Your Phone";
 "hostRegistration.city.placeholder"                     = "City";
@@ -586,7 +590,10 @@
 "hostRegistration.submitedAlert.title"                  = "Success";
 "hostRegistration.submitedAlert.message"                = "Your Host Registration has been submitted, continue to the next screen to register your boat.";
 "hostRegistration.zipCodeAlertView.title"               = "Zip Code";
+"hostRegistration.ssnCodeAlertView.title"               = "SSN Code";
+
 "hostRegistration.zipCodeAlertView.message"             = "The Zip code should have 5 numbers";
+"hostRegistration.ssnCodeAlertView.message"             = "The Social Security Last Four Digits should have 4 numbers";
 "hostRegistration.emailAlertView.title"                 = "Email";
 "hostRegistration.emailAlertView.message"               = "The email you entered is not valid.";
 "hostRegistration.zipCodeOutOfArea.title"               = "Zip Code";

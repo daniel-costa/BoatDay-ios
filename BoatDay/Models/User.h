@@ -36,6 +36,8 @@
 
 @property (copy) NSString *state;
 
+@property (copy) NSString *ssnCode;
+
 @property (copy) NSString *country;
 
 @property (retain) NSMutableArray *activities;

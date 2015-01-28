@@ -268,6 +268,32 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
+                    <view contentMode="scaleToFill" id="4bS-VK-6Lu" userLabel="Last Name View">
+                        <rect key="frame" x="173" y="81" width="120" height="41"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SSN (Last 4 Digits)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wA1-mp-BoM">
+                                <rect key="frame" x="0.0" y="0.0" width="118" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Portnoy" minimumFontSize="17" id="lFe-0M-iDa">
+                                <rect key="frame" x="0.0" y="14" width="120" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.1058823529" green="0.4549019608" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" id="Ji0-mz-6Tw" userLabel="bottom Line">
+                                <rect key="frame" x="-2" y="39" width="120" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
             </tableViewCellContentView>
@@ -288,6 +314,8 @@
                 <outlet property="lastNameTextField" destination="9Fw-ob-GcU" id="cw8-4i-8vK"/>
                 <outlet property="phoneNumberLabel" destination="NjJ-CS-joj" id="piQ-RL-8vV"/>
                 <outlet property="phoneNumberTextField" destination="VOR-s0-9qg" id="ODx-ot-pbx"/>
+                <outlet property="ssnCodeTextFiled" destination="lFe-0M-iDa" id="ajI-4O-W0G"/>
+                <outlet property="ssnLabel" destination="wA1-mp-BoM" id="OhE-d6-V4r"/>
                 <outlet property="stateButton" destination="Rpb-Hv-rD5" id="XHE-WE-KW0"/>
                 <outlet property="stateLabel" destination="Ivi-vI-AU3" id="VIr-6z-cR1"/>
                 <outlet property="zipCodeLabel" destination="1Rg-2A-Ids" id="ig6-RF-blt"/>

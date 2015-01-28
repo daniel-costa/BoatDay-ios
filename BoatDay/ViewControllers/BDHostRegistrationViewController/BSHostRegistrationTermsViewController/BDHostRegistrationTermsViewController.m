@@ -105,8 +105,10 @@
         [User currentUser].state = self.hostRegistrationDictionary[@"state"];
         [User currentUser].zipCode = self.hostRegistrationDictionary[@"zipCode"];
         [User currentUser].phoneNumber = self.hostRegistrationDictionary[@"phoneNumber"];
+        [User currentUser].ssnCode = self.hostRegistrationDictionary[@"ssnCode"];
+
         [User currentUser].hostRegistration = host;
-        
+
         [PFObject saveAllInBackground:@[host, [User currentUser]] block:^(BOOL succeeded, NSError *error) {
             
             

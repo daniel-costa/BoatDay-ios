@@ -70,9 +70,16 @@
     
     self.zipCodeLabel.font = [UIFont abelFontWithSize:12.0];
     self.zipCodeLabel.textColor = [UIColor grayBoatDay];
-    
+ 
     self.zipCodeTextField.font = [UIFont abelFontWithSize:17.0];
     self.zipCodeTextField.textColor = [UIColor greenBoatDay];
+    
+    
+    self.ssnLabel.font = [UIFont abelFontWithSize:12.0];
+    self.ssnLabel.textColor = [UIColor grayBoatDay];
+    
+    self.ssnCodeTextFiled.font = [UIFont abelFontWithSize:17.0];
+    self.ssnCodeTextFiled.textColor = [UIColor greenBoatDay];
     
     self.emailLabel.font = [UIFont abelFontWithSize:12.0];
     self.emailLabel.textColor = [UIColor grayBoatDay];
@@ -91,6 +98,7 @@
     [self.firstAddressLineTextField setTintColor:[UIColor greenBoatDay]];
     [self.cityTextField setTintColor:[UIColor greenBoatDay]];
     [self.zipCodeTextField setTintColor:[UIColor greenBoatDay]];
+    [self.ssnCodeTextFiled setTintColor:[UIColor greenBoatDay]];
     [self.emailTextField setTintColor:[UIColor greenBoatDay]];
     [self.phoneNumberTextField setTintColor:[UIColor greenBoatDay]];
     
