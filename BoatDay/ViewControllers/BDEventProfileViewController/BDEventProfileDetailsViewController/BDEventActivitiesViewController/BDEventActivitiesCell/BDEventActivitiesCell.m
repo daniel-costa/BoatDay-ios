@@ -39,9 +39,9 @@
     
     [self setCellColor:[UIColor greenBoatDay]];
     
-    self.activityTitleLabel.textColor = [UIColor grayBoatDay];
+    self.activityTitleLabel.textColor = [UIColor whiteColor];
     
-    self.activityDescriptionLabel.textColor = [UIColor grayBoatDay];
+    self.activityDescriptionLabel.textColor = [UIColor whiteColor];
     
     setFrameHeight(self.activityDescriptionLabel, 300.0);
     
@@ -51,7 +51,7 @@
     
     [self.activityDescriptionLabel sizeToFit];
     
-    PFFile *theImage = activity.pictureGreen;
+    PFFile *theImage = activity.picture;
     
     self.activityImageView.alpha = 0.0;
     
@@ -62,8 +62,8 @@
         
         self.activityImageView.image = image;
         
-        setFrameHeight(self.activityImageView, image.size.height / 2.0);
-        setFrameWidth(self.activityImageView, image.size.width / 2.0);
+        setFrameHeight(self.activityImageView, image.size.height / 2.5);
+        setFrameWidth(self.activityImageView, image.size.width / 2.5);
         
         CGFloat totalTextHeight = CGRectGetMaxY(self.activityDescriptionLabel.frame) - CGRectGetMinY(self.activityTitleLabel.frame);
         

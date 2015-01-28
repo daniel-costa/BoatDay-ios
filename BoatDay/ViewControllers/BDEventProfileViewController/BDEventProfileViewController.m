@@ -107,17 +107,17 @@
         
         if ([self.event.host isEqual:[User currentUser]]) {
             
-            NSInteger numberOfUsersAttendingOrWaiting = 0;
-            for (SeatRequest *request in self.event.seatRequests) {
-                if(![request isEqual:[NSNull null]]) {
-                    if ([request.status integerValue] == SeatRequestStatusAccepted || [request.status integerValue] == SeatRequestStatusPending) {
-                        numberOfUsersAttendingOrWaiting ++;
-                    }
-                }
-            }
+//            NSInteger numberOfUsersAttendingOrWaiting = 0;
+//            for (SeatRequest *request in self.event.seatRequests) {
+//                if(![request isEqual:[NSNull null]]) {
+//                    if ([request.status integerValue] == SeatRequestStatusAccepted || [request.status integerValue] == SeatRequestStatusPending) {
+//                        numberOfUsersAttendingOrWaiting ++;
+//                    }
+//                }
+//            }
             
-            if ([self.event.startsAt compare:[NSDate date]] == NSOrderedDescending && numberOfUsersAttendingOrWaiting == 0) {
-              
+//            if ([self.event.startsAt compare:[NSDate date]] == NSOrderedDescending && numberOfUsersAttendingOrWaiting == 0) {
+            
                 UIButton *editButton = [UIButton buttonWithType:UIButtonTypeCustom];
                 editButton.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
                 [editButton setImage:[UIImage imageNamed:@"ico-Edit"] forState:UIControlStateNormal];
@@ -127,7 +127,7 @@
                 
                 self.navigationItem.rightBarButtonItem = self.topRightButtonItem;
                 
-            }
+//            }
             
         } else {
             

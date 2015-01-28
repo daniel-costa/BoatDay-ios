@@ -85,7 +85,7 @@
 "profile.noAboutText"                       = "This user hasn't written a description yet.";
 "profile.noAboutTextSelf"                   = "You haven't written a description about you.";
 "profile.seatRequest.rejectAlert.title"     = "Remove Confirmed Guest";
-"profile.seatRequest.rejectAlert.message"   = "Let this Gest know why they have been removed from this BoatDay.";
+"profile.seatRequest.rejectAlert.message"   = "Let this Guest know why they have been removed from this BoatDay.";
 
 /*
  * Seat Request
@@ -219,13 +219,13 @@
 "addEditBoat.submit"                        = "SUBMIT BOAT";
 "addEditBoat.deleteButton"                  = "DELETE THIS BOAT";
 "addEditBoat.deleteDraftBoat"               = "DELETE BOAT";
-"addEditBoat.alertview.title"               = "Error";
+"addEditBoat.alertview.title"               = "Information Required";
 "addEditBoat.alertview.message"             = "Please fill in all of the required fields";
 "addEditBoat.deleteError.gotEvent.message"  = "You can't delete this boat because it is associated to an active event.";
 "addEditBoat.safetyFeatures.title"          = "Safety Features";
 "addEditBoat.createdAlert.title"            = "Success";
 "addEditBoat.createdAlert.message"          = "Your boat information has been submitted for approval.";
-"addEditBoat.gotoPaymentInfo.message"       = "To submit your boat and finalize your registration, please input your payment information.";
+"addEditBoat.gotoPaymentInfo.message"       = "To finalize your registration, please input your payment information.";
 "addEditBoat.maxPhotosAlert.title"          = "Number of photos";
 "addEditBoat.maxPhotosAlert.message"        = "The maximum number of photos is 5.";
 "addEditBoat.notCreatedAlert.title"         = "Error";
@@ -425,6 +425,7 @@
 "addEditEvent.eventDescription"         = "EVENT DESCRIPTION";
 "addEditEvent.publish"                  = "PUBLISH";
 "addEditEvent.delete"                   = "DELETE";
+"addEditEvent.cancel"                   = "CANCEL EVENT";
 "addEditEvent.date"                     = "Date";
 "addEditEvent.createdAlert.title"       = "Success";
 "addEditEvent.createdAlert.message"     = "Your new event has been created!";

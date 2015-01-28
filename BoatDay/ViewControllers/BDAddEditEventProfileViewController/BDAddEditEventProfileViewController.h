@@ -13,6 +13,7 @@ typedef void (^EventDeletedBlock)();
 @interface BDAddEditEventProfileViewController : BaseViewController
 
 @property (copy, nonatomic) NSString *locationString;
+@property (nonatomic) BOOL readOnly;
 
 @property (nonatomic, copy) EventDeletedBlock eventDeletedBlock;
 

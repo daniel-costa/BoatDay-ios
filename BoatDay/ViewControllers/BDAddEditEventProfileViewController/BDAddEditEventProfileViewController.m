@@ -102,6 +102,17 @@ static NSInteger const kMaximumAvailableSeats = 15;
         _pricePerSeat = [event.price stringValue];
     }
     
+    NSInteger numberOfUsersAttendingOrWaiting = 0;
+    for (SeatRequest *request in self.event.seatRequests) {
+        if(![request isEqual:[NSNull null]]) {
+            if ([request.status integerValue] == SeatRequestStatusAccepted || [request.status integerValue] == SeatRequestStatusPending) {
+                numberOfUsersAttendingOrWaiting ++;
+            }
+        }
+    }
+
+    self.readOnly = !([self.event.startsAt compare:[NSDate date]] == NSOrderedDescending && numberOfUsersAttendingOrWaiting == 0);
+
     return self;
     
 }
@@ -219,7 +230,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
                 
                 self.bigButton.titleLabel.font = [UIFont abelFontWithSize:24.0];
                 
-                [self.bigButton setTitle:NSLocalizedString(@"addEditEvent.delete", nil) forState:UIControlStateNormal];
+                [self.bigButton setTitle:NSLocalizedString(@"addEditEvent.cancel", nil) forState:UIControlStateNormal];
                 [self.bigButton setBackgroundImage:[UIImage imageNamed:@"button_lg_red_off"] forState:UIControlStateNormal];
                 [self.bigButton setBackgroundImage:[UIImage imageNamed:@"button_lg_red_on"] forState:UIControlStateHighlighted];
             }
@@ -473,6 +484,16 @@ static NSInteger const kMaximumAvailableSeats = 15;
     [cell.endTimeButton removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
     [cell.endTimeButton addTarget:self action:@selector(endDateButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     cell.endTimeButton.tag = 2;
+    
+    if(self.readOnly) {
+        cell.eventNameTextField.enabled = NO;
+        cell.pricePerSeatTextField.enabled = NO;
+        cell.availableSeatsButton.enabled = NO;
+        cell.pickUpTimeButton.enabled = NO;
+        cell.endTimeButton.enabled = NO;
+        cell.detailTextLabel.enabled = NO;
+        cell.locationButton.enabled = NO;
+    }
     
     return cell;
     
