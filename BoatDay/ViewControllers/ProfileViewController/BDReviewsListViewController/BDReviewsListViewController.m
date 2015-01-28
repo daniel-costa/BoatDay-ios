@@ -114,13 +114,13 @@
         
         PFQuery *query = [PFQuery orQueryWithSubqueries:@[otherHostquery, myHostquery]];
         
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            
-            if (objects.count) {
-                [self showAddReviewButton];
-            }
-            
-        }];
+        PFQuery *reviewsQuery = [Review query];
+        [reviewsQuery whereKey:@"from" equalTo:[User currentUser]];
+        [reviewsQuery whereKey:@"to" equalTo:self.user];
+        
+        if ([query countObjects] - [reviewsQuery countObjects] > 0) {
+            [self showAddReviewButton];
+        }
         
     }
     

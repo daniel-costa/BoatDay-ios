@@ -452,11 +452,8 @@
         }
         
         self.reviewsButton.titleLabel.font =[UIFont abelFontWithSize:12];
-        self.reviewsButton.enabled = false;
-        
-        [self.reviewsButton setTitle:[NSString stringWithFormat:@"NO %@",
-                                      NSLocalizedString(@"profile.reviews", nil)]
-                            forState:UIControlStateNormal];
+//        self.reviewsButton.enabled = false;
+        [self.reviewsButton setTitle:[NSString stringWithFormat:@"NO %@", NSLocalizedString(@"profile.reviews", nil)] forState:UIControlStateNormal];
         self.reviewsButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
         
 //        self.reviewsButton.center = CGPointMake(self.view.center.x, self.reviewsButton.center.y);
