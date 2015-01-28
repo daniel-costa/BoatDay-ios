@@ -505,8 +505,8 @@
 "notifications.type.hostRegistrationApproved"       = "You have been approved as a BoatDay Host!";
 "notifications.type.hostRegistrationRejected"       = "Your host registration has been rejected.";
 "notifications.type.paymentReminder"                = "Finalize your contribution.";
-"notifications.type.merchantApproved"               = "Your Payment Info was approved.";
-"notifications.type.merchantRejected"               = "Your Payment Info was declined.";
+"notifications.type.merchantApproved"               = "Payment Account Approved";
+"notifications.type.merchantRejected"               = "Payment Account Declined";
 "notifications.type.eventEnded"                     = "Event Ended. Tap for more information";
 "notifications.type.48hoursPriorToEvent"            = "Event will start in 48 hours.";
 "notifications.rejectionMessage.title"              = "Host Message";

@@ -32,6 +32,7 @@
 @dynamic braintreePaymentToken;
 @dynamic braintreeCustomerId;
 @dynamic deleted;
+@dynamic ssnCode;
 
 // Return the current user
 + (User *)currentUser {
