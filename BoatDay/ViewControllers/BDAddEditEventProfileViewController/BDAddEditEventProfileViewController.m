@@ -389,6 +389,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
         cell.detailTextLabel.font = [UIFont abelFontWithSize:16.0];
         cell.detailTextLabel.textColor = [UIColor greenBoatDay];
         
+        if(!self.readOnly) {
         // arrow as cell accessory view
         UIImage *arrowImage = [UIImage imageNamed:@"cell_arrow_grey"];
         UIImageView *arrowImageView = [[UIImageView alloc] init];
@@ -397,6 +398,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
         arrowImageView.image = arrowImage;
         arrowImageView.backgroundColor = [UIColor clearColor];
         cell.accessoryView = arrowImageView;
+        }
         
     }
     
@@ -491,7 +493,6 @@ static NSInteger const kMaximumAvailableSeats = 15;
         cell.availableSeatsButton.enabled = NO;
         cell.pickUpTimeButton.enabled = NO;
         cell.endTimeButton.enabled = NO;
-        cell.detailTextLabel.enabled = NO;
         cell.locationButton.enabled = NO;
     }
     
@@ -510,6 +511,10 @@ static NSInteger const kMaximumAvailableSeats = 15;
     cell.titleLabel.text = NSLocalizedString(@"addEditEvent.eventDescription", nil);
     cell.textView.text = self.eventDescription;
     cell.textView.tag = 1;
+    
+    if(self.readOnly) {
+        cell.textView.editable = NO;
+    }
     
     [cell updateCell];
     
@@ -536,11 +541,16 @@ static NSInteger const kMaximumAvailableSeats = 15;
 #pragma mark - UITableView Delegate methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+    
+    if(self.readOnly) {
+        return;
+    }
+    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
                                                                action:@"goToselectBoatViewController"
                                                                 label:self.screenName
                                                                 value:nil] build]];
-
+    
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
