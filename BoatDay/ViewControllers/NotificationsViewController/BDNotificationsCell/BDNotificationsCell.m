@@ -63,13 +63,13 @@
         case NotificationTypeBoatApproved:
         {
             message = NSLocalizedString(@"notifications.type.boatApproved", nil);
-            detailMessage = notification.boat.name;
+//            detailMessage = notification.boat.name;
         }
             break;
         case NotificationTypeBoatRejected:
         {
             message = NSLocalizedString(@"notifications.type.boatRejected", nil);
-            detailMessage = notification.boat.name;
+//            detailMessage = notification.boat.name;
         }
             break;
         case NotificationTypeSeatRequest:
@@ -83,109 +83,109 @@
             message = [NSString stringWithFormat:NSLocalizedString(@"notifications.type.seatRequest", nil), notification.seatRequest.numberOfSeats];
             }
             
-            detailMessage = notification.seatRequest.event.name;
+//            detailMessage = notification.seatRequest.event.name;
             
         }
             break;
         case NotificationTypeRequestApproved:
         {
             message = NSLocalizedString(@"notifications.type.seatRequestApproved", nil);
-            detailMessage = notification.event.name;
+//            detailMessage = notification.event.name;
         }
             break;
         case NotificationTypeRequestRejected:
         {
             message = NSLocalizedString(@"notifications.type.seatRequestRejected", nil);
-            detailMessage = notification.event.name;
+//            detailMessage = notification.event.name;
         }
             break;
         case NotificationTypeUserCertificationApproved:
         {
             message = NSLocalizedString(@"notifications.type.certificationApproved", nil);
-            detailMessage = notification.certification.type.name;
+//            detailMessage = notification.certification.type.name;
         }
             break;
         case NotificationTypeUserCertificationRejected:
         {
             message = NSLocalizedString(@"notifications.type.certificationRejected", nil);
-            detailMessage = notification.certification.type.name;
+//            detailMessage = notification.certification.type.name;
         }
             break;
         case NotificationTypeNewChatMessage:
         {
             message = NSLocalizedString(@"notifications.type.newChatMessage", nil);
-            detailMessage = notification.event.name;
+//            detailMessage = notification.event.name;
         }
             break;
         case NotificationTypeNewEventInvitation:
         {
             message = NSLocalizedString(@"notifications.type.eventInvitation", nil);
-            detailMessage = notification.event.name;
+//            detailMessage = notification.event.name;
         }
             break;
         case NotificationTypeRemovedFromAnEvent:
         {
             message = NSLocalizedString(@"notifications.type.userRemovedFromEvent", nil);
-            detailMessage = notification.event.name;
+//            detailMessage = notification.event.name;
         }
             break;
         case NotificationTypeEventRemoved:
         {
             message = NSLocalizedString(@"notifications.type.eventCanceled", nil);
-            detailMessage = notification.text;
+//            detailMessage = notification.text;
         }
             break;
         case NotificationTypeNewReview:
         {
             message = NSLocalizedString(@"notifications.type.newReview", nil);
-            detailMessage = notification.review.from.shortName;
+//            detailMessage = notification.review.from.shortName;
         }
             break;
         case NotificationTypeHostRegistrationApproved:
         {
             message = NSLocalizedString(@"notifications.type.hostRegistrationApproved", nil);
-            detailMessage = notification.user.shortName;
+//            detailMessage = notification.user.shortName;
         }
             break;
         case NotificationTypeHostRegistrationRejected:
         {
             message = NSLocalizedString(@"notifications.type.hostRegistrationRejected", nil);
-            detailMessage = notification.user.shortName;
+//            detailMessage = notification.user.shortName;
         }
             break;
         case NotificationTypeSeatRequestCanceledByUser: {
             message = NSLocalizedString(@"notifications.type.seatRequestCanceledByUser", nil);
-            detailMessage = [NSString stringWithFormat:@"Event: %@, User: %@", notification.event.name, notification.seatRequest.user.shortName];
+//            detailMessage = [NSString stringWithFormat:@"Event: %@, User: %@", notification.event.name, notification.seatRequest.user.shortName];
         }
             break;
         case NotificationTypePaymentReminder: {
             message = NSLocalizedString(@"notifications.type.paymentReminder", nil);
-            detailMessage = notification.event.name;
+//            detailMessage = notification.event.name;
         }
             break;
         case NotificationTypeMerchantApproved: {
             message = NSLocalizedString(@"notifications.type.merchantApproved", nil);
-            detailMessage = notification.user.shortName;
+//            detailMessage = notification.user.shortName;
         }
             break;
         case NotificationTypeMerchantDeclined: {
             message = NSLocalizedString(@"notifications.type.merchantRejected", nil);
-            detailMessage = notification.user.shortName;
+//            detailMessage = notification.user.shortName;
         }
             break;
         case NotificationTypeEventEnded: {
             message = NSLocalizedString(@"notifications.type.eventEnded", nil);
-            detailMessage = notification.event.name;
+//            detailMessage = notification.event.name;
         }
             break;
         case NotificationTypeEventWillStartIn48H: {
             message = NSLocalizedString(@"notifications.type.48hoursPriorToEvent", nil);
-            detailMessage = notification.event.name;
+//            detailMessage = notification.event.name;
         }
             break;
         case NotificationTypeEventInvitationRemoved: {
             message = NSLocalizedString(@"notifications.type.invitationRemoved", nil);
-            detailMessage = notification.event.name;
+//            detailMessage = notification.event.name;
         }
             break;
         default:
