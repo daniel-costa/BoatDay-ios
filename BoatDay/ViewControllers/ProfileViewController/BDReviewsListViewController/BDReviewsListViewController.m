@@ -51,8 +51,13 @@
     [super viewWillAppear:animated];
     
     [self checkIfUserCanAddReview];
+    
     [self getReviews];
     
+}
+
+- (void) hideAddReviewButton {
+    self.navigationItem.rightBarButtonItem = nil;
 }
 
 - (void) showAddReviewButton {
@@ -90,7 +95,7 @@
         
         // If I was in an Event that self.user was host
         PFQuery *eventQuery = [Event query];
-        [eventQuery whereKey:@"startsAt" lessThan:[NSDate date]];
+        [eventQuery whereKey:@"endDate" lessThan:[NSDate date]];
         [eventQuery whereKey:@"host" equalTo:self.user];
         [eventQuery whereKey:@"deleted" notEqualTo:@(YES)];
         
@@ -102,7 +107,7 @@
         
         // If self.user was in an Event that I host
         PFQuery *eventHostQuery = [Event query];
-        [eventHostQuery whereKey:@"startsAt" lessThan:[NSDate date]];
+        [eventHostQuery whereKey:@"endDate" lessThan:[NSDate date]];
         [eventHostQuery whereKey:@"host" equalTo:[User currentUser]];
         [eventHostQuery whereKey:@"deleted" notEqualTo:@(YES)];
         
@@ -114,13 +119,20 @@
         
         PFQuery *query = [PFQuery orQueryWithSubqueries:@[otherHostquery, myHostquery]];
         
-        PFQuery *reviewsQuery = [Review query];
-        [reviewsQuery whereKey:@"from" equalTo:[User currentUser]];
-        [reviewsQuery whereKey:@"to" equalTo:self.user];
-        
-        if ([query countObjects] - [reviewsQuery countObjects] > 0) {
-            [self showAddReviewButton];
-        }
+        [query countObjectsInBackgroundWithBlock:^(int number1, NSError *error) {
+            PFQuery *reviewsQuery = [Review query];
+            [reviewsQuery whereKey:@"from" equalTo:[User currentUser]];
+            [reviewsQuery whereKey:@"to" equalTo:self.user];
+            
+            [reviewsQuery countObjectsInBackgroundWithBlock:^(int number2, NSError *error) {
+                if (number1 - number2 > 0) {
+                    [self showAddReviewButton];
+                } else {
+                    [self hideAddReviewButton];
+                }
+            }];
+
+        }];
         
     }
     

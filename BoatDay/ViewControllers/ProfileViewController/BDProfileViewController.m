@@ -458,6 +458,34 @@
         
 //        self.reviewsButton.center = CGPointMake(self.view.center.x, self.reviewsButton.center.y);
     } else {
+        
+        if(self.reviewsButton.frame.size.height <= 60) {
+            self.aboutLabel.frame = CGRectMake(self.aboutLabel.frame.origin.x,
+                                               self.aboutLabel.frame.origin.y + 38,
+                                               self.aboutLabel.frame.size.width,
+                                               self.aboutLabel.frame.size.height);
+            
+            self.aboutMeLabel.frame = CGRectMake(self.aboutMeLabel.frame.origin.x,
+                                                 self.aboutMeLabel.frame.origin.y + 38,
+                                                 self.aboutMeLabel.frame.size.width,
+                                                 self.aboutMeLabel.frame.size.height);
+            
+            self.viewBelowAbout.frame = CGRectMake(self.viewBelowAbout.frame.origin.x,
+                                                   self.viewBelowAbout.frame.origin.y + 38,
+                                                   self.viewBelowAbout.frame.size.width,
+                                                   self.viewBelowAbout.frame.size.height);
+            
+            self.starAndEventsView.frame = CGRectMake(self.starAndEventsView.frame.origin.x,
+                                                      self.starAndEventsView.frame.origin.y,
+                                                      self.starAndEventsView.frame.size.width,
+                                                      60);
+            
+            self.reviewsButton.frame = CGRectMake(self.reviewsButton.frame.origin.x,
+                                                  self.reviewsButton.frame.origin.y,
+                                                  self.reviewsButton.frame.size.width,
+                                                  60);
+        }
+        
         [self.reviewsButton addSubview:self.starRating];
         self.reviewsButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
 
