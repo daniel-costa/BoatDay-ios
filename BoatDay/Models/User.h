@@ -16,6 +16,8 @@
 // Return the current user
 + (User *)currentUser;
 
+@property (copy) PFGeoPoint *location;
+
 @property (copy) NSString *facebookID;
 
 @property (copy) NSString *aboutMe;

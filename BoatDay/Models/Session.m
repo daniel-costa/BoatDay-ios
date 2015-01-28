@@ -314,6 +314,15 @@
           
           self.finalizeContributionTimeframeWindowHours = [configObject[@"finalizeContributionTimeInHours"] integerValue];
           
+          [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
+              if (!error) {
+                  [User currentUser].location = geoPoint;
+              } else {
+                  [User currentUser].location = (id)[NSNull null];
+              }
+          }];
+          
+          
           self.dataWasFechted = YES;
           
           return nil;

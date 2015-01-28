@@ -80,9 +80,6 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     
-    // DC Desactive the Back text when comming from HomeScreen
-    self.navigationItem.title = @"";
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     [super viewWillDisappear:animated];

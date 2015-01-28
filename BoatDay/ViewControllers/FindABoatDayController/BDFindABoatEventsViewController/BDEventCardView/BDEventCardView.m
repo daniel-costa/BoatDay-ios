@@ -115,7 +115,12 @@
         self.open2Label.font = [UIFont quattroCentoRegularFontWithSize:14.5];
         self.open2Label.text = NSLocalizedString(@"eventCard.view.openSeats2", nil);
     }
-
+    
+    if([User currentUser].location != (id)[NSNull null]) {
+        int milesAway = (int) ceil([event.pickupLocation distanceInMilesTo:[User currentUser].location]);
+        self.seatsLabel.text = [NSString stringWithFormat:@"%i mile%@ away", milesAway, milesAway > 1 ? @"s" : @"" ];
+    }
+    
 //    self.seatsLabel.text = [NSString stringWithFormat:@"%ld %@", (long)event.availableSeats.integerValue, NSLocalizedString(@"eventCard.view.totalSeats", nil)];
 
     self.userNameLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"eventCard.hostedBy", nil), [event.host shortName]];

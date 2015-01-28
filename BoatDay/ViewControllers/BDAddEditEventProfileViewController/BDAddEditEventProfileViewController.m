@@ -972,6 +972,36 @@ static NSInteger const kMaximumAvailableSeats = 15;
         
     }
     
+    
+    
+    if ([[NSDate date] compare:self.pickUpTime] == NSOrderedDescending) {
+        
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"addEditBoat.alertview.title", nil)
+                                                              message:@"BoatDay Events must take place at a future time."
+                                                             delegate:nil
+                                                    cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
+                                                    otherButtonTitles: nil];
+        
+        [myAlertView show];
+        
+        return;
+        
+    }
+    
+    if ([self.pickUpTime compare:self.endTime] != NSOrderedAscending) {
+        
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"addEditBoat.alertview.title", nil)
+                                                              message:@"Event End Time must be later than the Pickup Time"
+                                                             delegate:nil
+                                                    cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
+                                                    otherButtonTitles: nil];
+        
+        [myAlertView show];
+        
+        return;
+        
+    }
+    
     // shows some loading view so the user can see that is saving
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
     

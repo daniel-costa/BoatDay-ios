@@ -28,13 +28,13 @@
     }
     
     self.titleLabel.font = [UIFont abelFontWithSize:14.0];
-    self.titleLabel.textColor = [UIColor grayBoatDay];
+    self.titleLabel.textColor = [UIColor darkGrayBoatDay];
     self.titleLabel.backgroundColor = [UIColor clearColor];
     
     
     self.deepDescription.hidden = YES;
-    [self.deepDescription setFont:[UIFont quattroCentoRegularFontWithSize:13.0]];
-    [self.deepDescription setTextColor:[UIColor darkGrayBoatDay]];
+    [self.deepDescription setFont:[UIFont quattroCentoRegularFontWithSize:12.0]];
+    [self.deepDescription setTextColor:[UIColor grayBoatDay]];
     self.contentView.backgroundColor = [UIColor lightGrayBoatDay];
     self.backgroundColor = [UIColor lightGrayBoatDay];
     

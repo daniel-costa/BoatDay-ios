@@ -126,7 +126,13 @@ extern const CGFloat kMinDistanceLocation;
     
     NSNumberFormatter *formatterValues = [NSNumberFormatter valuesNumberFormatter];
     
-    NSString *distanceString = [formatterValues stringFromNumber:@(distance)];
+    NSString *distanceString = nil;
+    
+    if (distance == 100) {
+        distanceString = @"100+";
+    }  else {
+        distanceString = [formatterValues stringFromNumber:@(distance)];
+    }
     
     self.distanceLabel.text = [NSString stringWithFormat:NSLocalizedString(@"findABoat.distanceValue.stringFormat", nil), distanceString];
     

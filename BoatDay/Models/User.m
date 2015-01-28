@@ -10,6 +10,7 @@
 
 @implementation User
 
+@dynamic location;
 @dynamic facebookID;
 @dynamic aboutMe;
 @dynamic birthday;

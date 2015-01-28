@@ -35,7 +35,16 @@
         self.edgesForExtendedLayout = UIRectEdgeNone;
         
     }
+    
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
 
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    // DC Desactive the Back text when comming from HomeScreen
+//    self.navigationItem.title = @"";
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -47,8 +56,11 @@
     if (self.navigationController.childViewControllers.count > 1) {
         [self setupBackButton];
     }
-    else
+    else {
         [self setupLeftSideMenuButton];
+    }
+    
+//    self.navigationItem.leftBarButtonItem.title = @"";
     
 }
 
