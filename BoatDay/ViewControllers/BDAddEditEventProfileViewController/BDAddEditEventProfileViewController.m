@@ -1036,7 +1036,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
     self.event.price = [f numberFromString:self.pricePerSeat];
     self.event.boat = self.selectedBoat;
     self.event.activities = self.selectedActivities;
-//    self.event.pickupLocation = self.pickupLocation;
+    self.event.pickupLocation = self.pickupLocation;
     self.event.locationName = self.locationString;
     self.event.startsAt = self.pickUpTime;
     self.event.endDate = self.endTime;
@@ -1048,9 +1048,13 @@ static NSInteger const kMaximumAvailableSeats = 15;
     self.event.host = [User currentUser];
     self.event.status = @(status);
     self.event.eventDescription = self.eventDescription;
+
+    NSLog(@"%@", self.event.pickupLocation);
     
     // saving the user in background
     [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        
+
         
         if (newEvent) {
             
