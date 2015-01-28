@@ -429,8 +429,8 @@ static NSInteger const kMessageMaximumCharacters = 500;
                         [SVProgressHUD dismiss];
                         
                         Notification *notification = [Notification object];
-                        notification.user = self.seatRequest.event.host;
-//                        notification.event = self.seatRequest.event;
+                        notification.user = self.event.host;
+                        notification.event = self.event;
                         notification.seatRequest = self.seatRequest;
                         notification.read = @(NO);
                         notification.text = [NSString stringWithFormat:NSLocalizedString(@"finalizeContributions.notifyUser", nil), [User currentUser].fullName, self.event.name];
