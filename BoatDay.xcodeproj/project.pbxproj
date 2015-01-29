@@ -26,6 +26,8 @@
 		9582C5CF1A74689A00986CDC /* BDDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9582C5CD1A74689A00986CDC /* BDDefaultTableViewCell.m */; };
 		9582C5D01A74689A00986CDC /* BDDefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9582C5CE1A74689A00986CDC /* BDDefaultTableViewCell.xib */; };
 		958474A61A72BAF20008FAC3 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958474A51A72BAF20008FAC3 /* Crashlytics.framework */; };
+		95BEF7DA1A7AAEC40090D718 /* BoatdayNotificationMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF7D71A7AAEC40090D718 /* BoatdayNotificationMessage.m */; };
+		95BEF7DB1A7AAEC40090D718 /* BoatdayNotificationMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BEF7D91A7AAEC40090D718 /* BoatdayNotificationMessageView.m */; };
 		E80E1B991A30C04A0084E828 /* TSCurrencyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E80E1B981A30C04A0084E828 /* TSCurrencyTextField.m */; };
 		E812ED2519811BE7008EAE9C /* BDLeftMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E812ED2319811BE7008EAE9C /* BDLeftMenuCell.m */; };
 		E812ED2919812E5F008EAE9C /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = E812ED2819812E5F008EAE9C /* Notification.m */; };
@@ -343,6 +345,10 @@
 		9582C5CD1A74689A00986CDC /* BDDefaultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDDefaultTableViewCell.m; sourceTree = "<group>"; };
 		9582C5CE1A74689A00986CDC /* BDDefaultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDDefaultTableViewCell.xib; sourceTree = "<group>"; };
 		958474A51A72BAF20008FAC3 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		95BEF7D61A7AAEC40090D718 /* BoatdayNotificationMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoatdayNotificationMessage.h; sourceTree = "<group>"; };
+		95BEF7D71A7AAEC40090D718 /* BoatdayNotificationMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoatdayNotificationMessage.m; sourceTree = "<group>"; };
+		95BEF7D81A7AAEC40090D718 /* BoatdayNotificationMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoatdayNotificationMessageView.h; sourceTree = "<group>"; };
+		95BEF7D91A7AAEC40090D718 /* BoatdayNotificationMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoatdayNotificationMessageView.m; sourceTree = "<group>"; };
 		B89FAEA454AF4B3A8C994E10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80E1B971A30C04A0084E828 /* TSCurrencyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCurrencyTextField.h; sourceTree = "<group>"; };
 		E80E1B981A30C04A0084E828 /* TSCurrencyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCurrencyTextField.m; sourceTree = "<group>"; };
@@ -882,6 +888,17 @@
 				9582C5CE1A74689A00986CDC /* BDDefaultTableViewCell.xib */,
 			);
 			name = BDLeftHeadersCell;
+			sourceTree = "<group>";
+		};
+		95BEF7D51A7AAEA80090D718 /* NotificationView */ = {
+			isa = PBXGroup;
+			children = (
+				95BEF7D61A7AAEC40090D718 /* BoatdayNotificationMessage.h */,
+				95BEF7D71A7AAEC40090D718 /* BoatdayNotificationMessage.m */,
+				95BEF7D81A7AAEC40090D718 /* BoatdayNotificationMessageView.h */,
+				95BEF7D91A7AAEC40090D718 /* BoatdayNotificationMessageView.m */,
+			);
+			name = NotificationView;
 			sourceTree = "<group>";
 		};
 		E80E1B961A30C04A0084E828 /* TSCurrencyTextField */ = {
@@ -1889,6 +1906,7 @@
 		E87A74B819533CBE0006D097 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				95BEF7D51A7AAEA80090D718 /* NotificationView */,
 				E851CF0619C35C76007E4151 /* BDPlaceholderView */,
 				E8169B15195C66A7008F2A8C /* NoConnectionView */,
 				E8169B20195C66A7008F2A8C /* NRLoadingView */,
@@ -2735,6 +2753,7 @@
 				E84E9D241987D06800410585 /* BDFindABoatEventsViewController.m in Sources */,
 				E869B06119B72DEF0095E703 /* BDAboutViewController.m in Sources */,
 				E87A74D9195344BF0006D097 /* BDHomeViewController.m in Sources */,
+				95BEF7DA1A7AAEC40090D718 /* BoatdayNotificationMessage.m in Sources */,
 				E812ED8B19816E66008EAE9C /* BDEditProfileFirstRowCell.m in Sources */,
 				9582C5C01A744CAC00986CDC /* BDLeftMenuProfileTableViewCell.m in Sources */,
 				E86ABC67198A63C30049125B /* BDBoatLocationPinAnnotation.m in Sources */,
@@ -2864,6 +2883,7 @@
 				E8E65D4419A26354007F9455 /* AdminMessage.m in Sources */,
 				E89DD83D19B5FAF2000FFE39 /* BDNotificationsViewController.m in Sources */,
 				E812ED2D1981313A008EAE9C /* DNButtonContainerView.m in Sources */,
+				95BEF7DB1A7AAEC40090D718 /* BoatdayNotificationMessageView.m in Sources */,
 				E8DE4C8519659AE6003456E6 /* Report.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2906,6 +2926,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
+				PROVISIONING_PROFILE = "88b919c9-3ef7-496c-8c7b-6d88e7db2ecc";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2938,6 +2959,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "$(inherited)";
+				PROVISIONING_PROFILE = "88b919c9-3ef7-496c-8c7b-6d88e7db2ecc";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2949,8 +2971,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ryan Goldberg (7S46FF4X6U)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ryan Goldberg (7S46FF4X6U)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Peer-to-Pier Technologies, LLC (FYNCM49GS8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peer-to-Pier Technologies, LLC (FYNCM49GS8)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2966,7 +2988,7 @@
 				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "88b919c9-3ef7-496c-8c7b-6d88e7db2ecc";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2977,8 +2999,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ryan Goldberg (7S46FF4X6U)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ryan Goldberg (7S46FF4X6U)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Peer-to-Pier Technologies, LLC (FYNCM49GS8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peer-to-Pier Technologies, LLC (FYNCM49GS8)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2994,7 +3016,7 @@
 				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "88b919c9-3ef7-496c-8c7b-6d88e7db2ecc";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

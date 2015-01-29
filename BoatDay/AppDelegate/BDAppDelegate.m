@@ -17,6 +17,8 @@
 #import <Crashlytics/Crashlytics.h>
 #import <AVFoundation/AVFoundation.h>
 #import "GAI.h"
+#import "BoatdayNotificationMessage.h"
+#import "BoatdayNotificationMessageView.h"
 @interface BDAppDelegate ()
 
 @property (nonatomic,strong) MMDrawerController * drawerController;
@@ -238,9 +240,22 @@
             [[Session sharedSession] updateUserData];
             break;
     }
+    UIApplicationState appState = UIApplicationStateActive;
+    if ([application respondsToSelector:@selector(applicationState)]) {
+        appState = application.applicationState;
+    }
     
-    [PFPush handlePush:userInfo];
-    
+    if (appState == UIApplicationStateActive) {
+        NSLog(@"active %@",userInfo);
+
+        [BoatdayNotificationMessage showNotificationMessage:@"New Notification" subTitle:[[userInfo objectForKey:@"aps"] objectForKey:@"alert"] iconImage:@"logo" viewController:self.window.rootViewController callback:^(void){
+            
+        } typeOfMessage:BoatdayNotificationMessageTypeError];
+    } else {
+        NSLog(@"handlePush %@",userInfo);
+
+        [PFPush handlePush:userInfo];
+    }
 }
 
 #pragma mark - Log To File Methods
