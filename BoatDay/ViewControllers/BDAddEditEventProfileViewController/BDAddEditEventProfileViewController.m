@@ -221,7 +221,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
                 break;
             default:
             {
-                if(![now compare:event.endDate] == NSOrderedDescending]) {
+                if(![[NSDate date] compare:self.event.endDate] == NSOrderedDescending) {
                     // delete event
                     self.smallRedButton.hidden = YES;
                     self.smallYellowButton.hidden = YES;
@@ -1029,6 +1029,21 @@ static NSInteger const kMaximumAvailableSeats = 15;
     }
     
     if ([self.pickUpTime compare:self.endTime] != NSOrderedAscending) {
+        
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"addEditBoat.alertview.title", nil)
+                                                              message:@"Event End Time must be later than the Pickup Time"
+                                                             delegate:nil
+                                                    cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
+                                                    otherButtonTitles: nil];
+        
+        [myAlertView show];
+        
+        return;
+        
+    }
+    
+    // No more than 12h between an event starts and finishes
+    if ([self.endTime timeIntervalSinceDate:self.pickUpTime] > 43200) {
         
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"addEditBoat.alertview.title", nil)
                                                               message:@"Event End Time must be later than the Pickup Time"
