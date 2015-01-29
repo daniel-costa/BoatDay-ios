@@ -193,6 +193,8 @@ static NSInteger const kMaximumAvailableSeats = 15;
 
 - (void) setupBottomButtons {
     
+    self.bottomView.hidden = NO;
+    
     if (self.event) {
         
         switch ([self.event.status integerValue]) {
@@ -221,7 +223,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
                 break;
             default:
             {
-                if(![[NSDate date] compare:self.event.endDate] == NSOrderedDescending) {
+                if(![[NSDate date] compare:self.event.startsAt] == NSOrderedDescending) {
                     // delete event
                     self.smallRedButton.hidden = YES;
                     self.smallYellowButton.hidden = YES;
@@ -1017,7 +1019,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
     if ([[NSDate date] compare:self.pickUpTime] == NSOrderedDescending) {
         
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"addEditBoat.alertview.title", nil)
-                                                              message:@"BoatDay Events must take place at a future time."
+                                                              message:@"BoatDays must take place at a future time."
                                                              delegate:nil
                                                     cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
                                                     otherButtonTitles: nil];
@@ -1031,7 +1033,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
     if ([self.pickUpTime compare:self.endTime] != NSOrderedAscending) {
         
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"addEditBoat.alertview.title", nil)
-                                                              message:@"Event End Time must be later than the Pickup Time"
+                                                              message:@"BoatDay End Time must be later than the Pickup Time"
                                                              delegate:nil
                                                     cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
                                                     otherButtonTitles: nil];
@@ -1042,11 +1044,29 @@ static NSInteger const kMaximumAvailableSeats = 15;
         
     }
     
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDateComponents *comps1 = [cal components:(NSMonthCalendarUnit| NSYearCalendarUnit | NSDayCalendarUnit) fromDate:self.endTime];
+    NSDateComponents *comps2 = [cal components:(NSMonthCalendarUnit| NSYearCalendarUnit | NSDayCalendarUnit) fromDate:self.pickUpTime];
+    
+    BOOL sameDay = ([comps1 day] == [comps2 day] && [comps1 month] == [comps2 month] && [comps1 year] == [comps2 year]);
+    
+    if(!sameDay) {
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"addEditBoat.alertview.title", nil)
+                                                              message:@"Overnight Boatdays are not permitted."
+                                                             delegate:nil
+                                                    cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
+                                                    otherButtonTitles: nil];
+        
+        [myAlertView show];
+        
+        return;
+    }
+    
     // No more than 12h between an event starts and finishes
     if ([self.endTime timeIntervalSinceDate:self.pickUpTime] > 43200) {
         
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"addEditBoat.alertview.title", nil)
-                                                              message:@"Event End Time must be later than the Pickup Time"
+                                                              message:@"BoatDays cannot last more than 12 hours."
                                                              delegate:nil
                                                     cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
                                                     otherButtonTitles: nil];
