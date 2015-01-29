@@ -63,6 +63,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
 
 // Bottom Buttons
 @property (weak, nonatomic) IBOutlet UIButton *bigButton;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UIButton *smallRedButton;
 @property (weak, nonatomic) IBOutlet UIButton *smallYellowButton;
 
@@ -220,19 +221,25 @@ static NSInteger const kMaximumAvailableSeats = 15;
                 break;
             default:
             {
-                // delete event
-                self.smallRedButton.hidden = YES;
-                self.smallYellowButton.hidden = YES;
-                self.bigButton.hidden = NO;
-                
-                [self.bigButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-                [self.bigButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-                
-                self.bigButton.titleLabel.font = [UIFont abelFontWithSize:24.0];
-                
-                [self.bigButton setTitle:NSLocalizedString(@"addEditEvent.cancel", nil) forState:UIControlStateNormal];
-                [self.bigButton setBackgroundImage:[UIImage imageNamed:@"button_lg_red_off"] forState:UIControlStateNormal];
-                [self.bigButton setBackgroundImage:[UIImage imageNamed:@"button_lg_red_on"] forState:UIControlStateHighlighted];
+                if(![now compare:event.endDate] == NSOrderedDescending]) {
+                    // delete event
+                    self.smallRedButton.hidden = YES;
+                    self.smallYellowButton.hidden = YES;
+                    self.bigButton.hidden = NO;
+                    
+                    [self.bigButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                    [self.bigButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+                    
+                    self.bigButton.titleLabel.font = [UIFont abelFontWithSize:24.0];
+                    
+                    [self.bigButton setTitle:NSLocalizedString(@"addEditEvent.cancel", nil) forState:UIControlStateNormal];
+                    [self.bigButton setBackgroundImage:[UIImage imageNamed:@"button_lg_red_off"] forState:UIControlStateNormal];
+                    [self.bigButton setBackgroundImage:[UIImage imageNamed:@"button_lg_red_on"] forState:UIControlStateHighlighted];
+
+                } else {
+                    self.bottomView.hidden = YES;
+                    self.tableView.frame = CGRectMake(self.tableView.frame.origin.y, self.tableView.frame.origin.y, self.tableView.frame.size.width, self.tableView.frame.size.height+self.bottomView.frame.size.height);
+                }
             }
                 break;
         }
@@ -390,14 +397,14 @@ static NSInteger const kMaximumAvailableSeats = 15;
         cell.detailTextLabel.textColor = [UIColor greenBoatDay];
         
         if(!self.readOnly) {
-        // arrow as cell accessory view
-        UIImage *arrowImage = [UIImage imageNamed:@"cell_arrow_grey"];
-        UIImageView *arrowImageView = [[UIImageView alloc] init];
-        CGRect frame = CGRectMake(0.0, 0.0, arrowImage.size.width, arrowImage.size.height);
-        arrowImageView.frame = frame;
-        arrowImageView.image = arrowImage;
-        arrowImageView.backgroundColor = [UIColor clearColor];
-        cell.accessoryView = arrowImageView;
+            // arrow as cell accessory view
+            UIImage *arrowImage = [UIImage imageNamed:@"cell_arrow_grey"];
+            UIImageView *arrowImageView = [[UIImageView alloc] init];
+            CGRect frame = CGRectMake(0.0, 0.0, arrowImage.size.width, arrowImage.size.height);
+            arrowImageView.frame = frame;
+            arrowImageView.image = arrowImage;
+            arrowImageView.backgroundColor = [UIColor clearColor];
+            cell.accessoryView = arrowImageView;
         }
         
     }

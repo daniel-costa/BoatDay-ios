@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BDAddEditEventProfileViewController">
             <connections>
                 <outlet property="bigButton" destination="Eid-pX-kxY" id="BNo-6x-kdL"/>
+                <outlet property="bottomView" destination="ID8-yK-PFq" id="kAu-Th-iWt"/>
                 <outlet property="contentView" destination="vAE-r3-18k" id="NV3-fR-9re"/>
                 <outlet property="smallRedButton" destination="sDg-jL-PUr" id="n1J-oB-iKp"/>
                 <outlet property="smallYellowButton" destination="dlk-J0-NWE" id="cj2-Lf-7A6"/>
