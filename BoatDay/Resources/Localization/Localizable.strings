@@ -84,8 +84,8 @@
 "profile.noFriendsInCommon"                 = "No common friends.";
 "profile.noAboutText"                       = "This user hasn't written a description yet.";
 "profile.noAboutTextSelf"                   = "You haven't written a description about you.";
-"profile.seatRequest.rejectAlert.title"     = "Remove Confirmed Guest";
-"profile.seatRequest.rejectAlert.message"   = "Let this Guest know why they have been removed from this BoatDay.";
+"profile.seatRequest.rejectAlert.title"     = "Remove Guest?";
+"profile.seatRequest.rejectAlert.message"   = "Please tell this Guest why they have been removed.";
 
 /*
  * Seat Request
@@ -221,7 +221,7 @@
 "addEditBoat.deleteDraftBoat"               = "DELETE BOAT";
 "addEditBoat.alertview.title"               = "Information Required";
 "addEditBoat.alertview.message"             = "Please fill in all of the required fields";
-"addEditBoat.deleteError.gotEvent.message"  = "You can't delete this boat because it is associated to an active event.";
+"addEditBoat.deleteError.gotEvent.message"  = "You can not delete this boat because it is associated with an active BoatDay.";
 "addEditBoat.safetyFeatures.title"          = "Safety Features";
 "addEditBoat.createdAlert.title"            = "Success";
 "addEditBoat.createdAlert.message"          = "Your boat information has been submitted for approval.";
@@ -268,8 +268,8 @@
 "boatInsurance.minCoverageAlert.message"        = "Insurance coverage must be $300,000 or greater.";
 "boatInsurance.pictureAlert.title"              = "Insurance Photo";
 "boatInsurance.pictureAlert.message"            = "Proof of insurance is Required";
-"boatInsurance.dateTime.title"                  = "Date";
-"boatInsurance.dateTime.message"                = "Your expiration date needs to be valid.";
+"boatInsurance.dateTime.title"                  = "Error";
+"boatInsurance.dateTime.message"                = "Invalid Expiration Date.";
 "boatInsurance.warning.title"                   = "Picture";
 "boatInsurance.warning.message"                 = "Image must have full policy summary information including: Name of Carrier, Coverage Type, Minimum Amount of Coverage, Named Insured(s), Boat Registration Number, Coverage Term (including expiration), Address.";
 
@@ -365,7 +365,7 @@
 "eventProfile.flagConfirmation.title"                   = "Event Report";
 "eventProfile.flagConfirmation.message"                 = "Report as Inappropriate?";
 "eventProfile.inviteUsers"                              = "INVITE USERS";
-"eventProfile.seatRequest.deleteTitle"                  = "Cancel?";
+"eventProfile.seatRequest.deleteTitle"                  = "Are You Sure?";
 "eventProfile.seatRequest.deleteMessage"                = "Are sure you want to cancel your seat request?";
 "eventProfile.seat"                                     = "SEAT";
 "eventProfile.cancelRequest.title"                      = "Are you Sure?";
@@ -378,7 +378,7 @@
 "eventProfile.activities.yesSmoking.description"        = "Smoking is permitted on this event";
 "eventProfile.activities.nofamilyWelcome.title"         = "Not recommended for Children";
 "eventProfile.activities.nofamilyWelcome.description"   = "Children who are accompanied by adults are not permitted on this event.";
-"eventProfile.cancelationNotification"                  = "%@ canceled is seat request for \"%@\" event";
+"eventProfile.cancelationNotification"                  = "%@ canceled his seat request for \"%@\" event";
 
 /*
  * Notifications
@@ -583,7 +583,7 @@
 "hostRegistration.error.title"                          = "Failed";
 "hostRegistration.error.message"                        = "Something went wrong, please try again later or contact an admin.";
 "hostRegistration.uploadingPicture"                     = "Uploading Picture";
-"hostRegistration.checkboxesNotPressed.message"         = "You must accept the Terms and Conditions before submitting. To accept the terms, check off next to each item.";
+"hostRegistration.checkboxesNotPressed.message"         = "You must consent to a background check and accept the BoatDay Terms & Conditions to Register as a Host.";
 "hostRegistration.checkboxesNotPressed.title"           = "Host Registration";
 "hostRegistration.phoneNumberAlertView.title"           = "Phone Number";
 "hostRegistration.phoneNumberAlertView.message"         = "Please check your phone number. Some numbers are missing.";

@@ -400,17 +400,17 @@ static NSInteger const kMessageMaximumCharacters = 500;
 
 - (void) finalizePayment {
     
-    [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"finalizeContribution.confirmation.title", nil)
-                                message:NSLocalizedString(@"finalizeContribution.message", nil)
-                       cancelButtonItem:[RIButtonItem itemWithLabel:NSLocalizedString(@"certifications.delete.noButton", nil) action:nil]
-                       otherButtonItems:[RIButtonItem itemWithLabel:NSLocalizedString(@"certifications.delete.yesButton", nil) action:^{
-        
+//    [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"finalizeContribution.confirmation.title", nil)
+//                                message:NSLocalizedString(@"finalizeContribution.message", nil)
+//                       cancelButtonItem:[RIButtonItem itemWithLabel:NSLocalizedString(@"certifications.delete.noButton", nil) action:nil]
+//                       otherButtonItems:[RIButtonItem itemWithLabel:NSLocalizedString(@"certifications.delete.yesButton", nil) action:^{
+    
         [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
         
         User *user = [User currentUser];
         
-        NSLog(@"%@", @(self.contribution));
-        NSLog(@"%ld", (long)self.contribution);
+//        NSLog(@"%@", @(self.contribution));
+//        NSLog(@"%ld", (long)self.contribution);
 //        NSLog(@"%@", self.event.host.hostRegistration);
 //        NSLog(@"%@", self.event.host.hostRegistration.merchantId);
         
@@ -456,7 +456,7 @@ static NSInteger const kMessageMaximumCharacters = 500;
             
         }];
         
-    }], nil] show];
+//    }], nil] show];
     
 }
 

@@ -38,6 +38,17 @@
     self.seatsLabel.font = [UIFont quattroCentoRegularFontWithSize:13.0];
 }
 
+- (IBAction)messageBtnPressed:(id)sender {
+    
+    UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"BoatDay Team"
+                                                          message:self.boat.rejectionMessage.text
+                                                         delegate:nil
+                                                cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
+                                                otherButtonTitles: nil];
+    
+    [myAlertView show];
+}
+
 #pragma mark - Layout
 
 - (void)updateLayoutWithBoat:(Boat*)boat {
@@ -118,6 +129,7 @@
         case BoatStatusDenied:
             self.statusImage.image = highlighted ? [UIImage imageNamed:@"cert_denied_white"] : [UIImage imageNamed:@"cert_denied"];
             self.messageButton.hidden = NO;
+            self.messageButton.userInteractionEnabled = YES;
             [self.messageButton setBackgroundImage:highlighted ? [UIImage imageNamed:@"myboat_message_white"] : [UIImage imageNamed:@"myboat_message"]
                                           forState:UIControlStateNormal];
             break;
@@ -160,4 +172,6 @@
     
 }
 
+- (IBAction)messageButtonPress:(id)sender {
+}
 @end

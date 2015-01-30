@@ -125,6 +125,8 @@
                 
                 [query findObjectsInBackgroundWithBlock:^(NSArray *boats, NSError *error) {
                     
+                    [[Session sharedSession] updateUserData];
+                    
                     Boat *pendingBoat = boats.count == 1 ? boats[0] : nil;
                     
                     [SVProgressHUD dismiss];
