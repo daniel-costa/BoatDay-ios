@@ -201,7 +201,38 @@ static NSInteger const kMaximumNumberOfPictures = 5;
                                                                 label:self.screenName
                                                                 value:nil] build]];
 
-
+    if ([NSString isStringEmpty:[User currentUser].firstName] ||
+        [NSString isStringEmpty:[User currentUser].lastName] ||
+        [NSString isStringEmpty:[User currentUser].aboutMe] ||
+        ![User currentUser].birthday ||
+        ![User currentUser].location) {
+        
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"addEditBoat.alertview.title", nil)
+                                                              message:NSLocalizedString(@"addEditBoat.alertview.message", nil)
+                                                             delegate:nil
+                                                    cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
+                                                    otherButtonTitles: nil];
+        
+        [myAlertView show];
+        
+        return;
+        
+    }
+    
+    if(self.imagesArray.count == 0) {
+        
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"addEditBoat.alertview.title", nil)
+                                                              message:@"Please upload a profile photo"
+                                                             delegate:nil
+                                                    cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
+                                                    otherButtonTitles: nil];
+        
+        [myAlertView show];
+        
+        return;
+        
+    }
+    
     // shows some loading view so the user can see that is saving
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
     

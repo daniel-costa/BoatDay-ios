@@ -539,7 +539,7 @@
 
 
 /*
- * Terms Of Services
+ * Terms and Conditions
  */
 
 "termsOfService.title"      = "Terms and Conditions";
@@ -577,13 +577,13 @@
 "hostRegistration.alertview.message"                    = "Please add your drivers license picture.";
 "hostRegistration.terms.consentBackground"              = "I consent to a background check by the BoatDay administrators using the information that I have provided in the previous screen.";
 "hostRegistration.terms.agreeWithTerms"                 = "I agree to the BoatDay";
-"hostRegistration.terms.termsOfService"                 = "Terms of Service";
+"hostRegistration.terms.termsOfService"                 = "Terms and Conditions";
 "hostRegistration.terms.submit"                         = "SUBMIT";
 "hostRegistration.terms.title"                          = "Terms";
 "hostRegistration.error.title"                          = "Failed";
 "hostRegistration.error.message"                        = "Something went wrong, please try again later or contact an admin.";
 "hostRegistration.uploadingPicture"                     = "Uploading Picture";
-"hostRegistration.checkboxesNotPressed.message"         = "You must accept the terms of service before submitting. To accept the terms, check off next to each item.";
+"hostRegistration.checkboxesNotPressed.message"         = "You must accept the Terms and Conditions before submitting. To accept the terms, check off next to each item.";
 "hostRegistration.checkboxesNotPressed.title"           = "Host Registration";
 "hostRegistration.phoneNumberAlertView.title"           = "Phone Number";
 "hostRegistration.phoneNumberAlertView.message"         = "Please check your phone number. Some numbers are missing.";
@@ -632,9 +632,9 @@
 "paymentInfo.sectionTitle.selectDestination"        = "PAYMENT METHOD";
 "paymentInfo.sectionTitle.businessInformation"      = "BUSINESS INFORMATION (OPTIONAL)";
 "paymentInfo.sectionTitle.personalInformation"      = "PERSONAL INFORMATION";
-"paymentInfo.sectionTitle.termsOfService"           = "TERMS OF SERVICE";
+"paymentInfo.sectionTitle.termsOfService"           = "TERMS AND CONDITIONS";
 "paymentInfo.sectionTitle.addressInformation"       = "BILLING ADDRESS";
-"paymentInfo.termsOfService"                        = "Terms of Service";
+"paymentInfo.termsOfService"                        = "Terms and Conditions";
 "paymentInfo.submitButton"                          = "SUBMIT";
 "paymentInfo.accountNumber"                         = "ACCOUNT NUMBER*";
 "paymentInfo.routingNumber"                         = "ROUTING NUMBER*";

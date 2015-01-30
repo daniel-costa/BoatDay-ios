@@ -223,7 +223,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
                 break;
             default:
             {
-                if(![[NSDate date] compare:self.event.startsAt] == NSOrderedDescending) {
+                if([[NSDate date] compare:self.event.startsAt] != NSOrderedDescending) {
                     // delete event
                     self.smallRedButton.hidden = YES;
                     self.smallYellowButton.hidden = YES;
