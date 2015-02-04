@@ -503,7 +503,6 @@
 		7F81BF73D5B19F6210C53A6C /* BTUICardExpiryField.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FB658A8817DF430A975A53 /* BTUICardExpiryField.m */; settings = {COMPILER_FLAGS = "-Wall -Werror -Wextra -Wall -Wextra -w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		7F848032E145262A9B1838AC /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9D62A50E96DCFFCD4B4DF0 /* AFURLRequestSerialization.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		7FDF85A1EC1F22909A837487 /* FBDialogsData+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = F74B01EC15137C426486B98E /* FBDialogsData+Internal.h */; };
-		80096FBDAEA349AE37125CFE /* en_UK.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4D9C51C8F47545E5A7F6BD9E /* en_UK.lproj */; };
 		8014687971E559F3102C0203 /* FBInternalSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = ACBFD80E4A7036D63688B27B /* FBInternalSettings.h */; };
 		8037ED2B51125432A244522C /* RACQueueScheduler.h in Headers */ = {isa = PBXBuildFile; fileRef = AD603A0DC3E9205D68B57D48 /* RACQueueScheduler.h */; };
 		807E08E401B57AFB96DB47D6 /* BTOfflineClientBackend.h in Headers */ = {isa = PBXBuildFile; fileRef = E0DDE0EB567623CC4B45EA2F /* BTOfflineClientBackend.h */; };
@@ -638,7 +637,6 @@
 		A78C04504AA6930B3B3C9D4B /* FBLikeButtonPopWAV.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C32CE477B9C0A480064354B /* FBLikeButtonPopWAV.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		A814C9A3939BAE48DFAD6FED /* BTMockApplePayPaymentAuthorizationView.h in Headers */ = {isa = PBXBuildFile; fileRef = E86537AC7DC0EF9BAECC43E9 /* BTMockApplePayPaymentAuthorizationView.h */; };
 		A840FEFED4F3C4C1B9576DC4 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E63A3C2ADD44EAA71482E /* FBDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
-		A876B820D9A5666E217B7F99 /* en_UK.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DC10D122F330E7771CE80F74 /* en_UK.lproj */; };
 		A8EFE5390EABDD25D39C9ECD /* FBLikeButtonIconPNG.h in Headers */ = {isa = PBXBuildFile; fileRef = D83CB399AA6841D941F76E06 /* FBLikeButtonIconPNG.h */; };
 		A94085C7D975645DB230D19C /* NSObject+RACSelectorSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AEA8C6B1E38FA1631C12C3 /* NSObject+RACSelectorSignal.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		A983D3E04EE1144A3190D997 /* FBInsights.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D613AFBD36B42DBBB8D0F2F /* FBInsights.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
@@ -1411,7 +1409,6 @@
 		4D50F438EC13524104415567 /* BTUISummaryView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTUISummaryView.h; path = "Braintree/UI/Views/Payments Components/BTUISummaryView.h"; sourceTree = "<group>"; };
 		4D601FAFCEA92D8388579B22 /* BTReachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTReachability.h; path = Braintree/API/Utility/BTReachability.h; sourceTree = "<group>"; };
 		4D99AA111A5B83A850CB7843 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		4D9C51C8F47545E5A7F6BD9E /* en_UK.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en_UK.lproj; path = "Braintree/Drop-In/Localization/en_UK.lproj"; sourceTree = "<group>"; };
 		4E25AEBD94B5D192D4543E4A /* RACIndexSetSequence.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RACIndexSetSequence.m; path = ReactiveCocoa/RACIndexSetSequence.m; sourceTree = "<group>"; };
 		4E2DD928BF25A1F299BDBF7C /* Pods-ReactiveCocoa-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReactiveCocoa-Private.xcconfig"; sourceTree = "<group>"; };
 		4E4DCE4B9B996D938F343B6C /* BTUIDiscoverVectorArtView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTUIDiscoverVectorArtView.m; path = "Braintree/UI/Views/Vector Art/BTUIDiscoverVectorArtView.m"; sourceTree = "<group>"; };
@@ -1977,7 +1974,6 @@
 		DB0106BDA3EDE9FF16279527 /* Pods-ParseFacebookUtils-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ParseFacebookUtils-Private.xcconfig"; sourceTree = "<group>"; };
 		DB64F85F5EFC39B244F52D07 /* Pods-ParseFacebookUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ParseFacebookUtils-dummy.m"; sourceTree = "<group>"; };
 		DBF172247CD06C0291A05EE0 /* BTPaymentProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTPaymentProvider.h; path = "Braintree/Payments/@Public/BTPaymentProvider.h"; sourceTree = "<group>"; };
-		DC10D122F330E7771CE80F74 /* en_UK.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en_UK.lproj; path = Braintree/UI/Localization/en_UK.lproj; sourceTree = "<group>"; };
 		DC339A5DDDEE311857C420A6 /* Pods-Facebook-iOS-SDK-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Facebook-iOS-SDK-Private.xcconfig"; sourceTree = "<group>"; };
 		DC7B16D669F1A6C2BFA6EC85 /* BTUIVisaVectorArtView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTUIVisaVectorArtView.h; path = "Braintree/UI/Views/Vector Art/BTUIVisaVectorArtView.h"; sourceTree = "<group>"; };
 		DCB9EEDD9781FAB01629E64F /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en.lproj; path = Braintree/UI/Localization/en.lproj; sourceTree = "<group>"; };
@@ -2387,7 +2383,6 @@
 				9F4597C411F533FCD1724DE2 /* en_AU.lproj */,
 				CE320EEC415B8CE4656E0A86 /* en_CA.lproj */,
 				85B882ACB6B5FC16457371B3 /* en_GB.lproj */,
-				4D9C51C8F47545E5A7F6BD9E /* en_UK.lproj */,
 				FE8AF6D8E0CF027C3C7F6CED /* es.lproj */,
 				19A8B6337F9BB8CD3E62DF57 /* es_ES.lproj */,
 				FAD2E167B1B213BAE7C3A5D5 /* fr.lproj */,
@@ -2604,7 +2599,6 @@
 				8C3EAE8BB7DA96BF89B1B99F /* en_AU.lproj */,
 				8FB821F5A0C143C283EC4771 /* en_CA.lproj */,
 				A937BA5C7AEA55DC420717DB /* en_GB.lproj */,
-				DC10D122F330E7771CE80F74 /* en_UK.lproj */,
 				688BE2578C1F58E7899B2137 /* es.lproj */,
 				87AD0F40B4FB06C79973CD93 /* es_ES.lproj */,
 				003732B2A71D888294728C87 /* fr.lproj */,
@@ -4899,7 +4893,6 @@
 				7B484DCF65B8751DB5774A29 /* en_AU.lproj in Resources */,
 				DE7EE4C7E23C7F786C9F5084 /* en_CA.lproj in Resources */,
 				1544252A1844B7B7AC4E0373 /* en_GB.lproj in Resources */,
-				A876B820D9A5666E217B7F99 /* en_UK.lproj in Resources */,
 				C0AFD472914FE7FFCD629A8E /* es.lproj in Resources */,
 				2A2176EE21BCC03E839F3735 /* es_ES.lproj in Resources */,
 				FE1BF3CF32F7C993F5D7D3D6 /* fr.lproj in Resources */,
@@ -4928,7 +4921,6 @@
 				47387B1DDEF2C5A4E02D2E44 /* en_AU.lproj in Resources */,
 				90B74E42ED98316EDA61EBED /* en_CA.lproj in Resources */,
 				A42864D6FA38B407DF5D3587 /* en_GB.lproj in Resources */,
-				80096FBDAEA349AE37125CFE /* en_UK.lproj in Resources */,
 				BB84CE57596E82F1605D4C17 /* es.lproj in Resources */,
 				7B10BD2D50308D285C217E0E /* es_ES.lproj in Resources */,
 				9C13C2E5483B497BEDC7790E /* fr.lproj in Resources */,
