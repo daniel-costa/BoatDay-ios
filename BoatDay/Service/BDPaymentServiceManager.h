@@ -20,6 +20,7 @@
                               sessionToken:(NSString*)sessionToken
                               paymentToken:(NSString*)paymentToken
                                 merchantID:(NSString*)merchantId
+                                    amount:(NSNumber*)amount
                                  withBlock:(void (^)(BOOL success, NSError *error))block;
 
 - (void)getClientTokenWithCustomerID:(NSString*)customerID

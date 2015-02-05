@@ -882,6 +882,7 @@
                                                                                sessionToken:[User currentUser].sessionToken
                                                                                paymentToken:[User currentUser].braintreePaymentToken
                                                                                  merchantID:self.event.host.hostRegistration.merchantId
+                                                                                     amount:@(GetSeatPrice(self.event.price).integerValue * self.userRequest.numberOfSeats.integerValue)
                                                                                   withBlock:nil];
                 
             }
@@ -892,15 +893,7 @@
     }
     else {
         
-        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"eventProfile.seatRequest.deleteTitle", nil)
-                                    message:NSLocalizedString(@"eventProfile.seatRequest.deleteMessage", nil)
-                           cancelButtonItem:[RIButtonItem itemWithLabel:NSLocalizedString(@"certifications.delete.noButton", nil) action:nil]
-                           otherButtonItems:[RIButtonItem itemWithLabel:NSLocalizedString(@"certifications.delete.yesButton", nil) action:^{
-            
-            // Handle "Delete"
-            [self cancelSeatReservationOnParse];
-            
-        }], nil] show];
+        [self cancelSeatReservationOnParse];
         
     }
     

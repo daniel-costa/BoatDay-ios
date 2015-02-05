@@ -366,10 +366,10 @@
 "eventProfile.flagConfirmation.message"                 = "Report as Inappropriate?";
 "eventProfile.inviteUsers"                              = "INVITE USERS";
 "eventProfile.seatRequest.deleteTitle"                  = "Are You Sure?";
-"eventProfile.seatRequest.deleteMessage"                = "Are sure you want to cancel your seat request?";
+"eventProfile.seatRequest.deleteMessage"                = "Cancellation of your BoatDay negatively effects all Hosts and Guests. You will be charged the Trust & Safety Fee for each reserved seat if you cancel at this time. Do you wish to cancel?";
 "eventProfile.seat"                                     = "SEAT";
 "eventProfile.cancelRequest.title"                      = "Are you Sure?";
-"eventProfile.cancelRequest.message"                    = "Cancellation within 24 hours of your BoatDay negatively effects all Hosts and Guests. You will be charged the contribution amount if you cancel at this time. Do you wish to cancel?";
+"eventProfile.cancelRequest.message"                    = "Cancellation within 24 hours of your BoatDay negatively effects all Hosts and Guests. You will be charged the contribution amount (including the applicable Trust & Safety Fee) if you cancel at this time. Do you wish to cancel?";
 "eventProfile.finalizeContribution"                     = "FINALIZE CONTRIBUTION";
 "eventProfile.wall.you"                                 = "You";
 "eventProfile.activities.yesDrinking.title"             = "DRINKING ALLOWED";

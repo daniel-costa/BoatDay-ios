@@ -37,16 +37,18 @@ static NSString* const kBaseUrl = @"https://boat-day-payments.herokuapp.com";
                               sessionToken:(NSString*)sessionToken
                               paymentToken:(NSString*)paymentToken
                                 merchantID:(NSString*)merchantId
+                                    amount:(NSNumber*)amount
                                  withBlock:(void (^)(BOOL success, NSError *error))block {
     
-    NSString *cancel = @"%@/%@/cancel";
+    NSString *cancel = @"%@/seat-request/%@/cancel";
     NSString *url = [NSString stringWithFormat:cancel, kBaseUrl, seatRequestID];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager POST:url
        parameters:@{@"session":      sessionToken,
                     @"paymentToken": paymentToken,
-                    @"merchantId":   merchantId
+                    @"merchantId":   merchantId,
+                    @"amount":       amount
                     }
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               
