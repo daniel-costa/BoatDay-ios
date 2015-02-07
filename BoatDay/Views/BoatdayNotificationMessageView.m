@@ -157,9 +157,6 @@
             
             }
 
-
-    NSLog(@"fdas");
-    
 //    return self;
 
 }

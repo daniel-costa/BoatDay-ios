@@ -875,6 +875,9 @@
                            cancelButtonItem:[RIButtonItem itemWithLabel:NSLocalizedString(@"certifications.delete.noButton", nil) action:nil]
                            otherButtonItems:[RIButtonItem itemWithLabel:NSLocalizedString(@"certifications.delete.yesButton", nil) action:^{
             
+            
+            [self.event.host.hostRegistration fetchIfNeeded];
+            
             if (![NSString isStringEmpty:[User currentUser].braintreePaymentToken] &&
                 ![NSString isStringEmpty:self.event.host.hostRegistration.merchantId]) {
                 
@@ -902,6 +905,8 @@
 - (void) cancelSeatReservationOnParse {
     
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
+
+    [self.userRequest.event fetchIfNeeded];
     
     if([self.userRequest.status integerValue] == SeatRequestStatusAccepted) {
         self.userRequest.event.freeSeats = @(self.userRequest.event.freeSeats.integerValue + self.userRequest.numberOfSeats.integerValue);
