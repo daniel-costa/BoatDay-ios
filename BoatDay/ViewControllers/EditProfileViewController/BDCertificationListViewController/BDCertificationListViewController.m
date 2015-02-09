@@ -159,8 +159,8 @@ static char associatedKey;
     }
     
     if (indexPath.row == 0) {
-        cell.deepDescription.hidden = NO;
-        [cell.deepDescription setText:NSLocalizedString(@"certificationsList.boatSafteyEduCou", nil)];
+//        cell.deepDescription.hidden = NO;
+//        [cell.deepDescription setText:NSLocalizedString(@"certificationsList.boatSafteyEduCou", nil)];
     }
     
     return cell;

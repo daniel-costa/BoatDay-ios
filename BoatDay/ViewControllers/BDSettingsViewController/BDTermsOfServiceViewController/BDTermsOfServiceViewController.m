@@ -27,9 +27,10 @@
 
     self.title = NSLocalizedString(@"termsOfService.title", nil);
 
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
-    [[self navigationItem] setBackBarButtonItem:backButton];
-    self.webView.backgroundColor = [UIColor greenBoatDay];
+//    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
+//    [[self navigationItem] setBackBarButtonItem:backButton];
+//    self.webView.backgroundColor = [UIColor greenBoatDay];
+//    self.webView.viewController.view.backgroundColor = [UIColor greenBoatDay];
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"termsAndConditions" ofType:@"pdf"];
     NSURL *targetURL = [NSURL fileURLWithPath:path];

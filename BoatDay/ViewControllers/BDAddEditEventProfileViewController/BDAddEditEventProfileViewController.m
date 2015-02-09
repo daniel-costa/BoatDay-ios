@@ -113,7 +113,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
     }
 
     self.readOnly = !([self.event.startsAt compare:[NSDate date]] == NSOrderedDescending && numberOfUsersAttendingOrWaiting == 0);
-
+    
     return self;
     
 }
@@ -121,7 +121,8 @@ static NSInteger const kMaximumAvailableSeats = 15;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-        self.screenName =@"BDAddEditEventProfileViewController";
+    
+    self.screenName =@"BDAddEditEventProfileViewController";
 
     // make a new copy in order to reset user if this view is canceled
     self.oldEvent = (Event*)[self.event copyShallow];
@@ -164,6 +165,21 @@ static NSInteger const kMaximumAvailableSeats = 15;
     
 }
 
+-(void) viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    if( self.readOnly ) {
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@""
+                                                              message:@"Events can only be edited if there are no pending invitations or confirmed Guests"
+                                                             delegate:nil
+                                                    cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
+                                                    otherButtonTitles: nil];
+        [myAlertView show];
+    }
+    
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     
     [super viewWillDisappear:animated];
@@ -192,6 +208,8 @@ static NSInteger const kMaximumAvailableSeats = 15;
 #pragma mark - Setup Methods
 
 - (void) setupBottomButtons {
+    
+    
     
     self.bottomView.hidden = NO;
     
@@ -687,6 +705,13 @@ static NSInteger const kMaximumAvailableSeats = 15;
 
 - (void)keyboardWillShow:(NSNotification *)notification {
     
+    if(self.tap) {
+        [self dismissKeyboard];
+        [self.navigationController.view removeGestureRecognizer:self.tap];
+        [self.navigationController.navigationBar setUserInteractionEnabled:YES];
+        self.tap = nil;
+    }
+    
     [self.navigationController.navigationBar setUserInteractionEnabled:NO];
     
     // Add tap gesture to dismiss keyboard
@@ -1018,8 +1043,8 @@ static NSInteger const kMaximumAvailableSeats = 15;
     
     if ([[NSDate date] compare:self.pickUpTime] == NSOrderedDescending) {
         
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"addEditBoat.alertview.title", nil)
-                                                              message:@"BoatDays must take place at a future time."
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                              message:@"Departure Time must be a current or future Date."
                                                              delegate:nil
                                                     cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
                                                     otherButtonTitles: nil];
@@ -1126,7 +1151,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
     self.event.status = @(status);
     self.event.eventDescription = self.eventDescription;
     
-    // saving the user in background
+    // saving the event in background
     [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         
 

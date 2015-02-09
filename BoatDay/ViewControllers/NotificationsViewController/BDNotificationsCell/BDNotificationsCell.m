@@ -94,7 +94,7 @@
             break;
         case NotificationTypeRequestRejected:
         {
-            message = NSLocalizedString(@"notifications.type.seatRequestRejected", nil);
+            message = [NSString stringWithFormat: NSLocalizedString(@"notifications.type.seatRequestRejected", nil), notification.event.name];
 //            detailMessage = notification.event.name;
         }
             break;

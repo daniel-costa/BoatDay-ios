@@ -36,6 +36,10 @@
     self.dateLabel.textColor = [UIColor greenBoatDay];
     self.dateLabel.numberOfLines = 0;
     
+    
+    self.includingFees.font = [UIFont abelFontWithSize:9.0];
+    self.includingFees.textColor = [UIColor greenBoatDay];
+    
     self.price.textColor = [UIColor greenBoatDay];
     
     [UIView setRoundedView:self.placeholder toDiameter:CGRectGetHeight(self.placeholder.frame)];

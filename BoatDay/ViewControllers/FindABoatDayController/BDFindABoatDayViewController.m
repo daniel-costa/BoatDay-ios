@@ -95,7 +95,7 @@ CGFloat const kMinDistanceLocation    = 0.5;
         self.filterDictionary = [@{kTimeFrame: NSLocalizedString(@"findABoat.timeframe.any", nil),
                                    kAvailableSeats: NSLocalizedString(@"findABoat.availableSeats.noLimit", nil),
                                    kLocationString: NSLocalizedString(@"findABoat.location.none", nil),
-                                   kLocationGeoPoint: [User currentUser].location,
+                                   kLocationGeoPoint: [User currentUser].location?: [NSNull null],
                                    kDistance: @(kMaxDistanceLocation),
                                    kSuggestedPrice: NSLocalizedString(@"findABoat.suggestedDonation.noLimit", nil),
                                    kActivities: [@[] mutableCopy],
@@ -422,7 +422,7 @@ CGFloat const kMinDistanceLocation    = 0.5;
     }
     
     if([distance floatValue] == 100.0) {
-        distance = [NSNumber numberWithInt:500];
+        distance = [NSNumber numberWithInt:800];
     }
     
     [query whereKey:kLocationGeoPoint nearGeoPoint:geoPoint withinMiles:[distance floatValue]];

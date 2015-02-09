@@ -371,9 +371,9 @@
                                                                 label:self.screenName
                                                                 value:nil] build]];
 
-
+    
     [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"eventProfile.flagConfirmation.title", nil)
-                                message:NSLocalizedString(@"eventProfile.flagConfirmation.message", nil)
+                                message:[NSString stringWithFormat:NSLocalizedString(@"eventProfile.flagConfirmation.message", nil), self.event.name]
                        cancelButtonItem:[RIButtonItem itemWithLabel:NSLocalizedString(@"certifications.delete.noButton", nil) action:^{
         
         // Handle "Cancel"

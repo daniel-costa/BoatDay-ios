@@ -435,7 +435,7 @@ static NSInteger const kMinumumDateYear = 1920;
                 if ([NSString isStringEmpty:[Session sharedSession].hostRegistration.merchantId]) {
                     
                     UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"addEditBoat.createdAlert.title", nil)
-                                                                          message:NSLocalizedString(@"addEditBoat.gotoPaymentInfo.message", nil)
+                                                                          message:[NSString stringWithFormat:NSLocalizedString(@"addEditBoat.gotoPaymentInfo.message", nil), self.boat.name]
                                                                          delegate:nil
                                                                 cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
                                                                 otherButtonTitles: nil];
@@ -446,7 +446,7 @@ static NSInteger const kMinumumDateYear = 1920;
                 else {
                     
                     UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"addEditBoat.createdAlert.title", nil)
-                                                                          message:NSLocalizedString(@"addEditBoat.createdAlert.message", nil)
+                                                                          message:[NSString stringWithFormat:NSLocalizedString(@"addEditBoat.createdAlert.message", nil), self.boat.name]
                                                                          delegate:nil
                                                                 cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
                                                                 otherButtonTitles: nil];
@@ -737,7 +737,15 @@ static NSInteger const kMinumumDateYear = 1920;
 
 - (void)keyboardWillShow:(NSNotification *)notification {
     
+    if(self.tap) {
+        [self dismissKeyboard];
+        [self.navigationController.view removeGestureRecognizer:self.tap];
+        [self.navigationController.navigationBar setUserInteractionEnabled:YES];
+        self.tap = nil;
+    }
+    
     [self.navigationController.navigationBar setUserInteractionEnabled:NO];
+    
     
     // Add tap gesture to dismiss keyboard
     self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self

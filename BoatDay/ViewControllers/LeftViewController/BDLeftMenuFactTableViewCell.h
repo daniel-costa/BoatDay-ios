@@ -10,8 +10,8 @@
 
 @interface BDLeftMenuFactTableViewCell : UITableViewCell
 + (NSString *)reuseIdentifier;
+@property (weak, nonatomic) IBOutlet UILabel *factDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *factInfoLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *factDescriptionLabel;
 
 @end

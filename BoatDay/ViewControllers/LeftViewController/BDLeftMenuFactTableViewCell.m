@@ -40,12 +40,12 @@
     [self setCellColor:[UIColor colorWithRed:3.0/255 green:144.0/255 blue:150.0/255 alpha:1.0]];
     
     self.factInfoLabel.textColor = [UIColor whiteColor];
-//    self.factInfoLabel.backgroundColor = [UIColor clearColor];
-    self.factInfoLabel.font = [UIFont abelFontWithSize:60.0];
+    self.factInfoLabel.backgroundColor = [UIColor clearColor];
+//    self.factInfoLabel.font = [UIFont abelFontWithSize:60.0];
     
     self.factDescriptionLabel.textColor = [UIColor whiteColor];
-//    self.factDescriptionLabel.backgroundColor = [UIColor clearColor];
-    self.factDescriptionLabel.font = [UIFont abelFontWithSize:16.0];
+    self.factDescriptionLabel.backgroundColor = [UIColor clearColor];
+//    self.factDescriptionLabel.font = [UIFont abelFontWithSize:16.0];
   
 }
 

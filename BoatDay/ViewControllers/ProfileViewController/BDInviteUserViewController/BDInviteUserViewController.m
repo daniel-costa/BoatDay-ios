@@ -215,7 +215,7 @@
     Event *event = self.events[indexPath.row];
     
     BDFindABoatCalendarCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[BDFindABoatCalendarCell reuseIdentifier]];
-    
+    cell.includingFees.hidden = NO;
     [cell updateWithEvent:event];
     
     return cell;

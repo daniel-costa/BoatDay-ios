@@ -11,6 +11,7 @@
 @interface BDLeftMenuProfileTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *profileNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *profileNameSubLabel;
 - (void)updateProfileCellWith:(UIImage *)profileImage profileName:(NSString *)profileName;
 + (NSString *)reuseIdentifier;
 @end

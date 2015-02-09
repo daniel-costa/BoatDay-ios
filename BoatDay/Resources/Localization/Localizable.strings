@@ -134,7 +134,7 @@
 "editProfile.aboutMe"                       = "ABOUT ME*";
 "editProfile.aboutMe.charsRemaining"        = "characters remaining";
 "editProfile.myActivities"                  = "MY ACTIVITIES";
-"editProfile.boatingCertifications"         = "BOATING CERTIFICATIONS";
+"editProfile.boatingCertifications"         = "BOATING CERTIFICATIONS (optional)";
 "editProfile.certifications"                = "Certifications";
 "editProfile.myActivityEmptyState"          = "Pick your favorite activities!";
 
@@ -220,12 +220,12 @@
 "addEditBoat.deleteButton"                  = "DELETE THIS BOAT";
 "addEditBoat.deleteDraftBoat"               = "DELETE BOAT";
 "addEditBoat.alertview.title"               = "Information Required";
-"addEditBoat.alertview.message"             = "Please fill in all of the required fields";
+"addEditBoat.alertview.message"             = "Please fill in all of the required fields.";
 "addEditBoat.deleteError.gotEvent.message"  = "You can not delete this boat because it is associated with an active BoatDay.";
 "addEditBoat.safetyFeatures.title"          = "Safety Features";
-"addEditBoat.createdAlert.title"            = "Success";
-"addEditBoat.createdAlert.message"          = "Your boat information has been submitted for approval.";
-"addEditBoat.gotoPaymentInfo.message"       = "To finalize your registration, please input your payment information.";
+"addEditBoat.createdAlert.title"            = "Success!";
+"addEditBoat.createdAlert.message"          = "Your boat, %@, has been submitted for approval.";
+"addEditBoat.gotoPaymentInfo.message"       = "Your boat, %@ has been submitted for approval. To finalize your registration, please provide a payment account.";
 "addEditBoat.maxPhotosAlert.title"          = "Number of photos";
 "addEditBoat.maxPhotosAlert.message"        = "The maximum number of photos is 5.";
 "addEditBoat.notCreatedAlert.title"         = "Error";
@@ -234,8 +234,8 @@
 "addEditBoat.deleteMessage"                 = "Are you sure you want to delete this boat?";
 "addEditBoat.pictureReqlertview.title"      = "Boat Picture";
 "addEditBoat.pictureReqlertview.message"    = "A photo of your boat is required.";
-"addEditBoat.insuranceAlertview.title"      = "Insurance Picture";
-"addEditBoat.insuranceAlertview.message"    = "Proof of Insurance is Required.";
+"addEditBoat.insuranceAlertview.title"      = "Information Required";
+"addEditBoat.insuranceAlertview.message"    = "A photo of your primary policy page is required.";
 "addEditBoat.lenghtNumAlertview.title"      = "Length";
 "addEditBoat.lenghtNumAlertview.message"    = "This field should only take numbers";
 "addEditBoat.capacityNumAlertview.title"    = "Capacity";
@@ -264,14 +264,14 @@
 "boatInsurance.expirationDate"                  = "EXPIRATION DATE";
 "boatInsurance.minimumCoverage"                 = "MIN COVERAGE ($)";
 "boatInsurance.minimumCoverage.placeholder"     = "Min $300,000";
-"boatInsurance.minCoverageAlert.title"          = "Minimum Coverage";
-"boatInsurance.minCoverageAlert.message"        = "Insurance coverage must be $300,000 or greater.";
-"boatInsurance.pictureAlert.title"              = "Insurance Photo";
-"boatInsurance.pictureAlert.message"            = "Proof of insurance is Required";
+"boatInsurance.minCoverageAlert.title"          = "Insurance Requirement";
+"boatInsurance.minCoverageAlert.message"        = "All Host's must submit proof of private boat insurance: minimum coverage of $300,000 combined bodily injury and property protection (per occurrence).";
+"boatInsurance.pictureAlert.title"              = "Information Required";
+"boatInsurance.pictureAlert.message"            = "A photo of your primary policy page is required.";
 "boatInsurance.dateTime.title"                  = "Error";
 "boatInsurance.dateTime.message"                = "Invalid Expiration Date.";
-"boatInsurance.warning.title"                   = "Picture";
-"boatInsurance.warning.message"                 = "Image must have full policy summary information including: Name of Carrier, Coverage Type, Minimum Amount of Coverage, Named Insured(s), Boat Registration Number, Coverage Term (including expiration), Address.";
+"boatInsurance.warning.title"                   = "Information Required";
+"boatInsurance.warning.message"                 = "To be accepted, Policy Page photo must clearly display: Insurance Carrier, Coverage Type, Expiration Date, and Minimum Amounts, Insured(s) Name and Address, and Boat Registration Number (Hull ID).";
 
 /*
  * Find a Boat
@@ -362,8 +362,8 @@
 "eventProfile.flagAlert.title"                          = "Success";
 "eventProfile.flagAlert.message"                        = "%@ flagged";
 "eventProfile.flagMessage"                              = "User Flagged this event.";
-"eventProfile.flagConfirmation.title"                   = "Event Report";
-"eventProfile.flagConfirmation.message"                 = "Report as Inappropriate?";
+"eventProfile.flagConfirmation.title"                   = "Report BoatDay";
+"eventProfile.flagConfirmation.message"                 = "Report \"%@\" as inappropriate?";
 "eventProfile.inviteUsers"                              = "INVITE USERS";
 "eventProfile.seatRequest.deleteTitle"                  = "Are You Sure?";
 "eventProfile.seatRequest.deleteMessage"                = "Cancellation of your BoatDay negatively effects all Hosts and Guests. You will be charged the Trust & Safety Fee for each reserved seat if you cancel at this time. Do you wish to cancel?";
@@ -428,7 +428,7 @@
 "addEditEvent.cancel"                   = "CANCEL EVENT";
 "addEditEvent.date"                     = "Date";
 "addEditEvent.createdAlert.title"       = "Success";
-"addEditEvent.createdAlert.message"     = "Your new event has been created!";
+"addEditEvent.createdAlert.message"     = "Your BoatDay has been published.  Go to My BoatDays -> Hosting and select your BoatDay to invite Guests on-board.";
 "addEditEvent.deleteAlert.title"        = "Delete Event";
 "addEditEvent.deleteAlert.message"      = "Let the guests know why are you deleting this event. (optional)";
 "addEditEvent.deleteAlert.messageHere"  = "Message here...";
@@ -489,14 +489,14 @@
  */
 
 "notifications.title"                               = "Notifications";
-"notifications.type.boatApproved"                   = "Your boat has been approved!";
-"notifications.type.boatRejected"                   = "Your boat has been rejected.";
+"notifications.type.boatApproved"                   = "Your boat has been approved! Go to \"My BoatDays\" to create your first BoatDay.";
+"notifications.type.boatRejected"                   = "We are unable to approve your Boat.";
 "notifications.type.seatRequestSingle"              = "Request for %@ seat";
 "notifications.type.seatRequest"                    = "Request for %@ seats";
 "notifications.type.seatRequestApproved"            = "Your seat request has been approved!";
-"notifications.type.seatRequestRejected"            = "You have been removed from an event.";
-"notifications.type.certificationApproved"          = "Your certification has been approved!";
-"notifications.type.certificationRejected"          = "Your certification has been rejected.";
+"notifications.type.seatRequestRejected"            = "You have been removed from %@";
+"notifications.type.certificationApproved"          = "Your Boating Certification has been approved.";
+"notifications.type.certificationRejected"          = "We are unable to verify your Boating Certification.";
 "notifications.type.newChatMessage"                 = "Registered Users New Message";
 "notifications.type.eventInvitation"                = "You have been invited to reserve a seat.";
 "notifications.type.userRemovedFromEvent"           = "You have been removed from an event.";
@@ -573,8 +573,8 @@
 "hostRegistration.state.placeholder"                    = "State";
 "hostRegistration.birthday.placeholder"                 = "Select Date";
 "hostRegistration.next"                                 = "Next";
-"hostRegistration.alertview.title"                      = "Picture is missing";
-"hostRegistration.alertview.message"                    = "Please add your drivers license picture.";
+"hostRegistration.alertview.title"                      = "Information Required";
+"hostRegistration.alertview.message"                    = "A photo of your current driver's license is required.";
 "hostRegistration.terms.consentBackground"              = "I consent to a background check by the BoatDay administrators using the information that I have provided in the previous screen.";
 "hostRegistration.terms.agreeWithTerms"                 = "I agree to the BoatDay";
 "hostRegistration.terms.termsOfService"                 = "Terms and Conditions";
@@ -585,19 +585,19 @@
 "hostRegistration.uploadingPicture"                     = "Uploading Picture";
 "hostRegistration.checkboxesNotPressed.message"         = "You must consent to a background check and accept the BoatDay Terms & Conditions to Register as a Host.";
 "hostRegistration.checkboxesNotPressed.title"           = "Host Registration";
-"hostRegistration.phoneNumberAlertView.title"           = "Phone Number";
-"hostRegistration.phoneNumberAlertView.message"         = "Please check your phone number. Some numbers are missing.";
+"hostRegistration.phoneNumberAlertView.title"           = "Information Required";
+"hostRegistration.phoneNumberAlertView.message"         = "Please make sure your phone number is accurate.";
 "hostRegistration.submitedAlert.title"                  = "Success";
 "hostRegistration.submitedAlert.message"                = "Your Host Registration has been submitted, continue to the next screen to register your boat.";
 "hostRegistration.zipCodeAlertView.title"               = "Zip Code";
 "hostRegistration.ssnCodeAlertView.title"               = "SSN Code";
 
 "hostRegistration.zipCodeAlertView.message"             = "The Zip code should have 5 numbers";
-"hostRegistration.ssnCodeAlertView.message"             = "The Social Security Last Four Digits should have 4 numbers";
-"hostRegistration.emailAlertView.title"                 = "Email";
-"hostRegistration.emailAlertView.message"               = "The email you entered is not valid.";
+"hostRegistration.ssnCodeAlertView.message"             = "Invalid Social Security number.";
+"hostRegistration.emailAlertView.title"                 = "Information Requiredƒ";
+"hostRegistration.emailAlertView.message"               = "Invalid Email address.";
 "hostRegistration.zipCodeOutOfArea.title"               = "Zip Code";
-"hostRegistration.zipCodeOutOfArea.message"             = "BoatDay is not yet currently in your area. Please encourage your community to ask for BoatDay and check our website for new location updates.";
+"hostRegistration.zipCodeOutOfArea.message"             = "BoatDay is not currently registering Hosts in your location. Visit www.boatdayapp.com/cities to for location updates and to request BoatDay in your city.";
 
 /*
  * Seat Requests
@@ -622,7 +622,7 @@
 "finalizeContribution.error.message"            = "Something went wrong. Payment could not be charged. Please verify your internet connection. If the error persists please contact admin.";
 "finalizeContribution.confirmation.title"       = "Payment";
 "finalizeContributions.error.defaultMessage"    = "Error trying to make payment, please contact the admin.";
-"finalizeContributions.notifyUser"              = "%@ finalize his/her contribution for your event '%@'.";
+"finalizeContributions.notifyUser"              = "%@ finalize finalized contribution for your BoatDay, '%@'.";
 
 /*
  * Payment Info

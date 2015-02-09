@@ -491,6 +491,13 @@ extern const CGFloat kMaxDistanceLocation;
 
 - (void)keyboardWillShow:(NSNotification *)notification {
     
+    if(self.tap) {
+        [self dismissKeyboard];
+        [self.navigationController.view removeGestureRecognizer:self.tap];
+        [self.navigationController.navigationBar setUserInteractionEnabled:YES];
+        self.tap = nil;
+    }
+    
     [self.navigationController.navigationBar setUserInteractionEnabled:NO];
     
     // Add tap gesture to dismiss keyboard

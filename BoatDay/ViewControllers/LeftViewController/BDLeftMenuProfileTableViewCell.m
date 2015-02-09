@@ -44,6 +44,10 @@
     self.profileNameLabel.textColor = [UIColor whiteColor];
     self.profileNameLabel.backgroundColor = [UIColor clearColor];
     self.profileNameLabel.font = [UIFont quattroCentoBoldFontWithSize:16.0];
+    
+    self.profileNameSubLabel.textColor = [UIColor whiteColor];
+    self.profileNameSubLabel.backgroundColor = [UIColor clearColor];
+    self.profileNameSubLabel.font = [UIFont quattroCentoRegularFontWithSize:11.0];
 
     [_profileImageView setContentMode:UIViewContentModeScaleAspectFill];
     [_profileImageView setImage:[UIImage imageNamed:@"user_av_blank"]];

@@ -34,7 +34,7 @@
         
         // Google Analytics
         // Optional: automatically send uncaught exceptions to Google Analytics.
-        [GAI sharedInstance].trackUncaughtExceptions = YES;
+
         
         // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
         [GAI sharedInstance].dispatchInterval = 20;
@@ -63,9 +63,6 @@
         [Parse setApplicationId:@"n847Wlp5wbJxzU5sakhXd6ojpReDGDRKy5HhhmWN" clientKey:@"sYfLmXqCjf2DvH6LZZ3mobT8Jl9YDyxYv9q3bwvO"];
         
         [PFFacebookUtils initializeFacebook];
-        
-#warning Log To File (uncomment)
-        //  [self logToFile];
         
         // Customize status bar
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];

@@ -76,9 +76,15 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
     
     self = [super init];
     
+    NSLog(@"hey");
+    
     if( !self ) return nil;
     
+    NSLog(@"hoy");
+    
     _user = [User currentUser];
+    
+//    NSLog(@"test : %@", _user);
     
     if (_user) {
         _firstName = _user.firstName;
@@ -302,6 +308,8 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
                                                  @"phoneNumber": self.phoneNumber ?: @"",
                                                  @"driversLicenseFile": self.driversLicenseFile
                                                  };
+    
+    NSLog(@"%@", hostRegistrationDictionary);
     
     BDHostRegistrationTermsViewController *hostRegistrationTermsViewController = [[BDHostRegistrationTermsViewController alloc] initWithHostRegistrationDictionary:hostRegistrationDictionary];
     [self.navigationController pushViewController:hostRegistrationTermsViewController animated:YES];
@@ -666,6 +674,13 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
 
 - (void)keyboardWillShow:(NSNotification *)notification {
     
+    if(self.tap) {
+        [self dismissKeyboard];
+        [self.navigationController.view removeGestureRecognizer:self.tap];
+        [self.navigationController.navigationBar setUserInteractionEnabled:YES];
+        self.tap = nil;
+    }
+    
     [self.navigationController.navigationBar setUserInteractionEnabled:NO];
     
     // Add tap gesture to dismiss keyboard
@@ -821,7 +836,7 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
                                                                action:@"openDatePicker"
                                                                 label:self.screenName
                                                                 value:nil] build]];
-
+    
 
     self.actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@""
                                                            datePickerMode:UIDatePickerModeDate
@@ -841,6 +856,7 @@ static NSInteger const kZipCodeMaximumCharacters = 5;
 - (void)dateWasSelected:(NSDate *)selectedDate element:(id)element {
     
     self.birthdayDate = selectedDate;
+    self.user.birthday = selectedDate;
     
     NSDateFormatter *dateFormatter = [NSDateFormatter birthdayDateFormatter];
     NSString *birthday = [dateFormatter stringFromDate:[[User currentUser] birthday]];

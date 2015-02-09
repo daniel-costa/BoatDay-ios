@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *price;
 @property (weak, nonatomic) IBOutlet UILabel *eventName;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *includingFees;
 @property (nonatomic) BOOL shouldBeGray;
 
 - (void)changeCellStateSelected:(BOOL)selected;

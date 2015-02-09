@@ -48,10 +48,12 @@
     return self;
     
 }
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-        self.screenName =@"BDHostRegistrationTermsViewController";
+    
+    self.screenName =@"BDHostRegistrationTermsViewController";
 
     self.title = NSLocalizedString(@"hostRegistration.terms.title", nil);
     
