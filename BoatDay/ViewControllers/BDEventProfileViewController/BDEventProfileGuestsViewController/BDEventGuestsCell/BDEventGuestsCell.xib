@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -58,6 +58,16 @@
                             <action selector="secondUserButtonPressed:" destination="xw4-FI-mcP" eventType="touchUpInside" id="Khu-ka-T1n"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MI8-wR-UgI" userLabel="Button 3">
+                        <rect key="frame" x="222" y="11" width="75" height="75"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="thirdUserButtonPressed:" destination="xw4-FI-mcP" eventType="touchUpInside" id="OUR-WU-n4e"/>
+                        </connections>
+                    </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_selected" id="11t-la-Jhl" userLabel="Check 1">
                         <rect key="frame" x="74" y="61" width="25" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -106,16 +116,6 @@
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MI8-wR-UgI" userLabel="Button 3">
-                        <rect key="frame" x="222" y="11" width="75" height="75"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="thirdUserButtonPressed:" destination="xw4-FI-mcP" eventType="touchUpInside" id="OUR-WU-n4e"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <color key="backgroundColor" red="0.30588235289999999" green="0.69411764710000001" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
             </tableViewCellContentView>

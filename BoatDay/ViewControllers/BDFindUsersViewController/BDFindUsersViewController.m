@@ -208,6 +208,8 @@
             break;
     }
     
+    NSLog(@"indexPath.section:%li", indexPath.section);
+    
     NSInteger startPosition = (indexPath.row) * 3;
     
     firstUser = usersArray.count > startPosition ? usersArray[startPosition] : nil;
@@ -227,13 +229,14 @@
         
         if ([user isEqual:[User currentUser]]) {
             type = ProfileTypeSelf;
-            
         }
+        
         BDProfileViewController *profileViewController = [[BDProfileViewController alloc] initWithUser:user andProfileType:type];
         [self.navigationController pushViewController:profileViewController animated:YES];
-
-        
     }];
+    
+    [cell layoutSubviews];
+    [cell layoutIfNeeded];
     
     return cell;
 }
@@ -339,7 +342,6 @@
 
         self.usersByName = [NSMutableArray arrayWithArray:self.usersByNameTotalSearch];
         [self.usersByName removeObject:[User currentUser]];
-        
         
         [self.tableView reloadData];
         self.activityIndicator.hidden = YES;

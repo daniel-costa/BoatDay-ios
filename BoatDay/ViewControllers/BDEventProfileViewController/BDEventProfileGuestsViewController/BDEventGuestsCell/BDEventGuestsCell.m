@@ -153,6 +153,7 @@ static NSString * const kUserPlaceholder = @"user_av_blank_lg";
         self.firstPlaceholderImageView.hidden = YES;
         self.firstImageView.hidden = YES;
         self.firstCheckImageView.hidden = YES;
+        self.firstOriginImageView.hidden = YES;
     }
     
     if (secondUser) {
@@ -211,13 +212,12 @@ static NSString * const kUserPlaceholder = @"user_av_blank_lg";
         self.secondImageView.hidden = YES;
         
     } else {
-
         self.secondNameLabel.hidden = YES;
         self.secondLocationLabel.hidden = YES;
         self.secondPlaceholderImageView.hidden = YES;
         self.secondImageView.hidden = YES;
         self.secondCheckImageView.hidden = YES;
-        
+        self.secondOriginImageView.hidden = YES;
     }
     
     if (thirdUser) {
@@ -277,14 +277,14 @@ static NSString * const kUserPlaceholder = @"user_av_blank_lg";
         self.thirdImageView.hidden = YES;
         
     } else {
-        
         self.thirdNameLabel.hidden = YES;
         self.thirdLocationLabel.hidden = YES;
         self.thirdPlaceholderImageView.hidden = YES;
         self.thirdImageView.hidden = YES;
         self.thirdCheckImageView.hidden = YES;
-        
+        self.thirdOriginImageView.hidden = YES;
     }
+    
     
 }
 - (void)pSelectedFirst{
