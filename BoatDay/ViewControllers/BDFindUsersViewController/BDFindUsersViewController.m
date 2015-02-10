@@ -208,7 +208,6 @@
             break;
     }
     
-    NSLog(@"indexPath.section:%li", indexPath.section);
     
     NSInteger startPosition = (indexPath.row) * 3;
     
@@ -231,12 +230,20 @@
             type = ProfileTypeSelf;
         }
         
+        if(self.tap) {
+            [self dismissKeyboard];
+            [self.navigationController.view removeGestureRecognizer:self.tap];
+            [self.navigationController.navigationBar setUserInteractionEnabled:YES];
+            self.tap = nil;
+        }
+        
+        NSLog(@"indexPath.section:%@", user);
         BDProfileViewController *profileViewController = [[BDProfileViewController alloc] initWithUser:user andProfileType:type];
         [self.navigationController pushViewController:profileViewController animated:YES];
     }];
     
-    [cell layoutSubviews];
-    [cell layoutIfNeeded];
+//    [cell layoutSubviews];
+//    [cell layoutIfNeeded];
     
     return cell;
 }
