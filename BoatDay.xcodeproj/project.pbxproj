@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		655AD57E1A79471900ADD2E8 /* termsAndConditions.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 655AD57D1A79471900ADD2E8 /* termsAndConditions.pdf */; };
+		65CC66431A8A6D18000F2BB0 /* opening.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65CC66421A8A6D18000F2BB0 /* opening.wav */; };
+		65CC66491A8A733C000F2BB0 /* minus-button.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65CC66441A8A733C000F2BB0 /* minus-button.wav */; };
+		65CC664A1A8A733C000F2BB0 /* notification-payment.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65CC66451A8A733C000F2BB0 /* notification-payment.wav */; };
+		65CC664B1A8A733C000F2BB0 /* notification-review.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65CC66461A8A733C000F2BB0 /* notification-review.wav */; };
+		65CC664C1A8A733C000F2BB0 /* notification.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65CC66471A8A733C000F2BB0 /* notification.wav */; };
+		65CC664D1A8A733C000F2BB0 /* plus-button.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65CC66481A8A733C000F2BB0 /* plus-button.wav */; };
 		951D64671A72E33F00540EED /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D64651A72E33F00540EED /* libAdIdAccess.a */; };
 		951D64681A72E34000540EED /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D64661A72E33F00540EED /* libGoogleAnalyticsServices.a */; };
 		951D64741A72E9BF00540EED /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D64731A72E9BF00540EED /* libz.dylib */; };
@@ -310,6 +316,12 @@
 
 /* Begin PBXFileReference section */
 		655AD57D1A79471900ADD2E8 /* termsAndConditions.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = termsAndConditions.pdf; sourceTree = "<group>"; };
+		65CC66421A8A6D18000F2BB0 /* opening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = opening.wav; sourceTree = "<group>"; };
+		65CC66441A8A733C000F2BB0 /* minus-button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "minus-button.wav"; sourceTree = "<group>"; };
+		65CC66451A8A733C000F2BB0 /* notification-payment.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "notification-payment.wav"; sourceTree = "<group>"; };
+		65CC66461A8A733C000F2BB0 /* notification-review.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "notification-review.wav"; sourceTree = "<group>"; };
+		65CC66471A8A733C000F2BB0 /* notification.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = notification.wav; sourceTree = "<group>"; };
+		65CC66481A8A733C000F2BB0 /* plus-button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "plus-button.wav"; sourceTree = "<group>"; };
 		65F5B7F5D1BF8E5369CBC2EC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		951D64651A72E33F00540EED /* libAdIdAccess.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdIdAccess.a; sourceTree = "<group>"; };
 		951D64661A72E33F00540EED /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
@@ -822,6 +834,19 @@
 				EB147628F063EDA19E5D4726 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		65CC66411A8A6CE7000F2BB0 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				65CC66441A8A733C000F2BB0 /* minus-button.wav */,
+				65CC66451A8A733C000F2BB0 /* notification-payment.wav */,
+				65CC66461A8A733C000F2BB0 /* notification-review.wav */,
+				65CC66471A8A733C000F2BB0 /* notification.wav */,
+				65CC66481A8A733C000F2BB0 /* plus-button.wav */,
+				65CC66421A8A6D18000F2BB0 /* opening.wav */,
+			);
+			name = sounds;
 			sourceTree = "<group>";
 		};
 		951D64641A72E31500540EED /* GroupAnalytic */ = {
@@ -1672,6 +1697,7 @@
 		E87A747619533CBE0006D097 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				65CC66411A8A6CE7000F2BB0 /* sounds */,
 				655AD57D1A79471900ADD2E8 /* termsAndConditions.pdf */,
 				E84F3F011A1F72C7001340F4 /* zipcodes.plist */,
 				E8FDBF49197D677100D51645 /* videos */,
@@ -2546,6 +2572,7 @@
 				E8219737197E72E6001B17A1 /* BDMyBoatsViewController.xib in Resources */,
 				E87FE2DC1A1E425F009AD37F /* JSQMessagesTypingIndicatorFooterView.xib in Resources */,
 				E812ED3919814289008EAE9C /* BDBoatMessageViewController.xib in Resources */,
+				65CC664C1A8A733C000F2BB0 /* notification.wav in Resources */,
 				E873531C19866C0B002CCCBD /* BDSafetyFeaturesListViewController.xib in Resources */,
 				E824B1681965C0B300557328 /* BDInviteUserViewController.xib in Resources */,
 				E86F6F64196337CC00E2821F /* Done.png in Resources */,
@@ -2565,6 +2592,7 @@
 				E8260EC4198A8FA800D59859 /* BDFindABoatCalendarCell.xib in Resources */,
 				E86F6F65196337CC00E2821F /* Done@2x.png in Resources */,
 				E8E24EE619C1FB6B002B0B58 /* BDReportUserViewController.xib in Resources */,
+				65CC664A1A8A733C000F2BB0 /* notification-payment.wav in Resources */,
 				E87FE2BC1A1E425F009AD37F /* message_received.aiff in Resources */,
 				E869A9091964410000CB78A7 /* BDReviewsListCell.xib in Resources */,
 				E87A74BA19533CBE0006D097 /* Images.xcassets in Resources */,
@@ -2590,6 +2618,7 @@
 				E86D949619B87C600066AB5C /* BDHostRegistrationFirstRowCell.xib in Resources */,
 				9582C5AA1A741C4400986CDC /* BDMyEventListCell.xib in Resources */,
 				E8FDBF4B197D677100D51645 /* background.mp4 in Resources */,
+				65CC664B1A8A733C000F2BB0 /* notification-review.wav in Resources */,
 				E869A9031964409300CB78A7 /* BDReviewsListViewController.xib in Resources */,
 				E8315E56199A6E8D00977E5A /* BDEventActivitiesViewController.xib in Resources */,
 				E812ED7D19816E66008EAE9C /* BDActivitiesListCell.xib in Resources */,
@@ -2606,6 +2635,7 @@
 				E89DD84419B5FBEE000FFE39 /* BDNotificationsCell.xib in Resources */,
 				E8ECA5A71A31DF83001C64CE /* DiogoNunes@2x.png in Resources */,
 				E87FE2B61A1E425F009AD37F /* bubble_tailless.png in Resources */,
+				65CC664D1A8A733C000F2BB0 /* plus-button.wav in Resources */,
 				E812ED7F19816E66008EAE9C /* BDActivitiesListViewController.xib in Resources */,
 				E8E7921B19741FF2005511F2 /* QuattrocentoSans-Italic.ttf in Resources */,
 				9582C5C11A744CAC00986CDC /* BDLeftMenuProfileTableViewCell.xib in Resources */,
@@ -2660,8 +2690,10 @@
 				E8D35F2919B9D6DF00ACCDB2 /* BDSeatRequestViewController.xib in Resources */,
 				9582C5CB1A744D1B00986CDC /* BDLeftMenuNotificationTableViewCell.xib in Resources */,
 				E8ECA5A91A31DF83001C64CE /* RJ@2x.png in Resources */,
+				65CC66491A8A733C000F2BB0 /* minus-button.wav in Resources */,
 				E84E9D311987D11600410585 /* BDFindABoatCalendarViewController.xib in Resources */,
 				E87FE2B31A1E425F009AD37F /* bubble_stroked@2x.png in Resources */,
+				65CC66431A8A6D18000F2BB0 /* opening.wav in Resources */,
 				9582C5C61A744CED00986CDC /* BDLeftMenuFactTableViewCell.xib in Resources */,
 				E869B07519B7782E0095E703 /* BDHostRegistrationViewController.xib in Resources */,
 				E812ED3F19814B1D008EAE9C /* BDAddEditBoatViewController.xib in Resources */,

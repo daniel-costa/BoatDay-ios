@@ -61,7 +61,7 @@
     switch (type) {
         case NotificationTypeBoatApproved:
         {
-            message = NSLocalizedString(@"notifications.type.boatApproved", nil);
+            message = @"Your boat has been approved";
 //            detailMessage = notification.boat.name;
         }
             break;
@@ -183,7 +183,7 @@
         }
             break;
         case NotificationTypeEventInvitationRemoved: {
-            message = NSLocalizedString(@"notifications.type.invitationRemoved", nil);
+            message = @"Invitation Expired";
 //            detailMessage = notification.event.name;
         }
             break;

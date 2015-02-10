@@ -6,6 +6,7 @@
 //
 
 #import "BaseViewController.h"
+#import <AudioToolbox/AudioServices.h>
 
 @interface BaseViewController ()
 
@@ -247,5 +248,12 @@
     
 }
 
+- (void)playSound:(NSString*) name {
+    SystemSoundID sound;
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:name ofType:@"wav"];
+    CFURLRef soundURL = (__bridge CFURLRef)[NSURL fileURLWithPath:soundPath];
+    AudioServicesCreateSystemSoundID(soundURL, &sound);
+    AudioServicesPlaySystemSound(sound);
+}
 
 @end

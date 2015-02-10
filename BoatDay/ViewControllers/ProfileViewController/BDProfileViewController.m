@@ -924,7 +924,7 @@
         
         //remove invitation
         self.seatRequest.pendingInvite = @(NO);
-        notification.text = NSLocalizedString(@"notifications.type.invitationRemoved", nil);
+        notification.text = [NSString stringWithFormat:@"Your invitation to %@ is no longer active", self.seatRequest.event.name];
         notification.notificationType = @(NotificationTypeEventInvitationRemoved);
 
         [PFObject saveAllInBackground:@[self.seatRequest, notification] block:^(BOOL succeeded, NSError *error) {

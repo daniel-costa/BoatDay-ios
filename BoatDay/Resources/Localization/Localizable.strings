@@ -378,13 +378,13 @@
 "eventProfile.activities.yesSmoking.description"        = "Smoking is permitted on this event";
 "eventProfile.activities.nofamilyWelcome.title"         = "Not recommended for Children";
 "eventProfile.activities.nofamilyWelcome.description"   = "Children who are accompanied by adults are not permitted on this event.";
-"eventProfile.cancelationNotification"                  = "%@ canceled his seat request for \"%@\" event";
+"eventProfile.cancelationNotification"                  = "%@ canceled a seat request for %@";
 
 /*
  * Notifications
  */
 
-"notifications.type.seatRequestCanceledByUser"  = "Seat Request Canceled by user.";
+"notifications.type.seatRequestCanceledByUser"  = "Seat Request Canceled";
 "notifications.newComent"                       = "New Event Host Comment";
 "notification.eventDeleted.title"               = "Event Cancelled";
 "notification.eventEnded.title"                 = "Event Ended";
@@ -490,20 +490,20 @@
 
 "notifications.title"                               = "Notifications";
 "notifications.type.boatApproved"                   = "Your boat has been approved! Go to \"My BoatDays\" to create your first BoatDay.";
-"notifications.type.boatRejected"                   = "We are unable to approve your Boat.";
+"notifications.type.boatRejected"                   = "Boat Registration Denied";
 "notifications.type.seatRequestSingle"              = "Request for %@ seat";
 "notifications.type.seatRequest"                    = "Request for %@ seats";
 "notifications.type.seatRequestApproved"            = "Your seat request has been approved!";
 "notifications.type.seatRequestRejected"            = "You have been removed from %@";
 "notifications.type.certificationApproved"          = "Your Boating Certification has been approved.";
-"notifications.type.certificationRejected"          = "We are unable to verify your Boating Certification.";
+"notifications.type.certificationRejected"          = "Certification rejected";
 "notifications.type.newChatMessage"                 = "Registered Users New Message";
 "notifications.type.eventInvitation"                = "You have been invited to reserve a seat.";
 "notifications.type.userRemovedFromEvent"           = "You have been removed from an event.";
 "notifications.type.eventCanceled"                  = "This event was canceled.";
 "notifications.type.newReview"                      = "New review";
 "notifications.type.hostRegistrationApproved"       = "You have been approved as a BoatDay Host!";
-"notifications.type.hostRegistrationRejected"       = "Your host registration has been rejected.";
+"notifications.type.hostRegistrationRejected"       = "We are unable to Approve your Host Registration.";
 "notifications.type.paymentReminder"                = "Finalize your contribution.";
 "notifications.type.merchantApproved"               = "Payment Account Approved";
 "notifications.type.merchantRejected"               = "Payment Account Declined";
@@ -565,7 +565,7 @@
 "hostRegistration.lastName.placeholder"                 = "Last Name";
 "hostRegistration.firstAddressLine.placeholder"         = "Address";
 "hostRegistration.zipCode.placeholder"                  = "Zip Code";
-"hostRegistration.ssnCode.placeholder"                  = "SSN Code";
+"hostRegistration.ssnCode.placeholder"                  = "SSN";
 
 "hostRegistration.email.placeholder"                    = "your@email.com";
 "hostRegistration.phoneNumber.placeholder"              = "Your Phone";
@@ -594,7 +594,7 @@
 
 "hostRegistration.zipCodeAlertView.message"             = "The Zip code should have 5 numbers";
 "hostRegistration.ssnCodeAlertView.message"             = "Invalid Social Security number.";
-"hostRegistration.emailAlertView.title"                 = "Information Requiredƒ";
+"hostRegistration.emailAlertView.title"                 = "Information Required";
 "hostRegistration.emailAlertView.message"               = "Invalid Email address.";
 "hostRegistration.zipCodeOutOfArea.title"               = "Zip Code";
 "hostRegistration.zipCodeOutOfArea.message"             = "BoatDay is not currently registering Hosts in your location. Visit www.boatdayapp.com/cities to for location updates and to request BoatDay in your city.";
@@ -622,7 +622,7 @@
 "finalizeContribution.error.message"            = "Something went wrong. Payment could not be charged. Please verify your internet connection. If the error persists please contact admin.";
 "finalizeContribution.confirmation.title"       = "Payment";
 "finalizeContributions.error.defaultMessage"    = "Error trying to make payment, please contact the admin.";
-"finalizeContributions.notifyUser"              = "%@ finalize finalized contribution for your BoatDay, '%@'.";
+"finalizeContributions.notifyUser"              = "%@ finalized contribution for your BoatDay, '%@'.";
 
 /*
  * Payment Info
@@ -661,8 +661,8 @@
 "paymentInfo.zipCode"                               = "POSTAL CODE*";
 "paymentInfo.zipCode.placeholder"                   = "Postal Code";
 "paymentInfo.state"                                 = "STATE*";
-"paymentInfo.hostRegistration.title"                = "Success";
-"paymentInfo.hostRegistration.message"              = "You have completed the Host Registration process! Your information has been submitted and is pending approval. You can go to Settings -> Payment Info to check your account status.";
+"paymentInfo.hostRegistration.title"                = "Registration Complete!";
+"paymentInfo.hostRegistration.message"              = "Your Host and Boat Registrations are submitted and pending approval.";
 "paymentInfo.inputsMustMatch"                       = "All inputs must match policy summary page above";
 
 /*

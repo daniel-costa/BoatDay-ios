@@ -44,7 +44,7 @@ static BoatdayNotificationMessage *sharedMessage;
     BoatdayNotificationMessageView *pView = [[BoatdayNotificationMessageView alloc] initWithFrame:CGRectMake(0, -60, 320, 60)];
     [pView configMessage:title subTitle:subTitle
                iconImage:iconImage
-               durations:2.8
+               durations:3
                 callback:callback
           viewController:viewController
            typeOfMessage:typeOfMessage];
@@ -77,7 +77,6 @@ static BoatdayNotificationMessage *sharedMessage;
     if ((self = [super init]))
     {
         NSLog(@"init");
-
         _messages = [[NSMutableArray alloc] init];
     }
     return self;

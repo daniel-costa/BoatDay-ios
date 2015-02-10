@@ -78,7 +78,7 @@ static NSInteger const kMaximumAvailableSeats = 15;
 @implementation BDAddEditEventProfileViewController
 
 - (instancetype)initWithEvent:(Event *)event {
-    
+
     self = [super init];
     
     if( !self ) return nil;

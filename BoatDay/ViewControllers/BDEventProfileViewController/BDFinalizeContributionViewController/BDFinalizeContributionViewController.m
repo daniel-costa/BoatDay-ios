@@ -231,7 +231,10 @@ static NSInteger const kMessageMaximumCharacters = 500;
 }
 
 - (IBAction)minusButtonPressed:(id)sender {
-     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+    
+    [self playSound:@"minus-button"];
+    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
                                                                action:@"minusButtonPressed"
                                                                 label:self.screenName
                                                                 value:nil] build]];
@@ -252,7 +255,10 @@ static NSInteger const kMessageMaximumCharacters = 500;
 }
 
 - (IBAction)plusButtonPressed:(id)sender {
-     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
+    
+    [self playSound:@"plus-button"];
+    
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UIAction"
                                                                action:@"plusButtonPressed"
                                                                 label:self.screenName
                                                                 value:nil] build]];

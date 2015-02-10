@@ -122,7 +122,13 @@
         [self.window setRootViewController:self.drawerController];
         
         [self.window makeKeyAndVisible];
-
+        
+        
+        SystemSoundID sound;
+        NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"opening" ofType:@"wav"];
+        CFURLRef soundURL = (__bridge CFURLRef)[NSURL fileURLWithPath:soundPath];
+        AudioServicesCreateSystemSoundID(soundURL, &sound);
+        AudioServicesPlaySystemSound(sound);
     });
     
 }
@@ -237,7 +243,9 @@
             [[Session sharedSession] updateUserData];
             break;
     }
+    
     UIApplicationState appState = UIApplicationStateActive;
+    
     if ([application respondsToSelector:@selector(applicationState)]) {
         appState = application.applicationState;
     }
@@ -249,7 +257,7 @@
             
         } typeOfMessage:BoatdayNotificationMessageTypeError];
     } else {
-        NSLog(@"handlePush %@",userInfo);
+        NSLog(@"handlePush %@", userInfo);
 
         [PFPush handlePush:userInfo];
     }

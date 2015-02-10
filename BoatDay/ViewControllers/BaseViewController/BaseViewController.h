@@ -45,4 +45,6 @@
 
 - (void)removePlaceholderView;
 
+- (void)playSound:(NSString*)name;
+
 @end
