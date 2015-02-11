@@ -318,7 +318,7 @@
         case NotificationTypeEventRemoved:
         {
             UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"notification.eventDeleted.title", nil)
-                                                                  message:notification.message.text
+                                                                  message:notification.text
                                                                  delegate:nil
                                                         cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
                                                         otherButtonTitles:nil];

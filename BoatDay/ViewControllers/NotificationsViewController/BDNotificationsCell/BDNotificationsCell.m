@@ -61,7 +61,7 @@
     switch (type) {
         case NotificationTypeBoatApproved:
         {
-            message = @"Your boat has been approved";
+            message = @"Boat Registration Approved";
 //            detailMessage = notification.boat.name;
         }
             break;

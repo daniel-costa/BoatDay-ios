@@ -876,7 +876,7 @@
             notification.event  = self.seatRequest.event;
             notification.read  = @(NO);
             notification.seatRequest = self.seatRequest;
-            notification.text = NSLocalizedString(@"notifications.type.seatRequestApproved", nil);
+            notification.text = @"Your seat request has been approved.";
             notification.notificationType = @(NotificationTypeRequestApproved);
             notification.deleted = @(NO);
             
@@ -940,7 +940,8 @@
         self.seatRequest.event.freeSeats = @(self.seatRequest.event.freeSeats.integerValue + self.seatRequest.numberOfSeats.integerValue);
         
         // seat request cancelation
-        notification.text = [NSString stringWithFormat: NSLocalizedString(@"notifications.type.seatRequestRejected", nil), self.seatRequest.event.name];
+//        notification.text = [NSString stringWithFormat: NSLocalizedString(@"notifications.type.seatRequestRejected", nil), self.seatRequest.event.name];
+        notification.text = @"Tap this notificaiton to view any message from the Host.";
         notification.notificationType = @(NotificationTypeRequestRejected);
 
         AdminMessage *message = [AdminMessage object];

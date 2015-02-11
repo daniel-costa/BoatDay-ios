@@ -267,8 +267,8 @@
         
     } else if ([Session sharedSession].hostRegistration && [[Session sharedSession].hostRegistration.status integerValue] == HostRegistrationStatusPending) {
         
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Host Registration Pending"
-                                                              message:@"Your Host Information is pending review."
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Registration Pending"
+                                                              message:@"Your Regisration is Pending Review"
                                                              delegate:nil
                                                     cancelButtonTitle:@"Ok"
                                                     otherButtonTitles: nil];

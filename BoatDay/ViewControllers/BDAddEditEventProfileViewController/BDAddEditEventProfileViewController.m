@@ -170,8 +170,8 @@ static NSInteger const kMaximumAvailableSeats = 15;
     [super viewDidAppear:animated];
     
     if( self.readOnly ) {
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@""
-                                                              message:@"Events can only be edited if there are no pending invitations or confirmed Guests"
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                              message:@"BoatDays can only be edited if there are no pending invitations or confirmed Guests."
                                                              delegate:nil
                                                     cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
                                                     otherButtonTitles: nil];
