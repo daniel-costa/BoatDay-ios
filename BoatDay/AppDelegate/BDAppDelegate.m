@@ -186,6 +186,10 @@
     NotificationType notificationType = [userInfo[@"notificationType"] integerValue];
     
     switch (notificationType) {
+        case NotificationTypeDisbursement:
+            
+            break;
+            
         case NotificationTypeBoatApproved:
             [[Session sharedSession] updateUserData];
             break;

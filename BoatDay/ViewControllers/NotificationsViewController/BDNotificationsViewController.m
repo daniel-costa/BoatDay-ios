@@ -266,6 +266,17 @@
     NotificationType type = [notification.notificationType integerValue];
     
     switch (type) {
+        case NotificationTypeDisbursement:
+        {
+            UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                  message:notification.text
+                                                                 delegate:nil
+                                                        cancelButtonTitle:NSLocalizedString(@"errorMessages.ok", nil)
+                                                        otherButtonTitles:nil];
+            
+            [myAlertView show];
+            break;
+        }
         case NotificationTypeBoatApproved:
             
             viewController = [[BDBoatViewController alloc] initWithBoat:notification.boat];

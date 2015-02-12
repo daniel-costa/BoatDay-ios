@@ -59,6 +59,10 @@
     NotificationType type = [notification.notificationType integerValue];
     
     switch (type) {
+        case NotificationTypeDisbursement:
+        {
+            message = @"Error with your information";
+        }
         case NotificationTypeBoatApproved:
         {
             message = @"Boat Registration Approved";
